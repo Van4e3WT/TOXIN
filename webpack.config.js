@@ -43,7 +43,10 @@ module.exports = {
         path: PATHS.dist,
     },
     plugins:[
-        new HtmlWebpackPlugin(),
+        ...PAGES.map(page => new HtmlWebpackPlugin({
+            template: path.resolve(PAGES_DIR, page),
+            filename: `./${page.replace(/\.pug/,".html")}`
+          })),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "style_[id].css",
@@ -64,7 +67,12 @@ module.exports = {
             },
             {
                 test: /\.pug$/,
-                use: ["pug-loader"]
+                use:{
+                    loader: "pug-loader",
+                    options: {
+                        pretty: isDev,
+                    }
+                }
             },
             {
                 test: /\.(scss|sass)$/,
