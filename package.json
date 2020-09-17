@@ -4,10 +4,10 @@
   "description": "none",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack --mode development",
-    "build": "cross-env NODE_ENV=production webpack --mode production",
-    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open --mode development"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.1.0",
-    "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
     "csv-loader": "^3.0.3",
     "file-loader": "^6.1.0",

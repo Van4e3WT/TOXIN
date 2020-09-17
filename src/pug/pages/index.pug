@@ -1,8 +1,7 @@
-doctype html
-html(lang="ru-RU")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-    body
-        h1 Somebody Title
+extends ../layouts/base.pug
+
+block variables
+    -let title = "Landing Page"
+
+block content
+    h1.hmm Проверка дефолта сервера

@@ -1,0 +1,17 @@
+//- *********** header ***********
+
+mixin link(ref, name)
+    li.links__item
+        a(href=""+ref)= name
+
+
+//- *********** footer ***********
+
+mixin refItem(ref, name)
+    li.ref__item
+        a(href=ref)=name
+
+mixin socialReference(ref, name)
+    div(class="copyrights__" + name)
+        a(href=ref)
+            img(src="./static/" + name + "Logo.svg", alt=name)

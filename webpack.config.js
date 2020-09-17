@@ -14,17 +14,15 @@ const PATHS = {
 const PAGES_DIR = path.join(PATHS.src, "pug", "pages")
 const PAGES = fs.readdirSync(PAGES_DIR).filter(filename => filename.endsWith(".pug"))
 
-const isDev = process.env.NODE_ENV === "development"
-
 // Custom functions (yep, and arrows)
 const cssLoader = addition => {
     const loaders = [
         {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-                hmr: isDev,
-                reloadAll: true
-            },
+            // options: {
+            //     hmr: true,
+            //     reloadAll: true
+            // },
         },
         "css-loader",
     ]
@@ -54,7 +52,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                  from: path.resolve(__dirname, "src/static"), to: path.resolve(__dirname, "dist/static"),
+                  from: path.resolve(PATHS.src, "static"), to: path.resolve(PATHS.dist, "static"),
                 },
             ],
         }),
@@ -70,7 +68,7 @@ module.exports = {
                 use:{
                     loader: "pug-loader",
                     options: {
-                        pretty: isDev,
+                        pretty: true,
                     }
                 }
             },
@@ -102,8 +100,8 @@ module.exports = {
             }
         ]
     },
-    devServer: {
-        port: 8081,
-        hot: isDev,
-    },
+    // devServer: {
+    //     port: 8081,
+    //     hot: true,
+    // },
 }
