@@ -1,8 +1,7 @@
 //- *********** header ***********
 
 mixin link(ref, name)
-    li.links__item
-        a(href=""+ref)= name
+        a(class="header__item",href=""+ref)= name
 
 
 //- *********** footer ***********
@@ -14,4 +13,4 @@ mixin refItem(ref, name)
 mixin socialReference(ref, name)
     div(class="copyrights__" + name)
         a(href=ref)
-            img(src="./static/" + name + "Logo.svg", alt=name)
+            img(src="./assets/images/" + name + "Logo.svg", alt=name)

@@ -1,19 +1,20 @@
-header.header.container
-    .header__logo
-        .header__img
-            img(src="./static/LogoImg.svg", alt="TOXIN")
-        .header__name
-            img(src="./static/LogoName.svg", alt="TOXIN")
-    nav.navbar
-        ul.links
-            +link("#about", "О нас")
-            +link("#office", "Услуги")
-            +link("#vacancies", "Вакансии")
-            +link("#news", "Новости")
-            +link("#deals", "Соглашения")
-    //- написать логику для вывода ФИО вошедшего, либо предлагать авторизоваться, если анонимный пользователь
-    .anon
-        .anon__login
-            button Войти
-        .anon__register
-            button Зарегистрироваться
+header
+    .container
+        .header
+            .header__section
+                .header__item
+                    img(src="./assets/images/LogoImg.svg", alt="TOXIN", height="54px")
+                .header__name
+                    img(src="./assets/images/LogoName.svg", alt="TOXIN", height="18px")
+            .header__section
+                +link("#about", "О нас")
+                +link("#office", "Услуги")
+                +link("#vacancies", "Вакансии")
+                +link("#news", "Новости")
+                +link("#deals", "Соглашения")
+            //- написать логику для вывода ФИО вошедшего, либо предлагать авторизоваться, если анонимный пользователь
+            .header__section
+                .header__item
+                    button ВОЙТИ
+                .header__item
+                    button ЗАРЕГИСТРИРОВАТЬСЯ

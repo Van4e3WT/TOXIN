@@ -52,7 +52,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                  from: path.resolve(PATHS.src, "static"), to: path.resolve(PATHS.dist, "static"),
+                  from: path.resolve(PATHS.src, "static"), to: path.resolve(PATHS.dist, "assets"),
                 },
             ],
         }),
@@ -78,11 +78,19 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|jpeg|svg|gif)$/,
-                use: ["file-loader"]
+                loader: "file-loader",
+                options: {
+                    outputPath: "assets/images",
+                    name: "[name].[ext]"
+                }
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                use: ["file-loader"]
+                loader: "file-loader",
+                options: {
+                    outputPath: "assets/fonts",
+                    name: "[name].[ext]"
+                }
             },
             {
                 test: /\.csv$/,

@@ -1,21 +1,59 @@
+@import "_font-face.scss";
+
+$containerWidth: 1535px;
+$headerPadding: 18px;
+
 * {
     padding: 0;
     margin: 0;
 }
-
+body {
+    font-family: "Montserrat";
+    font-weight: regular;
+    font-size: 18px;
+}
+h1 {
+    font-family: "OpenSans";
+    font-weight: bold;
+    font-size: 36px;
+}
+h2 {
+    font-family: "OpenSans";
+    font-weight: bold;
+    font-size: 24px;
+}
+h3 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 20px;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
 .container {
-    max-width: 1530px;
+    max-width: $containerWidth;
     margin: 0 auto;
 }
-
 .header {
-    background-color: white;
-    // height: 95px;
-    .header__img, .header__name {
-        display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    .header__section {
+        display: flex;
+        padding: $headerPadding 0;
+        align-items: center;
+        .header__item {
+            padding: 0 $headerPadding;
+            color: black;
+        }
+        .header__item:first-child {
+            padding-left: 0;
+        }
+        .header__item:last-child {
+            padding-right: 0;
+        }
     }
-}
-
-.hmm {
-    color: green;
 }
