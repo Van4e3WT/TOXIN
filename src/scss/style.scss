@@ -1,21 +1,24 @@
 @import "_font-face.scss";
 
-$containerWidth: 1535px;
+$containerWidth: 1534px;
 $headerPadding: 18px;
+$gradientColor: linear-gradient(to top, #8BA4F9, #BC9CFF);
 
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 body {
     font-family: "Montserrat";
-    font-weight: regular;
+    font-weight: normal;
     font-size: 18px;
 }
 h1 {
     font-family: "OpenSans";
     font-weight: bold;
     font-size: 36px;
+    background: $gradientColor;
 }
 h2 {
     font-family: "OpenSans";
@@ -43,10 +46,10 @@ ul {
     overflow: hidden;
     .header__section {
         display: flex;
-        padding: $headerPadding 0;
+        padding: 18px 0;
         align-items: center;
         .header__item {
-            padding: 0 $headerPadding;
+            padding: 0 14px;
             color: black;
         }
         .header__item:first-child {
@@ -55,5 +58,57 @@ ul {
         .header__item:last-child {
             padding-right: 0;
         }
+        .header__logo {
+            padding-right: 16px;
+        }
+        .extended {
+            padding-right: 47px;
+        }
     }
 }
+.header__login {
+    display: flex;
+    position: relative;
+    $height: 45px;
+    height: $height;
+    width: 115px;
+    $border: 3px;
+    color: #BC9CFF;
+    background: white;
+    background-clip: padding-box;
+    border: solid $border transparent; 
+    border-radius: $height / 2;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 3px;
+ 
+    &:before {
+       content: "";
+       position: absolute;
+       top: 0; right: 0; bottom: 0; left: 0;
+       z-index: -1;
+       margin: -$border;
+       border-radius: $height / 2;
+       background: $gradientColor;
+    }
+ }
+ .header__register {
+    display: flex;
+    position: relative;
+    $height: 45px;
+    height: $height;
+    width: 258px;
+    background: $gradientColor;
+    border-radius: $height / 2;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 3px;
+    padding-top: 3px;
+ }

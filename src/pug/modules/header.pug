@@ -2,19 +2,19 @@ header
     .container
         .header
             .header__section
-                .header__item
+                .header__logo
                     img(src="./assets/images/LogoImg.svg", alt="TOXIN", height="54px")
                 .header__name
                     img(src="./assets/images/LogoName.svg", alt="TOXIN", height="18px")
+            //- Не вижу смысла оборачивать лишними тегами ul и li в данном случае DOM-дерево
             .header__section
                 +link("#about", "О нас")
-                +link("#office", "Услуги")
+                +link("#office", "Услуги", true)
                 +link("#vacancies", "Вакансии")
                 +link("#news", "Новости")
-                +link("#deals", "Соглашения")
+                +link("#deals", "Соглашения", true)
+                .header__item
+                    a.header__login Войти
+                .header__item
+                    a.header__register Зарегистрироваться
             //- написать логику для вывода ФИО вошедшего, либо предлагать авторизоваться, если анонимный пользователь
-            .header__section
-                .header__item
-                    button ВОЙТИ
-                .header__item
-                    button ЗАРЕГИСТРИРОВАТЬСЯ
