@@ -8,13 +8,17 @@ header
                     img(src="./assets/images/LogoName.svg", alt="TOXIN", height="18px")
             //- Не вижу смысла оборачивать лишними тегами ul и li в данном случае DOM-дерево
             .header__section
-                +link("#about", "О нас")
+                +link("#about", "О\xA0нас")
                 +link("#office", "Услуги", true)
                 +link("#vacancies", "Вакансии")
                 +link("#news", "Новости")
                 +link("#deals", "Соглашения", true)
-                .header__item
-                    a.header__login Войти
-                .header__item
-                    a.header__register Зарегистрироваться
+                if isAuthorized
+                    .header__item
+                        .header__user Пользователь
+                else
+                    .header__item
+                        a.header__login Войти
+                    .header__item
+                        a.header__register Зарегистрироваться
             //- написать логику для вывода ФИО вошедшего, либо предлагать авторизоваться, если анонимный пользователь

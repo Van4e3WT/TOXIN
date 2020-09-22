@@ -1,8 +1,9 @@
 //- *********** header ***********
 
 mixin link(ref, name, isExtended=false)
-    -let classes = isExtended ? "header__item extended" : "header__item"
-        a(class=classes,href=""+ref)= name
+    a(class="header__item",href=""+ref)=name
+        if isExtended
+            .arrow-down
 
 
 //- *********** footer ***********

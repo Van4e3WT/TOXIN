@@ -40,17 +40,23 @@ ul {
     max-width: $containerWidth;
     margin: 0 auto;
 }
+
+// *********** HEADER BLOCK ***********
+
 .header {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
     .header__section {
         display: flex;
-        padding: 18px 0;
+        padding: 17px 0;
         align-items: center;
         .header__item {
-            padding: 0 14px;
-            color: black;
+            display: flex;
+            padding: 0 14.5px;
+            color:#8F90A0;
+            align-items: center;
+            letter-spacing: 0.25px;
         }
         .header__item:first-child {
             padding-left: 0;
@@ -59,6 +65,9 @@ ul {
             padding-right: 0;
         }
         .header__logo {
+            padding-right: 16px;
+        }
+        .header__name {
             padding-right: 16px;
         }
         .extended {
@@ -82,8 +91,8 @@ ul {
     justify-content: center;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 16px;
-    padding-top: 3px;
+    font-size: 15.5px;
+    cursor: pointer;
  
     &:before {
        content: "";
@@ -108,7 +117,38 @@ ul {
     justify-content: center;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 16px;
-    margin-right: 3px;
-    padding-top: 3px;
+    font-size: 15.5px;
+    margin-right: 2px;
+    cursor: pointer;
+    letter-spacing: 0px;
  }
+.arrow-down {
+    $side: 27px;
+    display: inline-block;
+    height: $side;
+    width: $side;
+    $childWidth: 12px;
+    &::before, &::after
+    {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: $childWidth;
+        background-color:#8F90A0;
+    }
+    &::before {
+        transform: translate(($side / 2) - ($childWidth * 0.78), $side / 2) rotate(45deg);
+    }
+    &::after {
+        transform: translate(($side / 2) - ($childWidth* 0.22), $side / 2) rotate(-45deg);
+    }
+}
+
+// *********** BODY BLOCK ***********
+
+.landing {
+    background: url("../static/images/background.jpg") no-repeat;
+    background-size: cover;
+    background-position: 0% 100%;
+    height: 1095px;
+}
