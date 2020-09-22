@@ -47,14 +47,14 @@ ul {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
+    padding: 17px 0;
     .header__section {
         display: flex;
-        padding: 17px 0;
         align-items: center;
         .header__item {
             display: flex;
             padding: 0 14.5px;
-            color:#8F90A0;
+            color:#1f20417F;
             align-items: center;
             letter-spacing: 0.25px;
         }
@@ -64,14 +64,26 @@ ul {
         .header__item:last-child {
             padding-right: 0;
         }
-        .header__logo {
-            padding-right: 16px;
-        }
-        .header__name {
-            padding-right: 16px;
-        }
+        
         .extended {
             padding-right: 47px;
+        }
+    }
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    .logo__img {
+        padding-right: 16px;
+        & img{
+            height: 54px;
+        }
+    }
+    .logo__name {
+        padding-right: 16px;
+        & img{
+            height: 18px;
         }
     }
 }
@@ -125,6 +137,7 @@ ul {
 .arrow-down {
     $side: 27px;
     display: inline-block;
+    position: relative;
     height: $side;
     width: $side;
     $childWidth: 12px;
@@ -132,21 +145,72 @@ ul {
     {
         content: "";
         position: absolute;
+        top: $side / 2;
         height: 3px;
         width: $childWidth;
         background-color:#8F90A0;
     }
     &::before {
-        transform: translate(($side / 2) - ($childWidth * 0.78), $side / 2) rotate(45deg);
+        left: ($side / 2) - ($childWidth * 0.78);
+        transform: rotate(45deg);
     }
     &::after {
-        transform: translate(($side / 2) - ($childWidth* 0.22), $side / 2) rotate(-45deg);
+        right: $side / 2 - ($childWidth * 0.78);
+        transform: rotate(-45deg);
     }
+}
+
+// *********** FOOTER BLOCK ***********
+
+.footer {
+    .ref__row {
+        display: grid;
+        grid-template-columns: 25.8% 17.25% 17.25% 17.25% 1fr;
+        padding: 132px 0;
+        .ref__column {
+            letter-spacing: 0.3px;
+            line-height: 33px;
+            color: #1F2041BF;
+            .ref__item {
+                padding-bottom: 17px;
+                a {
+                    color: #1F20417F;
+                }
+            }
+            .ref__item:first-child {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 16px;
+                letter-spacing: 0;
+                color: #1F2041;
+            }
+            .ref__logo {
+                padding-bottom: 10px;
+            }
+        }
+    }
+    input[type="email"] {
+        height: 60px;
+        width: 79%;
+        border: none;
+        padding: 20px;
+        border-radius: 5px;
+        border-right: none;
+        font-style: "OpenSans";
+        font-size: 20px;
+    }
+    button {
+        width: 19.5%;
+        height: 60px;
+        border: none;
+        background-color: rgb(14, 33, 201);
+    }//крч надо еще форму завернуть в отдельный флекс
 }
 
 // *********** BODY BLOCK ***********
 
 .landing {
+    position: relative;
     background: url("../static/images/background.jpg") no-repeat;
     background-size: cover;
     background-position: 0% 100%;
