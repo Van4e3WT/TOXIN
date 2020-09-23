@@ -57,14 +57,13 @@ ul {
             color:#1f20417F;
             align-items: center;
             letter-spacing: 0.25px;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
         }
-        .header__item:first-child {
-            padding-left: 0;
         }
-        .header__item:last-child {
-            padding-right: 0;
-        }
-        
         .extended {
             padding-right: 47px;
         }
@@ -166,45 +165,90 @@ ul {
     .ref__row {
         display: grid;
         grid-template-columns: 25.8% 17.25% 17.25% 17.25% 1fr;
-        padding: 132px 0;
+        padding-top: 132px;
+        padding-bottom: 110px;
         .ref__column {
             letter-spacing: 0.3px;
             line-height: 33px;
-            color: #1F2041BF;
+            .ref__text {
+                color: #1F2041BF;
+                padding-bottom: 26px;
+            }
             .ref__item {
                 padding-bottom: 17px;
                 a {
                     color: #1F20417F;
                 }
-            }
-            .ref__item:first-child {
-                text-transform: uppercase;
-                font-weight: bold;
-                font-size: 16px;
-                letter-spacing: 0;
-                color: #1F2041;
+                &:first-child {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 16px;
+                    letter-spacing: 0;
+                    color: #1F2041;
+                }
             }
             .ref__logo {
                 padding-bottom: 10px;
             }
         }
     }
-    input[type="email"] {
-        height: 60px;
-        width: 79%;
+    .copyrights {
+        border-top: 1px solid #1F20413F;
+        .copyrights__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 28px 0;
+            .copyrights__copyright {
+                font-size: 18.7px;
+                letter-spacing: -0.2px;
+            }
+            .copyrights__social {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .copyrights__link {
+                    padding-top: 3px;
+                    padding-left: 28px;
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                    &:last-child {
+                        padding-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+.form {
+    display: flex;
+    height: 60px;
+    border: 2px solid #1F20413F;
+    border-radius: 5px;
+    input {
+        outline: none;
+        height: 100%;
+        width: 84%;
         border: none;
-        padding: 20px;
+        padding: 19px 0 20px 17px;
         border-radius: 5px;
         border-right: none;
-        font-style: "OpenSans";
-        font-size: 20px;
+        font-family: "Montserrat";
+        font-size: 19px;
+        color: #1F2041;
+        & ::placeholder {
+            color: #1F20413F;
+        }
     }
-    button {
-        width: 19.5%;
-        height: 60px;
+    .form__button {
+        outline: none;
+        cursor: pointer;
+        width: 17%;
+        height: 100%;
         border: none;
-        background-color: rgb(14, 33, 201);
-    }//крч надо еще форму завернуть в отдельный флекс
+        background-color: white;
+    }
 }
 
 // *********** BODY BLOCK ***********

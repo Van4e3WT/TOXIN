@@ -13,6 +13,6 @@ mixin refItem(ref, name)
         a(href=ref)=name
 
 mixin socialReference(ref, name)
-    div(class="copyrights__" + name)
+    .copyrights__link
         a(href=ref)
-            img(src="./assets/images/" + name + "Logo.svg", alt=name)
+            img(src="./assets/images/" + name + "Logo.svg", alt=name, height="30px", width="30px")
