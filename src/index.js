@@ -1,8 +1,11 @@
 // JS
-//import "./js/"
+import "./js/datepicker.js"
 
 // SCSS
 import "./scss/style.scss"
+
+//CSS
+import "./css/datepicker.css"
 
 // let str = "Hevo Lord"
 // async function test() {

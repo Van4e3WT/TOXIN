@@ -6,3 +6,25 @@ block variables
 
 block content
     .landing
+        .container
+            .landing__form
+                h1 Найдём номера под ваши пожелания
+                form(action="", method="post")
+                    label(for="datepicker-here") Прибытие
+                    input(type="text", class="datepicker-here")
+                    br
+                    label(for="date-departure") Выезд
+                    input(type="date", name="date-departure")
+                    br
+                    label(for="guests") Гости
+                    select(name="guests")
+                        option(value="Взрослые") Взрослые
+                            //- label(for="adult") Взрослые
+                            //- input(type="number", name="adult")
+                        option(value="Дети") Дети
+                            //- label(for="children") Дети
+                            //- input(type="number", name="children")
+                        option(value="Младенцы") Младенцы
+                            //- label(for="baby") Младенцы
+                            //- input(type="number", name="baby")
+            .landing__slogan
