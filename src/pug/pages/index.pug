@@ -10,11 +10,11 @@ block content
             .landing__form
                 h1 Найдём номера под ваши пожелания
                 form(action="", method="post")
-                    label(for="datepicker-here") Прибытие
-                    input(type="text", class="datepicker-here")
+                    label Прибытие
+                    input(type="text", class="datepicker-here", name="date-arrival", data-range="true", readonly)
                     br
-                    label(for="date-departure") Выезд
-                    input(type="date", name="date-departure")
+                    label Выезд
+                    input(type="text", class="datepicker-here", name="date-departure", data-range="true", readonly)
                     br
                     label(for="guests") Гости
                     select(name="guests")
