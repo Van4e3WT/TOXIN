@@ -10,21 +10,18 @@ block content
             .landing__form
                 h1 Найдём номера под ваши пожелания
                 form(action="", method="post")
-                    label Прибытие
-                    input(type="text", class="datepicker-here", name="date-arrival", data-range="true", readonly)
-                    br
-                    label Выезд
-                    input(type="text", class="datepicker-here", name="date-departure", data-range="true", readonly)
-                    br
+                    .landing__calendar-date
+                        .landing__date-item
+                            label Прибытие
+                            input(type="text", placeholder="ДД.ММ.ГГГГ", class="datepicker-here", name="date-arrival", data-range="true", readonly)
+                        .landing__date-item
+                            label Выезд
+                            input(type="text", placeholder="ДД.ММ.ГГГГ", class="datepicker-here", name="date-departure", data-range="true", readonly)
                     label(for="guests") Гости
-                    select(name="guests")
-                        option(value="Взрослые") Взрослые
-                            //- label(for="adult") Взрослые
-                            //- input(type="number", name="adult")
-                        option(value="Дети") Дети
-                            //- label(for="children") Дети
-                            //- input(type="number", name="children")
-                        option(value="Младенцы") Младенцы
-                            //- label(for="baby") Младенцы
-                            //- input(type="number", name="baby")
+                    input(placeholder="Сколько гостей")
+                +button("#", "Подобрать номер", "", "send-button")
             .landing__slogan
+                p
+                |Лучшие номера для вашей работы,
+                br
+                |отдыха и просто вдохновения

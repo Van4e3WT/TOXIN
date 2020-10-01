@@ -1,14 +1,17 @@
 header
     .container
         .header
-            .logo
-                .logo__img
-                    img(src="./assets/images/LogoImg.svg", alt="TOXIN")
-                .logo__name
-                    img(src="./assets/images/LogoName.svg", alt="TOXIN")
-            //- Не вижу смысла оборачивать лишними тегами ul и li в данном случае DOM-дерево
+            .header__description
+                .logo
+                    .logo__img
+                        img(src="./assets/images/LogoImg.svg", alt="TOXIN")
+                    .logo__name
+                        img(src="./assets/images/LogoName.svg", alt="TOXIN")
+                .header__burger
+                    span
             .header__section
                 +link("#about", "О\xA0нас")
+                //- Неразрывный пробел JS \xA0
                 +link("#office", "Услуги", true)
                 +link("#vacancies", "Вакансии")
                 +link("#news", "Новости")
@@ -17,8 +20,8 @@ header
                     .header__item
                         .header__user Пользователь
                 else
-                    .header__item
-                        a.header__login Войти
-                    .header__item
-                        a.header__register Зарегистрироваться
+                    //- .header__item
+                    //-     a.header__login Войти
+                    +button("#", "Войти", "header__item", "ghost-button")
+                    +button("#", "Зарегистрироваться", "header__item")
             //- написать логику для вывода ФИО вошедшего, либо предлагать авторизоваться, если анонимный пользователь

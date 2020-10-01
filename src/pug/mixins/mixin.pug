@@ -16,3 +16,9 @@ mixin socialReference(ref, name)
     .copyrights__link
         a(href=ref)
             img(src="./assets/images/" + name + "Logo.svg", alt=name, height="30px", width="30px")
+
+//- *********** other ***********
+
+mixin button(ref, content, classRef, classBtn)
+    a(class=classRef, href=ref)
+        .button(class=classBtn)=content
