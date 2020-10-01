@@ -22,3 +22,10 @@ mixin socialReference(ref, name)
 mixin button(ref, content, classRef, classBtn)
     a(class=classRef, href=ref)
         .button(class=classBtn)=content
+
+mixin logo()
+    .logo
+        .logo__img
+            img(src="./assets/images/LogoImg.svg", alt="TOXIN")
+        .logo__name
+            img(src="./assets/images/LogoName.svg", alt="TOXIN")
