@@ -1,0 +1,95 @@
+// *********** MEDIA QUERY ***********
+@media (max-width:1250px) {
+    .header {
+        display: block;
+        &__description {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        &__section {
+            display: none;
+        }
+        &__section.active {
+            display: block;
+        }
+        &__item {
+            display: block;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 1px solid #1F20413F;
+            font-size: 24px;
+            &:last-child, &:first-child {
+                padding: 25px;
+            }
+        }
+        &__burger {
+            $width: 50px;
+            $height: 5px;
+            $color: #1F20417F;
+            display: block;
+            position: relative;
+            height: $width;
+            width: $width;
+            span {
+                position: absolute;
+                height: $height;
+                width: 100%;
+                background-color: $color;
+                top: $width / 2;
+                transform: translateY(-50%);
+                transition: 0.2s;
+                &::before, &::after {
+                    content: "";
+                    position: absolute;
+                    height: $height;
+                    width: 100%;
+                    background-color: $color;
+                    transition: 0.3s;
+                }
+                &::before {
+                    bottom: $width / 2;
+                    transform: translateY(50%);
+                }
+                &::after {
+                    top: $width / 2;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        &__burger.active {
+            span {
+                transform: rotate(90deg);
+                &::before {
+                    width: 50%;
+                    transform: rotate(-45deg) translateY(9px) translateX(-16px);
+                }
+                &::after {
+                    width: 50%;
+                    transform: rotate(45deg) translateY(-9px) translateX(-16px);
+                }
+            }
+        }
+    }
+    .button {
+        font-size: 24px;
+        height: 60px;
+    }
+    .footer {
+        display: none;
+    }
+    .footer-mobile {
+        display: flex;
+    }
+}
+
+@media (max-width:570px) {
+    .landing {
+        &__calendar-date {
+            display: block;
+        }
+        &__date-item {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,133 @@
+// *********** HEADER BLOCK ***********
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 19px 0;
+    &__section {
+        display: flex;
+        align-items: center;
+    }
+    &__item {
+        display: flex;
+        padding: 0 14.5px;
+        color:#1f20417F;
+        align-items: center;
+        letter-spacing: 0.25px;
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+    &__burger {
+        display: none;
+        cursor: pointer;
+    }
+}
+.extended {
+    padding-right: 47px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    &__img {
+        height: 54px;
+        padding-right: 16px;
+        & img{
+            height: inherit;
+        }
+    }
+    &__name {
+        padding-right: 16px;
+        height: 18px;
+        & img{
+            height: inherit;
+        }
+    }
+}
+.button {
+   display: flex;
+   position: relative;
+   $height: 45px;
+   height: $height;
+   background: $gradientColor;
+   border-radius: $height / 2;
+   color: white;
+   align-items: center;
+   justify-content: center;
+   text-transform: uppercase;
+   font-weight: bold;
+   font-size: 15.5px;
+   cursor: pointer;
+   letter-spacing: 0.2px;
+   padding: 0 1.64rem;
+}
+.ghost-button {
+    $height: 45px;
+    $border: 3px;
+    color: #BC9CFF;
+    background: white;
+    background-clip: padding-box;
+    border: solid $border transparent;
+    padding: 0 1.5rem;
+ 
+    &:before {
+       content: "";
+       position: absolute;
+       top: 0; right: 0; bottom: 0; left: 0;
+       z-index: -1;
+       margin: -$border;
+       border-radius: $height / 2;
+       background: $gradientColor;
+    }
+ }
+ .send-button {
+     $height: 58px;
+     height: $height;
+     width: 422px;
+     border-radius: $height / 2;
+     &::before {
+         content: "";
+         position: absolute;
+         right: 22px;
+         height: 10px;
+         width: 10px;
+         border: 3px solid white;
+         border-left: none;
+         border-bottom: none;
+         transform: rotate(45deg);
+     }
+     &::after {
+         content: "";
+         position: absolute;
+         right: 24px;
+         height: 3px;
+         width: 15px;
+         background-color: white;
+     }
+ }
+.arrow-down {
+    $size: 27px;
+    display: inline-block;
+    position: relative;
+    height: $size;
+    width: $size;
+    $childWidth: 12px;
+    &::before {
+        position: absolute;
+        content: "";
+        $side: 9px;
+        top: 4px;
+        left: 9px;
+        height: $side;
+        width: $side;
+        transform: rotate(45deg);
+        border: 2.5px solid #1F20417F;
+        border-top: 0;
+        border-left: 0;
+    }
+}

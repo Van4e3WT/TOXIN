@@ -1,0 +1,76 @@
+// *********** INDEX CONTENT BLOCK ***********
+
+.landing {
+    position: relative;
+    background: url("../static/images/background.jpg") no-repeat;
+    background-size: cover;
+    background-position: 0% 100%;
+    height: 1095px;
+    color: #1F2041;
+    &__form {
+        position: absolute;
+        top: 92px;
+        background-color: white;
+        max-width: 502px;
+        padding: 40px 40px;
+        border-radius: 5px;
+        box-shadow: $shadow;
+        h1 {
+            padding-top: 12px;
+            padding-bottom: 26px;
+        }
+        label {
+            display: block;
+            position: relative;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            &::before {
+                position: absolute;
+                content: "";
+                top: 44px;
+                right: 22px;
+                $side: 10px;
+                height: $side;
+                width: $side;
+                transform: rotate(45deg);
+                border: 2.5px solid #1F20417F;
+                border-top: 0;
+                border-left: 0;
+            }
+        }
+        input {
+            width: 100%;
+            height: 58px;
+            border: 2px solid #1F20413F;
+            border-radius: 5px;
+            font-size: 19px;
+            font-family: "Montserrat";
+            padding:17px;
+            margin-bottom: 41px;
+            &::placeholder {
+                color: #1F2041BF;
+            }
+        }
+    }
+    &__calendar-date {
+        display: flex;
+        justify-content: space-between;
+        input {
+            margin-bottom: 30px;
+        }
+    }
+    &__date-item {
+        width: 198px;
+    }
+    &__slogan {
+        position: absolute;
+        right: 9.35%;
+        bottom: 25px;
+        text-align: right;
+        line-height: 32px;
+        letter-spacing: 0.3px;
+        color: #1F2041BF;
+    }
+}
