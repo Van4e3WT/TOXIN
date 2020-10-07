@@ -24,7 +24,7 @@ mixin button(ref, content, classRef, classBtn)
         .button(class=classBtn)=content
 
 mixin logo()
-    .logo
+    a(href="/").logo
         .logo__img
             img(src="./assets/images/LogoImg.svg", alt="TOXIN")
         .logo__name

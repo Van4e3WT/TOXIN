@@ -1,25 +1,18 @@
 //############# header-burger #############
-function removeActive() {
-    $(".header__burger, .header__section").removeClass("active");
-}
 
-$(".header__burger").on("click", function(e) {
-    e.PreventDefault;
-    $(".header__burger, .header__section").toggleClass("active");
-});
+$(".header__burger").on("click", () => $(".header__burger, .header__section").toggleClass("active"));
 
-$(".header__section a").on("click", removeActive());
+$(".header__section a").on("click", () => $(".header__burger, .header__section").removeClass("active"));
 
-$(window).on("resize",function (){
-    if ($(this).width() > 1250) {
-        removeActive();
-    }
-});
+//############# landing__calendar-datepicker #############
 
-//############# calendar-datepicker #############
-
-$(".datepicker-here").datepicker({
-    minDate: new Date(),
+$("#dateArrival").datepicker({
     clearButton: true,
     todayButton: true,
+    minDate: new Date(),
 });
+dateDeparture.onclick = () => $("#dateArrival").datepicker().data('datepicker').show();
+
+//############# landing__guests #############
+
+guests.onclick = () => $(".dropdown-list").toggleClass("active");

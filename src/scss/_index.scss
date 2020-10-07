@@ -49,6 +49,7 @@
             font-family: "Montserrat";
             padding:17px;
             margin-bottom: 41px;
+            outline: none;
             &::placeholder {
                 color: #1F2041BF;
             }
@@ -63,6 +64,9 @@
     }
     &__date-item {
         width: 198px;
+    }
+    &__guests {
+        position: relative;
     }
     &__slogan {
         position: absolute;

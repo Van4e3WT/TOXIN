@@ -13,12 +13,24 @@ block content
                     .landing__calendar-date
                         .landing__date-item
                             label Прибытие
-                            input(type="text", id="dateArrival", placeholder="ДД.ММ.ГГГГ", class="datepicker-here", name="date-arrival", data-range="true", readonly)
+                            input(type="text", id="dateArrival", placeholder="ДД.ММ.ГГГГ", name="date-arrival", data-range="true", readonly)
                         .landing__date-item
                             label Выезд
-                            input(type="text", id="dateDeparture" placeholder="ДД.ММ.ГГГГ", class="datepicker-here", name="date-departure", data-range="true", readonly)
-                    label(for="guests") Гости
-                    input(placeholder="Сколько гостей")
+                            input(type="text", id="dateDeparture" placeholder="ДД.ММ.ГГГГ", name="date-departure", data-range="true", readonly)
+                    .landing__guests
+                        label(for="guests") Гости
+                        input(placeholder="Сколько гостей", id="guests", readonly)
+                        //- стоит преобразовать его создание в миксин с параметрами
+                        .landing__dropdown-list.dropdown-list
+                            .landing__dropdown-item.dropdown-item
+                                .type Взрослые
+                                .counter 0
+                            .landing__dropdown-item.dropdown-item 
+                                .type Дети
+                                .counter 0
+                            .landing__dropdown-item.dropdown-item 
+                                .type Младенцы
+                                .counter 0
                 +button("#", "Подобрать номер", "", "send-button")
             .landing__slogan
                 p
