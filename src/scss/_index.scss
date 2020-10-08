@@ -53,6 +53,9 @@
             &::placeholder {
                 color: #1F2041BF;
             }
+            &:hover {
+                opacity: 0.8;
+            }
         }
     }
     &__calendar-date {

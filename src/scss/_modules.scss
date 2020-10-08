@@ -34,6 +34,9 @@
    letter-spacing: 0.2px;
    padding: 0 1.64rem;
 }
+.button:hover {
+    opacity: 0.5;
+}
 .ghost-button {
     $height: 45px;
     $border: 3px;
@@ -43,7 +46,7 @@
     border: solid $border transparent;
     padding: 0 1.5rem;
  
-    &:before {
+    &::before {
        content: "";
        position: absolute;
        top: 0; right: 0; bottom: 0; left: 0;
@@ -52,6 +55,12 @@
        border-radius: $height / 2;
        background: $gradientColor;
     }
+ }
+ .ghost-button:hover {
+     opacity: 1;
+     &::before {
+         opacity: 0.50;
+     }
  }
  .send-button {
      $height: 58px;
@@ -138,43 +147,62 @@
     border: 2px solid #1F20413F;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    .dropdown-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 8px 13px 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 16px;
+        color: #1F2041;
+        .counter {
+            display: block;
+            width: 120px;
+            position: relative;
+            text-align: center;
+            padding: 0 50px;
+            &::before, &::after {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 36px;
+                width: 36px;
+                border: 1px solid #1F20413F;
+                color: #1F20413F;
+                border-radius: 50%;
+                font-size: 30px;
+                font-weight: normal;
+                cursor: pointer;
+                top: -7px;
+            }
+            &::before {
+                content: "-";
+                left:0px;
+            }
+            &::after {
+                content: "+";
+                right:0px;
+            }
+        }
+    }
+    .dropdown-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 25px 7px 15px 15px;
+        text-transform: uppercase;
+        .clear-btn {
+            color: #1F20417F;
+        }
+        .apply-btn {
+            color: #BC9CFF;
+        }
+    }
 }
 .dropdown-list.active {
     display: block;
-}
-.dropdown-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 17px;
-    text-transform: uppercase;
-    font-weight: bold;
-    .counter {
-        position: relative;
-        text-align: center;
-        padding: 0 50px;
-        &::before, &::after {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 32px;
-            width: 32px;
-            border: 1px solid black;
-            border-radius: 50%;
-            font-size: 30px;
-            font-weight: normal;
-            cursor: pointer;
-        }
-        &::before {
-            content: "-";
-            left:0px;
-            top: -5px;
-        }
-        &::after {
-            content: "+";
-            right:0px;
-            top: -5px;
-        }
-    }
 }

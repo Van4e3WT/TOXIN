@@ -18,6 +18,9 @@
             padding-bottom: 17px;
             a {
                 color: #1F20417F;
+                &:hover {
+                    color: #1F2041BF;
+                }
             }
             &:first-child {
                 text-transform: uppercase;
@@ -54,6 +57,9 @@
                     }
                     &:last-child {
                         padding-right: 4px;
+                    }
+                    &:hover {
+                        opacity: 0.75;
                     }
                 }
             }

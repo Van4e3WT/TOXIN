@@ -26,7 +26,7 @@
         &__burger {
             $width: 50px;
             $height: 5px;
-            $color: #1F20417F;
+            $color: #1F2041;
             display: block;
             position: relative;
             height: $width;
@@ -80,6 +80,14 @@
     }
     .footer-mobile {
         display: flex;
+    }
+}
+
+@media (max-width:1125px) {
+    .footer-mobile {
+        &__copyrights {
+            width: 90%;
+        }
     }
 }
 
