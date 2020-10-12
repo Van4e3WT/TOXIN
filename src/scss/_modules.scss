@@ -140,7 +140,7 @@
 .dropdown-list {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 88px;
     z-index: 1;
     width: 100%;
     background-color: white;
@@ -151,7 +151,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 18px 8px 13px 16px;
+        padding: 12px 8px 6px 16px;
         text-transform: uppercase;
         font-weight: bold;
         font-size: 16px;
@@ -175,7 +175,7 @@
                 font-size: 30px;
                 font-weight: normal;
                 cursor: pointer;
-                top: -7px;
+                top: -3px;
             }
             &::before {
                 content: "-";
@@ -193,7 +193,7 @@
         align-items: center;
         font-size: 16px;
         font-weight: bold;
-        padding: 25px 7px 15px 15px;
+        padding: 21px 7px 8px 15px;
         text-transform: uppercase;
         .clear-btn {
             color: $DarkShade50;

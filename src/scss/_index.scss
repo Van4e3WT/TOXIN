@@ -16,6 +16,7 @@
         border-radius: 5px;
         box-shadow: $shadow;
         h1 {
+            letter-spacing: -0.1px;
             padding-top: 12px;
             padding-bottom: 26px;
         }
@@ -25,11 +26,10 @@
             text-transform: uppercase;
             font-size: 16px;
             font-weight: bold;
-            margin-bottom: 6px;
             &::before {
                 position: absolute;
                 content: "";
-                top: 44px;
+                top: 50px;
                 right: 22px;
                 $side: 10px;
                 height: $side;
@@ -62,7 +62,7 @@
         display: flex;
         justify-content: space-between;
         input {
-            margin-bottom: 30px;
+            margin-bottom: 22px;
         }
     }
     &__date-item {
