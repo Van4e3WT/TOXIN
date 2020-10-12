@@ -1,0 +1,16 @@
+extends ../layouts/base.pug
+
+block variables
+    -let title = "Регистрация"
+
+block content
+    .registration
+        .container
+            .registration__form.form
+                h1 Регистрация аккаунта
+                input(type="text", placeholder="Имя")
+                input(type="text", placeholder="Фамилия")
+                input(type="radio" name="sex")
+                | Мужчина
+                input(type="radio" name="sex") 
+                | Женщина
