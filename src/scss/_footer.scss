@@ -11,15 +11,15 @@
             line-height: 33px;
         }        
         &__text {
-            color: #1F2041BF;
+            color: $DarkShade75;
             padding-bottom: 26px;
         }
         &__item {
             padding-bottom: 17px;
             a {
-                color: #1F20417F;
+                color: $DarkShade50;
                 &:hover {
-                    color: #1F2041BF;
+                    color: $DarkShade75;
                 }
             }
             &:first-child {
@@ -27,7 +27,7 @@
                 font-weight: bold;
                 font-size: 16px;
                 letter-spacing: 0;
-                color: #1F2041;
+                color: $DarkShade;
             }
         }
         &__logo {
@@ -35,7 +35,7 @@
         }
     }
     .copyrights {
-        border-top: 1px solid #1F20413F;
+        border-top: 1px solid $DarkShade25;
         .copyrights__content {
             display: flex;
             align-items: center;

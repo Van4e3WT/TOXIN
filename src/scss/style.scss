@@ -2,8 +2,15 @@
 
 $containerWidth: 1573px;
 $headerPadding: 18px;
-$gradientColor: linear-gradient(to top, #8BA4F9, #BC9CFF);
-$shadow: 0px 0px 50px -25px #1F2041;
+$DarkShade: #1F2041;
+$DarkShade75: rgba($DarkShade, 0.75);
+$DarkShade50: rgba($DarkShade, 0.50);
+$DarkShade25: rgba($DarkShade, 0.25);
+$DarkShade05: rgba($DarkShade, 0.05);
+$Purple: #BC9CFF;
+$Green: #6FCF97;
+$shadow: 0px 0px 50px -25px $DarkShade;
+$gradientColor: linear-gradient(to top, #8BA4F9, $Purple);
 
 * {
     padding: 0;
@@ -14,23 +21,30 @@ body {
     font-family: "Montserrat";
     font-weight: normal;
     font-size: 18px;
+    line-height: 31px;
+    letter-spacing: 0.3px;
 }
 h1 {
     font-family: "OpenSans";
     font-weight: bold;
     font-size: 32px;
-    letter-spacing: -0.1px;
-    line-height: 41px;
+    letter-spacing: -0.7px;
+    line-height: 39px;
 }
 h2 {
     font-family: "OpenSans";
     font-weight: bold;
     font-size: 24px;
+    letter-spacing: -0.1px;
+    line-height: 32px;
 }
 h3 {
     font-family: "Montserrat";
     font-weight: bold;
-    font-size: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: -1.2px;
+    line-height: 20px;
 }
 a {
     text-decoration: none;

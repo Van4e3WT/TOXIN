@@ -1,3 +1,44 @@
-section {
-    
+.uikit {
+    padding: 40px;
+    &__row {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 60% 40%;
+        width: 100%;
+        padding: 76px 158px;
+    }
+    &__color-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 26px;
+    }
+    &__color-example {
+        height: 93px;
+        width: 93px;
+        background-color: $DarkShade;
+        border-radius: 8px;
+        margin-right: 50px;
+    }
+    &__color-description {
+        h2 {
+            letter-spacing: 0.018em;
+            margin-bottom: 7px;
+        }
+        p {
+            font-size: 24px;
+        }
+    }
+    &__text-item {
+        display: flex;
+        margin-bottom: 66px;
+    }
+    &__text-description {
+        margin-right: 40px;
+        display: block;
+        width: 63px;
+        font-family: "Montserrat";
+        font-weight: normal;
+        color: $DarkShade25;
+        text-align: right;
+    }
 }

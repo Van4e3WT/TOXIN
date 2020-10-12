@@ -12,7 +12,7 @@
     &__item {
         display: flex;
         padding: 0 14.5px;
-        color:#1f20417F;
+        color:$DarkShade50;
         align-items: center;
         letter-spacing: 0.25px;
         &:first-child {
@@ -22,7 +22,7 @@
             padding-right: 0;
         }
         &:hover {
-            color: #1f2041BF;
+            color: $DarkShade75;
         }
     }
     &__burger {
