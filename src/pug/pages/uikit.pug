@@ -8,10 +8,10 @@ html(lang="ru-RU")
     body
         include ../mixins/mixin.pug
         .uikit
-            section
+            section(name="colors-and-fonts").colors-and-fonts
                 +svgUI()
-                .uikit__row
-                    .uikit__column
+                .colors-and-fonts__row
+                    .colors-and-fonts__column
                         +color-itemUI("#1F2041", "Dark Shade 100%", "1")
                         +color-itemUI("#1F2041", "Dark Shade 75%", "0.75")
                         +color-itemUI("#1F2041", "Dark Shade 50%", "0.5")
@@ -19,25 +19,31 @@ html(lang="ru-RU")
                         +color-itemUI("#1F2041", "Dark Shade 5%", "0.05")
                         +color-itemUI("#BC9CFF", "Purple", "1")
                         +color-itemUI("#6FCF97", "Green", "1")
-                    .uikit__column
-                        .uikit__text-item
-                            h1.uikit__text-description H1
+                    .colors-and-fonts__column
+                        .colors-and-fonts__text-item
+                            h1.colors-and-fonts__text-description H1
                             h1 
                                 |This one is the sub-section or
                                 br
                                 |widget title
-                        .uikit__text-item
-                            h2.uikit__text-description H2
+                        .colors-and-fonts__text-item
+                            h2.colors-and-fonts__text-description H2
                             h2
                                 | Next one is the item title inside 
                                 br
                                 | widgets
-                        .uikit__text-item
-                            h3.uikit__text-description H3
+                        .colors-and-fonts__text-item
+                            h3.colors-and-fonts__text-description H3
                             h3 This is a label or CTA text
-                        .uikit__text-item
-                            p.uikit__text-description Body
+                        .colors-and-fonts__text-item
+                            p.colors-and-fonts__text-description Body
                             p 
                                 |This is the body text which is used for most
                                 br
                                 |of the design, like paragraphs, lists, etc.
+            section(name="headers-and-footers").headers-and-footers
+                +svgUI()
+                +header(false)
+                +header(true)
+                +footer()
+                +footerMobile()

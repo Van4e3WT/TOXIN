@@ -41,25 +41,24 @@
     $height: 45px;
     $border: 3px;
     color: #BC9CFF;
-    background: white;
     background-clip: padding-box;
-    border: solid $border transparent;
-    padding: 0 1.5rem;
+    padding: 0 1.7rem;
+    z-index: 1;
  
     &::before {
        content: "";
        position: absolute;
        top: 0; right: 0; bottom: 0; left: 0;
        z-index: -1;
-       margin: -$border;
+       margin: $border;
        border-radius: $height / 2;
-       background: $gradientColor;
+       background-color: white;
     }
  }
  .ghost-button:hover {
-     opacity: 1;
+     opacity: 0.50;
      &::before {
-         opacity: 0.50;
+         opacity: 1;
      }
  }
  .send-button {

@@ -1,21 +1,3 @@
 header
     .container
-        .header
-            .header__description
-                +logo()
-                .header__burger
-                    span
-            .header__section
-                +link("#about", "О\xA0нас")
-                //- Неразрывный пробел JS \xA0
-                +link("#office", "Услуги", true)
-                +link("#vacancies", "Вакансии")
-                +link("#news", "Новости")
-                +link("#deals", "Соглашения", true)
-                if isAuthorized
-                    .header__item
-                        .header__user Пользователь
-                else
-                    +button("#", "Войти", "header__item", "ghost-button")
-                    +button("registration.html", "Зарегистрироваться", "header__item")
-            //- написать логику для вывода ФИО вошедшего, либо предлагать авторизоваться, если анонимный пользователь
+        +header(false)
