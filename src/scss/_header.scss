@@ -1,34 +1,43 @@
 // *********** HEADER BLOCK ***********
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 19px 0;
+header {
     background-color: white;
-    &__section {
+    .header {
         display: flex;
-        align-items: center;
-    }
-    &__item {
-        display: flex;
-        padding: 0 14.5px;
-        color:$DarkShade50;
-        align-items: center;
-        letter-spacing: 0.25px;
-        &:first-child {
-            padding-left: 0;
+        justify-content: space-between;
+        overflow: hidden;
+        padding: 19px 0;
+        &__section {
+            display: flex;
+            align-items: center;
         }
-        &:last-child {
-            padding-right: 0;
+        &__item {
+            display: flex;
+            padding: 0 14.5px;
+            color:$DarkShade50;
+            align-items: center;
+            letter-spacing: 0.25px;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+            &:hover {
+                color: $DarkShade75;
+            }
         }
-        &:hover {
-            color: $DarkShade75;
+        &__user {
+            padding-left: 30px;
+            height: 40px;
+            border-left: 2px solid $DarkShade25;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-    }
-    &__burger {
-        display: none;
-        cursor: pointer;
+        &__burger {
+            display: none;
+            cursor: pointer;
+        }
     }
 }
 .extended {

@@ -1,51 +1,63 @@
 .uikit {
-    section {
-        padding: 40px;
-        &.colors-and-fonts {
-            &__row {
-                display: grid;
-                grid-template-rows: 1fr;
-                grid-template-columns: 60% 40%;
-                width: 100%;
-                padding: 76px 158px;
+    .colors-and-fonts {
+        &__row {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 60% 40%;
+            width: 100%;
+            padding: 36px 10.4%;
+        }
+        &__color-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 26px;
+        }
+        &__color-example {
+            height: 93px;
+            width: 93px;
+            background-color: $DarkShade;
+            border-radius: 8px;
+            margin-right: 50px;
+        }
+        &__color-description {
+            h2 {
+                letter-spacing: 0.018em;
+                margin-bottom: 7px;
             }
-            &__color-item {
-                display: flex;
-                align-items: center;
-                margin-bottom: 26px;
-            }
-            &__color-example {
-                height: 93px;
-                width: 93px;
-                background-color: $DarkShade;
-                border-radius: 8px;
-                margin-right: 50px;
-            }
-            &__color-description {
-                h2 {
-                    letter-spacing: 0.018em;
-                    margin-bottom: 7px;
-                }
-                p {
-                    font-size: 24px;
-                }
-            }
-            &__text-item {
-                display: flex;
-                margin-bottom: 66px;
-            }
-            &__text-description {
-                margin-right: 40px;
-                display: block;
-                width: 63px;
-                font-family: "Montserrat";
-                font-weight: normal;
-                color: $DarkShade25;
-                text-align: right;
+            p {
+                font-size: 24px;
             }
         }
-        &.headers-and-footers {
-            background-color: #F4F4F6;
+        &__text-item {
+            display: flex;
+            margin-bottom: 66px;
         }
+        &__text-description {
+            margin-right: 40px;
+            display: block;
+            width: 63px;
+            font-family: "Montserrat";
+            font-weight: normal;
+            color: $DarkShade25;
+            text-align: right;
+        }
+    }
+    .headers-and-footers {
+        background-color: #F4F4F6;
+        &__item {
+            padding: 30px 0 23px 0;
+            &:last-child {
+                margin-top: -60px;
+            }
+        }
+        .footer {
+            display: block;
+        }
+        .footer-mobile {
+            display: block;
+        }
+    }
+    .cards {
+        background-color: #F4F4F6;
     }
 }

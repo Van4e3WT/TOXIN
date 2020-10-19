@@ -1,6 +1,7 @@
 // *********** FOOTER BLOCK ***********
 
 .footer {
+    background-color: white;
     .ref {
         display: grid;
         grid-template-columns: 25.8% 17.25% 17.25% 17.25% 1fr;
@@ -89,6 +90,7 @@
     }
     &__text {
         letter-spacing: 0.1px;
+        line-height: 24px;
     }
     &__socials {
         display: inline-flex;

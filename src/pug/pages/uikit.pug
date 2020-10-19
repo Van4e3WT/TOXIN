@@ -43,7 +43,12 @@ html(lang="ru-RU")
                                 |of the design, like paragraphs, lists, etc.
             section(name="headers-and-footers").headers-and-footers
                 +svgUI()
-                +header(false)
-                +header(true)
-                +footer()
-                +footerMobile()
+                .headers-and-footers__item
+                    +header(false)
+                .headers-and-footers__item
+                    +header(true)
+                .headers-and-footers__item
+                    +footer()
+                .headers-and-footers__item
+                    +footerMobile()
+            section(name="cards").cards
