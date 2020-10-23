@@ -41,6 +41,57 @@ html(lang="ru-RU")
                                 |This is the body text which is used for most
                                 br
                                 |of the design, like paragraphs, lists, etc.
+            section(name="form-elements").form-elements
+                +svgUI()
+                .container
+                    .grid
+                        .div1
+                            label text field
+                            .promt default
+                            input(type="text", name="textfield1", placeholder="Email")
+                            label text field
+                            .promt hover / focus
+                            input(type="text", name="textfield2", value="This is pretty awesome", class="hover-focus")
+                            label dropdown
+                            .promt default
+                            +dropdownGuests()
+                            .wrapper
+                                label masked text field
+                                .promt default
+                                input(type="text", name="maskedtextfield", id="dateSolo", placeholder="ДД.ММ.ГГГГ", readonly)
+                            .wrapper
+                                +twinDatepick("date dropdown", "date dropdown")
+                            .wrapper
+                                label Filter date dropdown
+                                +dateSoloRange()
+                            label subscription text field
+                            +formSubscribe()
+                        .div2
+                            .wrapper
+                                label.header Checkbox buttons
+                                +checkbox("Можно курить", "forSmoking", false)
+                                +checkbox("Можно с питомцами", "forPets", true)
+                                +checkbox("Можно пригласить гостей (до 10 человек)", "forParty", true)
+                            .wrapper
+                                label.header Radio buttons
+                                .radiobutton-group
+                                    +radiobutton("Мужчина", "isMan", "sex", true)
+                                    +radiobutton("Женщина", "isWoman", "sex", false)
+                            .wrapper
+                                label.header Toggle
+                                +togglebutton("Получать спецпредложения", "specialOffers1", true)
+                                +togglebutton("Получать спецпредложения", "specialOffers2", false)
+                            .wrapper
+                                label.header Like button
+                        .div3
+                        .div4
+                        .div5
+                        .div6
+                        .div7
+                        .div8
+                        .div9
+                        .div10
+                        .div11
             section(name="headers-and-footers").headers-and-footers
                 +svgUI()
                 .headers-and-footers__item
@@ -51,4 +102,3 @@ html(lang="ru-RU")
                     +footer()
                 .headers-and-footers__item
                     +footerMobile()
-            section(name="cards").cards

@@ -1,5 +1,7 @@
 .uikit {
     .colors-and-fonts {
+        // включить блок по окончании верстки элементов
+        display: none;
         &__row {
             display: grid;
             grid-template-rows: 1fr;
@@ -42,7 +44,47 @@
             text-align: right;
         }
     }
+    .form-elements {
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            padding: 30px 0;
+        }
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+            padding-right: 87px;
+            .wrapper { margin-bottom: 26.5px; }
+        }
+        .div2 {
+            grid-area: 1 / 2 / 2 / 3;
+            padding: 0 89px 0 80px;
+            .wrapper { margin-bottom: 46px; }
+            label.header { margin-bottom: 16px; }
+        }
+        .div3 { grid-area: 1 / 3 / 2 / 4; }
+        .div4 { grid-area: 2 / 1 / 3 / 2; }
+        .div5 { grid-area: 2 / 2 / 3 / 3; }
+        .div6 { grid-area: 2 / 3 / 3 / 4; }
+        .div7 { grid-area: 3 / 1 / 4 / 2; }
+        .div8 { grid-area: 3 / 2 / 4 / 3; }
+        .div9 { grid-area: 3 / 3 / 4 / 4; }
+        .div10 { grid-area: 4 / 1 / 5 / 2; }
+        .div11 { grid-area: 4 / 2 / 5 / 4; }
+        .promt {
+            font-size: 16px;
+            float: right;
+            text-transform: uppercase;
+            line-height: 26px;
+            color: $DarkShade50;
+            letter-spacing: -0.2px;
+        }
+    }
     .headers-and-footers {
+        // включить блок по окончании верстки элементов
+        display: none;
         background-color: #F4F4F6;
         &__item {
             padding: 30px 0 23px 0;
@@ -56,8 +98,5 @@
         .footer-mobile {
             display: block;
         }
-    }
-    .cards {
-        background-color: #F4F4F6;
     }
 }
