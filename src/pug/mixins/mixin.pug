@@ -86,6 +86,25 @@ mixin togglebutton(content, id, isChecked)
         label(for=id, class="toggle-wrapper")
         label=content
 
+mixin likebutton(id, count, isChecked)
+    .likebutton
+        input(type="checkbox", id=id, checked=isChecked)
+        label(for=id)=count
+
+mixin ratebutton(name, inputRate, isReadonly)
+    .ratebutton
+        each i in [5,4,3,2,1]
+            input(class="ratebutton__input", type="radio", name=name, id=name+"-"+i, checked= i == inputRate)
+            label(class="ratebutton__label", for=name+"-"+i)
+
+mixin rateresult(name, inputRate)
+    .rateresult
+        each i in [1,2,3,4,5]
+            if i <= inputRate
+                label ★
+            else
+                label ☆
+
 //- *********** Headers and Footers ***********
 
 mixin header(isAuthorized)

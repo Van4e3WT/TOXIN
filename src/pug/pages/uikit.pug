@@ -83,7 +83,17 @@ html(lang="ru-RU")
                                 +togglebutton("Получать спецпредложения", "specialOffers2", false)
                             .wrapper
                                 label.header Like button
+                                br
+                                +likebutton("id1", 2, false)
+                                +likebutton("id2", 12, true)
+                            .wrapper
+                                label.header Rate button
+                                br
+                                +ratebutton("rb1", 4)
+                                //-+ratebutton("rb2", 5)
+                                +rateresult("rb3", 5)
                         .div3
+                            label Range Slider
                         .div4
                         .div5
                         .div6

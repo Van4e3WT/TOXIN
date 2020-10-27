@@ -193,14 +193,15 @@ input {
         font-size: 18px;
         letter-spacing: 0.3px;
         color: $DarkShade50;
+        $sideBorder: 22px;
+        $borderWidth: 2px;
         &::before {
             content: "";
             display: inline-block;
             flex-shrink: 0;
-            $side: 22px;
-            width: $side;
-            height: $side;
-            border: 2px solid $DarkShade25;
+            width: $sideBorder;
+            height: $sideBorder;
+            border: $borderWidth solid $DarkShade25;
             border-radius: 50%;
             margin-right: 12px;
         }
@@ -208,9 +209,10 @@ input {
             display: none;
             position: absolute;
             content: "";
-            left: 5px;
-            top: 5px;
-            $side: 16px;
+            transform: translate(-50%, -50%);
+            left: $sideBorder / 2 + $borderWidth;
+            top: $sideBorder / 2 + $borderWidth;
+            $side: 15px;
             height: $side;
             width: $side;
             background: $gradientColor;
@@ -243,6 +245,7 @@ input {
         color: $DarkShade50;
     }
     input+.toggle-wrapper {
+        flex-shrink: 0;
         display: inline-block;
         position: relative;
         $side: 27px;
@@ -270,6 +273,101 @@ input {
             transform: translateX(27px);
             background: $gradientColor;
         }
+    }
+}
+// ********* likebutton *********
+.likebutton {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-right: 15px;
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    input+label {
+        $side: 24px;
+        $border: 2px;
+        color: $DarkShade25;
+        width: $side * 2;
+        line-height: $side - $border * 2;
+        border-radius: $side / 2;
+        border: 2px solid transparent;
+        background-color: white;
+        text-align: right;
+        padding-right: 20%;
+        font-weight: normal;
+        font-size: 13px;
+        &::before {
+            content: "";
+            background: $DarkShade25;
+            position: absolute;
+            z-index: -1;
+            left: -$border;
+            top:-$border;
+            height: $side;
+            width: $side * 2;
+            border-radius: ($side + $border * 2) / 2;
+            padding: $border;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            height: $side / 2;
+            width: $side / 2;
+            top: $side / 2;
+            left: $side / 2;
+            transform: translate(-50%, -50%);
+            background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h24v24h-24z%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M12,22.3l-4-3c-6.1-4.7-7.5-6.5-7.5-10s2.9-6.4,6.4-6.4c2,0,3.9,1,5.1,2.5c1.2-1.6,2.9-2.5,4.9-2.5%20%20c3.5,0,6.4,2.9,6.4,6.4c0,3.6-1.4,5.4-7.4,10%20M14.9,18c5.6-4.4,6.8-5.8,6.8-8.6c0-2.6-2-4.6-4.6-4.7l0,0c-1.6,0-3.1,0.9-4.3,2.7%20%20l-0.8,0l-0.7,0C9.9,5.6,8.6,4.7,7,4.7c-2.5,0-4.6,2.1-4.6,4.6c0,2.8,1.2,4.3,6.8,8.6l2.8,2.2%22%20fill%3D%22%231f20413f%22%2F%3E%3C%2Fsvg%3E);
+            background-repeat: no-repeat;
+        }
+    }
+    input:checked+label {
+        color: $Purple;
+        &::before {
+            background: $gradientColor;
+        }
+        &::after {
+            background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h24v24h-24z%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M8.1,19.4c-6.1-4.7-7.4-6.5-7.4-10c0-3.5,2.9-6.4,6.4-6.4c2.1,0,4,1.2,5,3.1c1-1.9,2.9-3.1,5-3.1c3.5,0,6.4,2.9,6.4,6.4c0,3.6-1.4,5.4-7.4,10L12,22%22%20fill%3D%22%23bc9cff%22%2F%3E%3C%2Fsvg%3E);
+        }
+    }
+}
+// ********* ratebutton *********
+.ratebutton {
+    display: inline-block;
+    margin-right: 22px;
+    cursor: pointer;
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    &__label {
+        font-size: 36px;
+        letter-spacing: 0.8px;
+        color: $Purple;
+        float: right;
+        cursor: pointer;
+        &::before {
+            content: "☆";
+        }
+    }
+    &__label:hover::before,
+    &__label:hover~&__label::before,
+    &__input:checked~&__label::before {
+            content: "★";
+    }
+}
+// ********* ratebutton *********
+.rateresult {
+    display: inline-block;
+    user-select: none;
+    label {
+        font-size: 36px;
+        letter-spacing: 0.8px;
+        color: $Purple;
+        float: left;
     }
 }
 // ********* arrow *********
