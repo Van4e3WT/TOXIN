@@ -105,6 +105,16 @@ mixin rateresult(name, inputRate)
             else
                 label ☆
 
+mixin rangeslider(id)
+    .rangeslider
+        input(type="range", id=id+"Left", min=0, max = 15000, value=3750)
+        input(type="range", id=id+"Right", min=0, max = 15000, value=11250)
+        .rangeslider__slider
+            .rangeslider__track
+            .rangeslider__range
+            .rangeslider__thumb.left
+            .rangeslider__thumb.right
+
 //- *********** Headers and Footers ***********
 
 mixin header(isAuthorized)
