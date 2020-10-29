@@ -122,6 +122,21 @@ mixin rangeslider(name)
                 .slider__thumb.left
                 .slider__thumb.right
 
+mixin paginationPlug(pages, page)
+    .pagination(id="pagination-block")
+        .pagination__items
+            each i in [0,1,2,3,4,5]
+                if i == 0
+                    .pagination__item.active=page+i
+                else if i == 3
+                    .pagination__item="..."
+                else if i == 4
+                    .pagination__item=pages
+                else if i == 5
+                    .pagination__item.arrow
+                else
+                    .pagination__item=page+i
+        .pagination__info 1 – 12 из 100+ вариантов аренды
 //- *********** Headers and Footers ***********
 
 mixin header(isAuthorized)

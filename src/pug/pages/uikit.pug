@@ -93,7 +93,24 @@ html(lang="ru-RU")
                                 //-+ratebutton("rb2", 5)
                                 +rateresult("rb3", 5)
                         .div3
-                            +rangeslider("Range Slider")
+                            .wrapper
+                                +rangeslider("Range Slider")
+                            .ml-15
+                                .wrapper
+                                    label buttons
+                                    //- По макету хедера и UI-kit'у кнопки различаются, оставил кнопки, которые были сверстаны по пропорциям и размерам, указанным в макете хедера
+                                    .buttons
+                                        .buttons__item
+                                            +button("#", "Click me", "", "")
+                                        .buttons__item
+                                            +button("#", "Click me", "", "ghost-button")
+                                        .buttons__item
+                                            +button("#", "Click me", "", "skeleton-button")
+                                        .buttons__item
+                                            +button("#", "Перейти к оплате", "", "send-button")
+                                .wrapper
+                                    label.header Pagination
+                                    +paginationPlug(15, 1)
                         .div4
                         .div5
                         .div6
