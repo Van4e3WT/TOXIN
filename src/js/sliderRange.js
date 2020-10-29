@@ -1,8 +1,10 @@
-let inputLeft = document.getElementById("rangeSliderLeft");
-let inputRight = document.getElementById("rangeSliderRight");
-let thumbLeft = document.querySelector(".rangeslider__thumb.left");
-let thumbRight = document.querySelector(".rangeslider__thumb.right");
-let range = document.querySelector(".rangeslider__range");
+let inputLeft = document.querySelector(".rangeSliderLeft-here");
+let inputRight = document.querySelector(".rangeSliderRight-here");
+let thumbLeft = document.querySelector(".range-slider .slider__thumb.left");
+let thumbRight = document.querySelector(".range-slider .slider__thumb.right");
+let range = document.querySelector(".range-slider .slider__range");
+let textMin = document.querySelector(".range-slider__min");
+let textMax = document.querySelector(".range-slider__max");
 
 function setLeftValue() {
     let _this = inputLeft,
@@ -12,6 +14,9 @@ function setLeftValue() {
     let percent = ((_this.value - min) / (max - min)) * 100;
     thumbLeft.style.left = percent + "%";
     range.style.left = percent + "%";
+    if(textMin) {
+        textMin.innerHTML = _this.value;
+    }
 }
 function setRightValue() {
     let _this = inputRight,
@@ -21,6 +26,13 @@ function setRightValue() {
     let percent = ((_this.value - min) / (max - min)) * 100;
     thumbRight.style.right = (100 - percent) + "%";
     range.style.right = (100 - percent) + "%";
+    if(textMax) {
+        textMax.innerHTML = _this.value + "₽";
+    }
 }
-inputLeft.addEventListener("input", setLeftValue);
-inputRight.addEventListener("input", setRightValue);
+if(inputLeft) {
+    inputLeft.addEventListener("input", setLeftValue);
+}
+if(inputRight) {
+    inputRight.addEventListener("input", setRightValue);
+}
