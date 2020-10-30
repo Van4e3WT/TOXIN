@@ -30,21 +30,34 @@ mixin logo()
             img(src="./assets/images/LogoName.svg", alt="TOXIN")
 
 mixin dropdownGuests()
-    .guests-dropdown
-        input(value="Сколько гостей", id="guestsDropdown", type="text", class="dropdown", readonly)
-        .guests-dropdown__list
-            .guests-dropdown__item
-                .type Взрослые
-                .counter 2
-            .guests-dropdown__item
-                .type Дети
-                .counter 1
-            .guests-dropdown__item
-                .type Младенцы
-                .counter 0
-            .guests-dropdown__buttons
-                .guests-dropdown__clear-btn Очистить
-                .guests-dropdown__apply-btn Применить
+    .dropdown(wordforms="Гость, Гостя, Гостей")
+        input(default="Сколько гостей", class="dropdown__output", type="text", readonly)
+        .dropdown__list
+            each item, key in ["Взрослые", "Дети", "Младенцы"]
+                .dropdown__item
+                    .type=item
+                    .counter-block
+                        .counter-block__minus(class=key?"":"disabled") -
+                        .counter-block__counter=key
+                        .counter-block__plus +
+            .dropdown__buttons
+                .dropdown__clear-btn Очистить
+                .dropdown__apply-btn Применить
+
+mixin dropdownAddOptions()
+    .dropdown(several-word-forms)
+        input(default="Вспомогательные удобства", class="dropdown__output", type="text", readonly)
+        .dropdown__list
+            each item, key in [["Спальня, Спальни, Спален", "Спальни"], ["Кровать, Кровати, Кроватей", "Кровати"], ["Ванная комната, Ванные комнаты, Ванных комнат", "Ванные комнаты"]]
+                .dropdown__item(wordforms=item[0])
+                    .type=item[1]
+                    .counter-block
+                        .counter-block__minus(class=key?"":"disabled") -
+                        .counter-block__counter=key
+                        .counter-block__plus +
+            .dropdown__buttons
+                .dropdown__clear-btn Очистить
+                .dropdown__apply-btn Применить
 
 mixin twinDatepick(label1, label2)
     .twin-datepick

@@ -29,6 +29,3 @@ $("#dateSoloRange").datepicker({
     todayButton: true,
     minDate: new Date(),
 });
-
-//############# dropdown-guests #############
-$("#guestsDropdown").on("click", () => $(".guests-dropdown__list").toggleClass("active"));
