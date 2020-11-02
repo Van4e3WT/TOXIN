@@ -85,6 +85,12 @@ mixin checkbox(content, id, isChecked)
         input(type="checkbox", id=id, checked=isChecked)
         label(for=id)=content
 
+mixin checkboxRich(content, id, description)
+    .checkbox.rich
+        input(type="checkbox", id=id)
+        label(for=id)=content
+        p=description
+
 mixin radiobutton(content, id, name, isChecked)
     .radiobutton
         input(type="radio", name=name, id=id, checked=isChecked)
@@ -158,6 +164,11 @@ mixin dropdownChecks(title, id, isOpen, checkboxes)
                     +checkbox(i, id+"__"+i, false)
                 else
                     +checkbox(i[0], id+"__"+i, i[1])
+
+mixin bulletList(bullets)
+    ul.bullet-list
+        each bullet in bullets
+            li.bullet-list__item=bullet
 //- *********** Headers and Footers ***********
 
 mixin header(isAuthorized)

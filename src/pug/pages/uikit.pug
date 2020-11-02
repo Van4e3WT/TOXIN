@@ -129,7 +129,12 @@ html(lang="ru-RU")
                                 +dropdownChecks("Expandable checkbox list", "ddC1", false, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
                             +dropdownChecks("Expandable checkbox list", "ddC2", true, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
                         .div8
+                            label.header Rich checkbox buttons
+                            +checkboxRich("Широкий коридор", "isWideCorridor", "Ширина коридоров в номере не\xA0менее 91 см.")
+                            +checkboxRich("Помощник для инвалидов", "isAssistantForDisabled", "На 1 этаже вас встретит специалист и проводит до номера.")
                         .div9
+                            label.header Bullet list
+                            +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
                         .div10
                         .div11
             section(name="headers-and-footers").headers-and-footers

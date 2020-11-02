@@ -144,7 +144,7 @@ input {
         font-size: 18px;
         letter-spacing: 0.3px;
         color: $DarkShade50;
-        margin-bottom: 14px;
+        padding-bottom: 14px;
         &::before {
             content: "";
             display: inline-block;
@@ -181,6 +181,22 @@ input {
         }
         &::after {
             display: block;
+        }
+    }
+    &.rich {
+        max-width: 333px;
+        padding-bottom: 10px;
+        label {
+            font-weight: bold;
+            color: $DarkShade75;
+            padding-bottom: 7px;
+        }
+        p {
+            padding-left: 38px;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: -0.1px;
+            color: $DarkShade50;
         }
     }
 }
@@ -662,13 +678,14 @@ input {
         display: block;
     }
 }
-// ********* dropdown block list *********
+// ********* dropdown (relative) *********
 .dropdown-checkbox {
+    user-select: none;
     max-width: 350px;
     &__title {
         position: relative;
         height: 33px;
-        margin-bottom: 15px;
+        margin-bottom: 13px;
         &::before {
             content: "";
             position: absolute;
@@ -700,6 +717,26 @@ input {
         &::-webkit-scrollbar {
             width: 0;
             background: transparent;
+        }
+    }
+}
+// ********* bullet list *********
+.bullet-list {
+    max-width: 350px;
+    &__item {
+        position: relative;
+        padding-left: 30px;
+        padding-bottom: 14px;
+        color: $DarkShade75;
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 6px;
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            background-color: $DarkShade25;
         }
     }
 }
