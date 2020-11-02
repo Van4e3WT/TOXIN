@@ -113,11 +113,21 @@ html(lang="ru-RU")
                                     +paginationPlug(15, 1)
                         .div4
                             label Dropdown
-                            +dropdownGuests()
-                            +dropdownAddOptions()
+                            .promt default
+                            +dropdownAddOptions([2,2,0])
+                            label Dropdown
+                            .promt expanded
+                            +dropdownAddOptions([2,2,0], true)
                         .div5
+                            label Dropdown
+                            +dropdownGuests([0,0,0], true)
                         .div6
+                            label Dropdown
+                            +dropdownGuests([2,1,0], true)
                         .div7
+                            .wrapper
+                                +dropdownChecks("Expandable checkbox list", "ddC1", false, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
+                            +dropdownChecks("Expandable checkbox list", "ddC2", true, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
                         .div8
                         .div9
                         .div10

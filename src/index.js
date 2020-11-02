@@ -2,7 +2,8 @@
 import "./js/datepicker.js"
 import "./js/script.js"
 import "./js/sliderRange.js"
-import "./js/dropdown.js"
+import "./js/dropdownAbsolute.js"
+import "./js/dropdownRelative.js"
 
 // SCSS
 import "./scss/style.scss"

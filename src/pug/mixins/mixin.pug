@@ -29,35 +29,32 @@ mixin logo()
         .logo__name
             img(src="./assets/images/LogoName.svg", alt="TOXIN")
 
-mixin dropdownGuests()
-    .dropdown(wordforms="Гость, Гостя, Гостей")
+mixin dropdownGuests(defVals, isOpen)
+    .dropdown(wordforms="гость, гостя, гостей")
         input(default="Сколько гостей", class="dropdown__output", type="text", readonly)
-        .dropdown__list
+        .dropdown__list(class = isOpen?"active":"")
             each item, key in ["Взрослые", "Дети", "Младенцы"]
                 .dropdown__item
                     .type=item
                     .counter-block
                         .counter-block__minus(class=key?"":"disabled") -
-                        .counter-block__counter=key
+                        .counter-block__counter=defVals ? defVals[key] : 0
                         .counter-block__plus +
             .dropdown__buttons
-                .dropdown__clear-btn Очистить
-                .dropdown__apply-btn Применить
+                .dropdown__clear-btn.button.skeleton-button Очистить
+                .dropdown__apply-btn.button.skeleton-button Применить
 
-mixin dropdownAddOptions()
-    .dropdown(several-word-forms)
+mixin dropdownAddOptions(defVals, isOpen)
+    .dropdown.options(several-word-forms)
         input(default="Вспомогательные удобства", class="dropdown__output", type="text", readonly)
-        .dropdown__list
-            each item, key in [["Спальня, Спальни, Спален", "Спальни"], ["Кровать, Кровати, Кроватей", "Кровати"], ["Ванная комната, Ванные комнаты, Ванных комнат", "Ванные комнаты"]]
+        .dropdown__list(class = isOpen?"active":"")
+            each item, key in [["спальня, спальни, спален", "спальни"], ["кровать, кровати, кроватей", "кровати"], ["ванная комната, ванные комнаты, ванных комнат", "ванные комнаты"]]
                 .dropdown__item(wordforms=item[0])
                     .type=item[1]
                     .counter-block
                         .counter-block__minus(class=key?"":"disabled") -
-                        .counter-block__counter=key
+                        .counter-block__counter=defVals?defVals[key]:0
                         .counter-block__plus +
-            .dropdown__buttons
-                .dropdown__clear-btn Очистить
-                .dropdown__apply-btn Применить
 
 mixin twinDatepick(label1, label2)
     .twin-datepick
@@ -150,6 +147,17 @@ mixin paginationPlug(pages, page)
                 else
                     .pagination__item=page+i
         .pagination__info 1 – 12 из 100+ вариантов аренды
+
+mixin dropdownChecks(title, id, isOpen, checkboxes)
+    .dropdown-checkbox
+        .dropdown-checkbox__title(class=isOpen?"active":"")
+            label=title
+        .dropdown-checkbox__list
+            each i in checkboxes
+                if typeof i === "string"
+                    +checkbox(i, id+"__"+i, false)
+                else
+                    +checkbox(i[0], id+"__"+i, i[1])
 //- *********** Headers and Footers ***********
 
 mixin header(isAuthorized)
