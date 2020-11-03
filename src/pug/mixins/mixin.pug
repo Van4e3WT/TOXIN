@@ -169,6 +169,26 @@ mixin bulletList(bullets)
     ul.bullet-list
         each bullet in bullets
             li.bullet-list__item=bullet
+
+mixin privilegeElement(ref, title, description)
+    .privilege
+        .privilege__img
+            img(src=ref, height="54px", width="54px")
+        .privilege__text
+            label=title
+            p=description
+
+mixin comment(avatar, username, date, likes, isLiked, description)
+    .comment
+        .comment__header
+            img(src=avatar, height="54px", width="54px")
+            .comment__user
+                label=username
+                .comment__date=date
+        .comment__body
+            .comment_like
+                +likebutton(username+"__likebtn", likes, isLiked)
+            .comment__description=description
 //- *********** Headers and Footers ***********
 
 mixin header(isAuthorized)
