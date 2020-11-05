@@ -693,10 +693,15 @@
                 altValues = altValues.join(this.opts.multipleDatesSeparator);
                 this.$altField.val(altValues);
             }
-            // crutch for filling date range across two calendars with specific IDs
-            if(this.el.id == 'dateArrival') {
-                document.getElementById('dateArrival').value = value[0] ? value[0] : '';
-                document.getElementById('dateDeparture').value = value[1] ? value[1] : '';
+
+            var twinDatepicker = this.$el.parent().parent();
+            console.log(twinDatepicker)
+            // crutch for filling date range twin-datepick
+            if(twinDatepicker.hasClass("twin-datepick")) {
+                var dateArrival = twinDatepicker.find(".dateArrival")
+                var dateDeparture = twinDatepicker.find(".dateDeparture")
+                dateArrival.val(value[0] ? value[0] : '')
+                dateDeparture.val(value[1] ? value[1] : '')
             }
             else { // it's default code
                 value = value.join(this.opts.multipleDatesSeparator);

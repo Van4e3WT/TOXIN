@@ -7,13 +7,7 @@ block variables
 block content
     .landing
         .container
-            .landing__form
-                h1 Найдём номера под ваши пожелания
-                form(action="", method="post")
-                    +twinDatepick("Прибытие", "Выезд")
-                    label Гости
-                    +dropdownGuests()
-                +button("#", "Подобрать номер", "", "send-button")
+            +landingCard()
             .landing__slogan
                 p
                 |Лучшие номера для вашей работы,

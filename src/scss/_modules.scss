@@ -9,7 +9,7 @@ label {
 }
 input {
     outline: none;
-    &[type="text"] {
+    &[type="text"], &[type="email"], &[type="password"] {
         width: 424px;
         height: 59px;
         border: 2px solid $DarkShade25;
@@ -52,7 +52,7 @@ input {
 .button {
    display: inline-flex;
    position: relative;
-   $height: 45px;
+   $height: 55px;
    height: $height;
    background: $gradientColor;
    border-radius: $height / 2;
@@ -70,11 +70,11 @@ input {
     opacity: 0.5;
 }
 .ghost-button {
-    $height: 45px;
+    $height: 55px;
     $border: 3px;
     color: #BC9CFF;
     background-clip: padding-box;
-    padding: 0 1.7rem;
+    //padding: 0 2rem;
     z-index: 1;
  
     &::before {
@@ -820,4 +820,48 @@ input {
     &__user { padding-left: 15px; }
     &__body { display: flex; }
     &__description { margin-left: 7px; }
+}
+
+.landing-card {
+    background-color: white;
+    max-width: 500px;
+    padding: 40px 40px;
+    border-radius: 5px;
+    box-shadow: $shadow;
+    &__form {
+        padding-bottom: 20px;
+    }
+    h1 {
+        letter-spacing: -0.1px;
+        padding-top: 12px;
+        padding-bottom: 22px;
+    }
+}
+
+.register-card {
+    background-color: white;
+    max-width: 500px;
+    padding: 40px 40px;
+    border-radius: 5px;
+    box-shadow: $shadow;
+    h1 {
+        letter-spacing: -0.1px;
+        padding-top: 15px;
+        padding-bottom: 27px;
+    }
+    input {
+        margin-bottom: 12px;
+    }
+    &__group {
+        padding-bottom: 17px;
+    }
+    &__birthday {
+        padding-bottom: 10px;
+    }
+    &__help {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 40px;
+    }
 }

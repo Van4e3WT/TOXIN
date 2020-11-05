@@ -41,6 +41,17 @@ html(lang="ru-RU")
                                 |This is the body text which is used for most
                                 br
                                 |of the design, like paragraphs, lists, etc.
+            section(name="cards").cards
+                +svgUI()
+                .container
+                    .row
+                        .col
+                            .col__item
+                                +landingCard()
+                            .col__item
+                                +registerCard()
+                        .col
+                        .col
             section(name="form-elements").form-elements
                 +svgUI()
                 .container
@@ -58,7 +69,7 @@ html(lang="ru-RU")
                             .wrapper
                                 label masked text field
                                 .promt default
-                                input(type="text", name="maskedtextfield", id="dateSolo", placeholder="ДД.ММ.ГГГГ", readonly)
+                                input(type="text", name="maskedtextfield", class="dateSolo", placeholder="ДД.ММ.ГГГГ", readonly)
                             .wrapper
                                 +twinDatepick("date dropdown", "date dropdown")
                             .wrapper

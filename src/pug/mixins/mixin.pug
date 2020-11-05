@@ -60,14 +60,14 @@ mixin twinDatepick(label1, label2)
     .twin-datepick
         .twin-datepick__item
             label=label1
-            input(type="text", id="dateArrival", placeholder="ДД.ММ.ГГГГ", name="date-arrival", data-range="true", readonly)
+            input(type="text", class="dateArrival", placeholder="ДД.ММ.ГГГГ", name="date-arrival", data-range="true", readonly)
         .twin-datepick__item
             label=label2
-            input(type="text", id="dateDeparture" placeholder="ДД.ММ.ГГГГ", name="date-departure", data-range="true", readonly)
+            input(type="text", class="dateDeparture" placeholder="ДД.ММ.ГГГГ", name="date-departure", data-range="true", readonly)
 
 mixin dateSoloRange()
     .date-solo-range
-        input(type="text", name="filterdatedropdown", id="dateSoloRange", data-range="true", data-date-format="dd M", data-multiple-dates-separator=" - ", readonly)
+        input(type="text", name="filterdatedropdown", class="dateSoloRange", data-range="true", data-date-format="dd M", data-multiple-dates-separator=" - ", readonly)
 
 mixin formSubscribe()
     form(action="", method="POST").form-subscribe
@@ -189,6 +189,40 @@ mixin comment(avatar, username, date, likes, isLiked, description)
             .comment_like
                 +likebutton(username+"__likebtn", likes, isLiked)
             .comment__description=description
+
+//- *********** Cards ***********
+
+mixin landingCard()
+    .landing-card
+        h1 Найдём номера под ваши пожелания
+        form.landing-card__form(action="", method="post")
+            +twinDatepick("Прибытие", "Выезд")
+            label Гости
+            +dropdownGuests()
+        +button("#", "Подобрать номер", "", "send-button")
+
+mixin registerCard()
+    .register-card
+        h1 Регистрация аккаунта
+        .register-card__group
+            input(type="text", name="name", placeholder="Имя")
+            input(type="text", name="surname", placeholder="Фамилия")
+            .radiobutton-group
+                +radiobutton("Мужчина", "isManRegistration", "sexRegistration", true)
+                +radiobutton("Женщина", "isWomanRegistration", "sexRegistration", false)
+        .register-card__birthday
+            label Дата рождения
+            input(type="text", name="birthday", class="dateSolo", placeholder="ДД.ММ.ГГГГ", readonly)
+        .register-card__group
+            label Данные для входа в сервис
+            input(type="email", name="email" placeholder="Email")
+            input(type="password", name="password" placeholder="Пароль")
+            +togglebutton("Получать спецпредложения", id="subscribeRegistration", false)
+        +button("#", "Зарегистрироваться", "", "send-button")
+        .register-card__help
+            p Уже есть аккаунт на Toxin
+            +button("#", "Войти", "", "ghost-button")
+
 //- *********** Headers and Footers ***********
 
 mixin header(isAuthorized)

@@ -5,26 +5,28 @@ $(".header__burger").on("click", () => $(".header__burger, .header__section").to
 $(".header__section a").on("click", () => $(".header__burger, .header__section").removeClass("active"));
 
 //############# twin-datepick #############
-
-$("#dateArrival").datepicker({
-    clearButton: true,
-    todayButton: true,
-    minDate: new Date(),
-});
-
-$("#dateDeparture").on("click", () => $("#dateArrival").datepicker().data('datepicker').show());
+var twinDatepickers = $(".twin-datepick")
+$.each(twinDatepickers, function(index, value) {
+    var dateArrival = $(value).find(".dateArrival")
+    var dateDeparture = $(value).find(".dateDeparture")
+    dateArrival.datepicker({
+        clearButton: true,
+        todayButton: true,
+        minDate: new Date(),
+    });
+    $(dateDeparture).on("click", () => dateArrival.datepicker().data('datepicker').show());
+})
 
 //############# date-solo #############
 
-$("#dateSolo").datepicker({
+$(".dateSolo").datepicker({
     clearButton: true,
     todayButton: true,
-    minDate: new Date(),
 });
 
 //############# date-solo-range #############
 
-$("#dateSoloRange").datepicker({
+$(".dateSoloRange").datepicker({
     clearButton: true,
     todayButton: true,
     minDate: new Date(),
