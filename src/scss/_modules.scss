@@ -547,6 +547,38 @@ input {
         border-left: 0;
     }
 }
+// ********* help-info *********
+.help-info {
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+    height: 27px;
+    width: 27px;
+    border: 2px solid $DarkShade25;
+    border-radius: 50%;
+    color: $DarkShade25;
+    text-align: center;
+    font-weight: bold;
+    line-height: 25px;
+    &:hover::before {
+        content: attr(data-prompt);
+        position: absolute;
+        width: auto;
+        height: auto;
+        left: 15px; top: -37px;
+        z-index: 5;
+        background: white;
+        border: 2px solid $DarkShade25;
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        color: $DarkShade;
+        font-weight: normal;
+        text-align: justify;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 3px;
+    }
+}
 // ********* subscribe-form *********
 .form-subscribe {
     display: flex;
@@ -857,6 +889,107 @@ input {
     }
     &__birthday {
         padding-bottom: 10px;
+    }
+    &__help {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 40px;
+    }
+}
+
+.total-card {
+    background-color: white;
+    max-width: 500px;
+    padding: 40px 40px;
+    border-radius: 5px;
+    box-shadow: $shadow;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-top: 12px;
+        padding-bottom: 22px;
+        .number {
+            display: flex;
+            align-items: flex-end;
+            &__prefix {
+                font-size: 20px;
+                padding-right: 4px;
+            }
+            &__value { padding-right: 9px; }
+            &__lux { color: $Purple; }
+        }
+        .cost {
+            display: flex;
+            align-items: flex-start;
+            &__rubles {
+                font-size: 18px;
+                letter-spacing: 1px;
+                color: $DarkShade50;
+            }
+            &__period {
+                font-size: 16px;
+                line-height: 26px;
+                color: $DarkShade50;
+            }
+        }
+    }
+    &__body {
+        padding-bottom: 20px;
+        .calculate {
+            span {
+                line-height: 26px;
+            }
+            &__item {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 15px;
+            }
+            .additional-service__position, .service__position {
+                display: flex;
+                width: 317px;
+                justify-content: space-between;
+            }
+        }
+    }
+    &__total {
+        padding-bottom: 25px;
+        .total {
+            display: flex;
+            align-items: flex-start;
+            &__result { font-size: 26px; flex-shrink: 0;}
+            &__space { 
+                border-bottom: 2px dotted $DarkShade25;
+                width: 500px;
+                margin: 0 5px;
+                height: 26px;
+                flex-shrink: 2;
+            }
+            &__cost {
+                font-family: "Montserrat";
+                line-height: 35px;
+                flex-shrink: 0;
+            }
+        }
+    }
+}
+
+.login-card {
+    background-color: white;
+    max-width: 500px;
+    padding: 40px 40px;
+    border-radius: 5px;
+    box-shadow: $shadow;
+    h1 {
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+    &__fields {
+        padding-bottom: 10px;
+        input {
+            margin-bottom: 15px;
+        }
     }
     &__help {
         display: flex;

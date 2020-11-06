@@ -29,6 +29,9 @@ mixin logo()
         .logo__name
             img(src="./assets/images/LogoName.svg", alt="TOXIN")
 
+mixin helpInfo(description)
+    .help-info(data-prompt=description) i
+
 mixin dropdownGuests(defVals, isOpen)
     .dropdown(wordforms="гость, гостя, гостей")
         input(default="Сколько гостей", class="dropdown__output", type="text", readonly)
@@ -222,6 +225,58 @@ mixin registerCard()
         .register-card__help
             p Уже есть аккаунт на Toxin
             +button("#", "Войти", "", "ghost-button")
+
+mixin totalCard()
+    .total-card
+        .total-card__header
+            .number
+                label.number__prefix №
+                h1.number__value 888
+                label.number__lux люкс
+            .cost
+                label.cost__rubles 9990₽
+                p.cost__period в сутки
+        .total-card__body
+            +twinDatepick("Прибытие", "Выезд")
+            label Гости
+            +dropdownGuests()
+            .calculate
+                .calculate__item.base
+                    .base__position
+                        span.base__period-cost 9&nbsp;990₽
+                        span.base__split &nbsp;x&nbsp;
+                        span.base__peroid-value 4 суток
+                    p.base__cost 39&nbsp;960₽
+                .calculate__item.service
+                    .service__position
+                        .service__wrapper
+                            span.service__prefix Сбор за услуги:&nbsp;
+                            span.service__servises скидка 2&nbsp;179₽
+                        +helpInfo("Всплывающая подсказка")
+                    p.service__cost 0₽
+                .calculate__item.additional-service
+                    .additional-service__position
+                        span.additional-service__prefix Сбор за дополнительные услуги
+                        +helpInfo("Всплывающая подсказка")
+                    p.additional-service__cost 300₽
+        .total-card__total
+            .total
+                h2.total__result Итого
+                .total__space
+                h2.total__cost 38081₽
+        +button("#", "Забронировать", "", "send-button")
+
+mixin loginCard()
+    .login-card
+        h1 Войти
+        .login-card__fields
+            input(type="email", name="email" placeholder="Email")
+            input(type="password", name="password" placeholder="Пароль")
+        +button("#", "Войти", "", "send-button")
+        .login-card__help
+            p Нет аккаунта на Toxin?
+            +button("#", "Создать", "", "ghost-button")
+
 
 //- *********** Headers and Footers ***********
 
