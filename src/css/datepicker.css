@@ -142,7 +142,7 @@
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin: 7px 0 8px;
+  margin: 9px 0 10px;
   font-family: "Montserrat";
   font-size: 18px;
   font-weight: bold;}
@@ -348,7 +348,8 @@
 
 .datepicker--nav-title {
   border-radius: 4px;
-  padding: 0 8px; }
+  padding: 0 8px; 
+  font-size: 24px;}
   .datepicker--nav-title:hover {
     background: #f0f0f0; }
   .datepicker--nav-title.-disabled- {
@@ -361,7 +362,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
-  padding: 4px;
+  padding: 4px 25px;
   padding-bottom: 27px;}
 
 .datepicker--button {
@@ -383,10 +384,10 @@
   text-transform: uppercase;
   font-weight: bold;}
   span[data-action="clear"].datepicker--button  {
-      margin-right: 130px;
+      justify-content: flex-start;
       color: #1F20417F;}
   span[data-action="today"].datepicker--button {
-      /* margin-left: -20px; */
+      justify-content: flex-end;
       color: #BC9CFF;
   }
 

@@ -68,6 +68,9 @@ mixin twinDatepick(label1, label2)
             label=label2
             input(type="text", class="dateDeparture" placeholder="ДД.ММ.ГГГГ", name="date-departure", data-range="true", readonly)
 
+mixin openedDatepick()
+    .opened-datepick
+
 mixin dateSoloRange()
     .date-solo-range
         input(type="text", name="filterdatedropdown", class="dateSoloRange", data-range="true", data-date-format="dd M", data-multiple-dates-separator=" - ", readonly)

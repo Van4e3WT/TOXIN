@@ -31,3 +31,10 @@ $(".dateSoloRange").datepicker({
     todayButton: true,
     minDate: new Date(),
 });
+
+//############# opened-datepick #############
+$(".opened-datepick").datepicker({
+    inline: true,
+    clearButton: true,
+    todayButton: true,
+});

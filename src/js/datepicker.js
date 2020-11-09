@@ -581,11 +581,11 @@
             this.silent = true;
             this.view = this.opts.minView;
             this.silent = false;
-            this.date = new Date();
-
+            this.date = this.selectedDates[0];
             if (this.opts.todayButton instanceof Date) {
                 this.selectDate(this.opts.todayButton)
             }
+            this.hide();
         },
 
         clear: function () {
@@ -1488,7 +1488,7 @@
             daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
             months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
             monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-            today: 'Сегодня',
+            today: 'Применить',
             clear: 'Очистить',
             dateFormat: 'dd.mm.yyyy',
             timeFormat: 'hh:ii',
