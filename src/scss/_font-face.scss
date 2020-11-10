@@ -1,24 +1,24 @@
 @font-face {
     font-family: "OpenSans";
-    src:url("/static/fonts/OpenSansBold.ttf") format("truetype"),
-        url("/static/fonts/OpenSansBold.woff") format("woff"),
-        url("/static/fonts/OpenSansBold.svg") format("svg");
+    src:url("../fonts/OpenSansBold.ttf") format("truetype"),
+        url("../fonts/OpenSansBold.woff") format("woff"),
+        url("../fonts/OpenSansBold.svg") format("svg");
     font-weight : bold;
     font-style  : normal;
 }
 @font-face {
     font-family: "Montserrat";
-    src:url("/static/fonts/MontserratBold.ttf") format("truetype"),
-        url("/static/fonts/MontserratBold.woff") format("woff"),
-        url("/static/fonts/MontserratBold.svg") format("svg");
+    src:url("../fonts/MontserratBold.ttf") format("truetype"),
+        url("../fonts/MontserratBold.woff") format("woff"),
+        url("../fonts/MontserratBold.svg") format("svg");
     font-weight : bold;
     font-style  : normal;
 }
 @font-face {
     font-family: "Montserrat";
-    src:url("/static/fonts/MontserratRegular.ttf") format("truetype"),
-        url("/static/fonts/MontserratRegular.woff") format("woff"),
-        url("/static/fonts/MontserratRegular.svg") format("svg");
+    src:url("../fonts/MontserratRegular.ttf") format("truetype"),
+        url("../fonts/MontserratRegular.woff") format("woff"),
+        url("../fonts/MontserratRegular.svg") format("svg");
     font-weight : normal;
     font-style  : normal;
 }

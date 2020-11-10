@@ -83,15 +83,17 @@ module.exports = {
                 use: cssLoader("sass-loader")
             },
             {
-                test: /\.(png|jpg|jpeg|svg|gif)$/,
-                loader: "file-loader",
-                options: {
-                    outputPath: "assets/images",
-                    name: "[name].[ext]"
-                }
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        outputPath: "assets/images",
+                        name: "[name].[ext]"
+                    }
+                }]
             },
             {
-                test: /\.(ttf|woff|woff2|eot)$/,
+                test: /\.(ttf|woff|woff2|svg|eot)$/,
                 loader: "file-loader",
                 options: {
                     outputPath: "assets/fonts",
