@@ -1000,3 +1000,62 @@ input {
 }
 
 .opened-datepick {.datepicker-inline { display: block;}}
+
+.room-card {
+    height: 340px;
+    width: 356px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    &__carousel { height: 60%; background-color: red;}
+    &__description { height: 40%; }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 26px 26px 13px;
+        .number {
+            display: flex;
+            align-items: flex-end;
+            &__prefix {
+                font-size: 20px;
+                padding-right: 4px;
+            }
+            &__value { padding-right: 9px; font-size: 26px; line-height: 31px;}
+            &__lux { color: $Purple; }
+        }
+        .cost {
+            display: flex;
+            align-items: flex-end;
+            &__rubles {
+                font-size: 18px;
+                letter-spacing: 1px;
+                color: $DarkShade50;
+            }
+            &__period {
+                font-size: 16px;
+                line-height: 26px;
+                color: $DarkShade50;
+            }
+        }
+    }
+    &__spacer {
+        display: block;
+        height: 1px;
+        background-color: $DarkShade25;
+        width: 86%;
+        margin: 0 auto;
+    }
+    &__rating {
+        padding: 13px 26px 26px;
+        .rating { 
+            display: flex;
+            justify-content: space-between;
+            &__reviews {
+                display: flex;
+                align-items: center;
+                color: $DarkShade25;
+            }
+            &__count { font-size: 18px; color: $DarkShade50;}
+        }
+    }
+}

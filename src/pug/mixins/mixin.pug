@@ -280,6 +280,28 @@ mixin loginCard()
             p Нет аккаунта на Toxin?
             +button("#", "Создать", "", "ghost-button")
 
+mixin roomCard(src, images, number, isLux, cost, rate, review)
+    a.room-card-wrapper(href=src)
+        .room-card
+            .room-card__carousel
+            .room-card__description
+                .room-card__header
+                    .number
+                        label.number__prefix №
+                        h1.number__value=number
+                        label.number__lux=isLux ? "люкс" : ""
+                    br
+                    .cost
+                        label.cost__rubles=cost+"₽"
+                        p.cost__period в сутки
+                .room-card__spacer
+                .room-card__rating
+                    .rating
+                        +rateresult(number+"__rate", rate)
+                        .rating__reviews
+                            label.rating__count=review
+                            p.rating__count &nbsp;Отзывов
+
 
 //- *********** Headers and Footers ***********
 
