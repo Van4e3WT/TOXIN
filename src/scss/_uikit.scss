@@ -1,7 +1,6 @@
 .uikit {
     .colors-and-fonts {
-        // включить блок по окончании верстки элементов
-        display: none;
+        display: block;
         &__row {
             display: grid;
             grid-template-rows: 1fr;

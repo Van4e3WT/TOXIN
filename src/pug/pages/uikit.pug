@@ -59,7 +59,9 @@ html(lang="ru-RU")
                             .col__item
                                 +openedDatepick()
                             .col__item
-                                +roomCard("./images/888.jpg", "/images/888.jpg", 888, true, 9990, 5, 145)
+                                +roomCard("#", ["assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 888, true, 9990, 5, 145)
+                            .col__item
+                                +roomCard("#", ["assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 840, false, 9900, 4, 65)
             section(name="form-elements").form-elements
                 +svgUI()
                 .container

@@ -4,6 +4,7 @@ import "./js/script.js"
 import "./js/sliderRange.js"
 import "./js/dropdownAbsolute.js"
 import "./js/dropdownRelative.js"
+import "./js/carousel.js"
 
 // SCSS
 import "./scss/style.scss"
