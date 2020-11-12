@@ -240,7 +240,7 @@ mixin registerCard()
         +button("#", "Зарегистрироваться", "", "send-button")
         .register-card__help
             p Уже есть аккаунт на Toxin
-            +button("#", "Войти", "", "ghost-button")
+            +button("login.html", "Войти", "", "ghost-button")
 
 mixin totalCard()
     .total-card
@@ -291,7 +291,7 @@ mixin loginCard()
         +button("#", "Войти", "", "send-button")
         .login-card__help
             p Нет аккаунта на Toxin?
-            +button("#", "Создать", "", "ghost-button")
+            +button("registration.html", "Создать", "", "ghost-button")
 
 mixin roomCard(src, images, number, isLux, cost, rate, review)
     .room-card
@@ -337,7 +337,7 @@ mixin header(isAuthorized)
                         .header__item
                             .header__user Юлий Цезарь
                     else
-                        +button("#", "Войти", "header__item", "ghost-button")
+                        +button("login.html", "Войти", "header__item", "ghost-button")
                         +button("registration.html", "Зарегистрироваться", "header__item")
 
 mixin footer()
