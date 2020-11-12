@@ -7,18 +7,8 @@
     background-position: 0% 100%;
     height: 1095px;
     color: #1F2041;
-    &__calendar-date {
-        display: flex;
-        justify-content: space-between;
-        input {
-            margin-bottom: 22px;
-        }
-    }
-    &__date-item {
-        width: 198px;
-    }
-    &__guests {
-        position: relative;
+    &__wrapper {
+        padding-top: 92px;
     }
     &__slogan {
         position: absolute;

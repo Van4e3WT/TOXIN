@@ -583,13 +583,13 @@ input {
 .form-subscribe {
     display: flex;
     height: 60px;
-    width: 352px;
+    max-width: 352px;
     border: 2px solid $DarkShade25;
     border-radius: 5px;
     input {
         outline: none;
         height: 100%;
-        width: inherit;
+        width: 100%;
         border: none;
         padding: 19px 0 20px 17px;
         border-radius: 5px;
@@ -608,6 +608,7 @@ input {
         height: 100%;
         border: none;
         background-color: white;
+        flex-shrink: 0;
     }
 }
 // ********* dropdown (absolute list) *********
@@ -876,7 +877,7 @@ input {
         &.active {
             position: relative;
             opacity: 1;
-            transition: all 1s linear;
+            transition: all .5s linear;
             background-color: blue;
         }
     }
