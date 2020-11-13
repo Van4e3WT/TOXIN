@@ -1,6 +1,7 @@
 // *********** HEADER BLOCK ***********
 header {
     background-color: white;
+    box-shadow: $shadow;
     .header {
         display: flex;
         justify-content: space-between;
