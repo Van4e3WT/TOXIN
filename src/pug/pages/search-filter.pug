@@ -4,3 +4,33 @@ block variables
     -let title = "Поиск номеров"
 
 block content
+    .container
+        .search-page
+            .filter
+                .filter__group
+                    label Даты пребывания в отеле
+                    +dateSoloRange()
+                    label Гости
+                    +dropdownGuests()
+                .filter__group25
+                    +rangeslider("Диапазон цены")
+                    p Стоимость за сутки пребывания в номере
+                .filter__group15
+                    label.filter__title Правила дома
+                    +checkbox("Можно курить", "forSmoking", false)
+                    +checkbox("Можно с питомцами", "forPets", true)
+                    +checkbox("Можно пригласить гостей (до 10 человек)", "forParty", true)
+                .filter__group25
+                    label.filter__title Доступность
+                    +checkboxRich("Широкий коридор", "isWideCorridor", "Ширина коридоров в номере не\xA0менее 91 см.")
+                    +checkboxRich("Помощник для инвалидов", "isAssistantForDisabled", "На 1 этаже вас встретит специалист и проводит до номера.")
+                .filter__group
+                    label Удобства номера
+                    +dropdownAddOptions([2,2,0])
+                .filter__group
+                    +dropdownChecks("Дополнительные удобства", "ddC1", false, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
+            .rooms
+                .rooms__items
+                    .rooms__item
+                .rooms__pagination
+                    //- +paginationPlug(15, 1)
