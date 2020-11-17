@@ -1094,6 +1094,7 @@ input {
     border-radius: 5px;
     overflow: hidden;
     background-color: white;
+    box-shadow: $shadow;
     &__carousel { height: 60%; }
     &__description { height: 40%; }
     &__header {
