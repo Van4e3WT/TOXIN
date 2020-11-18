@@ -39,6 +39,10 @@ h2 {
     font-size: 24px;
     letter-spacing: -0.1px;
     line-height: 32px;
+    @media(max-width: "1024px") {
+        text-align: center;
+        font-size: 32px;
+    }
 }
 h3 {
     font-family: "Montserrat";

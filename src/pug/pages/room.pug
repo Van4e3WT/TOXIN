@@ -1,0 +1,38 @@
+extends ../layouts/base.pug
+
+block variables
+    -let title = "Отель \"TOXIN\" №888"
+
+block content
+    .room
+        .room__collage
+            .img1
+                img(src="assets/images/rooms/888.jpg")
+            .img2
+                img(src="assets/images/rooms/888-2.jpg")
+            .img3
+                img(src="assets/images/rooms/888-3.jpg")
+        .container
+            .room__body
+                .about
+                    h2 Сведения о номере
+                    +privilegeElement("/assets/images/privilege_comfort.svg", "Комфорт", "Шумопоглощающие стены")
+                    +privilegeElement("/assets/images/privilege_convenience.svg", "Удобство", "Окно в каждой из спален")
+                    +privilegeElement("/assets/images/privilege_fireplace.svg", "Уют", "Номер оснащен камином")
+                .reviews
+                    h2 Впечатления от номера
+                    +circleDiagram([50, 25, 25, 0])
+                .check
+                    +totalCard()
+                .comments
+                    h2 Отзывы посетителей номера
+                    .comments__review
+                        +comment("/assets/images/users_images/marat_123.jpg","Мурад Сарафанов","5 дней назад", "12", true, "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+                    .comments__review
+                        +comment("/assets/images/users_images/patryaGlassy.jpg","Патрисия Стёклышкова","неделю назад", "2", false, "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент")
+                .rules
+                    h2.rules__header Правила
+                    +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после\xa013:00, а выезд до\xa012:00"])
+                .cancel
+                    h2 Отмена
+                    p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
