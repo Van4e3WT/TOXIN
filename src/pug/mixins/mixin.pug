@@ -111,7 +111,9 @@ mixin togglebutton(content, id, isChecked)
 mixin likebutton(id, count, isChecked)
     .likebutton
         input(type="checkbox", id=id, checked=isChecked)
-        label(for=id)=count
+        label(for=id)
+            .heart
+            .counter=count
 
 mixin ratebutton(name, inputRate, isReadonly)
     .ratebutton
