@@ -67,6 +67,7 @@
             }
         }
     }
+    @media (max-width:1250px) { display: none; }
 }
 
 .footer-mobile {
@@ -84,6 +85,7 @@
         margin: 0 auto;
         background-color: white;
         box-shadow: $shadow;
+        @media (max-width:1125px) { width: 90%; }
     }
     &__logo {
         display: inline-block;
@@ -105,4 +107,5 @@
             }
         }
     }
+    @media (max-width:1250px) { display: flex; }
 }
