@@ -1,145 +1,144 @@
-// *********** HEADER BLOCK ***********
 header {
-    background-color: white;
-    box-shadow: $shadow;
-    .header {
-        display: flex;
-        justify-content: space-between;
-        overflow: hidden;
-        padding: 19px 0;
-        &__section {
-            display: flex;
-            align-items: center;
-        }
-        &__item {
-            display: flex;
-            padding: 0 14.5px;
-            color:$DarkShade50;
-            align-items: center;
-            letter-spacing: 0.25px;
-            &:first-child {
-                padding-left: 0;
-            }
-            &:last-child {
-                padding-right: 0;
-            }
-            &:hover {
-                color: $DarkShade75;
-            }
-        }
-        &__user {
-            padding-left: 30px;
-            height: 40px;
-            border-left: 2px solid $DarkShade25;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        &__burger {
-            display: none;
-            cursor: pointer;
-        }
+  background-color: white;
+  box-shadow: $shadow;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 19px 0;
+    &__section {
+      display: flex;
+      align-items: center;
     }
+    &__item {
+      display: flex;
+      padding: 0 14.5px;
+      color:$DarkShade50;
+      align-items: center;
+      letter-spacing: 0.25px;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+      &:hover {
+        color: $DarkShade75;
+      }
+    }
+    &__user {
+      padding-left: 30px;
+      height: 40px;
+      border-left: 2px solid $DarkShade25;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__burger {
+      display: none;
+      cursor: pointer;
+    }
+  }
 }
 .extended {
-    padding-right: 47px;
+  padding-right: 47px;
 }
 // *********** MEDIA QUERY ***********
 @media (max-width:1250px) {
-    header {
-        .header {
-            flex-direction: column;
-            &__description {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-            }
-            &__section {
-                display: none;
-            }
-            &__section.active {
-                display: block;
-            }
-            &__item {
-                display: block;
-                padding: 25px;
-                text-align: center;
-                border-bottom: 1px solid $DarkShade25;
-                font-size: 24px;
-                &:first-child, &:last-child {padding: 25px;}
-            }
-            &__user {
-                padding: 0;
-                border: none;
-                background: $gradientColor;
-                color: white;
-                border-radius: 5px;
-                $height: 54px;
-                height: $height;
-                font-weight: bold;
-                border-radius: $height / 2;
+  header {
+    .header {
+      flex-direction: column;
+      &__description {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+      &__section {
+        display: none;
+      }
+      &__section.active {
+        display: block;
+      }
+      &__item {
+        display: block;
+        padding: 25px;
+        text-align: center;
+        border-bottom: 1px solid $DarkShade25;
+        font-size: 24px;
+        &:first-child, &:last-child {padding: 25px;}
+      }
+      &__user {
+        padding: 0;
+        border: none;
+        background: $gradientColor;
+        color: white;
+        border-radius: 5px;
+        $height: 54px;
+        height: $height;
+        font-weight: bold;
+        border-radius: $height / 2;
 
-            }
-            &__burger {
-                $width: 50px;
-                $height: 5px;
-                $color: $DarkShade;
-                display: block;
-                position: relative;
-                height: $width;
-                width: $width;
-                span {
-                    position: absolute;
-                    height: $height;
-                    width: 100%;
-                    background-color: $color;
-                    top: $width / 2;
-                    transform: translateY(-50%);
-                    transition: 0.2s;
-                    &::before, &::after {
-                        content: "";
-                        position: absolute;
-                        height: $height;
-                        width: 100%;
-                        background-color: $color;
-                        transition: 0.3s;
-                    }
-                    &::before {
-                        bottom: $width / 2;
-                        transform: translateY(50%);
-                    }
-                    &::after {
-                        top: $width / 2;
-                        transform: translateY(-50%);
-                    }
-                }
-            }
-            &__burger.active {
-                span {
-                    transform: rotate(90deg);
-                    &::before {
-                        width: 50%;
-                        transform: rotate(-45deg) translateY(9px) translateX(-16px);
-                    }
-                    &::after {
-                        width: 50%;
-                        transform: rotate(45deg) translateY(-9px) translateX(-16px);
-                    }
-                }
-            }
-        }
-        .button {
-            $height: 60px;
+      }
+      &__burger {
+        $width: 50px;
+        $height: 5px;
+        $color: $DarkShade;
+        display: block;
+        position: relative;
+        height: $width;
+        width: $width;
+        span {
+          position: absolute;
+          height: $height;
+          width: 100%;
+          background-color: $color;
+          top: $width / 2;
+          transform: translateY(-50%);
+          transition: 0.2s;
+          &::before, &::after {
+            content: '';
+            position: absolute;
             height: $height;
-            border-radius: $height / 2;
             width: 100%;
+            background-color: $color;
+            transition: 0.3s;
+          }
+          &::before {
+            bottom: $width / 2;
+            transform: translateY(50%);
+          }
+          &::after {
+            top: $width / 2;
+            transform: translateY(-50%);
+          }
         }
-        .ghost-button {
-            $height: 60px;
-            height: $height;
-            &::before {
-                border-radius: $height / 2;
-            }
+      }
+      &__burger.active {
+        span {
+          transform: rotate(90deg);
+          &::before {
+            width: 50%;
+            transform: rotate(-45deg) translateY(9px) translateX(-16px);
+          }
+          &::after {
+            width: 50%;
+            transform: rotate(45deg) translateY(-9px) translateX(-16px);
+          }
         }
+      }
     }
+    .button {
+      $height: 60px;
+      height: $height;
+      border-radius: $height / 2;
+      width: 100%;
+    }
+    .ghost-button {
+      $height: 60px;
+      height: $height;
+      &::before {
+        border-radius: $height / 2;
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-@import "_font-face.scss";
+@import '_font-face.scss';
 
 $containerWidth: 1573px;
 $headerPadding: 18px;
@@ -15,72 +15,72 @@ $gradientColor: linear-gradient(to top, #8BA4F9, $Purple);
 $gradientColorSecond: linear-gradient(to top, #66D2EA, $Green);
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 body {
-    font-family: "Montserrat";
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 31px;
-    letter-spacing: 0.3px;
+  font-family: 'Montserrat', 'Arial', 'sans-serif';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 31px;
+  letter-spacing: 0.3px;
 }
 h1 {
-    font-family: "OpenSans";
-    font-weight: bold;
-    font-size: 32px;
-    letter-spacing: -0.7px;
-    line-height: 39px;
+  font-family: 'OpenSans';
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: -0.7px;
+  line-height: 39px;
 }
 h2 {
-    font-family: "OpenSans";
-    font-weight: bold;
-    font-size: 24px;
-    letter-spacing: -0.1px;
-    line-height: 32px;
-    @media(max-width: "1024px") {
-        text-align: center;
-        font-size: 32px;
-    }
+  font-family: 'OpenSans';
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: -0.1px;
+  line-height: 32px;
+  @media(max-width: '1024px') {
+    text-align: center;
+    font-size: 32px;
+  }
 }
 h3 {
-    font-family: "Montserrat";
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 18px;
-    letter-spacing: -1.2px;
-    line-height: 20px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: -1.2px;
+  line-height: 20px;
 }
 h1, h2, h3, p {
-    color: $DarkShade;
+  color: $DarkShade;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 ul {
-    list-style: none;
+  list-style: none;
 }
 .container {
-    max-width: $containerWidth;
-    padding: 0 20px;
-    margin: 0 auto;
+  max-width: $containerWidth;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
-@import "_uikit.scss";
+@import '_uikit.scss';
 
-@import "_index.scss";
+@import '_index.scss';
 
-@import "_registration.scss";
+@import '_registration.scss';
 
-@import "_login.scss";
+@import '_login.scss';
 
-@import "_search-room.scss";
+@import '_search-room.scss';
 
-@import "_room.scss";
+@import '_room.scss';
 
-@import "_header.scss";
+@import '_header.scss';
 
-@import "_footer.scss";
+@import '_footer.scss';
 
-@import "_modules.scss";
+@import '_modules.scss';
