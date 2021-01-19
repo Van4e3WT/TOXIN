@@ -1,11 +1,7 @@
-//- *********** header ***********
-
 mixin link(ref, name, isExtended=false)
     a(class="header__item",href=""+ref)=name
         if isExtended
             .arrow-down
-
-//- *********** footer ***********
 
 mixin refItem(ref, name)
     li.ref__item
@@ -16,14 +12,12 @@ mixin socialReference(ref, name)
         a(href=ref)
             img(src="./assets/images/" + name + "Logo.svg", alt=name, height="30px", width="30px")
 
-//- *********** other ***********
-
 mixin button(ref, content, classRef, classBtn)
     a(class=classRef, href=ref)
         .button(class=classBtn)=content
 
 mixin logo()
-    a(href="/").logo
+    a(href="index.html").logo
         .logo__img
             img(src="./assets/images/LogoImg.svg", alt="TOXIN")
         .logo__name
