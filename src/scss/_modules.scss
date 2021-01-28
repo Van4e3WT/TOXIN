@@ -139,6 +139,7 @@ input {
 
 .checkbox {
   max-width: 300px;
+  position: relative;
   input {
     position: absolute;
     z-index: -1;
@@ -212,10 +213,12 @@ input {
 .radiobutton {
   display: inline-block;
   margin-right: 24px;
+  position: relative;
   input {
     position: absolute;
     z-index: -1;
     opacity: 0;
+    width: 100%;
   }
   input+label {
     display: flex;
@@ -266,6 +269,7 @@ input {
 .togglebutton {
   display: flex;
   margin-bottom: 14px;
+  position: relative;
   input {
     position: absolute;
     z-index: -1;
@@ -371,6 +375,7 @@ input {
 .ratebutton {
   display: inline-block;
   margin-right: 22px;
+  position: relative;
   cursor: pointer;
   &__input {
     position: absolute;

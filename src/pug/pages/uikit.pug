@@ -10,37 +10,38 @@ html(lang="ru-RU")
         .uikit
             section(name="colors-and-fonts").colors-and-fonts
                 +svgUI()
-                .colors-and-fonts__row
-                    .colors-and-fonts__column
-                        +color-itemUI("#1F2041", "Dark Shade 100%", "1")
-                        +color-itemUI("#1F2041", "Dark Shade 75%", "0.75")
-                        +color-itemUI("#1F2041", "Dark Shade 50%", "0.5")
-                        +color-itemUI("#1F2041", "Dark Shade 25%", "0.25")
-                        +color-itemUI("#1F2041", "Dark Shade 5%", "0.05")
-                        +color-itemUI("#BC9CFF", "Purple", "1")
-                        +color-itemUI("#6FCF97", "Green", "1")
-                    .colors-and-fonts__column
-                        .colors-and-fonts__text-item
-                            h1.colors-and-fonts__text-description H1
-                            h1 
-                                |This one is the sub-section or
-                                br
-                                |widget title
-                        .colors-and-fonts__text-item
-                            h2.colors-and-fonts__text-description H2
-                            h2
-                                | Next one is the item title inside 
-                                br
-                                | widgets
-                        .colors-and-fonts__text-item
-                            h3.colors-and-fonts__text-description H3
-                            h3 This is a label or CTA text
-                        .colors-and-fonts__text-item
-                            p.colors-and-fonts__text-description Body
-                            p 
-                                |This is the body text which is used for most
-                                br
-                                |of the design, like paragraphs, lists, etc.
+                .container
+                    .colors-and-fonts__row
+                        .colors-and-fonts__column
+                            +color-itemUI("#1F2041", "Dark Shade 100%", "1")
+                            +color-itemUI("#1F2041", "Dark Shade 75%", "0.75")
+                            +color-itemUI("#1F2041", "Dark Shade 50%", "0.5")
+                            +color-itemUI("#1F2041", "Dark Shade 25%", "0.25")
+                            +color-itemUI("#1F2041", "Dark Shade 5%", "0.05")
+                            +color-itemUI("#BC9CFF", "Purple", "1")
+                            +color-itemUI("#6FCF97", "Green", "1")
+                        .colors-and-fonts__column
+                            .colors-and-fonts__text-item
+                                h1.colors-and-fonts__text-description H1
+                                h1 
+                                    |This one is the sub-section or
+                                    br
+                                    |widget title
+                            .colors-and-fonts__text-item
+                                h2.colors-and-fonts__text-description H2
+                                h2
+                                    | Next one is the item title inside 
+                                    br
+                                    | widgets
+                            .colors-and-fonts__text-item
+                                h3.colors-and-fonts__text-description H3
+                                h3 This is a label or CTA text
+                            .colors-and-fonts__text-item
+                                p.colors-and-fonts__text-description Body
+                                p 
+                                    |This is the body text which is used for most
+                                    br
+                                    |of the design, like paragraphs, lists, etc.
             section(name="cards").cards
                 +svgUI()
                 .container
@@ -163,11 +164,12 @@ html(lang="ru-RU")
                             +comment("assets/images/users_images/marat_123.jpg","Мурад Сарафанов","5 дней назад", "12", true, "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
             section(name="headers-and-footers").headers-and-footers
                 +svgUI()
-                .headers-and-footers__item
-                    +header(false)
-                .headers-and-footers__item
-                    +header(true)
-                .headers-and-footers__item
-                    +footer()
-                .headers-and-footers__item
-                    +footerMobile()
+                .container
+                    .headers-and-footers__item
+                        +header(false)
+                    .headers-and-footers__item
+                        +header(true)
+                    .headers-and-footers__item
+                        +footer()
+                    .headers-and-footers__item
+                        +footerMobile()
