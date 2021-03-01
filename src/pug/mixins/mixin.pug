@@ -125,20 +125,7 @@ mixin rateresult(name, inputRate)
 
 mixin rangeslider(name)
     .range-slider
-        .range-slider__text
-            label=name
-            .range-slider__range
-                span.range-slider__min 5000₽
-                span.range-slider__splitter &nbsp;-&nbsp;
-                span.range-slider__max 10000₽
-        .slider
-            input(type="range", class="rangeSliderLeft-here", min=0, max = 15000, step = 100, value=5000)
-            input(type="range", class="rangeSliderRight-here", min=0, max = 15000, step = 100, value=10000)
-            .slider__custom-slider
-                .slider__track
-                .slider__range
-                .slider__thumb.left
-                .slider__thumb.right
+      .multislider-v43(data-description=`${name}` data-min-value="0" data-max-value="15000" data-value1="5000" data-value2="10000" data-step="100" data-slider-type="double")
 
 mixin paginationPlug(pages, page)
     .pagination(id="pagination-block")
