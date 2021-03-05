@@ -77,7 +77,8 @@ header {
         width: 90%;
         text-align: center;
         border-bottom: 1px solid $DarkShade25;
-        &:first-child, &:last-child {padding: 25px;}
+        &:first-child, &:last-child { padding: 25px; }
+        &:last-child { border: none }
       }
       &__user {
         padding: 0;

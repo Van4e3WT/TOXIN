@@ -4,7 +4,7 @@ mixin headerLink(ref, name, isExtended=false)
             .arrow-down
 
 mixin refItem(ref, name)
-    li.ref__item
+    li.references__item
         a(href=ref)=name
 
 mixin socialReference(ref, name)
@@ -363,37 +363,37 @@ mixin header(isAuthorized)
 mixin footer()
     footer.footer
         .container
-            .ref
-                .ref__column
-                    .ref__logo
+            .references
+                .references__column
+                    .references__logo
                         +logo()
-                    .ref__text
+                    .references__text
                         p 
                         | Бронирование номеров в лучшем 
                         br
                         | отеле 2019 года по версии
                         br
                         | ассоциации «Отельные взгляды»
-                ul.ref__column 
-                    .ref__item Навигация
-                    +refItem("#about", "О нас")
-                    +refItem("#news", "Новости")
-                    +refItem("#support", "Служба поддержки")
-                    +refItem("#office", "Услуги")
-                ul.ref__column 
-                    .ref__item О&nbsp;нас
-                    +refItem("#service", "О сервисе")
-                    +refItem("#company", "Наша команда")
-                    +refItem("#vacancies", "Вакансии")
-                    +refItem("#investors", "Инвесторы")
-                ul.ref__column
-                    .ref__item Служба&nbsp;поддержки
-                    +refItem("#deals", "Соглашения")
-                    +refItem("#community", "Сообщества")
-                    +refItem("#connect", "Связь с нами")
-                .ref__column
-                    .ref__item Подписка
-                    .ref__text
+                ul.references__column 
+                    .references__item Навигация
+                    +refItem("/plug-link", "О нас")
+                    +refItem("/plug-link", "Новости")
+                    +refItem("/plug-link", "Служба поддержки")
+                    +refItem("/plug-link", "Услуги")
+                ul.references__column 
+                    .references__item О&nbsp;нас
+                    +refItem("/plug-link", "О сервисе")
+                    +refItem("/plug-link", "Наша команда")
+                    +refItem("/plug-link", "Вакансии")
+                    +refItem("/plug-link", "Инвесторы")
+                ul.references__column
+                    .references__item Служба&nbsp;поддержки
+                    +refItem("/plug-link", "Соглашения")
+                    +refItem("/plug-link", "Сообщества")
+                    +refItem("/plug-link", "Связь с нами")
+                .references__column
+                    .references__item Подписка
+                    .references__text
                         p Получайте специальные предложения и новости сервиса
                     +formSubscribe()
         .copyrights
@@ -402,9 +402,9 @@ mixin footer()
                     .copyrights__copyright
                         p Copyright © 2018 Toxin отель. Все права защищены.
                     .copyrights__social
-                        +socialReference("#twitter", "twitter")
-                        +socialReference("#facebook", "facebook")
-                        +socialReference("#instagram", "instagram")
+                        +socialReference("/plug-link", "twitter")
+                        +socialReference("/plug-link", "facebook")
+                        +socialReference("/plug-link", "instagram")
 
 mixin footerMobile()
     footer.footer-mobile
@@ -414,9 +414,9 @@ mixin footerMobile()
             .footer-mobile__text
                 p Copyright © 2018 Toxin отель. Все права защищены.
             .footer-mobile__socials
-                +socialReference("#twitter", "twitter")
-                +socialReference("#facebook", "facebook")
-                +socialReference("#instagram", "instagram")
+                +socialReference("/plug-link", "twitter")
+                +socialReference("/plug-link", "facebook")
+                +socialReference("/plug-link", "instagram")
 
 //- *********** UI-kit ***********
 

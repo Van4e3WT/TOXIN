@@ -1,18 +1,20 @@
 .footer {
   background-color: white;
   border-top: 1px solid $DarkShade25;
-  .ref {
+  .references {
     display: grid;
     grid-template-columns: 25.8% 17.25% 17.25% 17.25% 1fr;
     padding-top: 132px;
     padding-bottom: 110px;
     &__column {
+      padding-right: 15px;
       letter-spacing: 0.3px;
       line-height: 33px;
+      &:last-child { padding: 0; }
     }    
     &__text {
-      color: $DarkShade75;
       padding-bottom: 26px;
+      color: $DarkShade75;
     }
     &__item {
       padding-bottom: 17px;
@@ -25,7 +27,7 @@
       &:first-child {
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 1rem;
         letter-spacing: 0;
         color: $DarkShade;
       }
@@ -42,7 +44,7 @@
       justify-content: space-between;
       padding: 27px 0;
       .copyrights__copyright {
-        font-size: 18.7px;
+        font-size: 1,1687rem;
         letter-spacing: -0.2px;
       }
       .copyrights__social {
