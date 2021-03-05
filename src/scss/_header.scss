@@ -1,12 +1,12 @@
 header {
   background-color: white;
   box-shadow: $shadow;
-  .header {
+  .header-content {
     display: flex;
+    height: 92px;
     justify-content: space-between;
-    overflow: hidden;
-    padding: 19px 0;
-    &__section {
+    align-items: center;
+    &__body {
       display: flex;
       align-items: center;
     }
@@ -32,7 +32,6 @@ header {
       border-left: 2px solid $DarkShade25;
       display: flex;
       align-items: center;
-      justify-content: center;
     }
     &__burger {
       display: none;
@@ -46,25 +45,38 @@ header {
 // *********** MEDIA QUERY ***********
 @media (max-width:1250px) {
   header {
-    .header {
-      flex-direction: column;
-      &__description {
+    .header-content {
+      position: relative;
+      z-index: 5;
+      &__head {
         display: flex;
         width: 100%;
+        height: 100%;
         justify-content: space-between;
+        align-items: center;
+        z-index: 5;
+        background-color: white;
       }
-      &__section {
-        display: none;
+      &__body {
+        position: absolute;
+        overflow: hidden;
+        top: 100%;
+        width: 100%;
+        height: 0;
+        flex-direction: column;
+        background-color: white;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
       }
-      &__section.active {
-        display: block;
+      &__body.active {
+        height: auto;
       }
       &__item {
         display: block;
         padding: 25px;
+        width: 90%;
         text-align: center;
         border-bottom: 1px solid $DarkShade25;
-        font-size: 24px;
         &:first-child, &:last-child {padding: 25px;}
       }
       &__user {
@@ -132,13 +144,6 @@ header {
       height: $height;
       border-radius: $height / 2;
       width: 100%;
-    }
-    .ghost-button {
-      $height: 60px;
-      height: $height;
-      &::before {
-        border-radius: $height / 2;
-      }
     }
   }
 }
