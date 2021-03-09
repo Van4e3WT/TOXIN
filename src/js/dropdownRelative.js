@@ -1,9 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-  let drops = document.querySelectorAll('.dropdown-checkbox');
+/* global document */
+function addDropdownRelListeners() {
+  const dropdowns = document.querySelectorAll('.dropdown-checkbox');
 
-  drops.forEach(item => {
-    item.addEventListener('click', () => {
-      item.querySelector('.dropdown-checkbox__title').classList.toggle('active');
-    });
+  function toggleActiveDropdown(item) {
+    item.querySelector('.dropdown-checkbox__title').classList.toggle('active');
+  }
+
+  dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener('click', toggleActiveDropdown.bind(null, dropdown));
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', addDropdownRelListeners);
