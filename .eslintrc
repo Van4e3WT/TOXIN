@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "fsd"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:fsd/all"
+  ]
+}
