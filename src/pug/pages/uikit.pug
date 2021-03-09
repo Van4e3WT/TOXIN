@@ -1,175 +1,175 @@
 html(lang="ru-RU")
-    head
-        meta(charset="utf-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="x-ua-compatible" content="IE=edge")
-        link(rel="shortcut icon", href="./assets/favicon.ico", type="image/icon")
-        title= "UI Kit"
-    body
-        include ../mixins/mixin.pug
-        .uikit
-            section(name="colors-and-fonts").colors-and-fonts
-                +svgUI()
-                .container
-                    .colors-and-fonts__row
-                        .colors-and-fonts__column
-                            +color-itemUI("#1F2041", "Dark Shade 100%", "1")
-                            +color-itemUI("#1F2041", "Dark Shade 75%", "0.75")
-                            +color-itemUI("#1F2041", "Dark Shade 50%", "0.5")
-                            +color-itemUI("#1F2041", "Dark Shade 25%", "0.25")
-                            +color-itemUI("#1F2041", "Dark Shade 5%", "0.05")
-                            +color-itemUI("#BC9CFF", "Purple", "1")
-                            +color-itemUI("#6FCF97", "Green", "1")
-                        .colors-and-fonts__column
-                            .colors-and-fonts__text-item
-                                h1.colors-and-fonts__text-description H1
-                                h1 
-                                    |This one is the sub-section or
-                                    br
-                                    |widget title
-                            .colors-and-fonts__text-item
-                                h2.colors-and-fonts__text-description H2
-                                h2
-                                    | Next one is the item title inside 
-                                    br
-                                    | widgets
-                            .colors-and-fonts__text-item
-                                h3.colors-and-fonts__text-description H3
-                                h3 This is a label or CTA text
-                            .colors-and-fonts__text-item
-                                p.colors-and-fonts__text-description Body
-                                p 
-                                    |This is the body text which is used for most
-                                    br
-                                    |of the design, like paragraphs, lists, etc.
-            section(name="cards").cards
-                +svgUI()
-                .container
-                    .row
-                        .col
-                            .col__item
-                                +landingCard()
-                            .col__item
-                                +registerCard()
-                        .col
-                            .col__item
-                                +totalCard()
-                            .col__item
-                                +loginCard()
-                        .col
-                            .col__item
-                                +openedDatepick()
-                            .col__item
-                                +roomCard("#", ["assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 888, true, 9990, 5, 145)
-                            .col__item
-                                +roomCard("#", ["assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 840, false, 9900, 4, 65)
-            section(name="form-elements").form-elements
-                +svgUI()
-                .container
-                    .grid
-                        .div1
-                            label text field
-                            .promt default
-                            input(type="text", name="textfield1", placeholder="Email")
-                            label text field
-                            .promt hover / focus
-                            input(type="text", name="textfield2", value="This is pretty awesome", class="hover-focus")
-                            label dropdown
-                            .promt default
-                            +dropdownGuests()
-                            .wrapper
-                                label masked text field
-                                .promt default
-                                input(type="text", name="maskedtextfield", class="dateSolo", placeholder="ДД.ММ.ГГГГ", readonly)
-                            .wrapper
-                                +twinDatepick("date dropdown", "date dropdown")
-                            .wrapper
-                                label Filter date dropdown
-                                +dateSoloRange()
-                            label subscription text field
-                            +formSubscribe()
-                        .div2
-                            .wrapper
-                                label.header Checkbox buttons
-                                +checkbox("Можно курить", "forSmoking", false)
-                                +checkbox("Можно с питомцами", "forPets", true)
-                                +checkbox("Можно пригласить гостей (до 10 человек)", "forParty", true)
-                            .wrapper
-                                label.header Radio buttons
-                                .radiobutton-group
-                                    +radiobutton("Мужчина", "isMan", "sex", true)
-                                    +radiobutton("Женщина", "isWoman", "sex", false)
-                            .wrapper
-                                label.header Toggle
-                                +togglebutton("Получать спецпредложения", "specialOffers1", true)
-                                +togglebutton("Получать спецпредложения", "specialOffers2", false)
-                            .wrapper
-                                label.header Like button
-                                br
-                                +likebutton("id1", 2, false)
-                                +likebutton("id2", 12, true)
-                            .wrapper
-                                label.header Rate button
-                                br
-                                +ratebutton("rb1", 4)
-                                //-+ratebutton("rb2", 5)
-                                +rateresult("rb3", 5)
-                        .div3
-                            .ml-15
-                                .wrapper
-                                    +rangeslider("Range Slider")
-                                .wrapper
-                                    label buttons
-                                    //- По макету хедера и UI-kit'у кнопки различаются, оставил кнопки, которые были сверстаны по пропорциям и размерам, указанным в макете хедера
-                                    .buttons
-                                        .buttons__item
-                                            +button("#", "Click me", "", "")
-                                        .buttons__item
-                                            +button("#", "Click me", "", "ghost-button")
-                                        .buttons__item
-                                            +button("#", "Click me", "", "skeleton-button")
-                                        .buttons__item
-                                            +button("#", "Перейти к оплате", "", "send-button")
-                                .wrapper
-                                    label.header Pagination
-                                    +paginationPlug(15, 1)
-                        .div4
-                            label Dropdown
-                            .promt default
-                            +dropdownAddOptions([2,2,0])
-                            label Dropdown
-                            .promt expanded
-                            +dropdownAddOptions([2,2,0], true)
-                        .div5
-                            label Dropdown
-                            +dropdownGuests([0,0,0], true)
-                        .div6
-                            label Dropdown
-                            +dropdownGuests([2,1,0], true)
-                        .div7
-                            .wrapper
-                                +dropdownChecks("Expandable checkbox list", "ddC1", false, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
-                            +dropdownChecks("Expandable checkbox list", "ddC2", true, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
-                        .div8
-                            label.header Rich checkbox buttons
-                            +checkboxRich("Широкий коридор", "isWideCorridor", "Ширина коридоров в номере не\xA0менее 91 см.")
-                            +checkboxRich("Помощник для инвалидов", "isAssistantForDisabled", "На 1 этаже вас встретит специалист и проводит до номера.")
-                        .div9
-                            label.header Bullet list
-                            +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
-                        .div10
-                            +privilegeElement("assets/images/privilege_comfort.svg", "Комфорт", "Шумопоглощающие стены")
-                            +privilegeElement("assets/images/privilege_convenience.svg", "Удобство", "Окно в каждой из спален")
-                        .div11
-                            +comment("assets/images/users_images/marat_123.jpg","Мурад Сарафанов","5 дней назад", "12", true, "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
-            section(name="headers-and-footers").headers-and-footers
-                +svgUI()
-                .container
-                    .headers-and-footers__item
-                        +header(false)
-                    .headers-and-footers__item
-                        +header(true)
-                    .headers-and-footers__item
-                        +footer()
-                    .headers-and-footers__item
-                        +footerMobile()
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="x-ua-compatible" content="IE=edge")
+    link(rel="shortcut icon", href="./assets/favicon.ico", type="image/icon")
+    title= "UI Kit"
+  body
+    include ../mixins/mixin.pug
+    .uikit
+      section(name="colors-and-fonts").colors-and-fonts
+        +svgUI()
+        .container
+          .colors-and-fonts__row
+            .colors-and-fonts__column
+              +color-itemUI("#1F2041", "Dark Shade 100%", "1")
+              +color-itemUI("#1F2041", "Dark Shade 75%", "0.75")
+              +color-itemUI("#1F2041", "Dark Shade 50%", "0.5")
+              +color-itemUI("#1F2041", "Dark Shade 25%", "0.25")
+              +color-itemUI("#1F2041", "Dark Shade 5%", "0.05")
+              +color-itemUI("#BC9CFF", "Purple", "1")
+              +color-itemUI("#6FCF97", "Green", "1")
+            .colors-and-fonts__column
+              .colors-and-fonts__text-item
+                h1.colors-and-fonts__text-description H1
+                h1 
+                  |This one is the sub-section or
+                  br
+                  |widget title
+              .colors-and-fonts__text-item
+                h2.colors-and-fonts__text-description H2
+                h2
+                  | Next one is the item title inside 
+                  br
+                  | widgets
+              .colors-and-fonts__text-item
+                h3.colors-and-fonts__text-description H3
+                h3 This is a label or CTA text
+              .colors-and-fonts__text-item
+                p.colors-and-fonts__text-description Body
+                p 
+                  |This is the body text which is used for most
+                  br
+                  |of the design, like paragraphs, lists, etc.
+      section(name="cards").cards
+        +svgUI()
+        .container
+          .row
+            .col
+              .col__item
+                +landingCard()
+              .col__item
+                +registerCard()
+            .col
+              .col__item
+                +totalCard()
+              .col__item
+                +loginCard()
+            .col
+              .col__item
+                +openedDatepick()
+              .col__item
+                +roomCard("#", ["assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 888, true, 9990, 5, 145)
+              .col__item
+                +roomCard("#", ["assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 840, false, 9900, 4, 65)
+      section(name="form-elements").form-elements
+        +svgUI()
+        .container
+          .grid
+            .div1
+              label text field
+              .promt default
+              input(type="text", name="textfield1", placeholder="Email")
+              label text field
+              .promt hover / focus
+              input(type="text", name="textfield2", value="This is pretty awesome", class="hover-focus")
+              label dropdown
+              .promt default
+              +dropdownGuests()
+              .wrapper
+                label masked text field
+                .promt default
+                input(type="text", name="maskedtextfield", class="dateSolo", placeholder="ДД.ММ.ГГГГ", readonly)
+              .wrapper
+                +twinDatepick("date dropdown", "date dropdown")
+              .wrapper
+                label Filter date dropdown
+                +dateSoloRange()
+              label subscription text field
+              +formSubscribe()
+            .div2
+              .wrapper
+                label.header Checkbox buttons
+                +checkbox("Можно курить", "forSmoking", false)
+                +checkbox("Можно с питомцами", "forPets", true)
+                +checkbox("Можно пригласить гостей (до 10 человек)", "forParty", true)
+              .wrapper
+                label.header Radio buttons
+                .radiobutton-group
+                  +radiobutton("Мужчина", "isMan", "sex", true)
+                  +radiobutton("Женщина", "isWoman", "sex", false)
+              .wrapper
+                label.header Toggle
+                +togglebutton("Получать спецпредложения", "specialOffers1", true)
+                +togglebutton("Получать спецпредложения", "specialOffers2", false)
+              .wrapper
+                label.header Like button
+                br
+                +likebutton("id1", 2, false)
+                +likebutton("id2", 12, true)
+              .wrapper
+                label.header Rate button
+                br
+                +ratebutton("rb1", 4)
+                //-+ratebutton("rb2", 5)
+                +rateresult("rb3", 5)
+            .div3
+              .ml-15
+                .wrapper
+                  +rangeslider("Range Slider")
+                .wrapper
+                  label buttons
+                  //- По макету хедера и UI-kit'у кнопки различаются, оставил кнопки, которые были сверстаны по пропорциям и размерам, указанным в макете хедера
+                  .buttons
+                    .buttons__item
+                      +button("#", "Click me", "", "")
+                    .buttons__item
+                      +button("#", "Click me", "", "ghost-button")
+                    .buttons__item
+                      +button("#", "Click me", "", "skeleton-button")
+                    .buttons__item
+                      +button("#", "Перейти к оплате", "", "send-button")
+                .wrapper
+                  label.header Pagination
+                  +paginationPlug(15, 1)
+            .div4
+              label Dropdown
+              .promt default
+              +dropdownAddOptions([2,2,0])
+              label Dropdown
+              .promt expanded
+              +dropdownAddOptions([2,2,0], true)
+            .div5
+              label Dropdown
+              +dropdownGuests([0,0,0], true)
+            .div6
+              label Dropdown
+              +dropdownGuests([2,1,0], true)
+            .div7
+              .wrapper
+                +dropdownChecks("Expandable checkbox list", "ddC1", false, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
+              +dropdownChecks("Expandable checkbox list", "ddC2", true, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
+            .div8
+              label.header Rich checkbox buttons
+              +checkboxRich("Широкий коридор", "isWideCorridor", "Ширина коридоров в номере не\xA0менее 91 см.")
+              +checkboxRich("Помощник для инвалидов", "isAssistantForDisabled", "На 1 этаже вас встретит специалист и проводит до номера.")
+            .div9
+              label.header Bullet list
+              +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+            .div10
+              +privilegeElement("assets/images/privilege_comfort.svg", "Комфорт", "Шумопоглощающие стены")
+              +privilegeElement("assets/images/privilege_convenience.svg", "Удобство", "Окно в каждой из спален")
+            .div11
+              +comment("assets/images/users_images/marat_123.jpg","Мурад Сарафанов","5 дней назад", "12", true, "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+      section(name="headers-and-footers").headers-and-footers
+        +svgUI()
+        .container
+          .headers-and-footers__item
+            +header(false)
+          .headers-and-footers__item
+            +header(true)
+          .headers-and-footers__item
+            +footer()
+          .headers-and-footers__item
+            +footerMobile()
