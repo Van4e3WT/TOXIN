@@ -642,15 +642,22 @@ input {
   }
   &__buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     font-size: 16px;
     font-weight: bold;
     padding: 21px 7px 0 15px;
     text-transform: uppercase;
+    &.non-empty {
+      justify-content: space-between;
+      & .dropdown__clear-btn {
+        display: block;
+      }
+    }
     @media(max-width: 380px) { display: block; text-align: center;}
   }
   &__clear-btn {
+    display: none;
     color: $DarkShade50;
     &:hover {
       color: $Purple;

@@ -1,145 +1,146 @@
-function num2str(n, text_forms) {
-  n = Math.abs(n) % 100;
-  let n1 = n % 10;
+/* global document */
+function num2str(i, textForms) {
+  const n = Math.abs(i) % 100;
+  const n1 = n % 10;
 
-  if (n > 10 && n < 20) return text_forms[2];
-  if (n1 > 1 && n1 < 5) return text_forms[1];
-  if (n1 == 1) return text_forms[0];
+  if (n > 10 && n < 20) return textForms[2];
+  if (n1 > 1 && n1 < 5) return textForms[1];
+  if (n1 === 1) return textForms[0];
 
-  return text_forms[2];
+  return textForms[2];
 }
 
 function updateCounterBlock(item) {
-  let counter = item.querySelector('.counter-block__counter');
-  let minus = item.querySelector('.counter-block__minus');
+  const counter = item.querySelector('.counter-block__counter');
+  const minus = item.querySelector('.counter-block__minus');
 
-  if ( parseInt(counter.innerText) < 1 ) {
+  if (+counter.textContent < 1) {
     minus.classList.add('disabled');
   } else {
     minus.classList.remove('disabled');
   }
 }
 
-function updateDropdowns() {
-  let dropdowns = document.querySelectorAll('.dropdown');
+function addDropdownAbsListeners() {
+  const dropdowns = document.querySelectorAll('.dropdown');
 
-  dropdowns.forEach(dropdown => {
-    if ( dropdown.hasAttribute('several-word-forms') ) {
-      let result = [];
-      let sum = 0;
-      let defaultValue = dropdown.querySelector('.dropdown__output').getAttribute('default');
+  dropdowns.forEach((dropdown, i) => {
+    const dropdownOutput = dropdown.querySelector('.dropdown__output');
+    const dropdownClear = dropdown.querySelector('.dropdown__clear-btn');
+    const dropdownApply = dropdown.querySelector('.dropdown__apply-btn');
+    const dropdownList = dropdown.querySelector('.dropdown__list');
 
-      dropdown.querySelectorAll('.dropdown__item').forEach( (item, i) => {
-        updateCounterBlock(item);
+    function updateDropdowns() {
+      const defaultValue = dropdownOutput.getAttribute('default');
 
-        if ( item.hasAttribute('wordforms') ) {
-          let elValue = item.querySelectorAll('.counter-block__counter');
-          let value;
+      if (dropdown.hasAttribute('several-word-forms')) {
+        const result = [];
+        let sum = 0;
 
-          elValue.forEach(valueItem => {
-            value = parseInt(valueItem.innerText);
-            sum += parseInt(valueItem.innerText);
-          });
+        dropdown.querySelectorAll('.dropdown__item').forEach((item) => {
+          updateCounterBlock(item);
 
-          if (value > 0) {
-            let wordForms = item.getAttribute('wordforms').split(', ');
-            let rightForm = num2str(value, wordForms);
+          if (item.hasAttribute('wordforms')) {
+            const counters = item.querySelectorAll('.counter-block__counter');
+            let value;
 
-            result.push(value + ' ' + rightForm);
+            counters.forEach((counter) => {
+              value = +counter.textContent;
+              sum += +counter.textContent;
+            });
+
+            if (value > 0) {
+              const wordForms = item.getAttribute('wordforms').split(', ');
+              const rightForm = num2str(value, wordForms);
+
+              result.push(`${value} ${rightForm}`);
+            }
           }
-        }
 
-        if (sum !== 0) {
-          let resultStr = '';
+          if (sum !== 0) {
+            let resultStr = '';
 
-          for (let i = 0; i < result.length; ++i) {
-            resultStr += i?', ' + result[i]:result[i];
+            for (let j = 0; j < result.length; j += 1) {
+              resultStr += j ? `, ${result[j]}` : result[j];
+            }
+
+            dropdownOutput.value = `${resultStr}\u2026`;
+          } else {
+            dropdownOutput.value = defaultValue;
           }
-
-          dropdown.querySelector('.dropdown__output').value = resultStr + '\u2026';
-        } else {
-          dropdown.querySelector('.dropdown__output').value = defaultValue;
-        }
-      });
-    } else {
-      let btns = dropdown.querySelector('.dropdown__buttons');
-      let clearBtn = dropdown.querySelector('.dropdown__clear-btn');
-      let value = 0;
-
-      dropdown.querySelectorAll('.dropdown__item').forEach( (item, i) => {
-        updateCounterBlock(item);
-        value += ( parseInt( item.querySelector('.counter-block__counter').innerText ) );
-      });
-
-      let wordForms = dropdown.hasAttribute('wordforms') ? dropdown.getAttribute('wordforms').split(', '): undefined;
-      let rightForm = wordForms !== undefined ? num2str(value, wordForms): '';
-
-      if (value !==0) {
-        dropdown.querySelector('.dropdown__output').value = value + ' ' + rightForm;
-        btns.style.justifyContent = 'space-between';
-        clearBtn.style.display = 'block';
+        });
       } else {
-        dropdown.querySelector('.dropdown__output').value = dropdown.querySelector('.dropdown__output').getAttribute('default');
-        btns.style.justifyContent = 'flex-end';
-        clearBtn.style.display = 'none';
+        const buttonsBlock = dropdown.querySelector('.dropdown__buttons');
+        let value = 0;
+
+        dropdown.querySelectorAll('.dropdown__item').forEach((item) => {
+          updateCounterBlock(item);
+          value += (+item.querySelector('.counter-block__counter').textContent);
+        });
+
+        const wordForms = dropdown.hasAttribute('wordforms') ? dropdown.getAttribute('wordforms').split(', ') : null;
+        const rightForm = wordForms ? num2str(value, wordForms) : '';
+
+        if (value !== 0) {
+          dropdownOutput.value = `${value} ${rightForm}`;
+          buttonsBlock.classList.add('non-empty');
+        } else {
+          dropdownOutput.value = defaultValue;
+          buttonsBlock.classList.remove('non-empty');
+        }
       }
     }
-  });
-}
-document.addEventListener('DOMContentLoaded', function() {
-  //Получаем все дропдауны
-  let drop = document.querySelectorAll('.dropdown');
 
-  drop.forEach( (item,i) => {
-    //Каждому дропдауну навешиваем событие открытия и кнопок списка
-    let dropdownOutput = item.querySelector('.dropdown__output');
-    let dropdownClear = item.querySelector('.dropdown__clear-btn');
-    let dropdownApply = item.querySelector('.dropdown__apply-btn');
-    let dropdownList = item.querySelector('.dropdown__list');
+    function toggleActiveOnList() {
+      dropdown.querySelector('.dropdown__list').classList.toggle('active');
+    }
 
-    // задаем z-index по убыванию, дабы корректно отображать несколько дропдаунов друг под другом
-    dropdownList.style.zIndex = drop.length - i;
-    dropdownOutput.addEventListener('click', function() {
-      item.querySelector('.dropdown__list').classList.toggle('active');
-    });
+    function cleanListValues() {
+      const counters = dropdown.querySelectorAll('.counter-block__counter');
+
+      counters.forEach((counter) => {
+        counter.textContent = 0;
+      });
+
+      updateDropdowns();
+    }
+
+    // do z-index by descending (correct view few dropdown inder each other)
+    dropdownList.style.zIndex = dropdowns.length - i;
+
+    dropdownOutput.addEventListener('click', toggleActiveOnList);
 
     if (dropdownClear) {
-      dropdownClear.addEventListener('click', function() {
-        let counters = item.querySelectorAll('.counter-block__counter');
-
-        counters.forEach(counter => {
-          counter.innerText = 0
-        });
-        updateDropdowns();
-      });
+      dropdownClear.addEventListener('click', cleanListValues);
     }
 
     if (dropdownApply) {
-      dropdownApply.addEventListener('click', function() {
-        item.querySelector('.dropdown__list').classList.remove('active');
-      });
+      dropdownApply.addEventListener('click', toggleActiveOnList);
     }
 
-    //Получаем все айтемы у текущего дропдауна
-    let listItems = item.querySelectorAll('.dropdown__item');
-    listItems.forEach(item => {
-      // Для каждого айтема
-      let minus = item.querySelector('.counter-block__minus');
-      let counter = item.querySelector('.counter-block__counter');
-      let plus = item.querySelector('.counter-block__plus');
+    const listItems = dropdown.querySelectorAll('.dropdown__item');
+    listItems.forEach((item) => {
+      const minus = item.querySelector('.counter-block__minus');
+      const counter = item.querySelector('.counter-block__counter');
+      const plus = item.querySelector('.counter-block__plus');
 
-      minus.addEventListener('click', function() {
-        if (parseInt(counter.innerText) > 0) {
-          counter.innerText = parseInt(counter.innerText) - 1;
+      function decrementCounter() {
+        if (+counter.textContent > 0) {
+          counter.textContent = +counter.textContent - 1;
         }
         updateDropdowns();
-      });
+      }
 
-      plus.addEventListener('click', function() {
-        counter.innerText = parseInt(counter.innerText) + 1;
+      function incrementCounter() {
+        counter.textContent = +counter.textContent + 1;
         updateDropdowns();
-      });
+      }
+
+      minus.addEventListener('click', decrementCounter);
+      plus.addEventListener('click', incrementCounter);
     });
     updateDropdowns();
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', addDropdownAbsListeners);
