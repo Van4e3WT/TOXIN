@@ -1,10 +1,11 @@
 // JS
+import "./js/multislider-v43.js"
 import "./js/datepicker.js"
-import "./js/script.js"
+import "./js/datepickerFork.js"
 import "./js/dropdownAbsolute.js"
 import "./js/dropdownRelative.js"
 import "./js/carousel.js"
-import "./js/multislider-v43.js"
+import "./js/script.js"
 
 //CSS
 import "./css/datepicker.css"
