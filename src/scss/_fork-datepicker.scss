@@ -1,0 +1,165 @@
+
+
+.datepicker {
+  font-size: 1rem;
+  font-family: 'Montserrat';
+  width: 420px;
+  &--cell {
+    border-radius: 50%;
+    height: 53px;
+    &.-current- {
+      color: white;
+      font-weight: bold;
+      background: $gradientColorSecond;
+      &.-in-range- {
+        color: $Purple;
+      }
+    }
+    &.-in-range- {
+      background: linear-gradient(to top, #bc9cff3f 0%, #8ba4f93f 100%);
+      color: $DarkShade50;
+    }
+    &.-range-from- {
+      border: none;
+      border-radius: 50%;
+    }
+    &-day.datepicker--cell {
+      &.-range-from- {
+        &::before {
+          z-index: -1;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(180deg, #bc9cff3f 0%, #8ba4f93f 100%);
+          border-radius: 50% 0 0 50%;
+        }
+        &.-selected-::before {
+          z-index: -1;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(180deg, #bc9cff3f 0%, #8ba4f93f 100%);
+          border-radius: 50% 0 0 50%;
+        }
+      }
+      &.-range-to- {
+        &::before {
+          z-index: -1;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(180deg, #bc9cff3f 0%, #8ba4f93f 100%);
+          border-radius: 0 50% 50% 0;
+        }
+        &.-selected-::before {
+          z-index: -1;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(180deg, #bc9cff3f 0%, #8ba4f93f 100%);
+          border-radius: 0 50% 50% 0;
+        }
+      }
+    }
+    &.-range-to- {
+      border: none;
+      border-radius: 50%;
+      &.-range-from- {
+        border-radius: 50%;
+      }
+    }
+    &.-selected- {
+      background: $gradientColor;
+      &.-current- {
+        background: $gradientColorSecond;
+      }
+      &.-focus- {
+        background: $gradientColorSecond;
+      }
+    }
+  }
+  &--cells {
+    height: auto;
+  }
+  &--days-names {
+    margin: 9px 0 10px;
+    font-family: 'Montserrat';
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+  &--day-name {
+    color: $Purple;
+    text-transform: none;
+  }  
+  &--content {
+    padding: 25px;
+  }
+  &--pointer {
+    display: none;
+  }
+  &--nav {
+    border: none;
+    font-size: 1.375rem;
+    font-family: 'OpenSans';
+    font-weight: bold;
+    color: $DarkShade;
+    padding: 20px 27px;
+    &-action {
+      border-radius: 1rem;
+      &:hover {
+        background: none;
+      }
+      & path {
+        stroke: $Purple;
+        stroke-width: 3px;
+      }
+    }
+    &-title {
+      padding: 0 8px;
+      font-size: 1.5rem;
+      & i {
+        font-style: inherit;
+        color: inherit;
+        // margin: 0?
+      }
+    }
+  }
+  &--buttons {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 4px 25px 27px;
+    border: none;
+    span[data-action='clear'].datepicker--button {
+      justify-content: flex-start;
+      color: $DarkShade50;
+    }
+    span[data-action='today'].datepicker--button {
+      justify-content: flex-end;
+      color: $Purple;
+    }
+  }
+  &--button {
+    height: 16px;
+    flex: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $Purple;
+    &:hover {
+      opacity: 0.8;
+      color: inherit;
+      background: none;
+    }
+  }
+}

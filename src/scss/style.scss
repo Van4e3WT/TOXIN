@@ -10,9 +10,10 @@ $DarkShade10: rgba($DarkShade, 0.10);
 $DarkShade05: rgba($DarkShade, 0.05);
 $Purple: #BC9CFF;
 $Green: #6FCF97;
+$LightBlue: #66D2EA;
 $shadow: 0px 0px 50px -25px $DarkShade;
 $gradientColor: linear-gradient(to top, #8BA4F9, $Purple);
-$gradientColorSecond: linear-gradient(to top, #66D2EA, $Green);
+$gradientColorSecond: linear-gradient(to top, $LightBlue, $Green);
 
 * {
   padding: 0;
@@ -84,3 +85,5 @@ ul {
 @import '_footer.scss';
 
 @import '_modules.scss';
+
+@import '_fork-datepicker.scss';
