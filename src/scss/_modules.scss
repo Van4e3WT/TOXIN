@@ -735,7 +735,10 @@ input {
   &__item {
     width: 200px;
     position: relative;
-    input { width: 100%; }
+    input {
+      width: 100%; 
+      cursor: pointer;
+    }
     &::before {
       position: absolute;
       content: '';
@@ -950,12 +953,14 @@ input {
   border-radius: 5px;
   box-shadow: $shadow;
   &__form {
-    padding-bottom: 20px;
+    .dropdown {
+      padding-bottom: 18px;
+    }
   }
   h1 {
     letter-spacing: -0.1px;
     padding-top: 12px;
-    padding-bottom: 22px;
+    padding-bottom: 25px;
   }
 }
 
