@@ -1,22 +1,22 @@
-const fs = require("fs")
-const path = require("path")
-const webpack = require("webpack")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CopyWebpackPlugin = require("copy-webpack-plugin")
+const fs = require('fs');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // Custom variables
 const PATHS = {
-  src: path.resolve(__dirname, "src"),
-  dist: path.resolve(__dirname, "dist"),
-}
+  src: path.resolve(__dirname, 'src'),
+  dist: path.resolve(__dirname, 'dist'),
+};
 
-const PAGES_DIR = path.join(PATHS.src, "pug", "pages")
-const PAGES = fs.readdirSync(PAGES_DIR).filter(filename => filename.endsWith(".pug"))
+const PAGES_DIR = path.join(PATHS.src, 'pug', 'pages');
+const PAGES = fs.readdirSync(PAGES_DIR).filter((filename) => filename.endsWith('.pug'));
 
 // Custom functions (yep, and arrows)
-const cssLoader = addition => {
+const cssLoader = (addition) => {
   const loaders = [
     {
       loader: MiniCssExtractPlugin.loader,
@@ -25,43 +25,43 @@ const cssLoader = addition => {
       //   reloadAll: true
       // },
     },
-    "css-loader",
-  ]
+    'css-loader',
+  ];
   if (addition) {
-    loaders.push(addition)
+    loaders.push(addition);
   }
-  return loaders
-}
+  return loaders;
+};
 
 // Main config
 module.exports = {
   context: PATHS.src,
-  entry: ["@babel/polyfill", "./index.js"],
+  entry: ['@babel/polyfill', './index.js'],
   output: {
-    filename: "bundle_[id].js",
+    filename: 'bundle_[id].js',
     path: PATHS.dist,
   },
   plugins: [
-    ...PAGES.map(page => new HtmlWebpackPlugin({
+    ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: path.resolve(PAGES_DIR, page),
-      filename: `./${page.replace(/\.pug/, ".html")}`
+      filename: `./${page.replace(/\.pug/, '.html')}`,
     })),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "style_[id].css",
+      filename: 'style_[id].css',
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(PATHS.src, "static"), to: path.resolve(PATHS.dist, "assets"),
+          from: path.resolve(PATHS.src, 'static'), to: path.resolve(PATHS.dist, 'assets'),
         },
       ],
     }),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery",
-    })
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+    }),
   ],
   module: {
     rules: [
@@ -72,52 +72,52 @@ module.exports = {
       {
         test: /\.pug$/,
         use: {
-          loader: "pug-loader",
+          loader: 'pug-loader',
           options: {
             pretty: true,
-          }
-        }
+          },
+        },
       },
       {
         test: /\.(scss|sass)$/,
-        use: cssLoader("sass-loader")
+        use: cssLoader('sass-loader'),
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         use: [{
-          loader: "file-loader",
+          loader: 'file-loader',
           options: {
-            outputPath: "assets/images",
-            name: "[name].[ext]"
-          }
-        }]
+            outputPath: 'assets/images',
+            name: '[name].[ext]',
+          },
+        }],
       },
       {
         test: /\.(ttf|woff|woff2|svg|eot)$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          outputPath: "assets/fonts",
-          name: "[name].[ext]"
-        }
+          outputPath: 'assets/fonts',
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.csv$/,
-        use: ["csv-loader"]
+        use: ['csv-loader'],
       },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
   },
   // devServer: {
   //   port: 8081,
   //   hot: true,
   // },
-}
+};

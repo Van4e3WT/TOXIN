@@ -1,15 +1,15 @@
 // JS
-import "./js/multislider-v43.js"
-import "./js/datepicker.js"
-import "./js/datepickerFork.js"
-import "./js/dropdownAbsolute.js"
-import "./js/dropdownRelative.js"
-import "./js/carousel.js"
-import "./js/script.js"
+import './js/multislider-v43';
+import './js/datepicker';
+import './js/datepickerFork';
+import './js/dropdownAbsolute';
+import './js/dropdownRelative';
+import './js/carousel';
+import './js/script';
 
-//CSS
-import "./css/datepicker.css"
-import "./css/multislider-v43.css"
+// CSS
+import './css/datepicker.css';
+import './css/multislider-v43.css';
 
 // SCSS
-import "./scss/style.scss"
+import './scss/style.scss';

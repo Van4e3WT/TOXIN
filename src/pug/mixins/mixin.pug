@@ -345,9 +345,9 @@ mixin header(isAuthorized)
         .header-content__head
           .header-content__logo
             +logo()
-          .header-content__burger
+          .header-content__burger.js-header-content__burger
             span
-        .header-content__body
+        .header-content__body.js-header-content__body
           +headerLink("/plug-link", "О\xA0нас")
           +headerLink("/plug-link", "Услуги", true)
           +headerLink("/plug-link", "Вакансии")
