@@ -57,17 +57,21 @@ mixin twinDatepick(label1, label2)
   .twin-datepick
     .twin-datepick__item
       label=label1
-      input(type="text", class="dateArrival", placeholder="ДД.ММ.ГГГГ", name="date-arrival", data-range="true", readonly)
+      input(type="text", class="date-arrival", placeholder="ДД.ММ.ГГГГ", name="dateArrival", readonly)
     .twin-datepick__item
       label=label2
-      input(type="text", class="dateDeparture" placeholder="ДД.ММ.ГГГГ", name="date-departure", data-range="true", readonly)
+      input(type="text", class="date-departure" placeholder="ДД.ММ.ГГГГ", name="dateDeparture", readonly)
 
 mixin openedDatepick()
-  .opened-datepick
+  .opened-datepick.js-opened-datepick
+
+mixin dateSolo()
+  .date-solo
+    input(type="text", name="maskedTextField", class="js-date-solo", placeholder="ДД.ММ.ГГГГ", readonly)
 
 mixin dateSoloRange()
   .date-solo-range
-    input(type="text", name="filterdatedropdown", class="dateSoloRange", data-range="true", data-date-format="dd M", data-multiple-dates-separator=" - ", readonly)
+    input(type="text", name="filterDateDropdown", class="js-date-solo-range", readonly)
 
 mixin formSubscribe()
   form(action="", method="POST").form-subscribe
@@ -251,7 +255,7 @@ mixin registerCard()
         +radiobutton("Женщина", "isWomanRegistration", "sexRegistration", false)
     .register-card__birthday
       label Дата рождения
-      input(type="text", name="birthday", class="dateSolo", placeholder="ДД.ММ.ГГГГ", readonly)
+      +dateSolo()
     .register-card__group
       label Данные для входа в сервис
       input(type="email", name="email" placeholder="Email")

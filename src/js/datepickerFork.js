@@ -1,3 +1,4 @@
+/* global $ */
 const props = {
   clearButton: true,
   todayButton: true,
@@ -11,15 +12,31 @@ const props = {
   nextHtml: '<svg><path d="M 16,7 l 10,10 l -10,10"></path><path d="M 26,17 l -20,0"></path></svg>',
 };
 
+function contextShow() {
+  this.show();
+}
+
+function contextHide() {
+  this.hide();
+}
+
+function HideByApply() {
+  const acceptBtn = this.nav.$buttonsContainer[0].firstChild;
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', contextHide.bind(this));
+  }
+}
+
 const twinDatepickers = $('.twin-datepick');
 
-twinDatepickers.each(function (index, value) {
-  const dateArrival = $(value).find('.dateArrival');
-  const dateDeparture = $(value).find('.dateDeparture');
+twinDatepickers.each((index, value) => {
+  const dateArrival = $(value).find('.date-arrival');
+  const dateDeparture = $(value).find('.date-departure');
 
   dateArrival.datepicker({
+    range: true,
     minDate: new Date(),
-    onSelect: function (date) {
+    onSelect: function onSelect(date) {
       const dates = date.split(',');
       dateArrival.val(dates[0] ? dates[0] : '');
       dateDeparture.val(dates[1] ? dates[1] : '');
@@ -27,45 +44,36 @@ twinDatepickers.each(function (index, value) {
     ...props,
   });
 
-  $(dateDeparture).on('click', () => dateArrival.data('datepicker').show());
+  $(dateDeparture).on('click', contextShow.bind(dateArrival.data('datepicker')));
 
-  const acceptBtn = dateArrival.data('datepicker').nav.$buttonsContainer[0].firstChild;
-  if (acceptBtn) {
-    acceptBtn.addEventListener('click', () => dateArrival.data('datepicker').hide());
-  }
+  HideByApply.bind(dateArrival.data('datepicker'))();
 });
 
-$('.dateSolo').each((i, el) => {
+$('.js-date-solo').each((i, el) => {
   $(el).datepicker({
     ...props,
   });
 
-  const acceptBtn = $(el).data('datepicker').nav.$buttonsContainer[0].firstChild;
-  if (acceptBtn) {
-    acceptBtn.addEventListener('click', () => $(el).data('datepicker').hide());
-  }
+  HideByApply.bind($(el).data('datepicker'))();
 });
 
-$('.dateSoloRange').each((i, el) => {
+$('.js-date-solo-range').each((i, el) => {
   $(el).datepicker({
+    range: true,
+    dateFormat: 'dd M',
+    multipleDatesSeparator: ' - ',
     minDate: new Date(),
     ...props,
   });
 
-  const acceptBtn = $(el).data('datepicker').nav.$buttonsContainer[0].firstChild;
-  if (acceptBtn) {
-    acceptBtn.addEventListener('click', () => $(el).data('datepicker').hide());
-  }
+  HideByApply.bind($(el).data('datepicker'))();
 });
 
-$('.opened-datepick').each((i, el) => {
+$('.js-opened-datepick').each((i, el) => {
   $(el).datepicker({
     inline: true,
     ...props,
   });
 
-  const acceptBtn = $(el).data('datepicker').nav.$buttonsContainer[0].firstChild;
-  if (acceptBtn) {
-    acceptBtn.addEventListener('click', () => $(el).data('datepicker').hide());
-  }
+  HideByApply.bind($(el).data('datepicker'))();
 });
