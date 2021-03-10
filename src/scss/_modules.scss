@@ -1,7 +1,7 @@
 label {
   display: inline-block;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   line-height: 26px;
   color: $DarkShade;
@@ -15,7 +15,7 @@ input {
   border: 2px solid $DarkShade25;
   border-radius: 5px;
   padding: 15px 0 19px 19px;
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-family: 'Montserrat';
   letter-spacing: 0.5px;
   margin-bottom: 22px;
@@ -153,7 +153,7 @@ input {
     position: relative;
     font-weight: normal;
     text-transform: none;
-    font-size: 18px;
+    font-size: 1.125rem;
     letter-spacing: 0.3px;
     color: $DarkShade50;
     padding-bottom: 14px;
@@ -204,7 +204,7 @@ input {
     }
     p {
       padding-left: 38px;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 19px;
       letter-spacing: -0.1px;
       color: $DarkShade50;
@@ -228,7 +228,7 @@ input {
     position: relative;
     font-weight: normal;
     text-transform: none;
-    font-size: 18px;
+    font-size: 1.125rem;
     letter-spacing: 0.3px;
     color: $DarkShade50;
     $sideBorder: 22px;
@@ -280,10 +280,10 @@ input {
   label {
     font-weight: normal;
     text-transform: none;
-    font-size: 18px;
+    font-size: 1.125rem;
     letter-spacing: 0.3px;
     color: $DarkShade75;
-    @media (max-width: '450px') {font-size: 16px;}
+    @media (max-width: '450px') {font-size: 1rem;}
   }
   input+.toggle-wrapper {
     flex-shrink: 0;
@@ -340,7 +340,7 @@ input {
     border: 2px solid transparent;
     background-color: white;
     font-weight: normal;
-    font-size: 13px;
+    font-size: 0.8125rem;
     &::before {
       content: '';
       background: $DarkShade25;
@@ -385,7 +385,7 @@ input {
     opacity: 0;
   }
   &__label {
-    font-size: 36px;
+    font-size: 2.25rem;
     letter-spacing: 0.8px;
     color: $Purple;
     float: right;
@@ -405,7 +405,7 @@ input {
   display: inline-block;
   user-select: none;
   label {
-    font-size: 36px;
+    font-size: 2.25rem;
     letter-spacing: 0.8px;
     color: $Purple;
     float: left;
@@ -521,7 +521,7 @@ input {
     color: $DarkShade;
     font-weight: normal;
     text-align: justify;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 18px;
     padding: 3px;
   }
@@ -542,7 +542,7 @@ input {
     border-radius: 5px;
     border-right: none;
     font-family: 'Montserrat';
-    font-size: 19px;
+    font-size: 1.1875rem;
     color: $DarkShade;
     & ::placeholder {
       color: $DarkShade50;
@@ -584,7 +584,7 @@ input {
     }
   }
   &__output {
-    font-size: 18px;
+    font-size: 1.125rem;
     cursor: pointer;
     &::placeholder {
       color: $DarkShade75;
@@ -610,7 +610,7 @@ input {
     padding: 10px 10px 3px 16px;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     color: $DarkShade;
     .counter-block {
       display: flex;
@@ -626,7 +626,7 @@ input {
         border: 1px solid $DarkShade50;
         color: $DarkShade50;
         border-radius: 50%;
-        font-size: 30px;
+        font-size: 1.875rem;
         font-weight: normal;
         cursor: pointer;
         text-align: center;
@@ -642,7 +642,7 @@ input {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     padding: 21px 7px 0 15px;
     text-transform: uppercase;
@@ -802,7 +802,7 @@ input {
     color: $DarkShade75;
     label {
       text-transform: none;
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
 }
@@ -815,7 +815,7 @@ input {
     padding-bottom: 15px;
     img { display: block; border-radius: 50%;}
     label {
-      font-size: 18px;
+      font-size: 1.125rem;
       text-transform: none;
     }
   }
@@ -906,8 +906,8 @@ input {
     text-align: center;
     line-height: 29px;
   }
-  &__count { font-family: 'OpenSans'; font-size: 30px;}
-  &__votes { font-family: 'Montserrat'; font-size: 20px; font-weight: bold;}
+  &__count { font-family: 'OpenSans'; font-size: 1.875rem;}
+  &__votes { font-family: 'Montserrat'; font-size: 1.25rem; font-weight: bold;}
   &__chart {
     fill: none;
     stroke-width: 1.5px;
@@ -1013,7 +1013,7 @@ input {
       display: flex;
       align-items: flex-end;
       &__prefix {
-        font-size: 20px;
+        font-size: 1.25rem;
         padding-right: 4px;
       }
       &__value { padding-right: 9px; }
@@ -1023,12 +1023,12 @@ input {
       display: flex;
       align-items: flex-start;
       &__rubles {
-        font-size: 18px;
+        font-size: 1.125rem;
         letter-spacing: 1px;
         color: $DarkShade50;
       }
       &__period {
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 26px;
         color: $DarkShade50;
       }
@@ -1060,7 +1060,7 @@ input {
     .total {
       display: flex;
       align-items: flex-start;
-      &__result { font-size: 26px; flex-shrink: 0;}
+      &__result { font-size: 1.625rem; flex-shrink: 0;}
       &__space { 
         border-bottom: 2px dotted $DarkShade25;
         width: 500px;
@@ -1110,32 +1110,46 @@ input {
   overflow: hidden;
   background-color: white;
   box-shadow: $shadow;
-  &__carousel { height: 60%; }
-  &__description { height: 40%; }
+  &__carousel { 
+    height: 60%;
+    @media(max-width: '400px') {
+      height: 50%;
+    }
+  }
+  &__description { 
+    height: 40%;
+    @media(max-width: '400px') {
+      height: 50%;
+    }
+  }
   &__header {
     display: flex;
     justify-content: space-between;
-    padding: 26px 26px 13px;
+    padding: 8% 7% 3%;
+    @media(max-width: '400px') {
+      flex-direction: column;
+      align-items: center;
+    }
     .number {
       display: flex;
       align-items: flex-end;
       &__prefix {
-        font-size: 20px;
+        font-size: 1.25rem;
         padding-right: 4px;
       }
-      &__value { padding-right: 9px; font-size: 26px; line-height: 31px;}
+      &__value { padding-right: 9px; font-size: 1.625rem; line-height: 31px;}
       &__lux { color: $Purple; }
     }
     .cost {
       display: flex;
       align-items: flex-end;
       &__rubles {
-        font-size: 18px;
+        font-size: 1.125rem;
         letter-spacing: 1px;
         color: $DarkShade50;
       }
       &__period {
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 26px;
         color: $DarkShade50;
       }
@@ -1149,29 +1163,23 @@ input {
     margin: 0 auto;
   }
   &__rating {
-    padding: 13px 26px 26px;
+    padding: 4% 7.6% 8%;
     .rating { 
       display: flex;
       justify-content: space-between;
+      @media(max-width: '400px') {
+        flex-direction: column;
+        align-items: center;
+      }
       &__reviews {
         display: flex;
         align-items: center;
         color: $DarkShade25;
       }
-      &__count { font-size: 18px; color: $DarkShade50;}
+      &__count { font-size: 1.125rem; color: $DarkShade50;}
     }
   }  
   @media(max-width: '400px') {
     height: 100%;
-    &__header {
-      flex-direction: column;
-      align-items: center;
-    }
-    &__rating {
-      .rating {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
   }
 }
