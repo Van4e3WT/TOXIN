@@ -1,45 +1,52 @@
-function showSlides(n, items, dots) {
-  items.forEach( (item, i) => {
-    if (i == n) {
-      item.classList.add('active');
-      dots[i].classList.add('active');
-    } else {
-      item.classList.remove('active');
-      dots[i].classList.remove('active');
-    }
-  });
-}
+/* global document */
 
-document.addEventListener('DOMContentLoaded', () => {
-  let carousels = document.querySelectorAll('.carousel');
+function carouselInit() {
+  const carousels = document.querySelectorAll('.carousel');
 
-  carousels.forEach( (carousel) => {
-    let items = carousel.querySelectorAll('.carousel__item');
-    let dots = carousel.querySelectorAll('.carousel__dot');
-    let prevBtn = carousel.querySelector('.carousel__prev');
-    let nextBtn = carousel.querySelector('.carousel__next');
+  carousels.forEach((carousel) => {
+    const items = carousel.querySelectorAll('.carousel__item');
+    const dots = carousel.querySelectorAll('.carousel__dot');
+    const prevBtn = carousel.querySelector('.carousel__prev');
+    const nextBtn = carousel.querySelector('.carousel__next');
     let sliderIndex = 0;
 
-    prevBtn.addEventListener('click', () => {
+    function showSlides() {
+      items.forEach((item, i) => {
+        if (i === sliderIndex) {
+          item.classList.add('active');
+          dots[i].classList.add('active');
+        } else {
+          item.classList.remove('active');
+          dots[i].classList.remove('active');
+        }
+      });
+    }
+
+    function prevBtnListener() {
       if (sliderIndex - 1 < 0) {
         sliderIndex = items.length - 1;
       } else {
         sliderIndex -= 1;
       }
 
-      showSlides(sliderIndex, items, dots);
-    });
+      showSlides();
+    }
 
-    nextBtn.addEventListener('click', () => {
+    function nextBtnListener() {
       if (sliderIndex + 1 >= items.length) {
         sliderIndex = 0;
       } else {
         sliderIndex += 1;
       }
 
-      showSlides(sliderIndex, items, dots);
-    });
+      showSlides();
+    }
 
-    showSlides(sliderIndex, items, dots);
+    prevBtn.addEventListener('click', prevBtnListener);
+    nextBtn.addEventListener('click', nextBtnListener);
+
+    showSlides();
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', carouselInit);
