@@ -4,7 +4,7 @@ import './js/datepickerFork';
 import './js/dropdownAbsolute';
 import './js/dropdownRelative';
 import './js/carousel';
-import './js/script';
+import './blocks/blocks-scripts';
 
 // CSS
 import 'air-datepicker/dist/css/datepicker.min.css';

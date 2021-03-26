@@ -1,0 +1,29 @@
+include ../logo/logo.pug
+include ../button/button.pug
+
+mixin header-link(reference, name, isExtended=false)
+  a(class="header-content__item", href=""+reference)=name
+    if isExtended
+      .arrow-down
+
+mixin header(isAuthorized)
+  header
+    .container
+      .header-content
+        .header-content__head
+          .header-content__logo
+            +logo()
+          .header-content__burger.js-header-content__burger
+            span
+        .header-content__body.js-header-content__body
+          +header-link("/plug-link", "О\xA0нас")
+          +header-link("/plug-link", "Услуги", true)
+          +header-link("/plug-link", "Вакансии")
+          +header-link("/plug-link", "Новости")
+          +header-link("/plug-link", "Соглашения", true)
+          if isAuthorized
+            .header-content__item
+              .header-content__user Константин Константинопольский
+          else
+            +button("login.html", "Войти", "header-content__item", "ghost-button")
+            +button("registration.html", "Зарегистрироваться", "header-content__item")
