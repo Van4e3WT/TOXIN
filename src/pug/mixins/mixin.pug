@@ -57,10 +57,10 @@ mixin twinDatepick(label1, label2)
   .twin-datepick
     .twin-datepick__item
       label=label1
-      input(type="text", class="date-arrival", placeholder="ДД.ММ.ГГГГ", name="dateArrival", readonly)
+      input(type="text", class="js-date-arrival", placeholder="ДД.ММ.ГГГГ", name="dateArrival", readonly)
     .twin-datepick__item
       label=label2
-      input(type="text", class="date-departure" placeholder="ДД.ММ.ГГГГ", name="dateDeparture", readonly)
+      input(type="text", class="js-date-departure" placeholder="ДД.ММ.ГГГГ", name="dateDeparture", readonly)
 
 mixin openedDatepick()
   .opened-datepick.js-opened-datepick

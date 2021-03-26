@@ -1,4 +1,7 @@
 /* global $ */
+
+import 'air-datepicker/dist/js/datepicker.min';
+
 const props = {
   clearButton: true,
   todayButton: true,
@@ -20,8 +23,9 @@ function contextHide() {
   this.hide();
 }
 
-function HideByApply() {
+function hideByApply() {
   const acceptBtn = this.nav.$buttonsContainer[0].firstChild;
+
   if (acceptBtn) {
     acceptBtn.addEventListener('click', contextHide.bind(this));
   }
@@ -30,8 +34,8 @@ function HideByApply() {
 const twinDatepickers = $('.twin-datepick');
 
 twinDatepickers.each((index, value) => {
-  const dateArrival = $(value).find('.date-arrival');
-  const dateDeparture = $(value).find('.date-departure');
+  const dateArrival = $(value).find('.js-date-arrival');
+  const dateDeparture = $(value).find('.js-date-departure');
 
   dateArrival.datepicker({
     range: true,
@@ -44,9 +48,11 @@ twinDatepickers.each((index, value) => {
     ...props,
   });
 
-  $(dateDeparture).on('click', contextShow.bind(dateArrival.data('datepicker')));
+  const data = dateArrival.data('datepicker');
 
-  HideByApply.bind(dateArrival.data('datepicker'))();
+  $(dateDeparture).on('click', contextShow.bind(data));
+
+  hideByApply.call(data);
 });
 
 $('.js-date-solo').each((i, el) => {
@@ -54,7 +60,7 @@ $('.js-date-solo').each((i, el) => {
     ...props,
   });
 
-  HideByApply.bind($(el).data('datepicker'))();
+  hideByApply.call($(el).data('datepicker'));
 });
 
 $('.js-date-solo-range').each((i, el) => {
@@ -66,7 +72,7 @@ $('.js-date-solo-range').each((i, el) => {
     ...props,
   });
 
-  HideByApply.bind($(el).data('datepicker'))();
+  hideByApply.call($(el).data('datepicker'));
 });
 
 $('.js-opened-datepick').each((i, el) => {
@@ -75,5 +81,5 @@ $('.js-opened-datepick').each((i, el) => {
     ...props,
   });
 
-  HideByApply.bind($(el).data('datepicker'))();
+  hideByApply.call($(el).data('datepicker'));
 });
