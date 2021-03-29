@@ -1,0 +1,24 @@
+include ../blocks/header/header.pug
+include ../blocks/footer/footer.pug
+include ../blocks/footer/_mobile/footer_mobile.pug
+
+doctype html
+
+block variables
+
+html(lang="ru-RU")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="x-ua-compatible" content="IE=edge")
+    link(rel="shortcut icon", href="./assets/favicon.ico", type="image/icon")
+    block links
+    title= title ? title : "TOXIN"
+  body
+    +header(false)
+    main
+      block content
+    footer
+      +footer()
+      +footer_mobile()
+    block scripts

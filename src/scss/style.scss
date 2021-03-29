@@ -21,11 +21,15 @@ $gradientColorSecond: linear-gradient(to top, $LightBlue, $Green);
   box-sizing: border-box;
 }
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: 'Montserrat', 'Arial', 'sans-serif';
   font-weight: normal;
-  font-size: 1rem;
-  line-height: 31px;
-  letter-spacing: 0.3px;
+  font-size: 0.85rem;
+}
+main {
+  flex-grow: 1;
 }
 h1 {
   font-family: 'OpenSans', 'Arial', 'sans-serif';
@@ -79,8 +83,6 @@ ul {
 @import '_search-room.scss';
 
 @import '_room.scss';
-
-@import '_footer.scss';
 
 @import '_modules.scss';
 
