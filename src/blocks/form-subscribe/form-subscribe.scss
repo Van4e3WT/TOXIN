@@ -1,0 +1,26 @@
+.form-subscribe {
+  display: flex;
+  height: 44px;
+  max-width: 352px;
+  border: 2px solid $DarkShade25;
+  border-radius: 5px;
+  &__input {
+    height: 100%;
+    border: none;
+    padding: 10px 0 13px 12px;
+    border-right: none;
+    color: $DarkShade;
+    & ::placeholder {
+      color: $DarkShade50;
+    }
+  }
+  &__button {
+    outline: none;
+    cursor: pointer;
+    width: 17%;
+    height: 100%;
+    border: none;
+    background-color: white;
+    flex-shrink: 0;
+  }
+}

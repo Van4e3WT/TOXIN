@@ -15,7 +15,6 @@ input {
   border: 2px solid $DarkShade25;
   border-radius: 5px;
   padding: 15px 0 19px 19px;
-  font-size: 1.0625rem;
   font-family: 'Montserrat';
   letter-spacing: 0.5px;
   margin-bottom: 22px;
@@ -391,38 +390,6 @@ input {
     font-size: 0.875rem;
     line-height: 18px;
     padding: 3px;
-  }
-}
-
-.form-subscribe {
-  display: flex;
-  height: 60px;
-  max-width: 352px;
-  border: 2px solid $DarkShade25;
-  border-radius: 5px;
-  input {
-    outline: none;
-    height: 100%;
-    width: 100%;
-    border: none;
-    padding: 19px 0 20px 17px;
-    border-radius: 5px;
-    border-right: none;
-    font-family: 'Montserrat';
-    font-size: 1.1875rem;
-    color: $DarkShade;
-    & ::placeholder {
-      color: $DarkShade50;
-    }
-  }
-  &__button {
-    outline: none;
-    cursor: pointer;
-    width: 17%;
-    height: 100%;
-    border: none;
-    background-color: white;
-    flex-shrink: 0;
   }
 }
 
