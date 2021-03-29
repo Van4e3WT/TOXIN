@@ -1,0 +1,60 @@
+//- extends ../../layouts/base.pug
+
+//- block variables
+//-   -let title = "Поиск номеров"
+
+//- block content
+//-   .container
+//-     .search-page
+//-       .filter
+//-         .filter__group
+//-           label Даты пребывания в отеле
+//-           +dateSoloRange()
+//-           label Гости
+//-           +dropdownGuests()
+//-         .filter__group25
+//-           +rangeslider("Диапазон цены")
+//-           p Стоимость за сутки пребывания в номере
+//-         .filter__group15
+//-           label.filter__title Правила дома
+//-           +checkbox("Можно курить", "forSmoking", false)
+//-           +checkbox("Можно с питомцами", "forPets", true)
+//-           +checkbox("Можно пригласить гостей (до 10 человек)", "forParty", true)
+//-         .filter__group25
+//-           label.filter__title Доступность
+//-           +checkboxRich("Широкий коридор", "isWideCorridor", "Ширина коридоров в номере не\xA0менее 91 см.")
+//-           +checkboxRich("Помощник для инвалидов", "isAssistantForDisabled", "На 1 этаже вас встретит специалист и проводит до номера.")
+//-         .filter__group
+//-           label Удобства номера
+//-           +dropdownAddOptions([2,2,0])
+//-         .filter__group
+//-           +dropdownChecks("Дополнительные удобства", "ddC1", false, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
+//-       .rooms
+//-         h1.rooms__header Номера, которые мы для вас подобрали
+//-         .rooms__items
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 888, true, 9990, 5, 145)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/840.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 840, false, 9900, 4, 65)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/980.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 980, true, 8500, 3, 35)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/856.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 856, false, 7300, 5, 19)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/740.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 740, false, 6000, 4, 44)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/982.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 982, false, 5800, 3, 56)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/678.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 678, false, 5500, 5, 45)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/450.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 450, false, 5300, 4, 39)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/350.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 350, false, 5000, 3, 77)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/666.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 666, false, 5000, 5, 25)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/444.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 444, false, 5000, 3, 15)
+//-           .rooms__item
+//-             +roomCard("room.html", ["assets/images/rooms/352.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 352, false, 5000, 3, 55)
+//-         .rooms__pagination
+//-           +paginationPlug(15, 1)
