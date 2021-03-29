@@ -1,0 +1,39 @@
+.footer-mobile {
+  display:none;
+  align-items: center;
+  justify-content: center;
+  background-color:#f4f4f6;
+  text-align: center;
+  padding: 52px 0;
+  &__copyrights {
+    display: inline-block;
+    padding-top: 155px;
+    padding-bottom: 123px;
+    width: 1015px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: $shadow;
+    @media (max-width:1125px) { width: 90%; }
+  }
+  &__logo {
+    display: inline-block;
+    padding: 4px 0 28px 14px;
+  }
+  &__text {
+    letter-spacing: 0.1px;
+    line-height: 24px;
+  }
+  &__socials {
+    display: inline-flex;
+  }
+  &__link {
+    padding: 33px 14px;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  @media (max-width:1000px) { display: flex; }
+}
