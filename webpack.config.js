@@ -12,18 +12,28 @@ const PATHS = {
   dist: path.resolve(__dirname, 'dist'),
 };
 
-const PAGES_DIR = path.join(PATHS.src, 'pug', 'pages');
-const PAGES = fs.readdirSync(PAGES_DIR).filter((filename) => filename.endsWith('.pug'));
+function scanerFiles(directory, filetype) {
+  const arrayFiles = [];
+  const items = fs.readdirSync(directory);
 
-// Custom functions (yep, and arrows)
+  for (let i = 0; i < items.length; i += 1) {
+    const stat = fs.statSync(path.join(directory, items[i]));
+    if (!stat.isDirectory()) {
+      if (items[i].endsWith(filetype)) arrayFiles.push(path.join(directory, items[i]));
+    } else {
+      arrayFiles.push(...scanerFiles(path.join(directory, items[i]), filetype));
+    }
+  }
+  return arrayFiles;
+}
+
+const PAGES_DIR = path.join(PATHS.src, 'pages');
+const PAGES = scanerFiles(PAGES_DIR, '.pug');
+
 const cssLoader = (addition) => {
   const loaders = [
     {
       loader: MiniCssExtractPlugin.loader,
-      // options: {
-      //   hmr: true,
-      //   reloadAll: true
-      // },
     },
     'css-loader',
   ];
@@ -43,8 +53,8 @@ module.exports = {
   },
   plugins: [
     ...PAGES.map((page) => new HtmlWebpackPlugin({
-      template: path.resolve(PAGES_DIR, page),
-      filename: `./${page.replace(/\.pug/, '.html')}`,
+      template: page,
+      filename: `./${path.basename(page).replace(/\.pug/, '.html')}`,
     })),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -116,8 +126,4 @@ module.exports = {
       },
     ],
   },
-  // devServer: {
-  //   port: 8081,
-  //   hot: true,
-  // },
 };
