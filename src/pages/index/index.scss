@@ -1,14 +1,12 @@
-// *********** INDEX CONTENT BLOCK ***********
-
 .landing {
   position: relative;
   background: url('../static/images/background.jpg') no-repeat;
   background-size: cover;
   background-position: 0% 100%;
-  height: 1095px;
+  height: 830px;
   color: #1F2041;
   &__wrapper {
-    padding-top: 92px;
+    padding-top: 70px;
   }
   &__slogan {
     position: absolute;
