@@ -1,3 +1,9 @@
-mixin button(reference, content, classReference, modificator)
-  a(class=classReference, href=reference)
+//- @param {object} with properties
+//- reference - {string} link for tag a
+//- content - {string} button's content
+//- addedClasses - {string} classes for button
+//- modificator- {string} class-modificator form button
+mixin button(props)
+  - var { reference, content, addedClasses, modificator } = props
+  a(class=addedClasses, href=reference)
     .button(class=`button_${modificator}`)=content
