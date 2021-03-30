@@ -40,17 +40,17 @@
     }
   }
   &_send-button {
-    $height: 34px;
+    $height: 45px;
     height: $height;
-    width: 315px;
+    width: 100%;
     border-radius: $height / 2;
     &::before {
       content: '';
       position: absolute;
-      right: 22px;
+      right: 17px;
       height: 10px;
       width: 10px;
-      border: 3px solid white;
+      border: 2px solid white;
       border-left: none;
       border-bottom: none;
       transform: rotate(45deg);
@@ -58,12 +58,12 @@
     &::after {
       content: '';
       position: absolute;
-      right: 24px;
-      height: 3px;
+      right: 17px;
+      height: 2px;
       width: 15px;
       background-color: white;
     }
-    @media(max-width: 540px) {
+    @media(max-width: 420px) {
       width: 100%;
       text-align: center;
       &::before, &::after {
