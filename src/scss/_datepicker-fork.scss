@@ -1,12 +1,11 @@
 
 
 .datepicker {
-  font-size: 1rem;
   font-family: 'Montserrat';
-  width: 420px;
+  width: 320px;
   &--cell {
     border-radius: 50%;
-    height: 53px;
+    height: 40px;
     &.-current- {
       color: white;
       font-weight: bold;
@@ -92,11 +91,11 @@
   }
   &--cells {
     height: auto;
+    font-size: 0.75rem;
   }
   &--days-names {
     margin: 9px 0 10px;
     font-family: 'Montserrat';
-    font-size: 1.125rem;
     font-weight: bold;
   }
   &--day-name {
@@ -104,18 +103,17 @@
     text-transform: none;
   }  
   &--content {
-    padding: 25px;
+    padding: 23px;
   }
   &--pointer {
     display: none;
   }
   &--nav {
     border: none;
-    font-size: 1.375rem;
     font-family: 'OpenSans';
     font-weight: bold;
     color: $DarkShade;
-    padding: 20px 27px;
+    padding: 8px 20px;
     &-action {
       border-radius: 1rem;
       &:hover {
@@ -127,20 +125,19 @@
       }
     }
     &-title {
-      padding: 0 8px;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       & i {
         font-style: inherit;
         color: inherit;
-        // margin: 0?
       }
     }
   }
   &--buttons {
     justify-content: space-between;
     flex-direction: row-reverse;
-    padding: 4px 25px 27px;
+    padding: 0 20px 17px;
     border: none;
+    font-size: 0.75rem;
     span[data-action='clear'].datepicker--button {
       justify-content: flex-start;
       color: $DarkShade50;

@@ -11,8 +11,8 @@ const props = {
   navTitles: {
     days: 'MM yyyy',
   },
-  prevHtml: '<svg><path d="M 16,7 l -10,10 l 10,10"></path><path d="M 6,17 l 20,0"></path></svg>',
-  nextHtml: '<svg><path d="M 16,7 l 10,10 l -10,10"></path><path d="M 26,17 l -20,0"></path></svg>',
+  prevHtml: '<svg><path d="M 13,10 l -7,7 l 7,7"></path><path d="M 6,17 l 16,0"></path></svg>',
+  nextHtml: '<svg><path d="M 19,10 l 7,7 l -7,7"></path><path d="M 26,17 l -16,0"></path></svg>',
 };
 
 function contextShow() {
