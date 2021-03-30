@@ -1,0 +1,8 @@
+mixin twin-datepick(label1, label2, addedClasses="")
+  .twin-datepick(class=`${addedClasses}`)
+    .twin-datepick__item
+      label.twin-datepick__label=label1
+      input(type="text", class="js-date-arrival", placeholder="ДД.ММ.ГГГГ", name="dateArrival", readonly)
+    .twin-datepick__item
+      label.twin-datepick__label=label2
+      input(type="text", class="js-date-departure" placeholder="ДД.ММ.ГГГГ", name="dateDeparture", readonly)
