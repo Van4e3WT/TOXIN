@@ -1,42 +1,6 @@
 mixin helpInfo(description)
   .help-info(data-prompt=description) i
 
-mixin dropdownGuests(defVals, isOpen)
-  .dropdown(wordforms="гость, гостя, гостей")
-    input(default="Сколько гостей", class="dropdown__output", type="text", readonly)
-    .dropdown__list(class = isOpen?"active":"")
-      each item, key in ["Взрослые", "Дети", "Младенцы"]
-        .dropdown__item
-          .type=item
-          .counter-block
-            .counter-block__minus(class=key?"":"disabled") -
-            .counter-block__counter=defVals ? defVals[key] : 0
-            .counter-block__plus +
-      .dropdown__buttons
-        .dropdown__clear-btn.button.skeleton-button Очистить
-        .dropdown__apply-btn.button.skeleton-button Применить
-
-mixin dropdownAddOptions(defVals, isOpen)
-  .dropdown.options(several-word-forms)
-    input(default="Вспомогательные удобства", class="dropdown__output", type="text", readonly)
-    .dropdown__list(class = isOpen?"active":"")
-      each item, key in [["спальня, спальни, спален", "спальни"], ["кровать, кровати, кроватей", "кровати"], ["ванная комната, ванные комнаты, ванных комнат", "ванные комнаты"]]
-        .dropdown__item(wordforms=item[0])
-          .type=item[1]
-          .counter-block
-            .counter-block__minus(class=key?"":"disabled") -
-            .counter-block__counter=defVals?defVals[key]:0
-            .counter-block__plus +
-
-mixin twinDatepick(label1, label2)
-  .twin-datepick
-    .twin-datepick__item
-      label=label1
-      input(type="text", class="js-date-arrival", placeholder="ДД.ММ.ГГГГ", name="dateArrival", readonly)
-    .twin-datepick__item
-      label=label2
-      input(type="text", class="js-date-departure" placeholder="ДД.ММ.ГГГГ", name="dateDeparture", readonly)
-
 mixin openedDatepick()
   .opened-datepick.js-opened-datepick
 
