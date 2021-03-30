@@ -1,0 +1,25 @@
+.landing-card {
+  background-color: white;
+  max-width: 380px;
+  padding: 29px;
+  border-radius: 5px;
+  box-shadow: $shadow;
+  &__header {
+    padding-top: 9px;
+    padding-bottom: 19px;
+  }
+  &__form {
+    .dropdown {
+      padding-bottom: 18px;
+    }
+  }
+  &__twin-datepick {
+    padding-bottom: 20px;
+  }
+  &__label {
+    padding-bottom: 5px;
+  }
+  &__dropdown-absolute {
+    padding-bottom: 30px;
+  }
+}

@@ -27,6 +27,7 @@ body {
   font-family: 'Montserrat', 'Arial', 'sans-serif';
   font-weight: normal;
   font-size: 0.85rem;
+  letter-spacing: 0.3px;
 }
 main {
   flex-grow: 1;
@@ -34,9 +35,8 @@ main {
 h1 {
   font-family: 'OpenSans', 'Arial', 'sans-serif';
   font-weight: bold;
-  font-size: 2rem;
-  letter-spacing: -0.7px;
-  line-height: 39px;
+  font-size: 1.52rem;
+  line-height: 1.95rem;
 }
 h2 {
   font-family: 'OpenSans', 'Arial', 'sans-serif';
@@ -66,6 +66,31 @@ a {
 ul {
   list-style: none;
 }
+label {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: $DarkShade;
+  letter-spacing: 0px;
+}
+input {
+  outline: none;
+  width: 100%;
+  height: 44px;
+  border: 2px solid $DarkShade25;
+  border-radius: 5px;
+  padding: 14px 0 14px 14px;
+  font-family: 'Montserrat';
+  letter-spacing: 0.5px;
+  color: $DarkShade75;
+  &::placeholder {
+    color: $DarkShade25;
+  }
+  &:hover, &:focus, &.hover-focus {
+    border-color: $DarkShade50;
+  }
+}
 .container {
   max-width: $containerWidth;
   padding: 0 20px;
@@ -73,8 +98,6 @@ ul {
 }
 
 @import '_uikit.scss';
-
-@import '_index.scss';
 
 @import '_registration.scss';
 
@@ -84,10 +107,12 @@ ul {
 
 @import '_room.scss';
 
-@import '_modules.scss';
+//@import '_modules.scss';
 
 @import '_datepicker-fork.scss';
 
 @import 'multislider-v43-fork.scss';
 
 @import '../blocks/blocks-styles.scss';
+
+@import '../pages/pages-style.scss'
