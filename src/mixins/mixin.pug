@@ -4,10 +4,6 @@ mixin helpInfo(description)
 mixin openedDatepick()
   .opened-datepick.js-opened-datepick
 
-mixin dateSolo()
-  .date-solo
-    input(type="text", name="maskedTextField", class="js-date-solo", placeholder="ДД.ММ.ГГГГ", readonly)
-
 mixin dateSoloRange()
   .date-solo-range
     input(type="text", name="filterDateDropdown", class="js-date-solo-range", readonly)
@@ -22,17 +18,6 @@ mixin checkboxRich(content, id, description)
     input(type="checkbox", id=id)
     label(for=id)=content
     p=description
-
-mixin radiobutton(content, id, name, isChecked)
-  .radiobutton
-    input(type="radio", name=name, id=id, checked=isChecked)
-    label(for=id)=content
-
-mixin togglebutton(content, id, isChecked)
-  .togglebutton
-    input(type="checkbox", id=id, checked=isChecked)
-    label(for=id, class="toggle-wrapper")
-    label=content
 
 mixin likebutton(id, count, isChecked)
   .likebutton
@@ -159,31 +144,6 @@ mixin circleDiagram(value)
       .description__item
         .description__bad
         p Разочарован
-
-
-//- *********** Cards ***********
-
-mixin registerCard()
-  .register-card
-    h1 Регистрация аккаунта
-    .register-card__group
-      input(type="text", name="name", placeholder="Имя")
-      input(type="text", name="surname", placeholder="Фамилия")
-      .radiobutton-group
-        +radiobutton("Мужчина", "isManRegistration", "sexRegistration", true)
-        +radiobutton("Женщина", "isWomanRegistration", "sexRegistration", false)
-    .register-card__birthday
-      label Дата рождения
-      +dateSolo()
-    .register-card__group
-      label Данные для входа в сервис
-      input(type="email", name="email" placeholder="Email")
-      input(type="password", name="password" placeholder="Пароль")
-      +togglebutton("Получать спецпредложения", id="subscribeRegistration", false)
-    +button("#", "Зарегистрироваться", "", "send-button")
-    .register-card__help
-      p Уже есть аккаунт на Toxin
-      +button("login.html", "Войти", "", "ghost-button")
 
 mixin totalCard()
   .total-card

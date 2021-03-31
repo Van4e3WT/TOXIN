@@ -1,8 +1,10 @@
 extends ../../layouts/base.pug
 
+include ../../blocks/register-card/register-card.pug
+
 block variables
   -let title = "Регистрация"
 
 block content
   .registration
-//-     +registerCard()
+    +register-card()
