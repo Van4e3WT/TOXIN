@@ -3,20 +3,9 @@
   grid-template-columns: 23% 1fr;
   grid-column-gap: 5%;
   grid-row-gap: 20px;
-  padding-top: 35px;
+  padding-top: 30px;
   margin-bottom: 93px;
-  .filter {
-    &__group {
-      margin-bottom: 4px;
-      &15 {margin-bottom: 15px;}
-      &25 {margin-bottom: 25px;}
-    }
-    p {
-      font-size: 1rem;
-      letter-spacing: -0.1px;
-    }
-    &__title {margin-bottom: 20px;}
-  }
+  height: 1265px; // ВРЕМЕННОЕ СВОЙСТВО! УДАЛИТЬ!
   .rooms {
     &__header {
       letter-spacing: -0.1px;
