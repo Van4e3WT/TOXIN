@@ -225,17 +225,6 @@ mixin totalCard()
         h2.total__cost 38081₽
     +button("#", "Забронировать", "", "send-button")
 
-mixin loginCard()
-  .login-card
-    h1 Войти
-    .login-card__fields
-      input(type="email", name="email" placeholder="Email")
-      input(type="password", name="password" placeholder="Пароль")
-    +button("#", "Войти", "", "send-button")
-    .login-card__help
-      p Нет аккаунта на Toxin?
-      +button("registration.html", "Создать", "", "ghost-button")
-
 mixin roomCard(src, images, number, isLux, cost, rate, review)
   .room-card
     .room-card__carousel

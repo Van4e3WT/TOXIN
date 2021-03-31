@@ -1,0 +1,21 @@
+include ../button/button.pug
+
+mixin login-card()
+  .login-card
+    h1.login-card__header Войти
+    .login-card__fields
+      input.login-card__field(type="email", name="email" placeholder="Email")
+      input.login-card__field(type="password", name="password" placeholder="Пароль")
+    +button({
+      reference: "#",
+      content: "Войти",
+      addedClasses: "login-card__send",
+      modificator: "send-button"
+    })
+    .login-card__help
+      p Нет аккаунта на Toxin?
+      +button({
+        reference: "registration.html",
+        content: "Создать",
+        modificator: "ghost-button"
+      })

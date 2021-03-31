@@ -752,30 +752,6 @@
   }
 }
 
-.login-card {
-  background-color: white;
-  max-width: 500px;
-  padding: 40px;
-  border-radius: 5px;
-  box-shadow: $shadow;
-  h1 {
-    padding-top: 15px;
-    padding-bottom: 25px;
-  }
-  &__fields {
-    padding-bottom: 10px;
-    input {
-      margin-bottom: 15px;
-    }
-  }
-  &__help {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 40px;
-  }
-}
-
 .opened-datepick {.datepicker-inline { display: block;}}
 
 .room-card {
