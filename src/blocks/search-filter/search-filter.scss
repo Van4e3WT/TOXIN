@@ -1,0 +1,15 @@
+.filter {
+  &__label {
+    margin-bottom: 5px;
+  }
+  &__group {
+    margin-bottom: 4px;
+    &15 {margin-bottom: 15px;}
+    &25 {margin-bottom: 25px;}
+  }
+  p {
+    font-size: 1rem;
+    letter-spacing: -0.1px;
+  }
+  &__title {margin-bottom: 20px;}
+}
