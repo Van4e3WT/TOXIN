@@ -4,6 +4,6 @@
 //- addedClasses - {string} classes for button
 //- modificator- {string} class-modificator form button
 mixin button(props)
-  - var { reference, content, addedClasses, modificator } = props
-  a(class=addedClasses, href=reference)
-    .button(class=modificator ? `button_${modificator}` : "")=content
+  - var { reference="#", content="Button", addedClasses="", modificator="" } = props
+  a.button(class=`${addedClasses} ${modificator ? `button_${modificator}` : ""}`, href=reference)
+    .button__content=content

@@ -1,4 +1,7 @@
 .button {
+  display: inline-block;
+  width: auto;
+  &__content {
   display: inline-flex;
   position: relative;
   $height: 34px;
@@ -14,70 +17,77 @@
   cursor: pointer;
   letter-spacing: 0.2px;
   padding: 0 1.3rem;
+  }
   &:hover {
     opacity: 0.5;
   }
   &_ghost-button {
-    $height: 34px;
-    $border: 2px;
-    color: #BC9CFF;
-    background-clip: padding-box;
-    z-index: 1;
-    &:hover {
-      opacity: 0.50;
-      &::before {
-        opacity: 1;
+    .button__content {
+      $height: 34px;
+      $border: 2px;
+      color: #BC9CFF;
+      background-clip: padding-box;
+      z-index: 1;
+      &:hover {
+        opacity: 0.50;
+        &::before {
+          opacity: 1;
+        }
       }
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      z-index: -1;
-      margin: $border;
-      border-radius: $height / 2;
-      background-color: white;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: $border;
+        border-radius: $height / 2;
+        background-color: white;
+      }
     }
   }
   &_send-button {
-    $height: 45px;
-    height: $height;
     width: 100%;
-    border-radius: $height / 2;
-    &::before {
-      content: '';
-      position: absolute;
-      right: 17px;
-      height: 10px;
-      width: 10px;
-      border: 2px solid white;
-      border-left: none;
-      border-bottom: none;
-      transform: rotate(45deg);
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      right: 17px;
-      height: 2px;
-      width: 15px;
-      background-color: white;
-    }
-    @media(max-width: 420px) {
+    .button__content {
       width: 100%;
-      text-align: center;
-      &::before, &::after {
-        content: none;
+      $height: 45px;
+      height: $height;
+      border-radius: $height / 2;
+      &::before {
+        content: '';
+        position: absolute;
+        right: 17px;
+        height: 10px;
+        width: 10px;
+        border: 2px solid white;
+        border-left: none;
+        border-bottom: none;
+        transform: rotate(45deg);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        right: 17px;
+        height: 2px;
+        width: 15px;
+        background-color: white;
+      }
+      @media(max-width: 420px) {
+        text-align: center;
+        &::before, &::after {
+          content: none;
+        }
       }
     }
   }
   &_skeleton-button {
-    background: none;
-    color: $Purple;
-    padding: 0;
-    height: auto;
-    &:hover {
-      color: $DarkShade;
+    .button__content {
+      background: none;
+      color: $Purple;
+      padding: 0;
+      height: auto;
+      &:hover {
+        color: $DarkShade;
+      }
     }
   }
 }
