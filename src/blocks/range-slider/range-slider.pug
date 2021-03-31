@@ -1,0 +1,4 @@
+mixin range-slider(props)
+  - var { name, minValue, maxValue, value1, value2, step, sliderType } = props
+  .range-slider
+    .js-multislider-v43(data-description=name data-min-value=minValue data-max-value=maxValue data-value1=value1 data-value2=value2 data-step=step data-slider-type=sliderType)

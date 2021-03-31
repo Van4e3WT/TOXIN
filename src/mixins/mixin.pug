@@ -4,10 +4,6 @@ mixin helpInfo(description)
 mixin openedDatepick()
   .opened-datepick.js-opened-datepick
 
-mixin dateSoloRange()
-  .date-solo-range
-    input(type="text", name="filterDateDropdown", class="js-date-solo-range", readonly)
-
 mixin checkbox(content, id, isChecked)
   .checkbox
     input(type="checkbox", id=id, checked=isChecked)
@@ -39,10 +35,6 @@ mixin rateresult(name, inputRate)
         label ★
       else
         label ☆
-
-mixin rangeslider(name)
-  .range-slider
-    .js-multislider-v43(data-description=`${name}` data-min-value="0" data-max-value="15000" data-value1="5000" data-value2="10000" data-step="100" data-slider-type="double")
 
 mixin paginationPlug(pages, page)
   .pagination(id="pagination-block")

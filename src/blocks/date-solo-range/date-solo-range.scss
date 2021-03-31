@@ -1,0 +1,20 @@
+.date-solo-range {
+  position: relative;
+  max-width: 265px;
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: 46%;
+    right: 18px;
+    $side: 7px;
+    height: $side;
+    width: $side;
+    transform: rotate(45deg);
+    border: 2px solid #1F20417F;
+    border-top: 0;
+    border-left: 0;
+  }
+  &__input {
+    width: 100%;
+  }
+}
