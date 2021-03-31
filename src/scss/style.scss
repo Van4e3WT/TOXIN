@@ -1,4 +1,4 @@
-@import '_font-face.scss';
+@import '../fonts/font-face.scss';
 
 $containerWidth: 1200px;
 $headerPadding: 18px;
@@ -100,10 +100,6 @@ input {
 @import '_uikit.scss';
 
 @import '_search-room.scss';
-
-@import '_room.scss';
-
-//@import '_modules.scss';
 
 @import '_datepicker-fork.scss';
 
