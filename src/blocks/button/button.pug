@@ -6,4 +6,4 @@
 mixin button(props)
   - var { reference, content, addedClasses, modificator } = props
   a(class=addedClasses, href=reference)
-    .button(class=`button_${modificator}`)=content
+    .button(class=modificator ? `button_${modificator}` : "")=content
