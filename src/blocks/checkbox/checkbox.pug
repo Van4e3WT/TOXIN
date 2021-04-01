@@ -1,0 +1,7 @@
+mixin checkbox(props)
+  - var { content="Checkbox", isChecked=false, addedClasses="", description } = props
+  label.checkbox(class=`${description ? "checkbox_extended" : ""} ${addedClasses}`)
+    input.checkbox__input(type="checkbox", checked=isChecked)
+    .checkbox__content=content
+    if description
+      .checkbox__description=description

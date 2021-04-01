@@ -1,0 +1,19 @@
+include ../checkbox/checkbox.pug
+
+mixin dropdown-relative(props)
+  - var { content="Dropdown relative", isOpen=false, checkboxes=[] } = props
+  .dropdown-relative
+    label.dropdown-relative__content(class= isOpen ? "active" : "")=content
+    .dropdown-relative__list
+      each i in checkboxes
+        if typeof i === "string"
+          +checkbox({
+            content: i,
+            addedClasses: "dropdown-relative__item"
+          })
+        else
+          +checkbox({
+            content: i[0],
+            isChecked: i[1],
+            addedClasses: "dropdown-relative__item"
+          })

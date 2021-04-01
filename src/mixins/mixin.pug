@@ -4,17 +4,6 @@ mixin helpInfo(description)
 mixin openedDatepick()
   .opened-datepick.js-opened-datepick
 
-mixin checkbox(content, id, isChecked)
-  .checkbox
-    input(type="checkbox", id=id, checked=isChecked)
-    label(for=id)=content
-
-mixin checkboxRich(content, id, description)
-  .checkbox.rich
-    input(type="checkbox", id=id)
-    label(for=id)=content
-    p=description
-
 mixin likebutton(id, count, isChecked)
   .likebutton
     input(type="checkbox", id=id, checked=isChecked)
@@ -51,17 +40,6 @@ mixin paginationPlug(pages, page)
         else
           .pagination__item=page+i
     .pagination__info 1 – 12 из 100+ вариантов аренды
-
-mixin dropdownChecks(title, id, isOpen, checkboxes)
-  .dropdown-checkbox
-    .dropdown-checkbox__title(class=isOpen?"active":"")
-      label=title
-    .dropdown-checkbox__list
-      each i in checkboxes
-        if typeof i === "string"
-          +checkbox(i, id+"__"+i, false)
-        else
-          +checkbox(i[0], id+"__"+i, i[1])
 
 mixin bulletList(bullets)
   ul.bullet-list

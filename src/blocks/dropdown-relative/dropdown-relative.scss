@@ -1,0 +1,51 @@
+.dropdown-relative {
+  user-select: none;
+  max-width: 350px;
+  position: relative;
+  cursor: pointer;
+  &__content {
+    height: auto;
+    margin-right: 40px;
+    margin-bottom: 12px;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 7px;
+      width: 7px;
+      border: 2px solid $DarkShade50;
+      border-top: none;
+      border-left: none;
+      right: 20px;
+      top: 4px;
+      transform: rotate(45deg);
+      transition: 0.3s;
+    }
+  }
+  &__list {
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s;
+  }
+  &__item {
+    display: block;
+    margin-top: 10px;
+  }
+  &_active {
+    .dropdown-relative {
+      &__content {
+        &::before {
+          transform: rotate(225deg);
+          top: 9px;
+        }
+      }
+      &__list {
+        max-height: 300px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          width: 0;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
