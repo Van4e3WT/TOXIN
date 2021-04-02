@@ -1,15 +1,41 @@
-.filter {
+.search-filter {
+  &__section {
+    max-width: 265px;
+  }
   &__label {
     margin-bottom: 5px;
   }
   &__group {
-    margin-bottom: 4px;
-    &15 {margin-bottom: 15px;}
-    &25 {margin-bottom: 25px;}
+    margin-bottom: 18px;
+    &_25 {
+      margin-bottom: 25px;
+    }
   }
-  p {
-    font-size: 1rem;
-    letter-spacing: -0.1px;
+  &__range-group {
+    padding-top: 3px;
+    margin-bottom: 28px;
   }
-  &__title {margin-bottom: 20px;}
+  &__range {
+    margin-bottom: 12px;
+  }
+  &__description {
+    font-size: 0.75rem;
+    letter-spacing: 0;
+  }
+  &__checkboxes {
+    margin-bottom: 25px;
+    &-label {
+      display: block;
+      margin-bottom: 18px;
+    }
+  }
+  &__checkbox {
+    margin-bottom: 10px;
+  }
+  @media(max-width: 1000px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    justify-items: center;
+    grid-gap: 30px;
+  }
 }

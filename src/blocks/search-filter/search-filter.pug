@@ -1,26 +1,85 @@
-include ../../blocks/date-solo-range/date-solo-range.pug
+include ../date-solo-range/date-solo-range.pug
+include ../dropdown-absolute/dropdown-absolute.pug
+include ../dropdown-relative/dropdown-relative.pug
+include ../range-slider/range-slider.pug
+include ../checkbox/checkbox.pug
 
 mixin search-filter()
-  .filter
-    .filter__group
-      label.filter__label Даты пребывания в отеле
-      +date-solo-range()
-    //-   label Гости
-    //-   +dropdownGuests()
-    //- .filter__group25
-    //-   +rangeslider("Диапазон цены")
-    //-   p Стоимость за сутки пребывания в номере
-    //- .filter__group15
-    //-   label.filter__title Правила дома
-    //-   +checkbox("Можно курить", "forSmoking", false)
-    //-   +checkbox("Можно с питомцами", "forPets", true)
-    //-   +checkbox("Можно пригласить гостей (до 10 человек)", "forParty", true)
-    //- .filter__group25
-    //-   label.filter__title Доступность
-    //-   +checkboxRich("Широкий коридор", "isWideCorridor", "Ширина коридоров в номере не\xA0менее 91 см.")
-    //-   +checkboxRich("Помощник для инвалидов", "isAssistantForDisabled", "На 1 этаже вас встретит специалист и проводит до номера.")
-    //- .filter__group
-    //-   label Удобства номера
-    //-   +dropdownAddOptions([2,2,0])
-    //- .filter__group
-    //-   +dropdownChecks("Дополнительные удобства", "ddC1", false, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
+  .search-filter
+    .search-filter__section
+      .search-filter__group
+        label.search-filter__label Даты пребывания в отеле
+        +date-solo-range()
+      .search-filter__group
+        label.search-filter__label Гости
+        +dropdown-absolute({
+          wordforms: ["гость", "гостя", "гостей"],
+          items: ["Взрослые", "Дети", "Младенцы"],
+          defaultText: "Сколько гостей"
+        })
+      .search-filter__range-group
+        .search-filter__range
+          +range-slider({
+            name: "Диапазон цены",
+            minValue: 0,
+            maxValue: 15000,
+            value1: 5000,
+            value2: 10000,
+            step: 100,
+            sliderType: "double"
+          })
+        p.search-filter__description Стоимость за сутки пребывания в номере
+    .search-filter__section
+      .search-filter__checkboxes
+        label.search-filter__checkboxes-label Правила дома
+        +checkbox({
+          content: "Можно курить",
+          addedClasses: "search-filter__checkbox"
+        })
+        +checkbox({
+          content: "Можно с питомцами",
+          isChecked: true,
+          addedClasses: "search-filter__checkbox"
+        })
+        +checkbox({
+          content: "Можно пригласить гостей (до 10 человек)",
+          isChecked: true,
+          addedClasses: "search-filter__checkbox"
+        })
+      .search-filter__checkboxes
+        label.search-filter__checkboxes-label Доступность
+        +checkbox({
+          content: "Широкий коридор",
+          addedClasses: "search-filter__checkbox",
+          description: "Ширина коридоров в номере не\xA0менее 91 см."
+        })
+        +checkbox({
+          content: "Помощник для инвалидов",
+          addedClasses: "search-filter__checkbox",
+          description: "На 1 этаже вас встретит специалист и проводит до номера."
+        })
+    .search-filter__section
+      .search-filter__group
+        label.search-filter__label Удобства номера
+        +dropdown-absolute({
+          wordforms: [
+            ["спальня", "спальни", "спален"],
+            ["кровать", "кровати", "кроватей"],
+            ["ванная комната", "ванные комнаты", "ванных комнат"]
+          ],
+          addedClasses: "search-filter__group_25",
+          defaultValues: [2, 2, 0]
+        })
+        +dropdown-relative({
+          content: "Дополнительные удобства",
+          checkboxes: [
+              "Завтрак",
+              ["Письменный стол", true],
+              ["Стул для кормления", true],
+              ["Кроватка", true],
+              "Телевизор",
+              "Шампунь",
+              "Телевизор",
+              "Шампунь",
+            ]
+        })
