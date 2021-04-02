@@ -1,7 +1,6 @@
 // JS
 import './js/multislider-v43';
 import './js/datepickerFork';
-import './js/carousel';
 import './blocks/blocks-scripts';
 
 // CSS

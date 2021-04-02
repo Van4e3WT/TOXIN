@@ -17,14 +17,6 @@ mixin ratebutton(name, inputRate, isReadonly)
       input(class="ratebutton__input", type="radio", name=name, id=name+"-"+i, checked= i == inputRate)
       label(class="ratebutton__label", for=name+"-"+i)
 
-mixin rateresult(name, inputRate)
-  .rateresult
-    each i in [1,2,3,4,5]
-      if i <= inputRate
-        label ★
-      else
-        label ☆
-
 mixin paginationPlug(pages, page)
   .pagination(id="pagination-block")
     .pagination__items
@@ -65,18 +57,6 @@ mixin comment(avatar, username, date, likes, isLiked, description)
       .comment_like
         +likebutton(username+"__likebtn", likes, isLiked)
       .comment__description=description
-
-mixin carousel(images)
-  .carousel
-    each image in images
-      .carousel__item
-        img(src=image)
-    .carousel__buttons
-      button.carousel__prev
-      button.carousel__next
-    .carousel__dots
-      each image in images
-        .carousel__dot
 
 mixin circleDiagram(value)
   .circle-diagram
@@ -154,27 +134,6 @@ mixin totalCard()
         .total__space
         h2.total__cost 38081₽
     +button("#", "Забронировать", "", "send-button")
-
-mixin roomCard(src, images, number, isLux, cost, rate, review)
-  .room-card
-    .room-card__carousel
-      +carousel(images)
-    a.room-card__description(href=src)
-      .room-card__header
-        .number
-          label.number__prefix №
-          h1.number__value=number
-          label.number__lux=isLux ? "люкс" : ""
-        .cost
-          label.cost__rubles=cost+"₽"
-          p.cost__period в сутки
-      .room-card__spacer
-      .room-card__rating
-        .rating
-          +rateresult(number+"__rate", rate)
-          .rating__reviews
-            label.rating__count=review
-            p.rating__count &nbsp;Отзывов
 
 //- *********** UI-kit ***********
 

@@ -1,23 +1,25 @@
 /* global document */
 
+const BLOCKNAME = 'carousel';
+
 function carouselInit() {
-  const carousels = document.querySelectorAll('.carousel');
+  const carousels = document.querySelectorAll(`.${BLOCKNAME}`);
 
   carousels.forEach((carousel) => {
-    const items = carousel.querySelectorAll('.carousel__item');
-    const dots = carousel.querySelectorAll('.carousel__dot');
-    const prevBtn = carousel.querySelector('.carousel__prev');
-    const nextBtn = carousel.querySelector('.carousel__next');
+    const items = carousel.querySelectorAll(`.${BLOCKNAME}__item`);
+    const dots = carousel.querySelectorAll(`.${BLOCKNAME}__dot`);
+    const prevBtn = carousel.querySelector(`.${BLOCKNAME}__prev`);
+    const nextBtn = carousel.querySelector(`.${BLOCKNAME}__next`);
     let sliderIndex = 0;
 
     function showSlides() {
       items.forEach((item, i) => {
         if (i === sliderIndex) {
-          item.classList.add('active');
-          dots[i].classList.add('active');
+          item.classList.add(`${BLOCKNAME}__item_active`);
+          dots[i].classList.add(`${BLOCKNAME}__dot_active`);
         } else {
-          item.classList.remove('active');
-          dots[i].classList.remove('active');
+          item.classList.remove(`${BLOCKNAME}__item_active`);
+          dots[i].classList.remove(`${BLOCKNAME}__dot_active`);
         }
       });
     }

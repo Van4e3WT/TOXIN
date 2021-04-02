@@ -1,0 +1,11 @@
+mixin carousel(images)
+  .carousel
+    each image in images
+      .carousel__item
+        img(src=image)
+    .carousel__buttons
+      button.carousel__prev
+      button.carousel__next
+    .carousel__dots
+      each image in images
+        .carousel__dot

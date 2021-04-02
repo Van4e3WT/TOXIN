@@ -82,17 +82,6 @@
   }
 }
 
-.rateresult {
-  display: inline-block;
-  user-select: none;
-  label {
-    font-size: 2.25rem;
-    letter-spacing: 0.8px;
-    color: $Purple;
-    float: left;
-  }
-}
-
 .pagination {
   $side: 53px;
   &__items {
@@ -266,73 +255,6 @@
   &__description { margin-left: 7px; }
 }
 
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  overflow: hidden;
-  &__item {
-    display: block;
-    opacity: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
-
-    }
-    &.active {
-      position: relative;
-      opacity: 1;
-      transition: all .3s linear;
-    }
-  }
-  &__prev, &__next {
-    position: absolute;
-    opacity: 0;
-    background: none;
-    top: 50%;
-    height: 12px;
-    width: 12px;
-    border: 3px solid white;
-    border-bottom: none;
-    border-right: none;
-    z-index: 1;
-    outline: none;
-    transition: .3s;
-  }
-  &:hover &__prev, &:hover &__next {
-    opacity: 1;
-  }
-  &__prev {
-    left: 7%;
-    transform: rotate(-45deg) translate(50%,-50%);
-  }
-  &__next {
-    right: 7%;
-    transform: rotate(135deg) translate(-50%, 50%);
-  }
-  &__dots {
-    position: absolute;
-    display: flex;
-    right: 5%;
-    bottom: 11%;
-  }
-  &__dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 2px;
-    border: 1px solid white;
-    border-radius: 50%;
-    &.active {
-      background-color: white;
-    }
-  }
-}
-
 .circle-diagram {
   display: flex;
   align-items: flex-end;
@@ -473,84 +395,3 @@
 }
 
 .opened-datepick {.datepicker-inline { display: block;}}
-
-.room-card {
-  height: 340px;
-  width: 356px;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: white;
-  box-shadow: $shadow;
-  &__carousel { 
-    height: 60%;
-    @media(max-width: '400px') {
-      height: 50%;
-    }
-  }
-  &__description { 
-    height: 40%;
-    @media(max-width: '400px') {
-      height: 50%;
-    }
-  }
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    padding: 8% 7% 3%;
-    @media(max-width: '400px') {
-      flex-direction: column;
-      align-items: center;
-    }
-    .number {
-      display: flex;
-      align-items: flex-end;
-      &__prefix {
-        font-size: 1.25rem;
-        padding-right: 4px;
-      }
-      &__value { padding-right: 9px; font-size: 1.625rem; line-height: 31px;}
-      &__lux { color: $Purple; }
-    }
-    .cost {
-      display: flex;
-      align-items: flex-end;
-      &__rubles {
-        font-size: 1.125rem;
-        letter-spacing: 1px;
-        color: $DarkShade50;
-      }
-      &__period {
-        font-size: 1rem;
-        line-height: 26px;
-        color: $DarkShade50;
-      }
-    }
-  }
-  &__spacer {
-    display: block;
-    height: 1px;
-    background-color: $DarkShade25;
-    width: 86%;
-    margin: 0 auto;
-  }
-  &__rating {
-    padding: 4% 7.6% 8%;
-    .rating { 
-      display: flex;
-      justify-content: space-between;
-      @media(max-width: '400px') {
-        flex-direction: column;
-        align-items: center;
-      }
-      &__reviews {
-        display: flex;
-        align-items: center;
-        color: $DarkShade25;
-      }
-      &__count { font-size: 1.125rem; color: $DarkShade50;}
-    }
-  }  
-  @media(max-width: '400px') {
-    height: 100%;
-  }
-}

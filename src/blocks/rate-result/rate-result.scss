@@ -1,0 +1,11 @@
+.rateresult {
+  display: inline-block;
+  user-select: none;
+  label {
+    font-size: 1.7rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.8px;
+    color: $Purple;
+    float: left;
+  }
+}
