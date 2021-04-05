@@ -1,0 +1,23 @@
+include ../carousel/carousel.pug
+include ../rate-result/rate-result.pug
+
+mixin room-card(props)
+  - var { reference, images, number, isLux, cost, rating, reviews } = props
+  .room-card
+    .room-card__carousel
+      +carousel(images)
+    a.room-card__description(href=reference)
+      .room-card__header
+        .room-card__number
+          label.room-card__prefix №
+          h2.room-card__value=number
+          label.room-card__lux=isLux ? "люкс" : ""
+        .room-card__cost
+          label.room-card__rubles=cost + "₽"
+          p.room-card__period в сутки
+      .room-card__spacer
+      .room-card__rating
+        +rateresult(number + "__rate", rating)
+        .room-card__reviews
+          label.room-card__count=reviews
+          p.room-card__postfix &nbsp;Отзывов
