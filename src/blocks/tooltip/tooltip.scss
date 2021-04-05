@@ -1,0 +1,31 @@
+.help-info {
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+  height: 20px;
+  width: 20px;
+  border: 2px solid $DarkShade25;
+  border-radius: 50%;
+  color: $DarkShade25;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.125rem;
+  &:hover::before {
+    content: attr(data-prompt);
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    z-index: 5;
+    background: white;
+    border: 2px solid $DarkShade25;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    color: $DarkShade;
+    font-weight: normal;
+    text-align: justify;
+    font-size: 0.85rem;
+    padding: 3px;
+  }
+}

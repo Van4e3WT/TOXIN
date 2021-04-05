@@ -1,0 +1,52 @@
+include ../twin-datepick/twin-datepick.pug
+include ../dropdown-absolute/dropdown-absolute.pug
+include ../tooltip/tooltip.pug
+include ../button/button.pug
+
+mixin total-card(number, isLux, cost, addedClasses)
+  .total-card(class=`${addedClasses}`)
+    .total-card__header
+      .total-card__room-number
+        label.total-card__prefix №
+        h1.total-card__number=number
+        if isLux
+          label.room-number__lux="люкс"
+      .total-card__room-cost
+        label.total-card__rubles=cost + "₽"
+        p.total-card__period в сутки
+    .total-card__body
+      +twin-datepick("Прибытие", "Выезд", "total-card__input")
+      label.total-card__label Гости
+      +dropdown-absolute({
+        wordforms: ["гость", "гостя", "гостей"],
+        items: ["Взрослые", "Дети", "Младенцы"],
+        isOpen: false,
+        defaultText: "Сколько гостей",
+        addedClasses: "total-card__input"
+      })
+      .total-card__calculate
+        .total-card__product
+          .total-card__position
+            span.total-card__cost=`${cost}₽`
+            span.total-card__split &nbsp;x&nbsp;
+            span.total-card__peroid 4 суток
+          p.total-card__period-cost=`${cost * 4}₽`
+        .total-card__product
+          .total-card__position.total-card__position_service
+            span.total-card__cost Сбор за услуги:&nbsp; скидка 2&nbsp;179₽
+            +tooltip("Всплывающая подсказка")
+          p.total-card__period-cost 0₽
+        .total-card__product
+          .total-card__position.total-card__position_service
+            span.total-card__cost Сбор за дополнительные услуги
+            +tooltip("Всплывающая подсказка")
+          p.total-card__period-cost 300₽
+    .total-card__total
+      h3.total-card__result Итого
+      .total-card__space
+      h3.total-card__cost 38081₽
+    +button({
+      reference: "#",
+      content: "Забронировать",
+      modificator: "send-button"
+    })
