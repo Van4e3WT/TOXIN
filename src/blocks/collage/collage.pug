@@ -1,0 +1,7 @@
+mixin collage(images, addedClasses)
+  .collage(class=`${addedClasses}`)
+    each image, i in images
+      if !(i % 3)
+        img.collage__img.collage__img_main(src=image)
+      else
+        img.collage__img.collage__img_minor(src=image)

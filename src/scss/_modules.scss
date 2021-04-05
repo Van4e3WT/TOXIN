@@ -82,38 +82,6 @@
   }
 }
 
-.help-info {
-  display: inline-block;
-  position: relative;
-  flex-shrink: 0;
-  height: 27px;
-  width: 27px;
-  border: 2px solid $DarkShade25;
-  border-radius: 50%;
-  color: $DarkShade25;
-  text-align: center;
-  font-weight: bold;
-  line-height: 25px;
-  &:hover::before {
-    content: attr(data-prompt);
-    position: absolute;
-    width: auto;
-    height: auto;
-    left: 15px; top: -37px;
-    z-index: 5;
-    background: white;
-    border: 2px solid $DarkShade25;
-    border-radius: 10px;
-    border-bottom-left-radius: 0;
-    color: $DarkShade;
-    font-weight: normal;
-    text-align: justify;
-    font-size: 0.875rem;
-    line-height: 18px;
-    padding: 3px;
-  }
-}
-
 .bullet-list {
   max-width: 345px;
   &__item {
@@ -164,30 +132,6 @@
   }
 }
 
-.privilege {
-  padding: 27px 4px;
-  display: flex;
-  align-items: center;
-  max-width: 370px;
-  border-bottom: 1px solid $DarkShade10;
-  &:last-child {
-    border: none;
-  }
-  &__img {
-    img {
-      display: block;
-    }
-  }
-  &__text {
-    padding-left: 20px;
-    color: $DarkShade75;
-    label {
-      text-transform: none;
-      font-size: 1.125rem;
-    }
-  }
-}
-
 .comment {
   padding: 5px 3px;
   &__header {
@@ -205,142 +149,10 @@
   &__description { margin-left: 7px; }
 }
 
-.circle-diagram {
-  display: flex;
-  align-items: flex-end;
-  min-width: 462px;
-  padding: 24px 0;
-  &__wrapper { position: relative; margin-right: 38px;}
-  &__data {
-    position: absolute;
-    color: $Purple;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    line-height: 29px;
-  }
-  &__count { font-family: 'OpenSans'; font-size: 1.875rem;}
-  &__votes { font-family: 'Montserrat'; font-size: 1.25rem; font-weight: bold;}
-  &__chart {
-    fill: none;
-    stroke-width: 1.5px;
-    transform: rotate(90deg);
-  }
-  &__unit:hover {
-    stroke-width: 3.5px;
-    transition: .3s;
-  }
-  .description {
-    padding: 8px 0;
-    &__item {
-      display: flex;
-      align-items: center;
-    }
-    &__perfect, &__good, &__normal, &__bad { 
-      height: 13px;
-      width: 13px;
-      margin-right: 9px;
-      border-radius: 50%;
-      
-    }
-    &__perfect {background: linear-gradient(to top, #FFE39C, #FFBA9C);}
-    &__good {background: linear-gradient(to top,#8BA4F9, #BC9CFF);}
-    &__normal {background: linear-gradient(to top, #66D2EA, #6FCF97);}
-    &__bad {background: linear-gradient(to top,#909090, #3D4975);}
-  }
-  @media (max-width: '576px') {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-width: 0;
-  }
-}
-
 .rules {
   &__header {
     margin-bottom: 24px;
     margin-left: 28px;
-  }
-}
-
-.total-card {
-  background-color: white;
-  max-width: 500px;
-  padding: 40px 40px;
-  border-radius: 5px;
-  box-shadow: $shadow;
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-top: 12px;
-    padding-bottom: 22px;
-    .number {
-      display: flex;
-      align-items: flex-end;
-      &__prefix {
-        font-size: 1.25rem;
-        padding-right: 4px;
-      }
-      &__value { padding-right: 9px; }
-      &__lux { color: $Purple; }
-    }
-    .cost {
-      display: flex;
-      align-items: flex-start;
-      &__rubles {
-        font-size: 1.125rem;
-        letter-spacing: 1px;
-        color: $DarkShade50;
-      }
-      &__period {
-        font-size: 1rem;
-        line-height: 26px;
-        color: $DarkShade50;
-      }
-    }
-    @media (max-width: '430px') { flex-direction: column; align-items: center;}
-  }
-  &__body {
-    padding-bottom: 20px;
-    .calculate {
-      span {
-        line-height: 26px;
-      }
-      &__item {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 15px;
-        @media (max-width: '430px') { flex-direction: column; align-items: center;}
-      }
-      .additional-service__position, .service__position {
-        display: flex;
-        width: 317px;
-        justify-content: space-between;
-        @media (max-width: '430px') { width: 100%;}
-      }
-    }
-  }
-  &__total {
-    padding-bottom: 25px;
-    .total {
-      display: flex;
-      align-items: flex-start;
-      &__result { font-size: 1.625rem; flex-shrink: 0;}
-      &__space { 
-        border-bottom: 2px dotted $DarkShade25;
-        width: 500px;
-        margin: 0 5px;
-        height: 26px;
-        flex-shrink: 2;
-      }
-      &__cost {
-        font-family: 'Montserrat';
-        line-height: 35px;
-        flex-shrink: 0;
-      }
-    }
   }
 }
 
