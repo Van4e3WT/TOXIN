@@ -1,0 +1,52 @@
+.pagination {
+  $side: 40px;
+  font-size: 0.75rem;
+  padding-right: 13px;
+  &__items {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $side;
+    width: $side;
+    border-radius: 50%;
+    color: $DarkShade50;
+    &.active {
+      background: $gradientColor;
+      font-weight: bold;
+      color: white;
+    }
+    &.arrow {
+      background: $gradientColorSecond;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        right: 14px;
+        height: 10px;
+        width: 10px;
+        border: 2px solid white;
+        border-left: none;
+        border-bottom: none;
+        transform: rotate(45deg);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        right: 13px;
+        height: 2px;
+        width: 15px;
+        background-color: white;
+      }
+    }
+  }
+  &__info {
+    width: 100%;
+    font-size: 0.85rem;
+    text-align: center;
+    color: $DarkShade75;
+  }
+}

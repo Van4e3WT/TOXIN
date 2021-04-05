@@ -17,22 +17,6 @@ mixin ratebutton(name, inputRate, isReadonly)
       input(class="ratebutton__input", type="radio", name=name, id=name+"-"+i, checked= i == inputRate)
       label(class="ratebutton__label", for=name+"-"+i)
 
-mixin paginationPlug(pages, page)
-  .pagination(id="pagination-block")
-    .pagination__items
-      each i in [0,1,2,3,4,5]
-        if i == 0
-          .pagination__item.active=page+i
-        else if i == 3
-          .pagination__item="..."
-        else if i == 4
-          .pagination__item=pages
-        else if i == 5
-          .pagination__item.arrow
-        else
-          .pagination__item=page+i
-    .pagination__info 1 – 12 из 100+ вариантов аренды
-
 mixin bulletList(bullets)
   ul.bullet-list
     each bullet in bullets
