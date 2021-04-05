@@ -1,5 +1,7 @@
 include ../carousel/carousel.pug
 include ../rate-result/rate-result.pug
+include ../room-number/room-number.pug
+include ../room-cost/room-cost.pug
 
 mixin room-card(props)
   - var { reference, images, number, isLux, cost, rating, reviews } = props
@@ -8,13 +10,8 @@ mixin room-card(props)
       +carousel(images)
     a.room-card__description(href=reference)
       .room-card__header
-        .room-card__number
-          label.room-card__prefix №
-          h2.room-card__value=number
-          label.room-card__lux=isLux ? "люкс" : ""
-        .room-card__cost
-          label.room-card__rubles=cost + "₽"
-          p.room-card__period в сутки
+        +room-number(number, isLux)
+        +room-cost(cost)
       .room-card__spacer
       .room-card__rating
         +rateresult(number + "__rate", rating)

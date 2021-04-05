@@ -1,0 +1,16 @@
+.room-number {
+  display: flex;
+  align-items: flex-end;
+  &__prefix {
+    font-size: 0.85rem;
+    padding-right: 5px;
+  }
+  &__value {
+    padding-right: 9px;
+    font-size: 1.35rem;
+    line-height: 1.5rem;
+  }
+  &__lux {
+    color: $Purple;
+  }
+}

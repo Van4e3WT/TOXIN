@@ -1,0 +1,6 @@
+mixin room-number(number, isLux)
+  .room-number
+    label.room-number__prefix №
+    h2.room-number__value=number
+    if isLux
+      label.room-number__lux="люкс"

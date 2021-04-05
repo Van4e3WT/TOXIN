@@ -16,31 +16,6 @@
     justify-content: space-between;
     padding: 18px 16px 13px 20px;
   }
-  &__number, &__cost {
-    display: flex;
-    align-items: flex-end;
-  }  
-  &__prefix {
-    font-size: 0.85rem;
-    padding-right: 5px;
-  }
-  &__value {
-    padding-right: 9px;
-    font-size: 1.35rem;
-    line-height: 1.5rem;
-  }
-  &__lux {
-    color: $Purple;
-  }
-  &__rubles {
-    font-size: 0.85rem;
-    color: $DarkShade50;
-    padding-right: 3px;
-  }
-  &__period {
-    font-size: 0.75rem;
-    color: $DarkShade50;
-  }
   &__spacer {
     display: block;
     height: 1px;
