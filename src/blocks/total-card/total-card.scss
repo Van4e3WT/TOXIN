@@ -4,6 +4,8 @@ $media-size: 420px;
   background-color: white;
   max-width: 383px;
   width: 100%;
+  max-height: 510px;
+  overflow: hidden;
   padding: 40px 31px 30px;
   border-radius: 5px;
   box-shadow: $shadow;
@@ -81,5 +83,8 @@ $media-size: 420px;
     margin: 0 5px;
     height: 1.5rem;
     flex-shrink: 2;
+  }
+  @media(max-width: $media-size) {
+    max-height: none;
   }
 }

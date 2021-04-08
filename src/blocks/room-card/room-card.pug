@@ -4,7 +4,7 @@ include ../room-number/room-number.pug
 include ../room-cost/room-cost.pug
 
 mixin room-card(props)
-  - var { reference, images, number, isLux, cost, rating, reviews } = props
+  - var { reference, images, number=0, isLux=false, cost=0, rating=0, reviews=0 } = props
   .room-card
     .room-card__carousel
       +carousel(images)
