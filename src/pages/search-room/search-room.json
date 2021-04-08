@@ -1,172 +1,170 @@
-{
-  "rooms": [
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 888,
-      "isLux": true,
-      "cost": 9990,
-      "rating": 5,
-      "reviews": 145
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/840.jpg",
-        "assets/images/rooms/980.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/444.jpg"
-      ],
-      "number": 840,
-      "isLux": false,
-      "cost": 9990,
-      "rating": 4,
-      "reviews": 65
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/980.jpg",
-        "assets/images/rooms/856.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 980,
-      "isLux": true,
-      "cost": 8500,
-      "rating": 3,
-      "reviews": 35
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/856.jpg",
-        "assets/images/rooms/980.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 856,
-      "isLux": false,
-      "cost": 7300,
-      "rating": 5,
-      "reviews": 19
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/740.jpg",
-        "assets/images/rooms/982.jpg",
-        "assets/images/rooms/856.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 740,
-      "isLux": false,
-      "cost": 6000,
-      "rating": 4,
-      "reviews": 44
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/982.jpg",
-        "assets/images/rooms/840.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/740.jpg"
-      ],
-      "number": 982,
-      "isLux": false,
-      "cost": 5800,
-      "rating": 3,
-      "reviews": 56
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/678.jpg",
-        "assets/images/rooms/982.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 678,
-      "isLux": false,
-      "cost": 5500,
-      "rating": 5,
-      "reviews": 45
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/450.jpg",
-        "assets/images/rooms/678.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 450,
-      "isLux": false,
-      "cost": 5300,
-      "rating": 4,
-      "reviews": 39
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/350.jpg",
-        "assets/images/rooms/840.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 350,
-      "isLux": false,
-      "cost": 5000,
-      "rating": 3,
-      "reviews": 77
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/666.jpg",
-        "assets/images/rooms/840.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 666,
-      "isLux": false,
-      "cost": 5000,
-      "rating": 5,
-      "reviews": 25
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/444.jpg",
-        "assets/images/rooms/840.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 444,
-      "isLux": false,
-      "cost": 5000,
-      "rating": 3,
-      "reviews": 15
-    },
-    {
-      "reference": "room.html",
-      "images": [
-        "assets/images/rooms/352.jpg",
-        "assets/images/rooms/840.jpg",
-        "assets/images/rooms/888.jpg",
-        "assets/images/rooms/840.jpg"
-      ],
-      "number": 352,
-      "isLux": false,
-      "cost": 5000,
-      "rating": 3,
-      "reviews": 55
-    }
-  ]
-}
+[
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 888,
+    "isLux": true,
+    "cost": 9990,
+    "rating": 5,
+    "reviews": 145
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/840.jpg",
+      "assets/images/rooms/980.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/444.jpg"
+    ],
+    "number": 840,
+    "isLux": false,
+    "cost": 9990,
+    "rating": 4,
+    "reviews": 65
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/980.jpg",
+      "assets/images/rooms/856.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 980,
+    "isLux": true,
+    "cost": 8500,
+    "rating": 3,
+    "reviews": 35
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/856.jpg",
+      "assets/images/rooms/980.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 856,
+    "isLux": false,
+    "cost": 7300,
+    "rating": 5,
+    "reviews": 19
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/740.jpg",
+      "assets/images/rooms/982.jpg",
+      "assets/images/rooms/856.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 740,
+    "isLux": false,
+    "cost": 6000,
+    "rating": 4,
+    "reviews": 44
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/982.jpg",
+      "assets/images/rooms/840.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/740.jpg"
+    ],
+    "number": 982,
+    "isLux": false,
+    "cost": 5800,
+    "rating": 3,
+    "reviews": 56
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/678.jpg",
+      "assets/images/rooms/982.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 678,
+    "isLux": false,
+    "cost": 5500,
+    "rating": 5,
+    "reviews": 45
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/450.jpg",
+      "assets/images/rooms/678.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 450,
+    "isLux": false,
+    "cost": 5300,
+    "rating": 4,
+    "reviews": 39
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/350.jpg",
+      "assets/images/rooms/840.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 350,
+    "isLux": false,
+    "cost": 5000,
+    "rating": 3,
+    "reviews": 77
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/666.jpg",
+      "assets/images/rooms/840.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 666,
+    "isLux": false,
+    "cost": 5000,
+    "rating": 5,
+    "reviews": 25
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/444.jpg",
+      "assets/images/rooms/840.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 444,
+    "isLux": false,
+    "cost": 5000,
+    "rating": 3,
+    "reviews": 15
+  },
+  {
+    "reference": "room.html",
+    "images": [
+      "assets/images/rooms/352.jpg",
+      "assets/images/rooms/840.jpg",
+      "assets/images/rooms/888.jpg",
+      "assets/images/rooms/840.jpg"
+    ],
+    "number": 352,
+    "isLux": false,
+    "cost": 5000,
+    "rating": 3,
+    "reviews": 55
+  }
+]

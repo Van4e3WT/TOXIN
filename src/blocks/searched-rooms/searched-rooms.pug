@@ -1,8 +1,7 @@
 include ../room-card/room-card.pug
 include ../pagination/pagination.pug
 
-mixin searched-rooms(json)
-  - let { rooms } = json;
+mixin searched-rooms(rooms)
       .searched-rooms
         h1.searched-rooms__header Номера, которые мы для вас подобрали
         .searched-rooms__room-cards
