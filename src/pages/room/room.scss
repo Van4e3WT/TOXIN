@@ -1,0 +1,62 @@
+.room {
+  &__collage {
+    margin-bottom: 70px;
+  }
+  &__body {
+    width: 100%;
+    display: grid;
+    margin-bottom: 80px;
+    grid-template-columns: 31% 36.2% 32.8%;
+    grid-template-rows: minmax(303px, auto);
+    grid-template-areas:'about reviews check'
+                        'comments comments check';
+                        // 'rules cancel check';
+    @media(max-width: 1200px) {
+      grid-template-columns: repeat(2, 50%);
+      grid-template-rows: auto;
+      grid-row-gap: 30px;
+      justify-items: center;
+      grid-template-areas:'about check'
+                          'reviews check'
+                          'comments comments';
+                          // 'rules cancel';
+    }
+    @media(max-width: 800px) {
+      grid-template-columns: 100%;
+      grid-row-gap: 50px;
+      grid-template-areas:'about' 'reviews' 'check' 'comments' 'rules' 'cancel';
+    }
+  }
+  &__about {
+    grid-area: about;
+  }
+  &__privilege {
+    padding: 20px 4px;
+  }
+  &__reviews {
+    grid-area: reviews;
+  }
+  &__header {
+    margin-bottom: 18px;
+  }
+  &__check {
+    grid-area: check;
+    // @media(min-width: 1024px) {justify-self: right;}
+    // @media(max-width: 512px) {width: 100%;}
+  }
+  &__comments {
+    grid-area: comments;
+    // margin-bottom: 37px;
+    // &__review {
+    //   margin-top: 23px; 
+    //   padding-right: 95px;
+    //   @media (max-width: 1560px) { padding: 0; }
+    // }
+  }
+  .rules {grid-area: rules;}
+  .cancel {
+    grid-area: cancel;
+    h2 { margin-bottom: 24px; }
+    p {max-width: 430px;}
+  }
+}
