@@ -1,13 +1,6 @@
 mixin openedDatepick()
   .opened-datepick.js-opened-datepick
 
-mixin likebutton(id, count, isChecked)
-  .likebutton
-    input(type="checkbox", id=id, checked=isChecked)
-    label(for=id)
-      .heart
-      .counter=count
-
 mixin ratebutton(name, inputRate, isReadonly)
   .ratebutton
     each i in [5,4,3,2,1]
@@ -18,18 +11,6 @@ mixin bulletList(bullets)
   ul.bullet-list
     each bullet in bullets
       li.bullet-list__item=bullet
-
-mixin comment(avatar, username, date, likes, isLiked, description)
-  .comment
-    .comment__header
-      img(src=avatar, height="54px", width="54px")
-      .comment__user
-        label=username
-        .comment__date=date
-    .comment__body
-      .comment_like
-        +likebutton(username+"__likebtn", likes, isLiked)
-      .comment__description=description
 
 //- *********** UI-kit ***********
 

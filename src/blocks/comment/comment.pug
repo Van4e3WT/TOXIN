@@ -1,0 +1,14 @@
+include ../like-button/like-button.pug
+
+mixin comment(props)
+  - let { image, username="Пользователь", date="сегодня", likes="0", isLiked=false, content, addedClasses="" } = props
+  .comment(class=`${addedClasses}`)
+    .comment__header
+      img.comment__image(src=image)
+      .comment__user
+        label.comment__username=username
+        .comment__date=date
+    .comment__body
+      .comment__like
+        +like-button(likes, isLiked)
+      .comment__content=content

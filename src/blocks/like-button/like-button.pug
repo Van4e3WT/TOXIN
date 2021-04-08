@@ -1,0 +1,6 @@
+mixin like-button(count, isChecked)
+  label.like-button
+    input.like-button__input(type="checkbox", checked=isChecked)
+    .like-button__wrapper
+      .like-button__heart
+      .like-button__counter=count
