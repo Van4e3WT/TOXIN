@@ -1,7 +1,11 @@
 include ../checkbox/checkbox.pug
 
+//- @param {object} with properties
+//- content - {string} dropdowns title
+//- isOpen - {boolean} by default false
+//- checkboxes - {Array<string>} array content for included checkboxes
 mixin dropdown-relative(props)
-  - var { content="Dropdown relative", isOpen=false, checkboxes=[] } = props
+  - let { content="Dropdown relative", isOpen=false, checkboxes=[] } = props
   .dropdown-relative
     label.dropdown-relative__content(class= isOpen ? "active" : "")=content
     .dropdown-relative__list

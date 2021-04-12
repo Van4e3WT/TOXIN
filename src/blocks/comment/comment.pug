@@ -1,7 +1,15 @@
 include ../like-button/like-button.pug
 
+//- @param {object} with properties
+//- image - {string} image link
+//- user - {string} username
+//- date - {string} converted to string format date
+//- likes - {number/string} count likes
+//- isLiked - {boolean} default condition like-button
+//- content - {string} main content comment
+//- addedClasses - {string} addition block classes
 mixin comment(props)
-  - let { image, username="Пользователь", date="сегодня", likes="0", isLiked=false, content, addedClasses="" } = props
+  - let { image, username="Пользователь", date="сегодня", likes=0, isLiked=false, content, addedClasses="" } = props
   .comment(class=`${addedClasses}`)
     .comment__header
       img.comment__image(src=image)

@@ -3,8 +3,16 @@ include ../rate-result/rate-result.pug
 include ../room-number/room-number.pug
 include ../room-cost/room-cost.pug
 
+//- @param {object} with properties
+//- reference - {string} link to room
+//- images - {Array<string>} array images links
+//- number - {number/string} number room
+//- isLux - {number/string} is it lux
+//- cost - {number/string} room rate per night
+//- rating - {number/string} stars rating
+//- reviews - {string} count of reviews
 mixin room-card(props)
-  - var { reference, images, number=0, isLux=false, cost=0, rating=0, reviews=0 } = props
+  - let { reference, images, number=0, isLux=false, cost=0, rating=0, reviews=0 } = props
   .room-card
     .room-card__carousel
       +carousel(images)

@@ -12,7 +12,7 @@ mixin dropdown-absolute__counter-block(defVal, key)
 //- addedClasses - {string} classes for dropdown-absolute
 //- defaultValues - {Array<number>} / {Array<string>} default values items
 mixin dropdown-absolute(props)
-  - var { wordforms, items, isOpen=false, defaultText="", addedClasses="", defaultValues } = props
+  - let { wordforms, items, isOpen=false, defaultText="", addedClasses="", defaultValues } = props
   if (wordforms[0] instanceof Array)
     .dropdown-absolute(several-word-forms, class=`${addedClasses}`)
       input.dropdown-absolute__output(default=defaultText, type="text", readonly)

@@ -1,4 +1,12 @@
+//- @param {object} with properties
+//- name - {string} slider name
+//- minValue - {number/string} minimal slider's value
+//- maxValue - {number/string} maximal slider's value
+//- value1 - {number/string} default value first thumb
+//- value2 - {number/string} default value second thumb
+//- step - {number/string} step thumbs
+//- sliderType - {string} type of slider
 mixin range-slider(props)
-  - var { name, minValue, maxValue, value1, value2, step, sliderType } = props
+  - let { name, minValue, maxValue, value1, value2, step, sliderType } = props
   .range-slider
     .js-multislider-v43(data-description=name data-min-value=minValue data-max-value=maxValue data-value1=value1 data-value2=value2 data-step=step data-slider-type=sliderType)
