@@ -4,13 +4,12 @@
   justify-content: center;
   background-color:#f4f4f6;
   text-align: center;
-  padding: 52px 0;
   &__copyrights {
     display: inline-block;
     padding-top: 155px;
     padding-bottom: 123px;
     width: 1015px;
-    margin: 0 auto;
+    margin: 52px auto;
     background-color: white;
     box-shadow: $shadow;
     @media (max-width:1125px) { width: 90%; }

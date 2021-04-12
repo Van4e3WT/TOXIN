@@ -10,8 +10,17 @@ mixin register-card()
       input.register-card__field(type="text", name="name", placeholder="Имя")
       input.register-card__field(type="text", name="surname", placeholder="Фамилия")
     .register-card__radio-group
-      +radio-button("Мужчина", "sexRegistration", true)
-      +radio-button("Женщина", "sexRegistration", false)
+      +radio-button({
+        content: "Мужчина",
+        name: "sexRegistration",
+        isChecked: true,
+        addedClasses: "register-card__radio"
+      })
+      +radio-button({
+        content: "Женщина",
+        name: "sexRegistration",
+        addedClasses: "register-card__radio"
+      })
     .register-card__birthday
       label.register-card__label Дата рождения
       +date-solo()
