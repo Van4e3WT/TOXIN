@@ -1,0 +1,26 @@
+.rate-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  &__label {
+    font-size: 1.7rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.8px;
+    color: $Purple;
+    float: right;
+    cursor: pointer;
+    &::before {
+      content: '☆';
+    }
+  }
+  &__label:hover::before,
+  &__label:hover ~ &__label::before,
+  &__input:checked ~ &__label::before {
+      content: '★';
+  }
+}

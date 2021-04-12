@@ -22,7 +22,7 @@ mixin room-card(props)
         +room-cost(cost)
       .room-card__spacer
       .room-card__rating
-        +rateresult(number + "__rate", rating)
+        +rate-result(rating)
         .room-card__reviews
           label.room-card__count=reviews
           p.room-card__postfix &nbsp;Отзывов

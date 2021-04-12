@@ -1,5 +1,5 @@
-mixin toggle-button(content, isChecked)
-  label.toggle-button
+mixin toggle-button(content, isChecked="false", addedClasses="")
+  label.toggle-button(class=`${addedClasses}`)
     input.toggle-button__input(type="checkbox", checked=isChecked)
     .toggle-button__switch
     .toggle-button__content=content

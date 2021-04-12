@@ -1,6 +1,6 @@
 .date-solo-range {
   position: relative;
-  max-width: 265px;
+  max-width: 268px;
   &::before {
     position: absolute;
     content: '';
@@ -13,8 +13,5 @@
     border: 2px solid #1F20417F;
     border-top: 0;
     border-left: 0;
-  }
-  &__input {
-    width: 100%;
   }
 }

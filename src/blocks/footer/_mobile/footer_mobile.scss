@@ -6,17 +6,18 @@
   text-align: center;
   &__copyrights {
     display: inline-block;
-    padding-top: 155px;
-    padding-bottom: 123px;
-    width: 1015px;
-    margin: 52px auto;
+    padding-top: 116px;
+    padding-bottom: 96px;
+    max-width: 768px;
+    width: 100%;
+    margin: 40px auto;
     background-color: white;
     box-shadow: $shadow;
     @media (max-width:1125px) { width: 90%; }
   }
   &__logo {
     display: inline-block;
-    padding: 4px 0 28px 14px;
+    margin: 4px 0 18px 14px;
   }
   &__text {
     letter-spacing: 0.1px;
@@ -26,12 +27,12 @@
     display: inline-flex;
   }
   &__link {
-    padding: 33px 14px;
+    margin: 22px 11px;
     &:first-child {
-      padding-left: 0;
+      margin-left: 0;
     }
     &:last-child {
-      padding-right: 0;
+      margin-right: 0;
     }
   }
   @media (max-width:1000px) { display: flex; }

@@ -1,7 +1,7 @@
-.rateresult {
+.rate-result {
   display: inline-block;
   user-select: none;
-  label {
+  &__star {
     font-size: 1.7rem;
     line-height: 1.3rem;
     letter-spacing: 0.8px;

@@ -1,7 +1,7 @@
-mixin rateresult(name, inputRate)
-  .rateresult
+mixin rate-result(inputRate)
+  .rate-result
     each i in [1,2,3,4,5]
       if i <= inputRate
-        label ★
+        label.rate-result__star ★
       else
-        label ☆
+        label.rate-result__star ☆
