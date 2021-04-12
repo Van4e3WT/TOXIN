@@ -3,7 +3,7 @@
 const BLOCKNAME = 'carousel';
 
 function carouselInit() {
-  const carousels = document.querySelectorAll(`.${BLOCKNAME}`);
+  const carousels = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   carousels.forEach((carousel) => {
     const items = carousel.querySelectorAll(`.${BLOCKNAME}__item`);

@@ -24,7 +24,7 @@ function updateCounterBlock(item) {
 }
 
 function addDropdownAbsListeners() {
-  const dropdowns = document.querySelectorAll(`.${BLOCKNAME}`);
+  const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   dropdowns.forEach((dropdown, i) => {
     const dropdownOutput = dropdown.querySelector(`.${BLOCKNAME}__output`);

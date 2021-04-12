@@ -14,7 +14,7 @@ mixin dropdown-absolute__counter-block(defVal, key)
 mixin dropdown-absolute(props)
   - let { wordforms, items, isOpen=false, defaultText="", addedClasses="", defaultValues } = props
   if (wordforms[0] instanceof Array)
-    .dropdown-absolute(several-word-forms, class=`${addedClasses}`)
+    .dropdown-absolute.js-dropdown-absolute(several-word-forms, class=`${addedClasses}`)
       input.dropdown-absolute__output(default=defaultText, type="text", readonly)
       .dropdown-absolute__list(class= isOpen ? "dropdown-absolute__list_active" : "")
         each item, key in wordforms
@@ -22,7 +22,7 @@ mixin dropdown-absolute(props)
                 .dropdown-absolute__item-type=item[1]
                 +dropdown-absolute__counter-block(defaultValues, key)
   else
-      .dropdown-absolute(wordforms=wordforms.join(', '), class=`${addedClasses}`)
+      .dropdown-absolute.js-dropdown-absolute(wordforms=wordforms.join(', '), class=`${addedClasses}`)
         input.dropdown-absolute__output(default=defaultText, type="text", readonly)
         .dropdown-absolute__list(class= isOpen ? "dropdown-absolute__list_active" : "")
           each item, key in items

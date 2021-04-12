@@ -3,7 +3,7 @@
 const BLOCKNAME = 'dropdown-relative';
 
 function addDropdownRelListeners() {
-  const dropdowns = document.querySelectorAll(`.${BLOCKNAME}`);
+  const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   function toggleActiveDropdown() {
     this.classList.toggle(`${BLOCKNAME}_active`);
