@@ -1,5 +1,6 @@
 .uikit {
-  width: 1920px;
+  width: 1440px;
+  margin: 0 auto;
   .colors-and-fonts {
     display: block;
     &__row {
@@ -60,27 +61,19 @@
     }
   }
   .form-elements {
-    .grid {
+    &__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 38.4% 33.8% 27.8%;
       grid-template-rows: repeat(4, auto);
       grid-column-gap: 0px;
       grid-row-gap: 0px;
-      padding: 30px 0;
+      padding: 31px 0;
     }
-    .div1 {
-      grid-area: 1 / 1 / 2 / 2;
-      padding-right: 87px;
-      padding-bottom: 125px;
-      .wrapper { margin-bottom: 26.5px; }
+    &__div1 {
+      max-width: 322px;
     }
-    .div2 {
-      grid-area: 1 / 2 / 2 / 3;
-      padding: 0 88px 0 80px;
-      .wrapper {
-        margin-bottom: 44px;
-      }
-      label.header { margin-bottom: 16px; }
+    &__div2 {
+      max-width: 265px;
     }
     .div3 { 
       grid-area: 1 / 3 / 2 / 4;
@@ -123,22 +116,55 @@
     }
     .div10 { grid-area: 4 / 1 / 5 / 2; }
     .div11 { grid-area: 4 / 2 / 5 / 4; padding-left: 80px; padding-top: 35px;}
-    .promt {
-      font-size: 1rem;
+    &__promt {
+      font-size: 0.75rem;
       float: right;
       text-transform: uppercase;
-      line-height: 26px;
+      line-height: 0.85rem;
       color: $DarkShade50;
       letter-spacing: -0.2px;
+    }
+    &__rate {
+      display: inline-block;
+      margin-right: 17px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__like {
+      display: inline-block;
+      margin: 0 4px;
+    }
+    &__label {
+      margin-bottom: 5px;
+    }
+    &__mb-5 {
+      margin-bottom: 5px;
+    }
+    &__mb-10 {
+      margin-bottom: 10px;
+    }
+    &__mb-17 {
+      margin-bottom: 17px;
+    }
+    &__mb-20 {
+      margin-bottom: 20px;
+    }
+    &__mb-32 {
+      margin-bottom: 32px;
+    }
+    &__mb-40 {
+      margin-bottom: 40px;
+    }
+    &__mb-45 {
+      margin-bottom: 45px;
     }
   }
   .headers-and-footers {
     background-color: #F4F4F6;
     &__item {
-      padding: 30px 0 23px 0;
-      &:last-child {
-        margin-top: -60px;
-      }
+      margin-top: 29px;
+      margin-bottom: 40px;
     }
     .footer {
       display: block;

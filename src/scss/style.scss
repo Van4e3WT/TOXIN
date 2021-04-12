@@ -80,7 +80,7 @@ input {
   border-radius: 5px;
   padding: 14px 0 14px 14px;
   font-family: 'Montserrat';
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
   color: $DarkShade75;
   &::placeholder {
     color: $DarkShade25;
@@ -94,8 +94,6 @@ input {
   padding: 0 20px;
   margin: 0 auto;
 }
-
-@import '_uikit.scss';
 
 @import '../libs/air-datepicker/datepicker-fork.scss';
 
