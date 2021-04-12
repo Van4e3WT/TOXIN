@@ -97,9 +97,9 @@ input {
 
 @import '_uikit.scss';
 
-@import '_datepicker-fork.scss';
+@import '../libs/air-datepicker/datepicker-fork.scss';
 
-@import 'multislider-v43-fork.scss';
+@import '../libs/multislider-v43/multislider-v43-fork.scss';
 
 @import '../blocks/blocks-styles.scss';
 
