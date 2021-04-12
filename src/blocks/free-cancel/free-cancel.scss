@@ -1,0 +1,10 @@
+.free-cancel {
+  &__title {
+    margin-bottom: 18px;
+  }
+  &__content {
+    max-width: 330px;
+    line-height: 1.5rem;
+    color: $DarkShade75;
+  }
+}

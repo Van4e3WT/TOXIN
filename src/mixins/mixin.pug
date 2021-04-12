@@ -7,11 +7,6 @@ mixin ratebutton(name, inputRate, isReadonly)
       input(class="ratebutton__input", type="radio", name=name, id=name+"-"+i, checked= i == inputRate)
       label(class="ratebutton__label", for=name+"-"+i)
 
-mixin bulletList(bullets)
-  ul.bullet-list
-    each bullet in bullets
-      li.bullet-list__item=bullet
-
 //- *********** UI-kit ***********
 
 mixin svgUI()

@@ -5,6 +5,8 @@ include ../../blocks/room-privilege/room-privilege.pug
 include ../../blocks/circle-diagram/circle-diagram.pug
 include ../../blocks/total-card/total-card.pug
 include ../../blocks/comments/comments.pug
+include ../../blocks/bullet-list/bullet-list.pug
+include ../../blocks/free-cancel/free-cancel.pug
 
 block variables
   - let title = "Отель \"TOXIN\" №888"
@@ -43,9 +45,13 @@ block content
           +circle-diagram(260, "голосов", [50, 25, 25, 0])
         +total-card(888, true, 9900, "room__check")
         +comments(commentaries, "room__comments")
-//-         .rules
-//-           h2.rules__header Правила
-//-           +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после\xa013:00, а выезд до\xa012:00"])
-//-         .cancel
-//-           h2 Отмена
-//-           p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        +bullet-list({
+          title: "Правила",
+          addedClasses: "room__rules",
+          bullets: [
+            "Нельзя с питомцами",
+            "Без вечеринок и мероприятий",
+            "Время прибытия — после\xa013:00, а выезд до\xa012:00"
+          ]
+        })
+        +free-cancel("room__cancel")

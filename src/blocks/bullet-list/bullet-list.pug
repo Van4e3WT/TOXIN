@@ -1,0 +1,7 @@
+mixin bullet-list(props)
+  - let { title="Bullet list", bullets, addedClasses="" } = props
+  .bullet-list(class=`${addedClasses}`)
+    h3.bullet-list__title=title
+    ul.bullet-list__content
+      each bullet in bullets
+        li.bullet-list__item=bullet
