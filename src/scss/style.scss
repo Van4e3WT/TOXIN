@@ -35,25 +35,23 @@ main {
 h1 {
   font-family: 'OpenSans', 'Arial', 'sans-serif';
   font-weight: bold;
-  font-size: 1.52rem;
-  line-height: 1.95rem;
+  font-size: 1.5rem;
+  line-height: 1.85rem;
+  letter-spacing: 0.5px;
 }
 h2 {
-  font-family: 'OpenSans', 'Arial', 'sans-serif';
-  font-weight: bold;
-  font-size: 1.5rem;
-  letter-spacing: -0.1px;
-  line-height: 32px;
-  @media(max-width: 1024px) {
-    text-align: center;
-    font-size: 1.8rem;
-  }
-}
-h3 {
   font-family: 'Montserrat', 'Arial', 'sans-serif';
   font-weight: bold;
   font-size: 1.25rem;
   letter-spacing: -0.6px;
+}
+h3, label {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: $DarkShade;
+  letter-spacing: 0px;
 }
 h1, h2, h3, p {
   color: $DarkShade;
@@ -63,14 +61,6 @@ a {
 }
 ul {
   list-style: none;
-}
-label {
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: $DarkShade;
-  letter-spacing: 0px;
 }
 input {
   outline: none;

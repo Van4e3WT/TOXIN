@@ -6,8 +6,8 @@ include ../checkbox/checkbox.pug
 //- checkboxes - {Array<string>} array content for included checkboxes
 mixin dropdown-relative(props)
   - let { content="Dropdown relative", isOpen=false, checkboxes=[] } = props
-  .dropdown-relative.js-dropdown-relative
-    label.dropdown-relative__content(class= isOpen ? "active" : "")=content
+  .dropdown-relative.js-dropdown-relative(class= isOpen ? "dropdown-relative_active" : "")
+    label.dropdown-relative__content=content
     .dropdown-relative__list
       each i in checkboxes
         if typeof i === "string"

@@ -1,5 +1,7 @@
 .pagination {
   $side: 40px;
+
+  max-width: 255px;
   font-size: 0.75rem;
   padding-right: 13px;
   &__items {

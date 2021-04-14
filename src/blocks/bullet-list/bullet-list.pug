@@ -3,9 +3,10 @@
 //- bullets - {Array<string>} array bullet items
 //- addedClasses - {string} addition classes for block
 mixin bullet-list(props)
-  - let { title="Bullet list", bullets, addedClasses="" } = props
+  - let { title="", bullets, addedClasses="" } = props
   .bullet-list(class=`${addedClasses}`)
-    h3.bullet-list__title=title
+    if title
+      h2.bullet-list__title=title
     ul.bullet-list__content
       each bullet in bullets
         li.bullet-list__item=bullet

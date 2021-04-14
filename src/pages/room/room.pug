@@ -21,7 +21,7 @@ block content
     ], "room__collage")
     .container.room__body
         .room__about
-          h3 Сведения о номере
+          h2 Сведения о номере
           +room-privilege({
             image: "assets/images/privilege_comfort.svg",
             title: "Комфорт",
@@ -41,7 +41,7 @@ block content
             description: "Номер оснащен камином"
           })
         .room__reviews
-          h3.room__header Впечатления от номера
+          h2.room__header Впечатления от номера
           +circle-diagram(260, "голосов", [50, 25, 25, 0])
         +total-card(888, true, 9900, "room__check")
         +comments(commentaries, "room__comments")
