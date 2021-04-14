@@ -20,6 +20,19 @@ html(lang="ru-RU")
     include ../../blocks/like-button/like-button.pug
     include ../../blocks/rate-result/rate-result.pug
     include ../../blocks/rate-button/rate-button.pug
+    include ../../blocks/range-slider/range-slider.pug
+    include ../../blocks/button/button.pug
+    include ../../blocks/pagination/pagination.pug
+    include ../../blocks/dropdown-relative/dropdown-relative.pug
+    include ../../blocks/bullet-list/bullet-list.pug
+    include ../../blocks/room-privilege/room-privilege.pug
+    include ../../blocks/comment/comment.pug
+    include ../../blocks/landing-card/landing-card.pug
+    include ../../blocks/register-card/register-card.pug
+    include ../../blocks/total-card/total-card.pug
+    include ../../blocks/login-card/login-card.pug
+    include ../../blocks/opened-datepick/opened-datepick.pug
+    include ../../blocks/room-card/room-card.pug
 
     mixin svgUI()
       svg(width="108" height="108" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="padding:30px;")
@@ -35,6 +48,82 @@ html(lang="ru-RU")
           p=color
 
     .uikit
+      article.colors-and-fonts
+        +svgUI()
+        .container
+          .colors-and-fonts__grid
+            .colors-and-fonts__col
+              +color-itemUI("#1F2041", "Dark Shade 100%", "1")
+              +color-itemUI("#1F2041", "Dark Shade 75%", "0.75")
+              +color-itemUI("#1F2041", "Dark Shade 50%", "0.5")
+              +color-itemUI("#1F2041", "Dark Shade 25%", "0.25")
+              +color-itemUI("#1F2041", "Dark Shade 5%", "0.05")
+              +color-itemUI("#BC9CFF", "Purple", "1")
+              +color-itemUI("#6FCF97", "Green", "1")
+            .colors-and-fonts__column
+              .colors-and-fonts__text-item
+                h1.colors-and-fonts__text-description H1
+                h1 This one is the sub-section or widget title
+              .colors-and-fonts__text-item
+                h2.colors-and-fonts__text-description H2
+                h2 Next one is the item title inside widgets
+              .colors-and-fonts__text-item
+                label.colors-and-fonts__text-description H3
+                label This is a label or CTA text
+              .colors-and-fonts__text-item
+                p.colors-and-fonts__text-description Body
+                p
+                  |This is the body text which is used for most
+                  br
+                  |of the design, like paragraphs, lists, etc.
+      article.cards
+          +svgUI()
+          .container
+            .cards__grid
+              .cards__col
+                .cards__cell
+                  +landing-card()
+                .cards__cell
+                  +register-card()
+              .cards__col
+                .cards__cell
+                  +total-card(888, true, 9900)
+                .cards__cell
+                  +login-card()
+              .cards__col
+                .cards__cell
+                  +opened-datepick()
+                .cards__rooms
+                  .cards__cell
+                    +room-card({
+                      "reference": "room.html",
+                      "images": [
+                        "assets/images/rooms/888.jpg",
+                        "assets/images/rooms/840.jpg",
+                        "assets/images/rooms/888.jpg",
+                        "assets/images/rooms/840.jpg"
+                      ],
+                      "number": 888,
+                      "isLux": true,
+                      "cost": 9990,
+                      "rating": 5,
+                      "reviews": 145
+                    })
+                  .cards__cell
+                    +room-card({
+                      "reference": "room.html",
+                      "images": [
+                        "assets/images/rooms/840.jpg",
+                        "assets/images/rooms/980.jpg",
+                        "assets/images/rooms/888.jpg",
+                        "assets/images/rooms/444.jpg"
+                      ],
+                      "number": 840,
+                      "isLux": false,
+                      "cost": 9990,
+                      "rating": 4,
+                      "reviews": 65
+                    })
       article.form-elements
         +svgUI()
         .container
@@ -68,7 +157,7 @@ html(lang="ru-RU")
                 label.form-elements__mb-5 subscription text field
                 +form-subscribe()
             .form-elements__div2
-              .form-elements__mb-32
+              .form-elements__mb-27
                 label.form-elements__mb-17 Checkbox buttons
                 +checkbox({
                   content: "Можно курить",
@@ -84,8 +173,8 @@ html(lang="ru-RU")
                   isChecked: true,
                   addedClasses: "form-elements__mb-10"
                 })
-              .form-elements__mb-32
-                label.form-elements__mb-20 Radio buttons
+              .form-elements__mb-35
+                label.form-elements__mb-15 Radio buttons
                 .form-elements__radio
                   +radio-button({
                     content: "Мужчина",
@@ -99,9 +188,9 @@ html(lang="ru-RU")
                     addedClasses: "register-card__radio"
                   })
               .form-elements__mb-45
-                label.form-elements__mb-20 Toggle
-                +toggle-button("Получать спецпредложения", true, "form-elements__mb-10")
-                +toggle-button("Получать спецпредложения", false, "form-elements__mb-10")
+                label.form-elements__mb-17 Toggle
+                +toggle-button("Получать спецпредложения", true, "form-elements__mb-12")
+                +toggle-button("Получать спецпредложения", false, "form-elements__mb-12")
               .form-elements__mb-40
                 label.form-elements__mb-17 Like button
                 .form-elements__likes
@@ -116,54 +205,176 @@ html(lang="ru-RU")
                     +rate-button("rating", 4)
                   .form-elements__rate
                     +rate-result(5)
-//-             .div3
-//-               .ml-15
-//-                 .wrapper
-//-                   +rangeslider("Range Slider")
-//-                 .wrapper
-//-                   label buttons
-//-                   //- По макету хедера и UI-kit'у кнопки различаются, оставил кнопки, которые были сверстаны по пропорциям и размерам, указанным в макете хедера
-//-                   .buttons
-//-                     .buttons__item
-//-                       +button("#", "Click me", "", "")
-//-                     .buttons__item
-//-                       +button("#", "Click me", "", "ghost-button")
-//-                     .buttons__item
-//-                       +button("#", "Click me", "", "skeleton-button")
-//-                     .buttons__item
-//-                       +button("#", "Перейти к оплате", "", "send-button")
-//-                 .wrapper
-//-                   label.header Pagination
-//-                   +paginationPlug(15, 1)
-//-             .div4
-//-               label Dropdown
-//-               .promt default
-//-               +dropdownAddOptions([2,2,0])
-//-               label Dropdown
-//-               .promt expanded
-//-               +dropdownAddOptions([2,2,0], true)
-//-             .div5
-//-               label Dropdown
-//-               +dropdownGuests([0,0,0], true)
-//-             .div6
-//-               label Dropdown
-//-               +dropdownGuests([2,1,0], true)
-//-             .div7
-//-               .wrapper
-//-                 +dropdownChecks("Expandable checkbox list", "ddC1", false, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
-//-               +dropdownChecks("Expandable checkbox list", "ddC2", true, ["Завтрак", ["Письменный стол",true], ["Стул для кормления", true], ["Кроватка",true], "Телевизор", "Шампунь"])
-//-             .div8
-//-               label.header Rich checkbox buttons
-//-               +checkboxRich("Широкий коридор", "isWideCorridor", "Ширина коридоров в номере не\xA0менее 91 см.")
-//-               +checkboxRich("Помощник для инвалидов", "isAssistantForDisabled", "На 1 этаже вас встретит специалист и проводит до номера.")
-//-             .div9
-//-               label.header Bullet list
-//-               +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
-//-             .div10
-//-               +privilegeElement("assets/images/privilege_comfort.svg", "Комфорт", "Шумопоглощающие стены")
-//-               +privilegeElement("assets/images/privilege_convenience.svg", "Удобство", "Окно в каждой из спален")
-//-             .div11
-//-               +comment("assets/images/users_images/marat_123.jpg","Мурад Сарафанов","5 дней назад", "12", true, "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+            .form-elements__div3
+              .form-elements__mb-45
+                +range-slider({
+                  minValue: 0,
+                  maxValue: 15000,
+                  value1: 5000,
+                  value2: 10000,
+                  step: 100,
+                  sliderType: "double"
+                })
+              .form-elements__mb-40
+                label.form-elements__mb-20 buttons
+                .form-elements__buttons.form-elements__mb-32
+                  .form-elements__button.form-elements__mb-40
+                    +button({
+                      reference: "#",
+                      content: "click me"
+                    })
+                  .form-elements__button.form-elements__mb-40
+                    +button({
+                      reference: "#",
+                      content: "click me"
+                    })
+                  .form-elements__button.form-elements__mb-32
+                    +button({
+                      reference: "#",
+                      content: "click me",
+                      modificator: "ghost-button"
+                    })
+                  .form-elements__button.form-elements__mb-32
+                    +button({
+                      reference: "#",
+                      content: "click me",
+                      modificator: "ghost-button"
+                    })
+                  .form-elements__button
+                    +button({
+                      reference: "#",
+                      content: "click me",
+                      modificator: "skeleton-button"
+                    })
+                  .form-elements__button
+                    +button({
+                      reference: "#",
+                      content: "click me",
+                      modificator: "skeleton-button"
+                    })
+                +button({
+                  reference: "#",
+                  content: "перейти к оплате",
+                  addedClasses: "form-elements__mb-40",
+                  modificator: "send-button"
+                })
+                label.form-elements__mb-17 pagination
+                +pagination(1, 15)
+            .form-elements__div4
+              .form-elements__mb-20
+                label.form-elements__mb-5 Dropdown
+                .form-elements__promt default
+                +dropdown-absolute({
+                  wordforms: [
+                    ["спальня", "спальни", "спален"],
+                    ["кровать", "кровати", "кроватей"],
+                    ["ванная комната", "ванные комнаты", "ванных комнат"]
+                  ],
+                  defaultValues: [2, 2, 0]
+                })
+              .form-elements__mb-20
+                label.form-elements__mb-5 Dropdown
+                .form-elements__promt expanded
+                +dropdown-absolute({
+                  wordforms: [
+                    ["спальня", "спальни", "спален"],
+                    ["кровать", "кровати", "кроватей"],
+                    ["ванная комната", "ванные комнаты", "ванных комнат"]
+                  ],
+                  defaultValues: [2, 2, 0],
+                  isOpen: true
+                })
+            .form-elements__div5
+              label.form-elements__mb-5 Dropdown
+              +dropdown-absolute({
+                  wordforms: ["гость", "гостя", "гостей"],
+                  items: ["Взрослые", "Дети", "Младенцы"],
+                  isOpen: true,
+                  defaultText: "Сколько гостей"
+                })
+            .form-elements__div6
+              label.form-elements__mb-5 Dropdown
+              +dropdown-absolute({
+                wordforms: ["гость", "гостя", "гостей"],
+                items: ["Взрослые", "Дети", "Младенцы"],
+                isOpen: true,
+                defaultText: "Сколько гостей",
+                defaultValues: [2, 1, 0]
+              })
+            .form-elements__div7
+              .form-elements__mb-35
+                +dropdown-relative({
+                  content: "Expandable checkbox list",
+                  checkboxes: [
+                      "Завтрак",
+                      ["Письменный стол", true],
+                      ["Стул для кормления", true],
+                      ["Кроватка", true],
+                      "Телевизор",
+                      "Шампунь",
+                      "Телевизор",
+                      "Шампунь",
+                    ]
+                })
+              +dropdown-relative({
+                content: "Expandable checkbox list",
+                checkboxes: [
+                  "Завтрак",
+                  ["Письменный стол", true],
+                  ["Стул для кормления", true],
+                  ["Кроватка", true],
+                  "Телевизор",
+                  "Шампунь",
+                  "Телевизор",
+                  "Шампунь",
+                ],
+                isOpen: true
+              })
+            .form-elements__div8
+              label.form-elements__mb-17 Rich checkbox buttons
+              .form-elements__mb-12
+                +checkbox({
+                  content: "Широкий коридор",
+                  description: "Ширина коридоров в номере не\xA0менее 91 см."
+                })
+              .form-elements__mb-12
+                +checkbox({
+                  content: "Помощник для инвалидов",
+                  description: "На 1 этаже вас встретит специалист и проводит до номера."
+                })
+            .form-elements__div9
+              label.form-elements__mb-15 Bullet list
+              +bullet-list({
+                title: "",
+                bullets: [
+                  "Нельзя с питомцами",
+                  "Без вечеринок и мероприятий",
+                  "Время прибытия — после\xa013:00, а выезд до\xa012:00"
+                ]
+              })
+            .form-elements__div10
+              +room-privilege({
+                image: "assets/images/privilege_comfort.svg",
+                title: "Комфорт",
+                addedClasses: "form-elements__privilege",
+                description: "Шумопоглощающие стены"
+              })
+              +room-privilege({
+                image: "assets/images/privilege_convenience.svg",
+                title: "Удобство",
+                addedClasses: "form-elements__privilege",
+                description: "Окно в каждой из спален"
+              })
+            .form-elements__div11
+              +comment({
+                image: "assets/images/users_images/marat_123.jpg",
+                username: "Мурад Сарафанов",
+                date: "5 дней назад",
+                likes: 12,
+                isLiked: true,
+                addedClasses: "form-elements__comment",
+                content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+              })
       article.headers-and-footers
         +svgUI()
         .headers-and-footers__item
@@ -172,58 +383,3 @@ html(lang="ru-RU")
           +header(true)
         +footer()
         +footer_mobile()
-//-       section(name="colors-and-fonts").colors-and-fonts
-//-         +svgUI()
-//-         .container
-//-           .colors-and-fonts__row
-//-             .colors-and-fonts__column
-//-               +color-itemUI("#1F2041", "Dark Shade 100%", "1")
-//-               +color-itemUI("#1F2041", "Dark Shade 75%", "0.75")
-//-               +color-itemUI("#1F2041", "Dark Shade 50%", "0.5")
-//-               +color-itemUI("#1F2041", "Dark Shade 25%", "0.25")
-//-               +color-itemUI("#1F2041", "Dark Shade 5%", "0.05")
-//-               +color-itemUI("#BC9CFF", "Purple", "1")
-//-               +color-itemUI("#6FCF97", "Green", "1")
-//-             .colors-and-fonts__column
-//-               .colors-and-fonts__text-item
-//-                 h1.colors-and-fonts__text-description H1
-//-                 h1 
-//-                   |This one is the sub-section or
-//-                   br
-//-                   |widget title
-//-               .colors-and-fonts__text-item
-//-                 h2.colors-and-fonts__text-description H2
-//-                 h2
-//-                   | Next one is the item title inside 
-//-                   br
-//-                   | widgets
-//-               .colors-and-fonts__text-item
-//-                 h3.colors-and-fonts__text-description H3
-//-                 h3 This is a label or CTA text
-//-               .colors-and-fonts__text-item
-//-                 p.colors-and-fonts__text-description Body
-//-                 p 
-//-                   |This is the body text which is used for most
-//-                   br
-//-                   |of the design, like paragraphs, lists, etc.
-//-       section(name="cards").cards
-//-         +svgUI()
-//-         .container
-//-           .row
-//-             .col
-//-               .col__item
-//-                 +landingCard()
-//-               .col__item
-//-                 +registerCard()
-//-             .col
-//-               .col__item
-//-                 +totalCard()
-//-               .col__item
-//-                 +loginCard()
-//-             .col
-//-               .col__item
-//-                 +openedDatepick()
-//-               .col__item
-//-                 +roomCard("#", ["assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 888, true, 9990, 5, 145)
-//-               .col__item
-//-                 +roomCard("#", ["assets/images/rooms/840.jpg", "assets/images/rooms/888.jpg", "assets/images/rooms/840.jpg"], 840, false, 9900, 4, 65)
