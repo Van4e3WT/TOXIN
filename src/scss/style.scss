@@ -27,7 +27,7 @@ body {
   font-family: 'Montserrat', 'Arial', 'sans-serif';
   font-weight: normal;
   font-size: 0.85rem;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.18px;
 }
 main {
   flex-grow: 1;
@@ -52,6 +52,9 @@ h3, label {
   font-weight: bold;
   color: $DarkShade;
   letter-spacing: 0px;
+}
+p {
+  line-height: 1.45rem;
 }
 h1, h2, h3, p {
   color: $DarkShade;

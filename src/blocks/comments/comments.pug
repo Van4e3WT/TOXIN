@@ -4,7 +4,7 @@ mixin comments(items, addedClasses)
   .comments(class=`${addedClasses}`)
     .comments__header
       h2.comments__title Отзывы посетителей номера
-      p.comments__counter=`${items.length} отзыва`
+      .comments__counter=`${items.length} отзыва`
     .comments__body
       each item in items
         - item.addedClasses = "comments__item"

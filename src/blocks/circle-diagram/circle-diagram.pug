@@ -2,7 +2,7 @@ mixin circle-diagram(count=0, votes="голосов", value)
   .circle-diagram
     .circle-diagram__diagram
       .circle-diagram__data
-        h2.circle-diagram__count=count
+        h1.circle-diagram__count=count
         label.circle-diagram__votes=votes
       svg.circle-diagram__circle(height="127px" width="127px" viewBox="0 0 35 35")
         linearGradient(id="rate5", x1="0", y1="0.5", x2="1", y2="0.5")
