@@ -41,6 +41,7 @@ npm run start
 ```
 
 ## Используемые плагины
+**[jQuery](https://github.com/jquery/jquery)**
 
 **[air-datepicker](https://github.com/t1m0n/air-datepicker)**
 
