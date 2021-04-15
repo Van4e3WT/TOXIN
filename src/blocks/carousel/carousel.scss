@@ -25,13 +25,10 @@
   &__prev, &__next {
     position: absolute;
     opacity: 0;
-    background: none;
-    top: 50%;
-    height: 10px;
-    width: 10px;
-    border: 2px solid white;
-    border-bottom: none;
-    border-right: none;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    border: none;
     z-index: 1;
     outline: none;
     transition: .3s;
@@ -39,13 +36,31 @@
   &:hover &__prev, &:hover &__next {
     opacity: 1;
   }
+  &__prev::before, &__next::before {
+    content: '';
+    top: 50%;
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border: 2px solid white;
+    border-top: none;
+    border-right: none;
+  }
   &__prev {
-    left: 7%;
-    transform: rotate(-45deg) translate(50%,-50%);
+    left: 0;
+    background: linear-gradient(to right, #0000007F, #00000000);
+    &::before {
+      left: 20px;
+      transform: translateY(-50%) rotate(45deg);
+    }
   }
   &__next {
-    right: 7%;
-    transform: rotate(135deg) translate(-50%, 50%);
+    right: 0;
+    background: linear-gradient(to left, #0000007F, #00000000);
+    &::before {
+      right: 20px;
+      transform: translateY(-50%) rotate(-135deg);
+    }
   }
   &__dots {
     position: absolute;

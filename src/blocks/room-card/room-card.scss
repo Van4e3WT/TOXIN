@@ -31,9 +31,9 @@
   &__reviews {
     display: flex;
     align-items: center;
-    font-size: 0.85rem;
   }
   &__count, &__postfix {
     color: $DarkShade50;
+    font-size: 0.85rem;
   }
 }
