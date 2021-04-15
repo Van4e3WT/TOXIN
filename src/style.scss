@@ -1,4 +1,4 @@
-@import '../fonts/font-face.scss';
+@import './fonts/font-face.scss';
 
 $containerWidth: 1200px;
 $headerPadding: 18px;
@@ -88,10 +88,10 @@ input {
   margin: 0 auto;
 }
 
-@import '../libs/air-datepicker/datepicker-fork.scss';
+@import './libs/air-datepicker/datepicker-fork.scss';
 
-@import '../libs/multislider-v43/multislider-v43-fork.scss';
+@import './libs/multislider-v43/multislider-v43-fork.scss';
 
-@import '../blocks/blocks-styles.scss';
+@import './blocks/blocks-styles.scss';
 
-@import '../pages/pages-style.scss'
+@import './pages/pages-style.scss'

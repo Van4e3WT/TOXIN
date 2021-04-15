@@ -8,4 +8,4 @@ import 'air-datepicker/dist/css/datepicker.min.css';
 import './libs/multislider-v43/multislider-v43.css';
 
 // SCSS
-import './scss/style.scss';
+import './style.scss';
