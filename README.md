@@ -6,4 +6,4 @@
 
 # Ссылка на github pages: https://van4e3wt.github.io/TOXIN/
 
-# Ссылка на UI Kit: https://van4e3wt.github.io/TOXIN/uikit.html
+# Ссылка на проект: https://github.com/Van4e3WT/TOXIN
