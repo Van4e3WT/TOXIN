@@ -1,5 +1,4 @@
-mixin rate-button(name, inputRate)
+mixin rate-button(name, inputRate = 0)
   .rate-button
-    each i in [5,4,3,2,1]
-      input.rate-button__input(type="radio", name=name, id=name+"-"+i, checked= i == inputRate)
-      label.rate-button__label(for=name+"-"+i)
+    each i in [1,2,3,4,5]
+      input.rate-button__input(type="radio", name=name, checked= i == inputRate)
