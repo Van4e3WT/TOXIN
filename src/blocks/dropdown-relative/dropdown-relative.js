@@ -2,16 +2,27 @@
 
 const BLOCKNAME = 'dropdown-relative';
 
-function addDropdownRelListeners() {
-  const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
-
-  function toggleActiveDropdown() {
-    this.classList.toggle(`${BLOCKNAME}_active`);
+class DropdownRelative {
+  constructor(dropdown) {
+    this.dropdown = dropdown;
   }
 
-  dropdowns.forEach((dropdown) => {
-    dropdown.addEventListener('click', toggleActiveDropdown.bind(dropdown));
+  init() {
+    this.dropdown.addEventListener('click', this.toggleActiveDropdown.bind(this));
+  }
+
+  toggleActiveDropdown() {
+    this.dropdown.classList.toggle(`${BLOCKNAME}_active`);
+  }
+}
+
+function initDropdownsRelative() {
+  const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
+
+  dropdowns.forEach((item) => {
+    const dropdown = new DropdownRelative(item);
+    dropdown.init();
   });
 }
 
-document.addEventListener('DOMContentLoaded', addDropdownRelListeners);
+document.addEventListener('DOMContentLoaded', initDropdownsRelative);

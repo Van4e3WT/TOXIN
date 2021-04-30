@@ -2,53 +2,65 @@
 
 const BLOCKNAME = 'carousel';
 
-function carouselInit() {
+class Carousel {
+  constructor(carousel) {
+    this.carousel = carousel;
+  }
+
+  init() {
+    const prevBtn = this.carousel.querySelector(`.${BLOCKNAME}__prev`);
+    const nextBtn = this.carousel.querySelector(`.${BLOCKNAME}__next`);
+
+    this.items = this.carousel.querySelectorAll(`.${BLOCKNAME}__item`);
+    this.dots = this.carousel.querySelectorAll(`.${BLOCKNAME}__dot`);
+    this.currentIndex = 0;
+
+    prevBtn.addEventListener('click', this.prev.bind(this));
+    nextBtn.addEventListener('click', this.next.bind(this));
+
+    this.update();
+  }
+
+  update() {
+    this.items.forEach((item, i) => {
+      if (i === this.currentIndex) {
+        item.classList.add(`${BLOCKNAME}__item_active`);
+        this.dots[i].classList.add(`${BLOCKNAME}__dot_active`);
+      } else {
+        item.classList.remove(`${BLOCKNAME}__item_active`);
+        this.dots[i].classList.remove(`${BLOCKNAME}__dot_active`);
+      }
+    });
+  }
+
+  prev() {
+    if (this.currentIndex - 1 < 0) {
+      this.currentIndex = this.items.length - 1;
+    } else {
+      this.currentIndex -= 1;
+    }
+
+    this.update();
+  }
+
+  next() {
+    if (this.currentIndex + 1 >= this.items.length) {
+      this.currentIndex = 0;
+    } else {
+      this.currentIndex += 1;
+    }
+
+    this.update();
+  }
+}
+
+function carouselsInit() {
   const carousels = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
-  carousels.forEach((carousel) => {
-    const items = carousel.querySelectorAll(`.${BLOCKNAME}__item`);
-    const dots = carousel.querySelectorAll(`.${BLOCKNAME}__dot`);
-    const prevBtn = carousel.querySelector(`.${BLOCKNAME}__prev`);
-    const nextBtn = carousel.querySelector(`.${BLOCKNAME}__next`);
-    let sliderIndex = 0;
-
-    function showSlides() {
-      items.forEach((item, i) => {
-        if (i === sliderIndex) {
-          item.classList.add(`${BLOCKNAME}__item_active`);
-          dots[i].classList.add(`${BLOCKNAME}__dot_active`);
-        } else {
-          item.classList.remove(`${BLOCKNAME}__item_active`);
-          dots[i].classList.remove(`${BLOCKNAME}__dot_active`);
-        }
-      });
-    }
-
-    function prevBtnListener() {
-      if (sliderIndex - 1 < 0) {
-        sliderIndex = items.length - 1;
-      } else {
-        sliderIndex -= 1;
-      }
-
-      showSlides();
-    }
-
-    function nextBtnListener() {
-      if (sliderIndex + 1 >= items.length) {
-        sliderIndex = 0;
-      } else {
-        sliderIndex += 1;
-      }
-
-      showSlides();
-    }
-
-    prevBtn.addEventListener('click', prevBtnListener);
-    nextBtn.addEventListener('click', nextBtnListener);
-
-    showSlides();
+  carousels.forEach((item) => {
+    const carousel = new Carousel(item);
+    carousel.init();
   });
 }
 
-document.addEventListener('DOMContentLoaded', carouselInit);
+document.addEventListener('DOMContentLoaded', carouselsInit);

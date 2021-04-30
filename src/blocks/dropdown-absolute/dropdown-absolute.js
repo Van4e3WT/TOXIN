@@ -12,115 +12,31 @@ function num2str(i, textForms) {
   return textForms[2];
 }
 
-function updateCounterBlock(item) {
-  const counter = item.querySelector(`.${BLOCKNAME}__counter`);
-  const minus = item.querySelector(`.${BLOCKNAME}__minus`);
-
-  if (+counter.textContent < 1) {
-    minus.classList.add(`${BLOCKNAME}__minus_disabled`);
-  } else {
-    minus.classList.remove(`${BLOCKNAME}__minus_disabled`);
+class DropdownAbsolute {
+  constructor(dropdown, zIndex = 1) {
+    this.dropdown = dropdown;
+    this.zIndex = zIndex;
   }
-}
 
-function addDropdownAbsListeners() {
-  const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
+  init() {
+    this.dropdownOutput = this.dropdown.querySelector(`.${BLOCKNAME}__output`);
+    const dropdownClear = this.dropdown.querySelector(`.${BLOCKNAME}__clear-btn`);
+    const dropdownApply = this.dropdown.querySelector(`.${BLOCKNAME}__apply-btn`);
+    const dropdownList = this.dropdown.querySelector(`.${BLOCKNAME}__list`);
 
-  dropdowns.forEach((dropdown, i) => {
-    const dropdownOutput = dropdown.querySelector(`.${BLOCKNAME}__output`);
-    const dropdownClear = dropdown.querySelector(`.${BLOCKNAME}__clear-btn`);
-    const dropdownApply = dropdown.querySelector(`.${BLOCKNAME}__apply-btn`);
-    const dropdownList = dropdown.querySelector(`.${BLOCKNAME}__list`);
+    dropdownList.style.zIndex = this.zIndex;
 
-    function updateDropdowns() {
-      const defaultValue = dropdownOutput.getAttribute('default');
-
-      if (dropdown.hasAttribute('several-word-forms')) {
-        const result = [];
-        let sum = 0;
-
-        dropdown.querySelectorAll(`.${BLOCKNAME}__item`).forEach((item) => {
-          updateCounterBlock(item);
-
-          if (item.hasAttribute('wordforms')) {
-            const counters = item.querySelectorAll(`.${BLOCKNAME}__counter`);
-            let value;
-
-            counters.forEach((counter) => {
-              value = +counter.textContent;
-              sum += +counter.textContent;
-            });
-
-            if (value > 0) {
-              const wordForms = item.getAttribute('wordforms').split(', ');
-              const rightForm = num2str(value, wordForms);
-
-              result.push(`${value} ${rightForm}`);
-            }
-          }
-
-          if (sum !== 0) {
-            let resultStr = '';
-
-            for (let j = 0; j < result.length; j += 1) {
-              resultStr += j ? `, ${result[j]}` : result[j];
-            }
-
-            dropdownOutput.value = `${resultStr}\u2026`;
-          } else {
-            dropdownOutput.value = defaultValue;
-          }
-        });
-      } else {
-        const buttonsBlock = dropdown.querySelector(`.${BLOCKNAME}__buttons`);
-        let value = 0;
-
-        dropdown.querySelectorAll(`.${BLOCKNAME}__item`).forEach((item) => {
-          updateCounterBlock(item);
-          value += (+item.querySelector(`.${BLOCKNAME}__counter`).textContent);
-        });
-
-        const wordForms = dropdown.hasAttribute('wordforms') ? dropdown.getAttribute('wordforms').split(', ') : null;
-        const rightForm = wordForms ? num2str(value, wordForms) : '';
-
-        if (value !== 0) {
-          dropdownOutput.value = `${value} ${rightForm}`;
-          buttonsBlock.classList.add(`${BLOCKNAME}__buttons_non-empty`);
-        } else {
-          dropdownOutput.value = defaultValue;
-          buttonsBlock.classList.remove(`${BLOCKNAME}__buttons_non-empty`);
-        }
-      }
-    }
-
-    function toggleActiveOnList() {
-      dropdown.querySelector(`.${BLOCKNAME}__list`).classList.toggle(`${BLOCKNAME}__list_active`);
-    }
-
-    function cleanListValues() {
-      const counters = dropdown.querySelectorAll(`.${BLOCKNAME}__counter`);
-
-      counters.forEach((counter) => {
-        counter.textContent = 0;
-      });
-
-      updateDropdowns();
-    }
-
-    // do z-index by descending (correct view few dropdown inder each other)
-    dropdownList.style.zIndex = dropdowns.length - i;
-
-    dropdownOutput.addEventListener('click', toggleActiveOnList);
+    this.dropdownOutput.addEventListener('click', this.toggleActiveOnList.bind(this));
 
     if (dropdownClear) {
-      dropdownClear.addEventListener('click', cleanListValues);
+      dropdownClear.addEventListener('click', this.clearListValues.bind(this));
     }
 
     if (dropdownApply) {
-      dropdownApply.addEventListener('click', toggleActiveOnList);
+      dropdownApply.addEventListener('click', this.toggleActiveOnList.bind(this));
     }
 
-    const listItems = dropdown.querySelectorAll(`.${BLOCKNAME}__item`);
+    const listItems = this.dropdown.querySelectorAll(`.${BLOCKNAME}__item`);
     listItems.forEach((item) => {
       const minus = item.querySelector(`.${BLOCKNAME}__minus`);
       const counter = item.querySelector(`.${BLOCKNAME}__counter`);
@@ -130,19 +46,116 @@ function addDropdownAbsListeners() {
         if (+counter.textContent > 0) {
           counter.textContent = +counter.textContent - 1;
         }
-        updateDropdowns();
+        this.update();
       }
 
       function incrementCounter() {
         counter.textContent = +counter.textContent + 1;
-        updateDropdowns();
+        this.update();
       }
 
-      minus.addEventListener('click', decrementCounter);
-      plus.addEventListener('click', incrementCounter);
+      minus.addEventListener('click', decrementCounter.bind(this));
+      plus.addEventListener('click', incrementCounter.bind(this));
     });
-    updateDropdowns();
+
+    this.update();
+  }
+
+  update() {
+    const defaultValue = this.dropdownOutput.getAttribute('default');
+
+    function updateCounterBlock(item) {
+      const counter = item.querySelector(`.${BLOCKNAME}__counter`);
+      const minus = item.querySelector(`.${BLOCKNAME}__minus`);
+
+      if (+counter.textContent < 1) {
+        minus.classList.add(`${BLOCKNAME}__minus_disabled`);
+      } else {
+        minus.classList.remove(`${BLOCKNAME}__minus_disabled`);
+      }
+    }
+
+    if (this.dropdown.hasAttribute('several-word-forms')) {
+      const result = [];
+      let sum = 0;
+
+      this.dropdown.querySelectorAll(`.${BLOCKNAME}__item`).forEach((item) => {
+        updateCounterBlock(item);
+
+        if (item.hasAttribute('wordforms')) {
+          const counters = item.querySelectorAll(`.${BLOCKNAME}__counter`);
+          let value;
+
+          counters.forEach((counter) => {
+            value = +counter.textContent;
+            sum += +counter.textContent;
+          });
+
+          if (value > 0) {
+            const wordForms = item.getAttribute('wordforms').split(', ');
+            const rightForm = num2str(value, wordForms);
+
+            result.push(`${value} ${rightForm}`);
+          }
+        }
+
+        if (sum !== 0) {
+          let resultStr = '';
+
+          for (let j = 0; j < result.length; j += 1) {
+            resultStr += j ? `, ${result[j]}` : result[j];
+          }
+
+          this.dropdownOutput.value = `${resultStr}\u2026`;
+        } else {
+          this.dropdownOutput.value = defaultValue;
+        }
+      });
+    } else {
+      const buttonsBlock = this.dropdown.querySelector(`.${BLOCKNAME}__buttons`);
+      let value = 0;
+
+      this.dropdown.querySelectorAll(`.${BLOCKNAME}__item`).forEach((item) => {
+        updateCounterBlock(item);
+        value += (+item.querySelector(`.${BLOCKNAME}__counter`).textContent);
+      });
+
+      const wordForms = this.dropdown.hasAttribute('wordforms') ? this.dropdown.getAttribute('wordforms').split(', ') : null;
+      const rightForm = wordForms ? num2str(value, wordForms) : '';
+
+      if (value !== 0) {
+        this.dropdownOutput.value = `${value} ${rightForm}`;
+        buttonsBlock.classList.add(`${BLOCKNAME}__buttons_non-empty`);
+      } else {
+        this.dropdownOutput.value = defaultValue;
+        buttonsBlock.classList.remove(`${BLOCKNAME}__buttons_non-empty`);
+      }
+    }
+  }
+
+  toggleActiveOnList() {
+    this.dropdown.querySelector(`.${BLOCKNAME}__list`).classList.toggle(`${BLOCKNAME}__list_active`);
+  }
+
+  clearListValues() {
+    const counters = this.dropdown.querySelectorAll(`.${BLOCKNAME}__counter`);
+
+    counters.forEach((counter) => {
+      // eslint-disable-next-line no-param-reassign
+      counter.textContent = 0;
+    });
+
+    this.update();
+  }
+}
+
+function initDropdownsAbsolute() {
+  const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
+
+  dropdowns.forEach((item, i) => {
+    const dropdown = new DropdownAbsolute(item, dropdowns.length - i);
+    dropdown.init();
   });
 }
 
-document.addEventListener('DOMContentLoaded', addDropdownAbsListeners);
+document.addEventListener('DOMContentLoaded', initDropdownsAbsolute);
