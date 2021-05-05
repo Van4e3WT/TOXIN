@@ -10,6 +10,7 @@
   text-align: center;
   font-weight: bold;
   line-height: 1.125rem;
+  
   &:hover::before {
     content: attr(data-prompt);
     position: absolute;

@@ -2,10 +2,12 @@
   display: flex;
   align-items: flex-end;
   overflow: hidden;
+
   &__diagram {
     position: relative;
     margin-right: 24px;
   }
+
   &__data {
     position: absolute;
     top: 50%;
@@ -13,44 +15,55 @@
     transform: translate(-50%, -60%);
     text-align: center;
   }
+
   &__count, &__votes {
     color: $Purple;
   }
+
   &__circle {
     fill: none;
     stroke-width: 1px;
     transform: rotate(90deg);
   }
+
   &__unit:hover {
     stroke-width: 2.5px;
     transition: .2s;
   }
+
   &__item {
     display: flex;
     align-items: center;
     padding-bottom: 2px;
   }
+
   &__sample {
     height: 10px;
     width: 10px;
     margin-right: 5px;
     border-radius: 50%;
+
     &_perfect {
       background: linear-gradient(to top, #FFE39C, #FFBA9C);
     }
+
     &_good {
       background: linear-gradient(to top, #66D2EA, #6FCF97);
     }
+
     &_normal {
       background: linear-gradient(to top,#8BA4F9, #BC9CFF);
     }
+
     &_bad {
       background: linear-gradient(to top,#909090, #3D4975);
     }
   }
+
   &__rate {
     color: $DarkShade75;
   }
+
   @media (max-width: 576px) {
     flex-direction: column;
     align-items: center;

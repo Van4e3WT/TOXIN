@@ -1,12 +1,13 @@
 .date-solo-range {
   position: relative;
   max-width: 268px;
+
   &::before {
+    $side: 7px;
     position: absolute;
     content: '';
     bottom: 46%;
     right: 18px;
-    $side: 7px;
     height: $side;
     width: $side;
     transform: rotate(45deg);

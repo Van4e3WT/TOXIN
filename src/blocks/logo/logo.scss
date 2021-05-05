@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: start;
+
   &__img {
     height: 40px;
     padding-right: 12px;
   }
+  
   &__name {
     padding-right: 16px;
     height: 14px;

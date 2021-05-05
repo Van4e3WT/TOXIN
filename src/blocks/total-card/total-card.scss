@@ -1,4 +1,4 @@
-$media-size: 420px;
+$mediaSize: 420px;
 
 .total-card {
   background-color: white;
@@ -9,75 +9,92 @@ $media-size: 420px;
   padding: 40px 31px 30px;
   border-radius: 5px;
   box-shadow: $shadow;
+
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom: 22px;
-    @media (max-width: $media-size) {
+
+    @media (max-width: $mediaSize) {
       flex-direction: column;
       align-items: center;
     }
   }
+
   &__room-number, &__room-cost {
     display: flex;
     align-items: flex-end;
   }
+
   &__prefix {
     font-size: 0.85rem;
     padding-right: 4px;
   }
+
   &__number {
     padding-right: 9px;
     font-size: 1.7rem;
     line-height: 1.7rem;
   }
+
   &__lux {
     color: $Purple;
   }
+
   &__rubles {
     font-size: 0.85rem;
     letter-spacing: 1px;
     color: $DarkShade50;
   }
+
   &__period {
     font-size: 0.75rem;
     line-height: normal;
     color: $DarkShade50;
   }
+
   &__label {
     margin-bottom: 5px;
   }
+
   &__input {
     margin-bottom: 21px;
   }
+
   &__body {
     margin-bottom: 32px;
   }
+
   &__product {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 11px;
-    @media (max-width: $media-size) {
+
+    @media (max-width: $mediaSize) {
       flex-direction: column;
       align-items: center;
       border-bottom: 1px dotted $DarkShade25;
     }
   }
+
   &__position {
     display: flex;
     justify-content: space-between;
     max-width: 242px;
+
     &_service {
       width: 100%;
     }
   }
+
   &__total {
     margin-bottom: 20px;
     display: flex;
     align-items: flex-start;
   }
+
   &__space { 
     border-bottom: 2px dotted $DarkShade25;
     width: 100%;
@@ -85,7 +102,8 @@ $media-size: 420px;
     height: 1.5rem;
     flex-shrink: 2;
   }
-  @media(max-width: $media-size) {
+  
+  @media(max-width: $mediaSize) {
     max-height: none;
   }
 }

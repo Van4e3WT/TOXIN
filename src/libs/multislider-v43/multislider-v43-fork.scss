@@ -3,14 +3,17 @@
   font-size: 0.75rem;
   letter-spacing: 0;
   padding: 0;
+
   &-header {
     display: flex;
     justify-content: space-between;
     padding: 0;
     padding-bottom: 20px;
+
     &__output {
       font-size: inherit;
     }
+    
     &__spacer {
       flex-shrink: 0;
     }

@@ -3,12 +3,15 @@
   align-items: center;
   max-width: 280px;
   border-bottom: 1px solid $DarkShade10;
+
   &:last-child {
     border: none;
   }
+
   &__content {
     padding-left: 14px;
   }
+  
   &__title, &__description {
     color: $DarkShade75;
     text-transform: none;

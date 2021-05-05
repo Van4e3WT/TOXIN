@@ -1,15 +1,18 @@
-$media-size: 420px;
+$mediaSize: 420px;
 
 .twin-datepick {
   display: flex;
   justify-content: space-between;
+
   &__item {
     max-width: 151px;
     position: relative;
+
     input {
       width: 100%; 
       cursor: pointer;
     }
+
     &::before {
       position: absolute;
       content: '';
@@ -23,17 +26,21 @@ $media-size: 420px;
       border-top: 0;
       border-left: 0;
     }
-    @media(max-width: $media-size) {
+
+    @media(max-width: $mediaSize) {
       max-width: 100%;
+
       label {
         padding-top: 5px;
       }
     }
   }
+
   &__label {
     padding-bottom: 5px;
   }
-  @media(max-width: $media-size) {
+  
+  @media(max-width: $mediaSize) {
     display: block;
   }
 }

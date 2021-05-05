@@ -4,28 +4,36 @@
   padding: 30px;
   border-radius: 5px;
   box-shadow: $shadow;
+
   &__header {
     padding-top: 9px;
     padding-bottom: 21.5px;
   }
+
   &__field {
     margin-bottom: 10px;
   }
+
   &__radio {
     margin-right: 12px;
   }
+
   &__radio-group, &__birthday {
     margin-bottom: 19px;
   }
+
   &__login-group {
     margin-bottom: 23px;
   }
+
   &__send {
     margin-bottom: 35px;
   }
+
   &__label {
     margin-bottom: 5px;
   }
+  
   &__help {
     display: flex;
     align-items: center;

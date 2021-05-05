@@ -1,18 +1,22 @@
 .comments {
   max-width: 710px;
+
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 22px;
+
     @media(max-width: 420px) {
       flex-direction: column;
       align-items: flex-start;
     }
   }
+
   &__counter {
     color: $DarkShade50;
   }
+
   &__item {
     margin-bottom: 24px;
   }

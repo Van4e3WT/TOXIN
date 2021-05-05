@@ -2,15 +2,18 @@
   &__header {
     margin-bottom: 22.5px;
   }
+
   &__room-cards {
     display: grid;
     grid-gap: 19px 10px;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     margin-bottom: 42px;
+
     @media(max-width:400px) {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
   }
+  
   &__pagination {
     display: flex;
     justify-content: center;

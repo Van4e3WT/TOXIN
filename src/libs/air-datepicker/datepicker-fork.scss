@@ -3,25 +3,31 @@
 .datepicker {
   font-family: 'Montserrat';
   width: 320px;
+
   &--cell {
     border-radius: 50%;
     height: 40px;
+
     &.-current- {
       color: white;
       font-weight: bold;
       background: $gradientColorSecond;
+
       &.-in-range- {
         color: $Purple;
       }
     }
+
     &.-in-range- {
       background: linear-gradient(to top, #bc9cff3f 0%, #8ba4f93f 100%);
       color: $DarkShade50;
     }
+
     &.-range-from- {
       border: none;
       border-radius: 50%;
     }
+
     &-day.datepicker--cell {
       &.-range-from- {
         &::before {
@@ -35,6 +41,7 @@
           background: linear-gradient(180deg, #bc9cff3f 0%, #8ba4f93f 100%);
           border-radius: 50% 0 0 50%;
         }
+
         &.-selected-::before {
           z-index: -1;
           content: "";
@@ -47,6 +54,7 @@
           border-radius: 50% 0 0 50%;
         }
       }
+
       &.-range-to- {
         &::before {
           z-index: -1;
@@ -59,6 +67,7 @@
           background: linear-gradient(180deg, #bc9cff3f 0%, #8ba4f93f 100%);
           border-radius: 0 50% 50% 0;
         }
+
         &.-selected-::before {
           z-index: -1;
           content: "";
@@ -72,87 +81,108 @@
         }
       }
     }
+
     &.-range-to- {
       border: none;
       border-radius: 50%;
+
       &.-range-from- {
         border-radius: 50%;
       }
     }
+
     &.-selected- {
       background: $gradientColor;
+
       &.-current- {
         background: $gradientColorSecond;
       }
+
       &.-focus- {
         background: $gradientColorSecond;
       }
     }
   }
+
   &--cells {
     height: auto;
     font-size: 0.75rem;
   }
+
   &--days-names {
     margin: 9px 0 10px;
     font-family: 'Montserrat';
     font-weight: bold;
   }
+
   &--day-name {
     color: $Purple;
     text-transform: none;
-  }  
+  }
+
   &--content {
     padding: 23px;
   }
+
   &--pointer {
     display: none;
   }
+
   &--nav {
     border: none;
     font-family: 'OpenSans';
     font-weight: bold;
     color: $DarkShade;
     padding: 8px 20px;
+
     &-action {
       border-radius: 1rem;
+
       &:hover {
         background: none;
       }
+
       & path {
         stroke: $Purple;
         stroke-width: 3px;
       }
     }
+
     &-title {
       font-size: 1.25rem;
+
       & i {
         font-style: inherit;
         color: inherit;
       }
     }
   }
+
   &--buttons {
     justify-content: space-between;
     flex-direction: row-reverse;
     padding: 0 20px 17px;
     border: none;
     font-size: 0.75rem;
+
     span[data-action='clear'].datepicker--button {
       justify-content: flex-start;
       color: $DarkShade50;
     }
+
     span[data-action='today'].datepicker--button {
       justify-content: flex-end;
       color: $Purple;
     }
   }
+
   &--button {
     height: 16px;
     flex: 0;
     text-transform: uppercase;
     font-weight: bold;
     color: $Purple;
+    
     &:hover {
       opacity: 0.8;
       color: inherit;

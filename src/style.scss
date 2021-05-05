@@ -20,6 +20,7 @@ $gradientColorSecond: linear-gradient(to top, $LightBlue, $Green);
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   min-height: 100vh;
   display: flex;
@@ -29,9 +30,11 @@ body {
   font-size: 0.85rem;
   letter-spacing: 0.18px;
 }
+
 main {
   flex-grow: 1;
 }
+
 h1 {
   font-family: 'OpenSans', 'Arial', 'sans-serif';
   font-weight: bold;
@@ -39,12 +42,14 @@ h1 {
   line-height: 1.85rem;
   letter-spacing: 0.5px;
 }
+
 h2 {
   font-family: 'Montserrat', 'Arial', 'sans-serif';
   font-weight: bold;
   font-size: 1.25rem;
   letter-spacing: -0.6px;
 }
+
 h3, label {
   display: inline-block;
   text-transform: uppercase;
@@ -53,18 +58,23 @@ h3, label {
   color: $DarkShade;
   letter-spacing: 0px;
 }
+
 p {
   line-height: 1.45rem;
 }
+
 h1, h2, h3, p {
   color: $DarkShade;
 }
+
 a {
   text-decoration: none;
 }
+
 ul {
   list-style: none;
 }
+
 input {
   outline: none;
   width: 100%;
@@ -75,13 +85,16 @@ input {
   font-family: 'Montserrat';
   letter-spacing: 0.2px;
   color: $DarkShade75;
+
   &::placeholder {
     color: $DarkShade25;
   }
+
   &:hover, &:focus, &.hover-focus {
     border-color: $DarkShade50;
   }
 }
+
 .container {
   max-width: $containerWidth;
   padding: 0 20px;

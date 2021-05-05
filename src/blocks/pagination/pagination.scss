@@ -1,13 +1,14 @@
 .pagination {
   $side: 40px;
-
   max-width: 255px;
   font-size: 0.75rem;
   padding-right: 13px;
+
   &__items {
     display: flex;
     margin-bottom: 10px;
   }
+
   &__item {
     display: flex;
     align-items: center;
@@ -16,14 +17,17 @@
     width: $side;
     border-radius: 50%;
     color: $DarkShade50;
+
     &.active {
       background: $gradientColor;
       font-weight: bold;
       color: white;
     }
+
     &.arrow {
       background: $gradientColorSecond;
       position: relative;
+
       &::before {
         content: '';
         position: absolute;
@@ -35,6 +39,7 @@
         border-bottom: none;
         transform: rotate(45deg);
       }
+
       &::after {
         content: '';
         position: absolute;
@@ -45,6 +50,7 @@
       }
     }
   }
+  
   &__info {
     width: 100%;
     font-size: 0.85rem;

@@ -4,16 +4,19 @@
   max-width: 268px;
   border: 2px solid $DarkShade25;
   border-radius: 5px;
+
   &__input {
     height: 100%;
     border: none;
     padding: 10px 0 13px 12px;
     border-right: none;
     color: $DarkShade;
+
     & ::placeholder {
       color: $DarkShade50;
     }
   }
+
   &__button {
     outline: none;
     cursor: pointer;

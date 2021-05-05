@@ -5,17 +5,21 @@
   overflow: hidden;
   background-color: white;
   box-shadow: $shadow;
+  
   &__carousel { 
     height: 150px;
   }
+
   &__description { 
     height: 120px;
   }
+
   &__header {
     display: flex;
     justify-content: space-between;
     padding: 18px 16px 13px 20px;
   }
+
   &__spacer {
     display: block;
     height: 1px;
@@ -23,15 +27,18 @@
     width: 86%;
     margin: 0 auto;
   }
+
   &__rating {
     padding: 8px 20px 20px 22px;
     display: flex;
     justify-content: space-between;
   }
+
   &__reviews {
     display: flex;
     align-items: center;
   }
+  
   &__count, &__postfix {
     color: $DarkShade50;
     font-size: 0.85rem;

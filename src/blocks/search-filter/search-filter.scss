@@ -2,36 +2,46 @@
   &__section {
     max-width: 265px;
   }
+
   &__label {
     margin-bottom: 5px;
   }
+
   &__group {
     margin-bottom: 18px;
+
     &_30 {
       margin-bottom: 30px;
     }
   }
+
   &__range-group {
     padding-top: 13px;
     margin-bottom: 24px;
   }
+
   &__range {
     margin-bottom: 8px;
   }
+
   &__description {
     font-size: 0.75rem;
     letter-spacing: 0;
   }
+
   &__checkboxes {
     margin-bottom: 19px;
+
     &-label {
       display: block;
       margin-bottom: 18px;
     }
   }
+
   &__checkbox {
     margin-bottom: 10px;
   }
+  
   @media(max-width: 1000px) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));

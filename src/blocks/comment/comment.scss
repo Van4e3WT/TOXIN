@@ -4,6 +4,7 @@
     align-items: center;
     padding-bottom: 15px;
   }
+
   &__image {
     display: block;
     height: 45px;
@@ -11,19 +12,23 @@
     border-radius: 50%;
     margin-right: 12px;
   }
+
   &__username {
     font-size: 0.85rem;
     letter-spacing: 0.3px;
     text-transform: none;
     margin-bottom: 10px;
   }
+
   &__body {
     display: flex;
   }
+
   &__like {
     margin-right: 10px;
     padding: 0 5px;
   }
+
   &__content {
     letter-spacing: 0.25px;
   }

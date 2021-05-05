@@ -4,24 +4,27 @@
   height: 100%;
   background-color: white;
   overflow: hidden;
+
   &__item {
     display: block;
     opacity: 0;
     position: absolute;
     height: 100%;
     width: 100%;
+
     img {
       object-fit: cover;
       height: 100%;
       width: 100%;
-
     }
+
     &_active {
       position: relative;
       opacity: 1;
       transition: all .3s linear;
     }
   }
+
   &__prev, &__next {
     position: absolute;
     opacity: 0;
@@ -33,9 +36,11 @@
     outline: none;
     transition: .3s;
   }
+
   &:hover &__prev, &:hover &__next {
     opacity: 1;
   }
+
   &__prev::before, &__next::before {
     content: '';
     top: 50%;
@@ -46,34 +51,41 @@
     border-top: none;
     border-right: none;
   }
+
   &__prev {
     left: 0;
     background: linear-gradient(to right, #0000007F, #00000000);
+  
     &::before {
       left: 20px;
       transform: translateY(-50%) rotate(45deg);
     }
   }
+
   &__next {
     right: 0;
     background: linear-gradient(to left, #0000007F, #00000000);
+
     &::before {
       right: 20px;
       transform: translateY(-50%) rotate(-135deg);
     }
   }
+
   &__dots {
     position: absolute;
     display: flex;
     right: 5%;
     bottom: 10%;
   }
+
   &__dot {
     height: 7px;
     width: 7px;
     margin: 0 2px;
     border: 1px solid white;
     border-radius: 50%;
+
     &_active {
       background-color: white;
     }
