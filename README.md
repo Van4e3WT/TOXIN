@@ -1,12 +1,30 @@
-# Frontend Practise
+# Отель TOXIN
 
-Стажировка MetaLamp. Развитие навыков верстки под Frontend-developing.
+Стажировка MetaLamp. Верстка основных страниц для практики frontend-developing.
 
 Вместо шрифта Quicksand использовался Open Sans. Причиной замены является отсутствие кириллического начертания.
 
 ## [Github pages](https://van4e3wt.github.io/TOXIN/)
 
 ## [UI Kit](https://van4e3wt.github.io/TOXIN/uikit.html)
+
+### Навигация
+
+* [Загрузка репозитория](#загрузка-репозитория)
+* [Инструкция по развертыванию](#инструкция-по-развертыванию-и-сборке)
+* [Плагины](#используемые-плагины)
+
+
+## Загрузка репозитория
+
+Существует два основных способа загрузки содержимого: 
+
+Клонирование репозитория (необходим установленный Git)
+```
+git clone https://github.com/Van4e3WT/TOXIN.git
+```
+
+Скачивание в формате ZIP-архива через интерфейс GitHub: `Code -> Download ZIP`
 
 ## Инструкция по развертыванию и сборке
 
@@ -46,3 +64,6 @@ npm run start
 **[air-datepicker](https://github.com/t1m0n/air-datepicker)**
 
 **[multislider-v43](https://github.com/Van4e3WT/Mutilslider_V43)**
+
+
+[^ В начало ^](#навигация)
