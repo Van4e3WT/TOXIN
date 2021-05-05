@@ -4,11 +4,16 @@
 
 Вместо шрифта Quicksand использовался Open Sans. Причиной замены является отсутствие кириллического начертания.
 
-## [Github pages](https://van4e3wt.github.io/TOXIN/)
+## Доступные страницы:
 
-## [UI Kit](https://van4e3wt.github.io/TOXIN/uikit.html)
+* ### [Главная](https://van4e3wt.github.io/TOXIN/)
+* ### [Войти](https://van4e3wt.github.io/TOXIN/login.html)
+* ### [Регистрация](https://van4e3wt.github.io/TOXIN/registration.html)
+* ### [Поиск номеров](https://van4e3wt.github.io/TOXIN/search-room.html)
+* ### [Номер отеля](https://van4e3wt.github.io/TOXIN/room.html)
+* ### [UI-kit](https://van4e3wt.github.io/TOXIN/uikit.html)
 
-### Навигация
+## Навигация
 
 * [Загрузка репозитория](#загрузка-репозитория)
 * [Инструкция по развертыванию](#инструкция-по-развертыванию-и-сборке)
