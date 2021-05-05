@@ -2,10 +2,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 888,
     "isLux": true,
@@ -16,10 +16,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/840.jpg",
-      "assets/images/rooms/980.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/444.jpg"
+      "assets/images/rooms/room-840.jpg",
+      "assets/images/rooms/room-980.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-444.jpg"
     ],
     "number": 840,
     "isLux": false,
@@ -30,10 +30,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/980.jpg",
-      "assets/images/rooms/856.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-980.jpg",
+      "assets/images/rooms/room-856.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 980,
     "isLux": true,
@@ -44,10 +44,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/856.jpg",
-      "assets/images/rooms/980.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-856.jpg",
+      "assets/images/rooms/room-980.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 856,
     "isLux": false,
@@ -58,10 +58,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/740.jpg",
-      "assets/images/rooms/982.jpg",
-      "assets/images/rooms/856.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-740.jpg",
+      "assets/images/rooms/room-982.jpg",
+      "assets/images/rooms/room-856.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 740,
     "isLux": false,
@@ -72,10 +72,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/982.jpg",
-      "assets/images/rooms/840.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/740.jpg"
+      "assets/images/rooms/room-982.jpg",
+      "assets/images/rooms/room-840.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-740.jpg"
     ],
     "number": 982,
     "isLux": false,
@@ -86,10 +86,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/678.jpg",
-      "assets/images/rooms/982.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-678.jpg",
+      "assets/images/rooms/room-982.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 678,
     "isLux": false,
@@ -100,10 +100,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/450.jpg",
-      "assets/images/rooms/678.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-450.jpg",
+      "assets/images/rooms/room-678.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 450,
     "isLux": false,
@@ -114,10 +114,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/350.jpg",
-      "assets/images/rooms/840.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-350.jpg",
+      "assets/images/rooms/room-840.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 350,
     "isLux": false,
@@ -128,10 +128,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/666.jpg",
-      "assets/images/rooms/840.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-666.jpg",
+      "assets/images/rooms/room-840.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 666,
     "isLux": false,
@@ -142,10 +142,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/444.jpg",
-      "assets/images/rooms/840.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-444.jpg",
+      "assets/images/rooms/room-840.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 444,
     "isLux": false,
@@ -156,10 +156,10 @@
   {
     "reference": "room.html",
     "images": [
-      "assets/images/rooms/352.jpg",
-      "assets/images/rooms/840.jpg",
-      "assets/images/rooms/888.jpg",
-      "assets/images/rooms/840.jpg"
+      "assets/images/rooms/room-352.jpg",
+      "assets/images/rooms/room-840.jpg",
+      "assets/images/rooms/room-888.jpg",
+      "assets/images/rooms/room-840.jpg"
     ],
     "number": 352,
     "isLux": false,

@@ -15,27 +15,27 @@ block content
   - const commentaries = require('./comments.json')
   .room
     +collage([
-      "assets/images/rooms/888-1.jpg",
-      "assets/images/rooms/888-2.jpg",
-      "assets/images/rooms/888-3.jpg"
+      "assets/images/rooms/room-888-1.jpg",
+      "assets/images/rooms/room-888-2.jpg",
+      "assets/images/rooms/room-888-3.jpg"
     ], "room__collage")
     .container.room__body
         .room__about
           h2 Сведения о номере
           +room-privilege({
-            image: "assets/images/privilege_comfort.svg",
+            image: "assets/images/privilege-comfort.svg",
             title: "Комфорт",
             addedClasses: "room__privilege",
             description: "Шумопоглощающие стены"
           })
           +room-privilege({
-            image: "assets/images/privilege_convenience.svg",
+            image: "assets/images/privilege-convenience.svg",
             title: "Удобство",
             addedClasses: "room__privilege",
             description: "Окно в каждой из спален"
           })
           +room-privilege({
-            image: "assets/images/privilege_fireplace.svg",
+            image: "assets/images/privilege-fireplace.svg",
             title: "Уют",
             addedClasses: "room__privilege",
             description: "Номер оснащен камином"
