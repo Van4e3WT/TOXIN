@@ -1,10 +1,10 @@
 /* global $ */
-const headerBurger = 'header-content__burger';
-const headerBody = 'header-content__body';
+const headerBurger = 'header__burger';
+const headerBody = 'header__body';
 
 function addBurgerListener() {
   $(`.js-${headerBurger}`).toggleClass(`${headerBurger}_active`);
   $(`.js-${headerBody}`).toggleClass(`${headerBody}_active`);
 }
 
-$('.js-header-content__burger').on('click', addBurgerListener);
+$('.js-header__burger').on('click', addBurgerListener);

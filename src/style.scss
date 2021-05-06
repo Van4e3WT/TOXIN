@@ -31,10 +31,6 @@ body {
   letter-spacing: 0.18px;
 }
 
-main {
-  flex-grow: 1;
-}
-
 h1 {
   font-family: 'OpenSans', 'Arial', 'sans-serif';
   font-weight: bold;
@@ -93,6 +89,10 @@ input {
   &:hover, &:focus, &.hover-focus {
     border-color: $DarkShade50;
   }
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .container {

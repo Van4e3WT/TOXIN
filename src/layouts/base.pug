@@ -21,10 +21,11 @@ html(lang="ru-RU")
     block links
     title= title ? title : "TOXIN"
   body
-    +header(false)
-    main
+    header.headers
+      +header(false)
+    main.main
       block content
-    footer
+    footer.footers
       +footer()
       +footer_mobile()
     block scripts
