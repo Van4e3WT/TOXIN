@@ -1,0 +1,8 @@
+//- @param Array<Array<string, string>>
+//- arr[i][0] - description one list item
+//- arr[i][1] - link one list item
+mixin project-navigation(arr)
+  ul.project-navigation
+    each item in arr
+      li.project-navigation__item
+        a.project-navigation__link(href=item[1])=item[0]

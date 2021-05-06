@@ -6,7 +6,8 @@
 
 ## Доступные страницы:
 
-* ### [Главная](https://van4e3wt.github.io/TOXIN/)
+* ### [Навигация](https://van4e3wt.github.io/TOXIN/)
+* ### [Главная](https://van4e3wt.github.io/TOXIN/landing.html)
 * ### [Войти](https://van4e3wt.github.io/TOXIN/login.html)
 * ### [Регистрация](https://van4e3wt.github.io/TOXIN/registration.html)
 * ### [Поиск номеров](https://van4e3wt.github.io/TOXIN/search-room.html)
