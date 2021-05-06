@@ -12,17 +12,17 @@
     height: 100%;
     width: 100%;
 
-    img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
-    }
-
     &_active {
       position: relative;
       opacity: 1;
       transition: all .3s linear;
     }
+  }
+
+  &__img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
   }
 
   &__prev, &__next {

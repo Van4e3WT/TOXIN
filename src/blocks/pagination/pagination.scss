@@ -18,13 +18,13 @@
     border-radius: 50%;
     color: $DarkShade50;
 
-    &.active {
+    &_active {
       background: $gradientColor;
       font-weight: bold;
       color: white;
     }
 
-    &.arrow {
+    &_arrow {
       background: $gradientColorSecond;
       position: relative;
 

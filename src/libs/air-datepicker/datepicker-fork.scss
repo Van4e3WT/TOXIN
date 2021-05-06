@@ -150,11 +150,6 @@
 
     &-title {
       font-size: 1.25rem;
-
-      & i {
-        font-style: inherit;
-        color: inherit;
-      }
     }
   }
 
@@ -165,12 +160,12 @@
     border: none;
     font-size: 0.75rem;
 
-    span[data-action='clear'].datepicker--button {
+    .datepicker--button[data-action='clear'] {
       justify-content: flex-start;
       color: $DarkShade50;
     }
 
-    span[data-action='today'].datepicker--button {
+    .datepicker--button[data-action='today'] {
       justify-content: flex-end;
       color: $Purple;
     }

@@ -2,7 +2,7 @@ mixin carousel(images)
   .carousel.js-carousel
     each image in images
       .carousel__item
-        img(src=image)
+        img.carousel__img(src=image)
     .carousel__buttons
       button.carousel__prev
       button.carousel__next

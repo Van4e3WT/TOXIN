@@ -1,6 +1,6 @@
 $mediaSize: 1000px;
 
-header {
+.header {
   background-color: white;
   box-shadow: $shadow;
 
@@ -137,7 +137,7 @@ header {
         height: $width;
         width: $width;
 
-        span {
+        .header-content__burger-divisions {
           position: absolute;
           height: $height;
           width: 100%;
@@ -167,7 +167,7 @@ header {
         }
 
         &_active {
-          span {
+          .header-content__burger-divisions {
             transform: rotate(90deg);
 
             &::before {

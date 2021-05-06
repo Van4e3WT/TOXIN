@@ -31,20 +31,20 @@
   &__item {
     padding-bottom: 17px;
 
-    a {
-      color: $DarkShade50;
-
-      &:hover {
-        color: $DarkShade75;
-      }
-    }
-
     &:first-child {
       text-transform: uppercase;
       font-weight: bold;
       font-size: 0.75rem;
       letter-spacing: 0;
       color: $DarkShade;
+    }
+  }
+
+  &__link {
+    color: $DarkShade50;
+
+    &:hover {
+      color: $DarkShade75;
     }
   }
 
@@ -66,7 +66,7 @@
     justify-content: flex-end;
   }
 
-  &__link {
+  &__reference {
     padding-left: 22px;
 
     &:first-child {
