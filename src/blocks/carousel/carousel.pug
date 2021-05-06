@@ -1,8 +1,9 @@
 mixin carousel(images)
   .carousel.js-carousel
     each image in images
+      - const alt = image.split('/').slice(-1)[0].split('.')[0]
       .carousel__item
-        img.carousel__img(src=image)
+        img.carousel__img(src=image, alt=alt)
     .carousel__buttons
       button.carousel__prev
       button.carousel__next

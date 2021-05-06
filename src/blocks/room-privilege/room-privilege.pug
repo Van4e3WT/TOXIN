@@ -4,9 +4,10 @@
 //- description - {number/string} block description
 //- addedClasses - {number/string} addition block classes
 mixin room-privilege(props)
- - let { image, title, description, addedClasses="" } = props
-  .room-privilege(class=`${addedClasses}`)
-    img.room-privilege__img(src=image, height="40px", width="40px")
-    .room-privilege__content
-      label.room-privilege__title=title
-      p.room-privilege__description=description
+  - let { image, title, description, addedClasses="" } = props
+  - const alt = image.split('/').slice(-1)[0].split('.')[0]
+   .room-privilege(class=`${addedClasses}`)
+     img.room-privilege__img(src=image, height="40px", width="40px", alt=alt)
+     .room-privilege__content
+       label.room-privilege__title=title
+       p.room-privilege__description=description

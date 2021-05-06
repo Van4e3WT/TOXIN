@@ -1,7 +1,8 @@
 mixin collage(images, addedClasses)
   .collage(class=`${addedClasses}`)
     each image, i in images
+      - const alt = image.split('/').slice(-1)[0].split('.')[0]
       if !(i % 3)
-        img.collage__img.collage__img_main(src=image)
+        img.collage__img.collage__img_main(src=image, alt=alt)
       else
-        img.collage__img.collage__img_minor(src=image)
+        img.collage__img.collage__img_minor(src=image, alt=alt)
