@@ -51,6 +51,7 @@ module.exports = {
     filename: 'bundle_[id].js',
     path: PATHS.dist,
   },
+  devtool: 'eval-source-map',
   plugins: [
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: page,
