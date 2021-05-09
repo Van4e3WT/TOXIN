@@ -22,7 +22,7 @@
     cursor: pointer;
 
     &::placeholder {
-      color: $DarkShade75;
+      color: $darkShade75;
     }
   }
 
@@ -34,7 +34,7 @@
     z-index: 1;
     width: 100%;
     background-color: white;
-    border: 2px solid $DarkShade50;
+    border: 2px solid $darkShade50;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -46,7 +46,7 @@
     padding: 7px 6px 0 14px;
     text-transform: uppercase;
     font-weight: bold;
-    color: $DarkShade;
+    color: $darkShade;
   }
 
   &__counter-block {
@@ -63,8 +63,8 @@
   &__minus, &__plus {
     height: 30px;
     width: 30px;
-    border: 1px solid $DarkShade50;
-    color: $DarkShade50;
+    border: 1px solid $darkShade50;
+    color: $darkShade50;
     border-radius: 50%;
     font-size: 1.5rem;
     font-weight: normal;
@@ -72,8 +72,8 @@
     text-align: center;
 
     &_disabled {
-      border: 1px solid $DarkShade25;
-      color: $DarkShade25;
+      border: 1px solid $darkShade25;
+      color: $darkShade25;
     }
   }
 
@@ -96,16 +96,16 @@
 
   &__clear-btn {
     display: none;
-    color: $DarkShade50;
+    color: $darkShade50;
 
     &:hover {
-      color: $Purple;
+      color: $purple;
       opacity: 1;
     }
   }
 
   &__apply-btn {
-    color: $Purple;
+    color: $purple;
   }
 
   &__list_active {

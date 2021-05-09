@@ -39,19 +39,19 @@ $mediaSize: 420px;
   }
 
   &__lux {
-    color: $Purple;
+    color: $purple;
   }
 
   &__rubles {
     font-size: 0.85rem;
     letter-spacing: 1px;
-    color: $DarkShade50;
+    color: $darkShade50;
   }
 
   &__period {
     font-size: 0.75rem;
     line-height: normal;
-    color: $DarkShade50;
+    color: $darkShade50;
   }
 
   &__label {
@@ -75,7 +75,7 @@ $mediaSize: 420px;
     @media (max-width: $mediaSize) {
       flex-direction: column;
       align-items: center;
-      border-bottom: 1px dotted $DarkShade25;
+      border-bottom: 1px dotted $darkShade25;
     }
   }
 
@@ -96,7 +96,7 @@ $mediaSize: 420px;
   }
 
   &__space { 
-    border-bottom: 2px dotted $DarkShade25;
+    border-bottom: 2px dotted $darkShade25;
     width: 100%;
     margin: 0 5px;
     height: 1.5rem;

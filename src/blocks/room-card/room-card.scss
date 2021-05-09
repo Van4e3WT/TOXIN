@@ -23,7 +23,7 @@
   &__spacer {
     display: block;
     height: 1px;
-    background-color: $DarkShade25;
+    background-color: $darkShade25;
     width: 86%;
     margin: 0 auto;
   }
@@ -40,7 +40,7 @@
   }
   
   &__count, &__postfix {
-    color: $DarkShade50;
+    color: $darkShade50;
     font-size: 0.85rem;
   }
 }

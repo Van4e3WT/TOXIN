@@ -18,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $DarkShade25;
+    color: $darkShade25;
     min-width: $side * 2;
     height: $side;
     border-radius: $side / 2;
@@ -31,7 +31,7 @@
 
     &::before {
       content: '';
-      background: $DarkShade25;
+      background: $darkShade25;
       position: absolute;
       z-index: -1;
       left: -$border;
@@ -56,7 +56,7 @@
   }
 
   &__input:checked + &__wrapper {
-    color: $Purple;
+    color: $purple;
 
     &::before {
       background: $gradientColor;

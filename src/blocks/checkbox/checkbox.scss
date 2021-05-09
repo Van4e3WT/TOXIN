@@ -19,7 +19,7 @@
     font-size: 0.85rem;
     line-height: 1.25rem;
     letter-spacing: 0.3px;
-    color: $DarkShade50;
+    color: $darkShade50;
 
     &::before {
       $side: 18px;
@@ -28,7 +28,7 @@
       flex-shrink: 0;
       width: $side;
       height: $side;
-      border: 1px solid $DarkShade25;
+      border: 1px solid $darkShade25;
       border-radius: 5px;
       margin-right: 12px;
     }
@@ -54,7 +54,7 @@
 
   &__input:checked + &__content {
     &::before {
-      border-color: $Purple;
+      border-color: $purple;
     }
 
     &::after {
@@ -68,12 +68,12 @@
     .checkbox {
       &__content {
         font-weight: bold;
-        color: $DarkShade75;
+        color: $darkShade75;
       }
       
       &__description {
         padding-left: 30px;
-        color: $DarkShade50;
+        color: $darkShade50;
       }
     }
   }

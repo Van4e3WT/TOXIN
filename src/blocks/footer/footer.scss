@@ -1,6 +1,6 @@
 .footer {
   background-color: white;
-  border-top: 1px solid $DarkShade25;
+  border-top: 1px solid $darkShade25;
 
   &__row {
     display: grid;
@@ -15,7 +15,7 @@
 
   &__text {
     padding-bottom: 24px;
-    color: $DarkShade75;
+    color: $darkShade75;
   }
 
   &__column {
@@ -36,20 +36,20 @@
       font-weight: bold;
       font-size: 0.75rem;
       letter-spacing: 0;
-      color: $DarkShade;
+      color: $darkShade;
     }
   }
 
   &__link {
-    color: $DarkShade50;
+    color: $darkShade50;
 
     &:hover {
-      color: $DarkShade75;
+      color: $darkShade75;
     }
   }
 
   &__copyrights {
-    border-top: 1px solid $DarkShade25;
+    border-top: 1px solid $darkShade25;
     letter-spacing: 0.2px;
   }
 

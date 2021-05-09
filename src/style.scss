@@ -2,18 +2,18 @@
 
 $containerWidth: 1200px;
 $headerPadding: 18px;
-$DarkShade: #1F2041;
-$DarkShade75: rgba($DarkShade, 0.75);
-$DarkShade50: rgba($DarkShade, 0.50);
-$DarkShade25: rgba($DarkShade, 0.25);
-$DarkShade10: rgba($DarkShade, 0.10);
-$DarkShade05: rgba($DarkShade, 0.05);
-$Purple: #BC9CFF;
-$Green: #6FCF97;
-$LightBlue: #66D2EA;
-$shadow: 0px 0px 50px -25px $DarkShade;
-$gradientColor: linear-gradient(to top, #8BA4F9, $Purple);
-$gradientColorSecond: linear-gradient(to top, $LightBlue, $Green);
+$darkShade: #1F2041;
+$darkShade75: rgba($darkShade, 0.75);
+$darkShade50: rgba($darkShade, 0.50);
+$darkShade25: rgba($darkShade, 0.25);
+$darkShade10: rgba($darkShade, 0.10);
+$darkShade05: rgba($darkShade, 0.05);
+$purple: #BC9CFF;
+$green: #6FCF97;
+$lightBlue: #66D2EA;
+$shadow: 0px 0px 50px -25px $darkShade;
+$gradientColor: linear-gradient(to top, #8BA4F9, $purple);
+$gradientColorSecond: linear-gradient(to top, $lightBlue, $green);
 
 * {
   padding: 0;
@@ -51,7 +51,7 @@ h3, label {
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: bold;
-  color: $DarkShade;
+  color: $darkShade;
   letter-spacing: 0px;
 }
 
@@ -60,7 +60,7 @@ p {
 }
 
 h1, h2, h3, p {
-  color: $DarkShade;
+  color: $darkShade;
 }
 
 a {
@@ -72,22 +72,25 @@ ul {
 }
 
 input {
-  outline: none;
   width: 100%;
   height: 44px;
-  border: 2px solid $DarkShade25;
+  border: 2px solid $darkShade25;
   border-radius: 5px;
   padding: 14px 0 14px 14px;
   font-family: 'Montserrat';
   letter-spacing: 0.2px;
-  color: $DarkShade75;
+  color: $darkShade75;
 
   &::placeholder {
-    color: $DarkShade25;
+    color: $darkShade25;
   }
 
   &:hover, &:focus, &.hover-focus {
-    border-color: $DarkShade50;
+    border-color: $darkShade50;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 

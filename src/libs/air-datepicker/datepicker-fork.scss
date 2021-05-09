@@ -14,13 +14,13 @@
       background: $gradientColorSecond;
 
       &.-in-range- {
-        color: $Purple;
+        color: $purple;
       }
     }
 
     &.-in-range- {
       background: linear-gradient(to top, #bc9cff3f 0%, #8ba4f93f 100%);
-      color: $DarkShade50;
+      color: $darkShade50;
     }
 
     &.-range-from- {
@@ -32,7 +32,7 @@
       &.-range-from- {
         &::before {
           z-index: -1;
-          content: "";
+          content: '';
           position: absolute;
           top: 0;
           left: 0;
@@ -44,7 +44,7 @@
 
         &.-selected-::before {
           z-index: -1;
-          content: "";
+          content: '';
           position: absolute;
           top: 0;
           left: 0;
@@ -58,7 +58,7 @@
       &.-range-to- {
         &::before {
           z-index: -1;
-          content: "";
+          content: '';
           position: absolute;
           top: 0;
           left: 0;
@@ -70,7 +70,7 @@
 
         &.-selected-::before {
           z-index: -1;
-          content: "";
+          content: '';
           position: absolute;
           top: 0;
           left: 0;
@@ -116,7 +116,7 @@
   }
 
   &--day-name {
-    color: $Purple;
+    color: $purple;
     text-transform: none;
   }
 
@@ -132,7 +132,7 @@
     border: none;
     font-family: 'OpenSans';
     font-weight: bold;
-    color: $DarkShade;
+    color: $darkShade;
     padding: 8px 20px;
 
     &-action {
@@ -143,7 +143,7 @@
       }
 
       & path {
-        stroke: $Purple;
+        stroke: $purple;
         stroke-width: 3px;
       }
     }
@@ -162,12 +162,12 @@
 
     .datepicker--button[data-action='clear'] {
       justify-content: flex-start;
-      color: $DarkShade50;
+      color: $darkShade50;
     }
 
     .datepicker--button[data-action='today'] {
       justify-content: flex-end;
-      color: $Purple;
+      color: $purple;
     }
   }
 
@@ -176,7 +176,7 @@
     flex: 0;
     text-transform: uppercase;
     font-weight: bold;
-    color: $Purple;
+    color: $purple;
     
     &:hover {
       opacity: 0.8;

@@ -16,7 +16,7 @@
     text-transform: none;
     font-size: 0.85rem;
     letter-spacing: 0.3px;
-    color: $DarkShade50;
+    color: $darkShade50;
     $sideBorder: 18px;
     $borderWidth: 2px;
 
@@ -26,7 +26,7 @@
       flex-shrink: 0;
       width: $sideBorder;
       height: $sideBorder;
-      border: $borderWidth solid $DarkShade25;
+      border: $borderWidth solid $darkShade25;
       border-radius: 50%;
       margin-right: 10px;
     }
@@ -47,10 +47,10 @@
   }
 
   &__input:checked + &__content {
-    color: $DarkShade75;
+    color: $darkShade75;
 
     &::before {
-      border-color: $Purple;
+      border-color: $purple;
     }
     
     &::after {

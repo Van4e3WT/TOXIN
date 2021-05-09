@@ -33,8 +33,11 @@
     width: 25%;
     border: none;
     z-index: 1;
-    outline: none;
     transition: .3s;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &:hover &__prev, &:hover &__next {

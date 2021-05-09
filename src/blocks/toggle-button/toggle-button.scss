@@ -16,7 +16,7 @@
     text-transform: none;
     font-size: 0.85rem;
     letter-spacing: 0.3px;
-    color: $DarkShade75;
+    color: $darkShade75;
   }
 
   &__switch {
@@ -26,7 +26,7 @@
     height: $side;
     width: $side * 2;
     margin-right: 12px;
-    border: 2px solid $DarkShade25;
+    border: 2px solid $darkShade25;
     border-radius: $side / 2;
     transition: 0.3s;
 
@@ -37,18 +37,18 @@
       left: 2px;
       height: 12px;
       width: 12px;
-      background: $DarkShade25;
+      background: $darkShade25;
       border-radius: 50%;
       transition: 0.3s;
     }
   }
 
   &__input:checked + &__switch {
-    border-color: $Purple;
+    border-color: $purple;
 
     &::before {
       transform: translateX(20px);
-      background: $Purple;
+      background: $purple;
     }
   }
 }

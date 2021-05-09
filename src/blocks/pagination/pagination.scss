@@ -16,7 +16,7 @@
     height: $side;
     width: $side;
     border-radius: 50%;
-    color: $DarkShade50;
+    color: $darkShade50;
 
     &_active {
       background: $gradientColor;
@@ -55,6 +55,6 @@
     width: 100%;
     font-size: 0.85rem;
     text-align: center;
-    color: $DarkShade75;
+    color: $darkShade75;
   }
 }

@@ -50,7 +50,7 @@ $mediaSize: 1000px;
   &__item {
     display: flex;
     padding: 0 9.5px;
-    color:$DarkShade50;
+    color:$darkShade50;
     align-items: center;
     justify-content: center;
     letter-spacing: 0.25px;
@@ -72,7 +72,7 @@ $mediaSize: 1000px;
         height: $side;
         width: $side;
         transform: rotate(45deg);
-        border: 2.5px solid $DarkShade50;
+        border: 2.5px solid $darkShade50;
         border-top: 0;
         border-left: 0;
       }
@@ -87,14 +87,14 @@ $mediaSize: 1000px;
     }
 
     &:hover {
-      color: $DarkShade75;
+      color: $darkShade75;
     }
 
     @media (max-width:$mediaSize) {
       padding: 25px;
       width: 90%;
       text-align: center;
-      border-bottom: 1px solid $DarkShade25;
+      border-bottom: 1px solid $darkShade25;
       &:first-child, &:last-child {
         padding: 25px;
       }
@@ -108,7 +108,7 @@ $mediaSize: 1000px;
   &__user {
     padding-left: 30px;
     height: 40px;
-    border-left: 2px solid $DarkShade25;
+    border-left: 2px solid $darkShade25;
     display: flex;
     align-items: center;
 
@@ -132,7 +132,7 @@ $mediaSize: 1000px;
     @media (max-width:$mediaSize) {
       $width: 50px;
       $height: 5px;
-      $color: $DarkShade;
+      $color: $darkShade;
       display: block;
       position: relative;
       height: $width;
