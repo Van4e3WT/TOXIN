@@ -46,8 +46,6 @@
       border-left: none;
       transform: rotate(45deg);
       border-image: $gradientColor;
-      -moz-border-image: $gradientColor;
-      -webkit-border-image: $gradientColor;
       border-image-slice: 1;
     }
   }
