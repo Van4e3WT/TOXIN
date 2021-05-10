@@ -1,3 +1,6 @@
+$mediaSizeLarge: 1200px;
+$mediaSizeSmall: 800px;
+
 .room {
   &__collage {
     margin-bottom: 70px;
@@ -11,18 +14,14 @@
     grid-template-rows: minmax(303px, auto);
     grid-auto-flow: dense;
 
-    @media(max-width: 1200px) {
+    @media(max-width: $mediaSizeLarge) {
       grid-template-columns: repeat(2, 50%);
       grid-template-rows: auto;
       justify-items: center;
       grid-row-gap: 30px;
-
-      h2 {
-        text-align: center;
-      }
     }
 
-    @media(max-width: 800px) {
+    @media(max-width: $mediaSizeSmall) {
       grid-template-columns: 100%;
       grid-row-gap: 50px;
     }
@@ -30,10 +29,26 @@
 
   &__privilege {
     padding: 20px 4px;
+
+    &:first-child {
+      padding-top: 2px;
+    }
+
+    &:last-child {
+      padding-bottom: 2px;
+    }
   }
 
   &__header {
     margin-bottom: 18px;
+
+    @media(max-width: $mediaSizeLarge) {
+      text-align: center;
+    }
+  }
+
+  &__bullet-header {
+    margin-left: 20px;
   }
 
   &__check {
@@ -44,7 +59,7 @@
     grid-column: span 2;
     margin-bottom: 8px;
     
-    @media(max-width: 800px) {
+    @media(max-width: $mediaSizeSmall) {
       grid-column: auto;
     }
   }
