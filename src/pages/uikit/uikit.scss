@@ -45,6 +45,12 @@
       color: $darkShade25;
       text-align: right;
     }
+
+    &__text-example {
+      &_limited {
+        max-width: 300px;
+      }
+    }
   }
 
   .cards {
