@@ -150,6 +150,7 @@
     &__button {
       display: inline-block;
       margin-right: 12px;
+      margin-bottom: 32px;
     }
 
     &__like {
@@ -159,50 +160,42 @@
 
     &__label {
       margin-bottom: 5px;
+
+      &_medium {
+        margin-bottom: 15px;
+      }
+
+      &_large {
+        margin-bottom: 17px;
+      }
     }
 
-    &__mb-5 {
-      margin-bottom: 5px;
+    &__wrapper {
+      margin-bottom: 35px;
+
+      &_small {
+        margin-bottom: 12px;
+      }
+
+      &_medium {
+        margin-bottom: 20px;
+      }
+
+      &_large {
+        margin-bottom: 40px;
+      }
+
+      &_huge {
+        margin-bottom: 45px;
+      }
     }
 
-    &__mb-10 {
-      margin-bottom: 10px;
-    }
-
-    &__mb-12 {
-      margin-bottom: 12px;
-    }
-
-    &__mb-15 {
-      margin-bottom: 15px;
-    }
-
-    &__mb-17 {
-      margin-bottom: 17px;
-    }
-
-    &__mb-20 {
-      margin-bottom: 20px;
-    }
-
-    &__mb-27 {
+    &__checkboxes {
       margin-bottom: 27px;
     }
 
-    &__mb-32 {
-      margin-bottom: 32px;
-    }
-
-    &__mb-35 {
-      margin-bottom: 35px;
-    }
-
-    &__mb-40 {
-      margin-bottom: 40px;
-    }
-
-    &__mb-45 {
-      margin-bottom: 45px;
+    &__checkbox {
+      margin-bottom: 10px;
     }
   }
 

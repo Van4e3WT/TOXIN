@@ -134,52 +134,52 @@ html(lang="ru-RU")
         .container
           .form-elements__grid
             .form-elements__div1
-              .form-elements__mb-20
-                label.form-elements__mb-5 text field
+              .form-elements__wrapper_medium
+                label.form-elements__label text field
                 .form-elements__promt default
                 input.form-elements__input(type="text", name="textfield1", placeholder="Email")
-              .form-elements__mb-20
-                label.form-elements__mb-5 text field
+              .form-elements__wrapper_medium
+                label.form-elements__label text field
                 .form-elements__promt hover / focus
                 input.form-elements__input(type="text", name="textfield2", value="This is pretty awesome", class="hover-focus")
-              .form-elements__mb-20
-                label.form-elements__mb-5 dropdown
+              .form-elements__wrapper_medium
+                label.form-elements__label dropdown
                 +dropdown-absolute({
                   wordforms: ["гость", "гостя", "гостей"],
                   items: ["Взрослые", "Дети", "Младенцы"],
                   isOpen: false,
                   defaultText: "Сколько гостей"
                 })
-              .form-elements__mb-40
-                label.form-elements__mb-5 masked text field
+              .form-elements__wrapper_large
+                label.form-elements__label masked text field
                 +date-solo()
-              .form-elements__mb-40
+              .form-elements__wrapper_large
                 +twin-datepick("date dropdown", "date dropdown")
-              .form-elements__mb-40
-                label.form-elements__mb-5 Filter date dropdown
+              .form-elements__wrapper_large
+                label.form-elements__label Filter date dropdown
                 +date-solo-range()
-              .form-elements__mb-40
-                label.form-elements__mb-5 subscription text field
+              .form-elements__wrapper_large
+                label.form-elements__label subscription text field
                 +form-subscribe()
             .form-elements__div2
-              .form-elements__mb-27
-                label.form-elements__mb-17 Checkbox buttons
+              .form-elements__checkboxes
+                label.form-elements__label_large Checkbox buttons
                 +checkbox({
                   content: "Можно курить",
-                  addedClasses: "form-elements__mb-10"
+                  addedClasses: "form-elements__checkbox"
                 })
                 +checkbox({
                   content: "Можно с питомцами",
                   isChecked: true,
-                  addedClasses: "form-elements__mb-10"
+                  addedClasses: "form-elements__checkbox"
                 })
                 +checkbox({
                   content: "Можно пригласить гостей (до 10 человек)",
                   isChecked: true,
-                  addedClasses: "form-elements__mb-10"
+                  addedClasses: "form-elements__checkbox"
                 })
-              .form-elements__mb-35
-                label.form-elements__mb-15 Radio buttons
+              .form-elements__wrapper
+                label.form-elements__label_medium Radio buttons
                 .form-elements__radio
                   +radio-button({
                     content: "Мужчина",
@@ -192,26 +192,26 @@ html(lang="ru-RU")
                     name: "sexRegistration",
                     addedClasses: "register-card__radio"
                   })
-              .form-elements__mb-45
-                label.form-elements__mb-17 Toggle
-                +toggle-button("Получать спецпредложения", true, "form-elements__mb-12")
-                +toggle-button("Получать спецпредложения", false, "form-elements__mb-12")
-              .form-elements__mb-40
-                label.form-elements__mb-17 Like button
+              .form-elements__wrapper_huge
+                label.form-elements__label_large Toggle
+                +toggle-button("Получать спецпредложения", true, "form-elements__wrapper_small")
+                +toggle-button("Получать спецпредложения", false, "form-elements__wrapper_small")
+              .form-elements__wrapper_large
+                label.form-elements__label_large Like button
                 .form-elements__likes
                   .form-elements__like
                     +like-button(2, false)
                   .form-elements__like
                     +like-button(12, true)
-              .form-elements__mb-40
-                label.form-elements__mb-17 Rate button
+              .form-elements__wrapper_large
+                label.form-elements__label_large Rate button
                 .form-elements__rates
                   .form-elements__rate
                     +rate-button("rating", 4)
                   .form-elements__rate
                     +rate-result(5)
             .form-elements__div3
-              .form-elements__mb-45
+              .form-elements__wrapper_huge
                 +range-slider({
                   minValue: 0,
                   maxValue: 15000,
@@ -220,26 +220,26 @@ html(lang="ru-RU")
                   step: 100,
                   sliderType: "double"
                 })
-              .form-elements__mb-40
-                label.form-elements__mb-20 buttons
-                .form-elements__buttons.form-elements__mb-32
-                  .form-elements__button.form-elements__mb-40
+              .form-elements__wrapper_large
+                label.form-elements__wrapper_medium buttons
+                .form-elements__buttons
+                  .form-elements__button.form-elements__wrapper_large
                     +button({
                       reference: "#",
                       content: "click me"
                     })
-                  .form-elements__button.form-elements__mb-40
+                  .form-elements__button.form-elements__wrapper_large
                     +button({
                       reference: "#",
                       content: "click me"
                     })
-                  .form-elements__button.form-elements__mb-32
+                  .form-elements__button
                     +button({
                       reference: "#",
                       content: "click me",
                       modificator: "ghost-button"
                     })
-                  .form-elements__button.form-elements__mb-32
+                  .form-elements__button
                     +button({
                       reference: "#",
                       content: "click me",
@@ -260,14 +260,14 @@ html(lang="ru-RU")
                 +button({
                   reference: "#",
                   content: "перейти к оплате",
-                  addedClasses: "form-elements__mb-40",
+                  addedClasses: "form-elements__wrapper_large",
                   modificator: "send-button"
                 })
-                label.form-elements__mb-17 pagination
+                label.form-elements__label_large pagination
                 +pagination(1, 15)
             .form-elements__div4
-              .form-elements__mb-20
-                label.form-elements__mb-5 Dropdown
+              .form-elements__wrapper_medium
+                label.form-elements__label Dropdown
                 .form-elements__promt default
                 +dropdown-absolute({
                   wordforms: [
@@ -277,8 +277,8 @@ html(lang="ru-RU")
                   ],
                   defaultValues: [2, 2, 0]
                 })
-              .form-elements__mb-20
-                label.form-elements__mb-5 Dropdown
+              .form-elements__wrapper_medium
+                label.form-elements__label Dropdown
                 .form-elements__promt expanded
                 +dropdown-absolute({
                   wordforms: [
@@ -290,7 +290,7 @@ html(lang="ru-RU")
                   isOpen: true
                 })
             .form-elements__div5
-              label.form-elements__mb-5 Dropdown
+              label.form-elements__label Dropdown
               +dropdown-absolute({
                   wordforms: ["гость", "гостя", "гостей"],
                   items: ["Взрослые", "Дети", "Младенцы"],
@@ -298,7 +298,7 @@ html(lang="ru-RU")
                   defaultText: "Сколько гостей"
                 })
             .form-elements__div6
-              label.form-elements__mb-5 Dropdown
+              label.form-elements__label Dropdown
               +dropdown-absolute({
                 wordforms: ["гость", "гостя", "гостей"],
                 items: ["Взрослые", "Дети", "Младенцы"],
@@ -307,7 +307,7 @@ html(lang="ru-RU")
                 defaultValues: [2, 1, 0]
               })
             .form-elements__div7
-              .form-elements__mb-35
+              .form-elements__wrapper
                 +dropdown-relative({
                   content: "Expandable checkbox list",
                   checkboxes: [
@@ -336,19 +336,19 @@ html(lang="ru-RU")
                 isOpen: true
               })
             .form-elements__div8
-              label.form-elements__mb-17 Rich checkbox buttons
-              .form-elements__mb-12
+              label.form-elements__label_large Rich checkbox buttons
+              .form-elements__wrapper_small
                 +checkbox({
                   content: "Широкий коридор",
                   description: "Ширина коридоров в номере не\xA0менее 91 см."
                 })
-              .form-elements__mb-12
+              .form-elements__wrapper_small
                 +checkbox({
                   content: "Помощник для инвалидов",
                   description: "На 1 этаже вас встретит специалист и проводит до номера."
                 })
             .form-elements__div9
-              label.form-elements__mb-15 Bullet list
+              label.form-elements__label_medium Bullet list
               +bullet-list({
                 bullets: [
                   "Нельзя с питомцами",
