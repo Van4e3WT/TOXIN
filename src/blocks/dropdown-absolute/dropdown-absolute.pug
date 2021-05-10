@@ -18,17 +18,17 @@ mixin dropdown-absolute(props)
       input.dropdown-absolute__output(default=defaultText, type="text", readonly)
       .dropdown-absolute__list(class= isOpen ? "dropdown-absolute__list_active" : "")
         each item, key in wordforms
-              .dropdown-absolute__item(wordforms=item.join(', '))
-                .dropdown-absolute__item-type=item[1]
-                +dropdown-absolute__counter-block(defaultValues, key)
+          .dropdown-absolute__item(wordforms=item.join(', '))
+            .dropdown-absolute__item-type=item[1]
+            +dropdown-absolute__counter-block(defaultValues, key)
   else
-      .dropdown-absolute.js-dropdown-absolute(wordforms=wordforms.join(', '), class=`${addedClasses}`)
-        input.dropdown-absolute__output(default=defaultText, type="text", readonly)
-        .dropdown-absolute__list(class= isOpen ? "dropdown-absolute__list_active" : "")
-          each item, key in items
-            .dropdown-absolute__item
-              .dropdown-absolute__item-type=item
-              +dropdown-absolute__counter-block(defaultValues, key)
-          .dropdown-absolute__buttons
-            .dropdown-absolute__clear-btn.button_skeleton-button Очистить
-            .dropdown-absolute__apply-btn.button_skeleton-button Применить
+    .dropdown-absolute.js-dropdown-absolute(wordforms=wordforms.join(', '), class=`${addedClasses}`)
+      input.dropdown-absolute__output(default=defaultText, type="text", readonly)
+      .dropdown-absolute__list(class= isOpen ? "dropdown-absolute__list_active" : "")
+        each item, key in items
+          .dropdown-absolute__item
+            .dropdown-absolute__item-type=item
+            +dropdown-absolute__counter-block(defaultValues, key)
+        .dropdown-absolute__buttons
+          .dropdown-absolute__clear-btn.button_skeleton-button Очистить
+          .dropdown-absolute__apply-btn.button_skeleton-button Применить

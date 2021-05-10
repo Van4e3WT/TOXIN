@@ -69,67 +69,67 @@ html(lang="ru-RU")
             .colors-and-fonts__column
               .colors-and-fonts__text-item
                 h1.colors-and-fonts__text-description H1
-                h1 This one is the sub-section or widget title
+                h1.colors-and-fonts__text-example This one is the sub-section or widget title
               .colors-and-fonts__text-item
                 h2.colors-and-fonts__text-description H2
-                h2 Next one is the item title inside widgets
+                h2.colors-and-fonts__text-example Next one is the item title inside widgets
               .colors-and-fonts__text-item
                 label.colors-and-fonts__text-description H3
-                label This is a label or CTA text
+                label.colors-and-fonts__text-example This is a label or CTA text
               .colors-and-fonts__text-item
                 p.colors-and-fonts__text-description Body
-                p
+                p.colors-and-fonts__text-example
                   |This is the body text which is used for most
                   br
                   |of the design, like paragraphs, lists, etc.
       article.cards
-          +svgUI()
-          .container
-            .cards__grid
-              .cards__col
+        +svgUI()
+        .container
+          .cards__grid
+            .cards__col
+              .cards__cell
+                +landing-card()
+              .cards__cell
+                +register-card()
+            .cards__col
+              .cards__cell
+                +total-card(888, true, 9900)
+              .cards__cell
+                +login-card()
+            .cards__col
+              .cards__cell
+                +opened-datepick()
+              .cards__rooms
                 .cards__cell
-                  +landing-card()
+                  +room-card({
+                    "reference": "room.html",
+                    "images": [
+                      "assets/images/rooms/room-888.jpg",
+                      "assets/images/rooms/room-840.jpg",
+                      "assets/images/rooms/room-888.jpg",
+                      "assets/images/rooms/room-840.jpg"
+                    ],
+                    "number": 888,
+                    "isLux": true,
+                    "cost": 9990,
+                    "rating": 5,
+                    "reviews": 145
+                  })
                 .cards__cell
-                  +register-card()
-              .cards__col
-                .cards__cell
-                  +total-card(888, true, 9900)
-                .cards__cell
-                  +login-card()
-              .cards__col
-                .cards__cell
-                  +opened-datepick()
-                .cards__rooms
-                  .cards__cell
-                    +room-card({
-                      "reference": "room.html",
-                      "images": [
-                        "assets/images/rooms/room-888.jpg",
-                        "assets/images/rooms/room-840.jpg",
-                        "assets/images/rooms/room-888.jpg",
-                        "assets/images/rooms/room-840.jpg"
-                      ],
-                      "number": 888,
-                      "isLux": true,
-                      "cost": 9990,
-                      "rating": 5,
-                      "reviews": 145
-                    })
-                  .cards__cell
-                    +room-card({
-                      "reference": "room.html",
-                      "images": [
-                        "assets/images/rooms/room-840.jpg",
-                        "assets/images/rooms/room-980.jpg",
-                        "assets/images/rooms/room-888.jpg",
-                        "assets/images/rooms/room-444.jpg"
-                      ],
-                      "number": 840,
-                      "isLux": false,
-                      "cost": 9990,
-                      "rating": 4,
-                      "reviews": 65
-                    })
+                  +room-card({
+                    "reference": "room.html",
+                    "images": [
+                      "assets/images/rooms/room-840.jpg",
+                      "assets/images/rooms/room-980.jpg",
+                      "assets/images/rooms/room-888.jpg",
+                      "assets/images/rooms/room-444.jpg"
+                    ],
+                    "number": 840,
+                    "isLux": false,
+                    "cost": 9990,
+                    "rating": 4,
+                    "reviews": 65
+                  })
       article.form-elements
         +svgUI()
         .container
@@ -138,11 +138,11 @@ html(lang="ru-RU")
               .form-elements__mb-20
                 label.form-elements__mb-5 text field
                 .form-elements__promt default
-                input(type="text", name="textfield1", placeholder="Email")
+                input.form-elements__input(type="text", name="textfield1", placeholder="Email")
               .form-elements__mb-20
                 label.form-elements__mb-5 text field
                 .form-elements__promt hover / focus
-                input(type="text", name="textfield2", value="This is pretty awesome", class="hover-focus")
+                input.form-elements__input(type="text", name="textfield2", value="This is pretty awesome", class="hover-focus")
               .form-elements__mb-20
                 label.form-elements__mb-5 dropdown
                 +dropdown-absolute({

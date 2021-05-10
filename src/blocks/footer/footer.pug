@@ -13,11 +13,10 @@ mixin footer()
         .footer__column
           .footer__logo
             +logo()
-          .footer__text
-            p
-              | Бронирование номеров в лучшем
-              | отеле 2019 года по версии
-              | ассоциации «Отельные взгляды»
+          p.footer__text
+            | Бронирование номеров в лучшем
+            | отеле 2019 года по версии
+            | ассоциации «Отельные взгляды»
         ul.footer__column 
           .footer__item Навигация
           +ref-item("/plug-link", "О нас")

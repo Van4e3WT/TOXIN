@@ -20,42 +20,42 @@ block content
       "assets/images/rooms/room-888-3.jpg"
     ], "room__collage")
     .container.room__body
-        .room__about
-          h2.room__header Сведения о номере
-          .room__privileges
-            +room-privilege({
-              image: "assets/images/privilege-comfort.svg",
-              title: "Комфорт",
-              addedClasses: "room__privilege",
-              description: "Шумопоглощающие стены"
-            })
-            +room-privilege({
-              image: "assets/images/privilege-convenience.svg",
-              title: "Удобство",
-              addedClasses: "room__privilege",
-              description: "Окно в каждой из спален"
-            })
-            +room-privilege({
-              image: "assets/images/privilege-fireplace.svg",
-              title: "Уют",
-              addedClasses: "room__privilege",
-              description: "Номер оснащен камином"
-            })
-        .room__reviews
-          h2.room__header Впечатления от номера
-          +circle-diagram(260, "голосов", [50, 25, 25, 0])
-        +total-card(888, true, 9900, "room__check")
-        +comments(commentaries, "room__comments")
-        .room__bullet-list
-          h2.room__header.room__bullet-header Правила
-          +bullet-list({
-            addedClasses: "room__rules",
-            bullets: [
-              "Нельзя с питомцами",
-              "Без вечеринок и мероприятий",
-              "Время прибытия — после\xa013:00, а выезд до\xa012:00"
-            ]
+      .room__about
+        h2.room__header Сведения о номере
+        .room__privileges
+          +room-privilege({
+            image: "assets/images/privilege-comfort.svg",
+            title: "Комфорт",
+            addedClasses: "room__privilege",
+            description: "Шумопоглощающие стены"
           })
-        .room__free-cancel
-          h2.room__header Отмена
-          +free-cancel("room__cancel")
+          +room-privilege({
+            image: "assets/images/privilege-convenience.svg",
+            title: "Удобство",
+            addedClasses: "room__privilege",
+            description: "Окно в каждой из спален"
+          })
+          +room-privilege({
+            image: "assets/images/privilege-fireplace.svg",
+            title: "Уют",
+            addedClasses: "room__privilege",
+            description: "Номер оснащен камином"
+          })
+      .room__reviews
+        h2.room__header Впечатления от номера
+        +circle-diagram(260, "голосов", [50, 25, 25, 0])
+      +total-card(888, true, 9900, "room__check")
+      +comments(commentaries, "room__comments")
+      .room__bullet-list
+        h2.room__header.room__bullet-header Правила
+        +bullet-list({
+          addedClasses: "room__rules",
+          bullets: [
+            "Нельзя с питомцами",
+            "Без вечеринок и мероприятий",
+            "Время прибытия — после\xa013:00, а выезд до\xa012:00"
+          ]
+        })
+      .room__free-cancel
+        h2.room__header Отмена
+        +free-cancel("room__cancel")

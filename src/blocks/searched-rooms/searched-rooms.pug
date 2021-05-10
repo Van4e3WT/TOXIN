@@ -2,10 +2,10 @@ include ../room-card/room-card.pug
 include ../pagination/pagination.pug
 
 mixin searched-rooms(rooms)
-      .searched-rooms
-        h1.searched-rooms__header Номера, которые мы для вас подобрали
-        .searched-rooms__room-cards
-          each room in rooms
-            +room-card(room)
-        .searched-rooms__pagination
-          +pagination(1, 15)
+  .searched-rooms
+    h1.searched-rooms__header Номера, которые мы для вас подобрали
+    .searched-rooms__room-cards
+      each room in rooms
+        +room-card(room)
+    .searched-rooms__pagination
+      +pagination(1, 15)
