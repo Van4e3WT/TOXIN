@@ -1,0 +1,141 @@
+import Utils from './utils';
+
+class DropdownAbsolute {
+  constructor(dropdown, selector, zIndex = 1) {
+    this.dropdown = dropdown;
+    this.selector = selector;
+    this.zIndex = zIndex;
+  }
+
+  init() {
+    this.dropdownOutput = this.dropdown.querySelector(`.${this.selector}__output`);
+    const dropdownClear = this.dropdown.querySelector(`.${this.selector}__clear-btn`);
+    const dropdownApply = this.dropdown.querySelector(`.${this.selector}__apply-btn`);
+    const dropdownList = this.dropdown.querySelector(`.${this.selector}__list`);
+
+    dropdownList.style.zIndex = this.zIndex;
+
+    this.dropdownOutput.addEventListener('click', this.toggleActiveOnList.bind(this));
+
+    if (dropdownClear) {
+      dropdownClear.addEventListener('click', this.clearListValues.bind(this));
+    }
+
+    if (dropdownApply) {
+      dropdownApply.addEventListener('click', this.toggleActiveOnList.bind(this));
+    }
+
+    const listItems = this.dropdown.querySelectorAll(`.${this.selector}__item`);
+    listItems.forEach((item) => {
+      const minus = item.querySelector(`.${this.selector}__minus`);
+      const counter = item.querySelector(`.${this.selector}__counter`);
+      const plus = item.querySelector(`.${this.selector}__plus`);
+
+      const decrementCounter = () => {
+        if (+counter.textContent > 0) {
+          counter.textContent = +counter.textContent - 1;
+        }
+        this.update();
+      };
+
+      const incrementCounter = () => {
+        counter.textContent = +counter.textContent + 1;
+        this.update();
+      };
+
+      minus.addEventListener('click', decrementCounter);
+      plus.addEventListener('click', incrementCounter);
+    });
+
+    this.update();
+  }
+
+  update() {
+    const defaultValue = this.dropdownOutput.getAttribute('default');
+
+    const updateCounterBlock = (item) => {
+      const counter = item.querySelector(`.${this.selector}__counter`);
+      const minus = item.querySelector(`.${this.selector}__minus`);
+
+      if (+counter.textContent < 1) {
+        minus.classList.add(`${this.selector}__minus_disabled`);
+      } else {
+        minus.classList.remove(`${this.selector}__minus_disabled`);
+      }
+    };
+
+    if (this.dropdown.hasAttribute('several-word-forms')) {
+      const result = [];
+      let sum = 0;
+
+      this.dropdown.querySelectorAll(`.${this.selector}__item`).forEach((item) => {
+        updateCounterBlock(item);
+
+        if (item.hasAttribute('wordforms')) {
+          const counters = item.querySelectorAll(`.${this.selector}__counter`);
+          let value;
+
+          counters.forEach((counter) => {
+            value = +counter.textContent;
+            sum += +counter.textContent;
+          });
+
+          if (value > 0) {
+            const wordForms = item.getAttribute('wordforms').split(', ');
+            const rightForm = Utils.num2str(value, wordForms);
+
+            result.push(`${value} ${rightForm}`);
+          }
+        }
+
+        if (sum !== 0) {
+          let resultStr = '';
+
+          for (let j = 0; j < result.length; j += 1) {
+            resultStr += j ? `, ${result[j]}` : result[j];
+          }
+
+          this.dropdownOutput.value = `${resultStr}\u2026`;
+        } else {
+          this.dropdownOutput.value = defaultValue;
+        }
+      });
+    } else {
+      const buttonsBlock = this.dropdown.querySelector(`.${this.selector}__buttons`);
+      let value = 0;
+
+      this.dropdown.querySelectorAll(`.${this.selector}__item`).forEach((item) => {
+        updateCounterBlock(item);
+        value += (+item.querySelector(`.${this.selector}__counter`).textContent);
+      });
+
+      const wordForms = this.dropdown.hasAttribute('wordforms') ? this.dropdown.getAttribute('wordforms').split(', ') : null;
+      const rightForm = wordForms ? Utils.num2str(value, wordForms) : '';
+
+      if (value !== 0) {
+        this.dropdownOutput.value = `${value} ${rightForm}`;
+        buttonsBlock.classList.add(`${this.selector}__buttons_non-empty`);
+      } else {
+        this.dropdownOutput.value = defaultValue;
+        buttonsBlock.classList.remove(`${this.selector}__buttons_non-empty`);
+      }
+    }
+  }
+
+  toggleActiveOnList() {
+    this.dropdown.querySelector(`.${this.selector}__list`).classList.toggle(`${this.selector}__list_active`);
+  }
+
+  clearListValues() {
+    const counters = this.dropdown.querySelectorAll(`.${this.selector}__counter`);
+
+    counters.forEach((counter) => {
+      // eslint-disable-next-line no-param-reassign
+      counter.textContent = 0;
+    });
+
+    this.update();
+  }
+}
+
+export default DropdownAbsolute;

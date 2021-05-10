@@ -1,7 +1,7 @@
 import './header/header';
 
-import './carousel/carousel';
+import './carousel/carousel-init';
 
-import './dropdown-absolute/dropdown-absolute';
+import './dropdown-absolute/dropdown-absolute-init';
 
-import './dropdown-relative/dropdown-relative';
+import './dropdown-relative/dropdown-relative-init';
