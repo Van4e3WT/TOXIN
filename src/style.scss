@@ -91,6 +91,7 @@ input {
 
   &:focus {
     outline: none;
+    border-color: $darkShade50;
   }
 }
 

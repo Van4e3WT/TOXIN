@@ -35,24 +35,20 @@
     z-index: 1;
     transition: .3s;
 
-    &:focus {
-      outline: none;
+    &::before {
+      content: '';
+      top: 50%;
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      border: 2px solid white;
+      border-top: none;
+      border-right: none;
     }
   }
 
   &:hover &__prev, &:hover &__next {
     opacity: 1;
-  }
-
-  &__prev::before, &__next::before {
-    content: '';
-    top: 50%;
-    position: absolute;
-    height: 8px;
-    width: 8px;
-    border: 2px solid white;
-    border-top: none;
-    border-right: none;
   }
 
   &__prev {
