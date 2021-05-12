@@ -1,8 +1,4 @@
-mixin dropdown-absolute__counter-block(defVal, key)
-  .dropdown-absolute__counter-block
-    .dropdown-absolute__minus -
-    .dropdown-absolute__counter=defVal ? defVal[key] : 0
-    .dropdown-absolute__plus +
+include __counter/dropdown-absolute__counter.pug
 
 //- @param {object} with properties
 //- wordforms - {Array<string>} / {Array<Array[string]>}
@@ -20,7 +16,7 @@ mixin dropdown-absolute(props)
         each item, key in wordforms
           .dropdown-absolute__item(wordforms=item.join(', '))
             .dropdown-absolute__item-type=item[1]
-            +dropdown-absolute__counter-block(defaultValues, key)
+            +dropdown-absolute__counter(defaultValues, key)
   else
     .dropdown-absolute.js-dropdown-absolute(wordforms=wordforms.join(', '), class=`${addedClasses}`)
       input.dropdown-absolute__output(default=defaultText, type="text", readonly)
@@ -28,7 +24,7 @@ mixin dropdown-absolute(props)
         each item, key in items
           .dropdown-absolute__item
             .dropdown-absolute__item-type=item
-            +dropdown-absolute__counter-block(defaultValues, key)
+            +dropdown-absolute__counter(defaultValues, key)
         .dropdown-absolute__buttons
           .dropdown-absolute__clear-btn.button_skeleton-button Очистить
           .dropdown-absolute__apply-btn.button_skeleton-button Применить

@@ -1,10 +1,7 @@
+include __ref-item/footer__ref-item.pug
 include ../logo/logo.pug
 include ../form-subscribe/form-subscribe.pug
 include ../social-reference/social-reference.pug
-
-mixin ref-item(reference, name)
-  li.footer__item
-    a.footer__link(href=reference)=name
 
 mixin footer()
   .footer
@@ -19,21 +16,21 @@ mixin footer()
             | ассоциации «Отельные взгляды»
         ul.footer__column 
           .footer__item Навигация
-          +ref-item("/plug-link", "О нас")
-          +ref-item("/plug-link", "Новости")
-          +ref-item("/plug-link", "Служба поддержки")
-          +ref-item("/plug-link", "Услуги")
+          +footer__ref-item("/plug-link", "О нас")
+          +footer__ref-item("/plug-link", "Новости")
+          +footer__ref-item("/plug-link", "Служба поддержки")
+          +footer__ref-item("/plug-link", "Услуги")
         ul.footer__column 
           .footer__item О&nbsp;нас
-          +ref-item("/plug-link", "О сервисе")
-          +ref-item("/plug-link", "Наша команда")
-          +ref-item("/plug-link", "Вакансии")
-          +ref-item("/plug-link", "Инвесторы")
+          +footer__ref-item("/plug-link", "О сервисе")
+          +footer__ref-item("/plug-link", "Наша команда")
+          +footer__ref-item("/plug-link", "Вакансии")
+          +footer__ref-item("/plug-link", "Инвесторы")
         ul.footer__column
           .footer__item Служба&nbsp;поддержки
-          +ref-item("/plug-link", "Соглашения")
-          +ref-item("/plug-link", "Сообщества")
-          +ref-item("/plug-link", "Связь с нами")
+          +footer__ref-item("/plug-link", "Соглашения")
+          +footer__ref-item("/plug-link", "Сообщества")
+          +footer__ref-item("/plug-link", "Связь с нами")
         .footer__column
           .footer__item Подписка
           p.footer__text Получайте специальные предложения и новости сервиса

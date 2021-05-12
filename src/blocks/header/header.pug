@@ -1,10 +1,6 @@
+include __ref-item/header__ref-item.pug
 include ../logo/logo.pug
 include ../button/button.pug
-
-mixin header-link(reference, name, isExtended=false)
-  a(class="header__item", href=`${reference}`)=name
-    if isExtended
-      .arrow-down
 
 mixin header(isAuthorized)
   .header
@@ -15,11 +11,11 @@ mixin header(isAuthorized)
         .header__burger.js-header__burger
           .header__burger-divisions
       .header__body.js-header__body
-        +header-link("/plug-link", "О\xA0нас")
-        +header-link("/plug-link", "Услуги", true)
-        +header-link("/plug-link", "Вакансии")
-        +header-link("/plug-link", "Новости")
-        +header-link("/plug-link", "Соглашения", true)
+        +header__ref-item("/plug-link", "О\xA0нас")
+        +header__ref-item("/plug-link", "Услуги", true)
+        +header__ref-item("/plug-link", "Вакансии")
+        +header__ref-item("/plug-link", "Новости")
+        +header__ref-item("/plug-link", "Соглашения", true)
         if isAuthorized
           .header__item
             .header__user Константин Константинопольский
