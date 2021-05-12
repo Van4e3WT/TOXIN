@@ -20,7 +20,7 @@ function scanerFiles(directory, filetype) {
     const stat = fs.statSync(path.join(directory, items[i]));
     if (!stat.isDirectory()) {
       if (items[i].endsWith(filetype)) arrayFiles.push(path.join(directory, items[i]));
-    } else {
+    } else if (!items[i].startsWith('_')) {
       arrayFiles.push(...scanerFiles(path.join(directory, items[i]), filetype));
     }
   }
