@@ -56,14 +56,14 @@ const cssLoader = (addition) => {
 };
 
 // Main config
-module.exports = {
+module.exports = (env, options) => ({
   context: PATHS.src,
   entry: ['@babel/polyfill', './index.js'],
   output: {
     filename: 'bundle_[id].js',
     path: PATHS.dist,
   },
-  devtool: 'eval-source-map',
+  devtool: options.mode === 'production' ? false : 'eval-cheap-module-source-map',
   plugins: [
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: page,
@@ -139,4 +139,4 @@ module.exports = {
       },
     ],
   },
-};
+});
