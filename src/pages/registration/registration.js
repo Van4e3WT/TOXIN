@@ -1,2 +1,2 @@
 import './registration.scss';
-import '../../blocks/register-card/register-card';
+import 'Blocks/register-card/register-card';

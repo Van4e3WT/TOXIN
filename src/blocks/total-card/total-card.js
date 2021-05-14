@@ -1,5 +1,5 @@
 import './total-card.scss';
-import '../twin-datepick/twin-datepick';
-import '../dropdown-absolute/dropdown-absolute-init';
-import '../tooltip/tolltip';
-import '../button/button';
+import 'Blocks/twin-datepick/twin-datepick';
+import 'Blocks/dropdown-absolute/dropdown-absolute-init';
+import 'Blocks/tooltip/tolltip';
+import 'Blocks/button/button';

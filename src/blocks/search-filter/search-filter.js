@@ -1,6 +1,6 @@
 import './search-filter.scss';
-import '../date-solo-range/date-solo-range';
-import '../dropdown-absolute/dropdown-absolute-init';
-import '../dropdown-relative/dropdown-relative-init';
-import '../range-slider/range-slider';
-import '../checkbox/checkbox';
+import 'Blocks/date-solo-range/date-solo-range';
+import 'Blocks/dropdown-absolute/dropdown-absolute-init';
+import 'Blocks/dropdown-relative/dropdown-relative-init';
+import 'Blocks/range-slider/range-slider';
+import 'Blocks/checkbox/checkbox';

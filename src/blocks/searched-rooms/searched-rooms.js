@@ -1,3 +1,3 @@
 import './searched-rooms.scss';
-import '../room-card/room-card';
-import '../pagination/pagination';
+import 'Blocks/room-card/room-card';
+import 'Blocks/pagination/pagination';

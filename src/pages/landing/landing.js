@@ -1,2 +1,2 @@
 import './landing.scss';
-import '../../blocks/landing-card/landing-card';
+import 'Blocks/landing-card/landing-card';

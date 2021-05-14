@@ -5,5 +5,8 @@
   "extends": [
     "airbnb",
     "plugin:fsd/all"
-  ]
+  ],
+  "settings": {
+    "import/resolver": "webpack"
+  }
 }

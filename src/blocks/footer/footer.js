@@ -1,3 +1,3 @@
 import './footer.scss';
-import '../logo/logo';
-import '../form-subscribe/form-subscribe';
+import 'Blocks/logo/logo';
+import 'Blocks/form-subscribe/form-subscribe';

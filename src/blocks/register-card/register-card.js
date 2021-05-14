@@ -1,4 +1,4 @@
 import './register-card.scss';
-import '../button/button';
-import '../radio-button/radio-button';
-import '../toggle-button/toggle-button';
+import 'Blocks/button/button';
+import 'Blocks/radio-button/radio-button';
+import 'Blocks/toggle-button/toggle-button';

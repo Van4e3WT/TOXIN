@@ -3,7 +3,7 @@
 import DropdownRelative from './DropdownRelative';
 
 import './dropdown-relative.scss';
-import '../checkbox/checkbox';
+import 'Blocks/checkbox/checkbox';
 
 const BLOCKNAME = 'dropdown-relative';
 

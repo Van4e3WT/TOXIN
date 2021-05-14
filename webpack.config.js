@@ -65,6 +65,12 @@ module.exports = (env, options) => ({
     path: PATHS.dist,
   },
   devtool: options.mode === 'production' ? false : 'eval-cheap-module-source-map',
+  resolve: {
+    alias: {
+      Root: PATHS.src,
+      Blocks: path.join(PATHS.src, 'blocks'),
+    },
+  },
   plugins: [
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: page,

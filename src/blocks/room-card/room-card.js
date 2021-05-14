@@ -1,5 +1,5 @@
 import './room-card.scss';
-import '../carousel/carousel-init';
-import '../rate-result/rate-result';
-import '../room-number/room-number';
-import '../room-cost/room-cost';
+import 'Blocks/carousel/carousel-init';
+import 'Blocks/rate-result/rate-result';
+import 'Blocks/room-number/room-number';
+import 'Blocks/room-cost/room-cost';

@@ -1,8 +1,8 @@
 /* global $ */
 
 import './header.scss';
-import '../logo/logo';
-import '../button/button';
+import 'Blocks/logo/logo';
+import 'Blocks/button/button';
 
 const headerBurger = 'header__burger';
 const headerBody = 'header__body';

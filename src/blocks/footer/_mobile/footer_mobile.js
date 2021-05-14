@@ -1,2 +1,2 @@
 import './footer_mobile.scss';
-import '../../logo/logo';
+import 'Blocks/logo/logo';

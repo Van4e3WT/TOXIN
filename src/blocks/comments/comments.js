@@ -1,2 +1,2 @@
 import './comments.scss';
-import '../comment/comment';
+import 'Blocks/comment/comment';

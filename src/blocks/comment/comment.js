@@ -1,2 +1,2 @@
 import './comment.scss';
-import '../like-button/like-button';
+import 'Blocks/like-button/like-button';

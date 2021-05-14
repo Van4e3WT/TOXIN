@@ -1,3 +1,3 @@
-import '../blocks/header/header';
-import '../blocks/footer/footer';
-import '../blocks/footer/_mobile/footer_mobile';
+import 'Blocks/header/header';
+import 'Blocks/footer/footer';
+import 'Blocks/footer/_mobile/footer_mobile';
