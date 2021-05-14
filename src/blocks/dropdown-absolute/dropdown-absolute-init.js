@@ -2,6 +2,8 @@
 
 import DropdownAbsolute from './DropdownAbsolute';
 
+import './dropdown-absolute.scss';
+
 const BLOCKNAME = 'dropdown-absolute';
 
 function initDropdownsAbsolute() {

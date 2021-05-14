@@ -2,6 +2,8 @@
 
 import Carousel from './Сarousel';
 
+import './carousel.scss';
+
 const BLOCKNAME = 'carousel';
 
 function carouselsInit() {

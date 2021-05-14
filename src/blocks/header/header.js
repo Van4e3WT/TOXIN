@@ -1,4 +1,9 @@
 /* global $ */
+
+import './header.scss';
+import '../logo/logo';
+import '../button/button';
+
 const headerBurger = 'header__burger';
 const headerBody = 'header__body';
 
