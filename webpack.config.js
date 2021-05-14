@@ -29,6 +29,7 @@ function scanerFiles(directory, filetype) {
 
 const PAGES_DIR = path.join(PATHS.src, 'pages');
 const PAGES = scanerFiles(PAGES_DIR, '.pug');
+const PAGES_ENTRY = scanerFiles(PATHS.src, '.js');
 
 const cssLoader = (addition) => {
   const loaders = [
@@ -58,7 +59,7 @@ const cssLoader = (addition) => {
 // Main config
 module.exports = (env, options) => ({
   context: PATHS.src,
-  entry: ['@babel/polyfill', './index.js'],
+  entry: ['@babel/polyfill', './index.js', ...PAGES_ENTRY],
   output: {
     filename: 'bundle_[id].js',
     path: PATHS.dist,
