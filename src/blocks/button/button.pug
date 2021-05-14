@@ -1,8 +1,3 @@
-//- @param {object} with properties
-//- reference - {string} link for tag a
-//- content - {string} button's content
-//- addedClasses - {string} classes for button
-//- modificator- {string} class-modificator form button
 mixin button(props)
   - let { reference="#", content="Button", addedClasses="", modificator="" } = props
   a.button(class=`${addedClasses} ${modificator ? `button_${modificator}` : ""}`, href=reference)

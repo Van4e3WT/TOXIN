@@ -1,8 +1,3 @@
-//- @param {object} with properties
-//- content - {string} block content
-//- isChecked - {boolean} default status
-//- addedClasses - {string} classes for block
-//- description - {string} extended content's description
 mixin checkbox(props)
   - let { content="Checkbox", isChecked=false, addedClasses="", description } = props
   label.checkbox(class=`${description ? "checkbox_extended" : ""} ${addedClasses}`)

@@ -1,7 +1,3 @@
-//- @param {object} with properties
-//- title - {string} block's header
-//- bullets - {Array<string>} array bullet items
-//- addedClasses - {string} addition classes for block
 mixin bullet-list(props)
   - let { bullets, addedClasses="" } = props
   .bullet-list(class=`${addedClasses}`)

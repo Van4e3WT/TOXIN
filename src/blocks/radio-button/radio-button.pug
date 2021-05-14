@@ -1,8 +1,3 @@
-//- @param {object} with properties
-//- content - {string} radio-button content
-//- name - {string} html attribute name
-//- isChecked - {boolean} default condition
-//- addedClasses - {string} addition classes
 mixin radio-button(props)
   - let { content, name, isChecked=false, addedClasses="" } = props
   label.radio-button(class=`${addedClasses}`)

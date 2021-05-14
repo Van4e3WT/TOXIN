@@ -6,7 +6,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-// Custom variables
 const PATHS = {
   src: path.resolve(__dirname, 'src'),
   dist: path.resolve(__dirname, 'dist'),
@@ -56,7 +55,6 @@ const cssLoader = (addition) => {
   return loaders;
 };
 
-// Main config
 module.exports = (env, options) => ({
   context: PATHS.src,
   entry: ['@babel/polyfill', './index.js', ...PAGES_ENTRY],

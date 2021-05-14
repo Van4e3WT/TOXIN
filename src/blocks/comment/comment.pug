@@ -1,13 +1,5 @@
 include ~Blocks/like-button/like-button.pug
 
-//- @param {object} with properties
-//- image - {string} image link
-//- user - {string} username
-//- date - {string} converted to string format date
-//- likes - {number/string} count likes
-//- isLiked - {boolean} default condition like-button
-//- content - {string} main content comment
-//- addedClasses - {string} addition block classes
 mixin comment(props)
   - let { image, username="Пользователь", date="сегодня", likes=0, isLiked=false, content, addedClasses="" } = props
   - const alt = image.split('/').slice(-1)[0].split('.')[0]

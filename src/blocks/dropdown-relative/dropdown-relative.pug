@@ -1,9 +1,5 @@
 include ~Blocks/checkbox/checkbox.pug
 
-//- @param {object} with properties
-//- content - {string} dropdowns title
-//- isOpen - {boolean} by default false
-//- checkboxes - {Array<string>} array content for included checkboxes
 mixin dropdown-relative(props)
   - let { content="Dropdown relative", isOpen=false, checkboxes=[] } = props
   .dropdown-relative.js-dropdown-relative(class= isOpen ? "dropdown-relative_active" : "")

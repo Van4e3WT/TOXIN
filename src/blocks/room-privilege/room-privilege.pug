@@ -1,8 +1,3 @@
-//- @param {object} with properties
-//- image - {string} image link
-//- title - {number/string} title for block
-//- description - {number/string} block description
-//- addedClasses - {number/string} addition block classes
 mixin room-privilege(props)
   - let { image, title, description, addedClasses="" } = props
   - const alt = image.split('/').slice(-1)[0].split('.')[0]
