@@ -16,7 +16,8 @@ $mediaSize: 420px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding-bottom: 22px;
+    padding-top: 5px;
+    padding-bottom: 20px;
 
     @media (max-width: $mediaSize) {
       flex-direction: column;
@@ -36,8 +37,7 @@ $mediaSize: 420px;
 
   &__number {
     padding-right: 9px;
-    font-size: 1.7rem;
-    line-height: 1.7rem;
+    line-height: 1.5rem;
   }
 
   &__lux {

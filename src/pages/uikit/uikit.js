@@ -24,3 +24,4 @@ import 'Blocks/register-card/register-card';
 import 'Blocks/total-card/total-card';
 import 'Blocks/login-card/login-card';
 import 'Blocks/room-card/room-card';
+import 'Blocks/opened-datepick/opened-datepick';

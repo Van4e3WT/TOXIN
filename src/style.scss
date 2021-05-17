@@ -1,14 +1,4 @@
 @font-face {
-  font-family: 'OpenSans';
-  src:local('Open Sans Bold'), local('OpenSans-Bold'),
-    url('./fonts/open-sans-bold/open-sans-bold.ttf') format('truetype'),
-    url('./fonts/open-sans-bold/open-sans-bold.woff') format('woff'),
-    url('./fonts/open-sans-bold/open-sans-bold.svg') format('svg');
-  font-weight : bold;
-  font-style  : normal;
-}
-
-@font-face {
   font-family: 'Montserrat';
   src:local('Montserrat Bold'), local('Montserrat-Bold'),
     url('./fonts/montserrat-bold/montserrat-bold.ttf') format('truetype'),
@@ -47,11 +37,11 @@ body {
 }
 
 h1 {
-  font-family: 'OpenSans', 'Arial', 'sans-serif';
+  font-family: 'Montserrat', 'Arial', 'sans-serif';
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 1.85rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 }
 
 h2 {
