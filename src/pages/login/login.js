@@ -1,2 +1,1 @@
-import './login.scss';
-import 'Blocks/login-card/login-card';
+import 'Blocks/login-page/login-page';

@@ -1,10 +1,9 @@
 extends ~Root/layouts/base.pug
 
-include ~Blocks/register-card/register-card.pug
+include ~Blocks/registration-page/registration-page.pug
 
 block variables
   - let title = "Регистрация"
 
 block content
-  .registration
-    +register-card()
+  +registration-page()

@@ -1,0 +1,33 @@
+include ~Blocks/collage/collage.pug
+include ~Blocks/room-privilege/room-privilege.pug
+include ~Blocks/circle-diagram/circle-diagram.pug
+include ~Blocks/total-card/total-card.pug
+include ~Blocks/comments/comments.pug
+include ~Blocks/bullet-list/bullet-list.pug
+include ~Blocks/free-cancel/free-cancel.pug
+
+mixin room-page(props)
+  - const { commentaries, images, privileges, votes, room, rules, freeCancel } = props 
+  .room
+    +collage(images, "room__collage")
+    .container.room__body
+      .room__about
+        h2.room__header Сведения о номере
+        .room__privileges
+          each privilege in privileges
+            +room-privilege(privilege)
+      .room__reviews
+        h2.room__header Впечатления от номера
+        +circle-diagram(votes.total, "голосов", votes.precents)
+      +total-card(room.number, room.isLux, room.cost, "room__check")
+      +comments(commentaries, "room__comments")
+      .room__bullet-list
+        h2.room__header.room__bullet-header Правила
+        +bullet-list({
+          addedClasses: "room__rules",
+          bullets: rules
+        })
+      if(freeCancel)
+        .room__free-cancel
+          h2.room__header Отмена
+          +free-cancel("room__cancel")

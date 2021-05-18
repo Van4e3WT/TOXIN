@@ -1,3 +1,1 @@
-import './index.scss';
-import 'Blocks/logo/logo';
-import 'Blocks/project-navigation/project-navigation';
+import 'Blocks/navigation-page/navigation-page';

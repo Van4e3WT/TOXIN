@@ -1,2 +1,1 @@
-import './landing.scss';
-import 'Blocks/landing-card/landing-card';
+import 'Blocks/landing-page/landing-page';

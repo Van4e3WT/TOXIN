@@ -1,61 +1,52 @@
 extends ~Root/layouts/base.pug
 
-include ~Blocks/collage/collage.pug
-include ~Blocks/room-privilege/room-privilege.pug
-include ~Blocks/circle-diagram/circle-diagram.pug
-include ~Blocks/total-card/total-card.pug
-include ~Blocks/comments/comments.pug
-include ~Blocks/bullet-list/bullet-list.pug
-include ~Blocks/free-cancel/free-cancel.pug
+include ~Blocks/room-page/room-page.pug
 
 block variables
   - let title = "Отель \"TOXIN\" №888"
 
 block content
   - const commentaries = require('./comments.json')
-  .room
-    +collage([
+  +room-page({
+    commentaries,
+    images: [
       "assets/images/rooms/room-888-1.jpg",
       "assets/images/rooms/room-888-2.jpg",
-      "assets/images/rooms/room-888-3.jpg"
-    ], "room__collage")
-    .container.room__body
-      .room__about
-        h2.room__header Сведения о номере
-        .room__privileges
-          +room-privilege({
-            image: "assets/images/privilege-comfort.svg",
-            title: "Комфорт",
-            addedClasses: "room__privilege",
-            description: "Шумопоглощающие стены"
-          })
-          +room-privilege({
-            image: "assets/images/privilege-convenience.svg",
-            title: "Удобство",
-            addedClasses: "room__privilege",
-            description: "Окно в каждой из спален"
-          })
-          +room-privilege({
-            image: "assets/images/privilege-fireplace.svg",
-            title: "Уют",
-            addedClasses: "room__privilege",
-            description: "Номер оснащен камином"
-          })
-      .room__reviews
-        h2.room__header Впечатления от номера
-        +circle-diagram(260, "голосов", [50, 25, 25, 0])
-      +total-card(888, true, 9900, "room__check")
-      +comments(commentaries, "room__comments")
-      .room__bullet-list
-        h2.room__header.room__bullet-header Правила
-        +bullet-list({
-          addedClasses: "room__rules",
-          bullets: [
-            "Нельзя с питомцами",
-            "Без вечеринок и мероприятий",
-            "Время прибытия — после\xa013:00, а выезд до\xa012:00"
-          ]
-        })
-      .room__free-cancel
-        h2.room__header Отмена
-        +free-cancel("room__cancel")
+      "assets/images/rooms/room-888-3.jpg",
+    ],
+    privileges: [
+      {
+        image: "assets/images/privilege-comfort.svg",
+        title: "Комфорт",
+        addedClasses: "room__privilege",
+        description: "Шумопоглощающие стены",
+      },
+      {
+        image: "assets/images/privilege-convenience.svg",
+        title: "Удобство",
+        addedClasses: "room__privilege",
+        description: "Окно в каждой из спален",
+      },
+      {
+        image: "assets/images/privilege-fireplace.svg",
+        title: "Уют",
+        addedClasses: "room__privilege",
+        description: "Номер оснащен камином",
+      }
+    ],
+    votes: {
+      total: 260,
+      precents: [50, 25, 25, 0],
+    },
+    room: {
+      number: 888,
+      isLux: true,
+      cost: 9900,
+    },
+    rules: [
+      "Нельзя с питомцами",
+      "Без вечеринок и мероприятий",
+      "Время прибытия — после\xa013:00, а выезд до\xa012:00",
+    ],
+    freeCancel: true,
+  })

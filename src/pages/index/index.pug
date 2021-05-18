@@ -13,18 +13,13 @@ html(lang="ru")
     meta(name='theme-color' content='#ffffff')
     title Доступные страницы
   body
-    include ~Blocks/logo/logo.pug
-    include ~Blocks/project-navigation/project-navigation.pug
+    include ~Blocks/navigation-page/navigation-page.pug
 
-    .container.navigation
-      .navigation__logo
-        +logo()
-      h1.navigation__header Список доступных страниц
-      +project-navigation([
-        ["Главная", "landing.html"],
-        ["Вход", "login.html"],
-        ["Регистрация", "registration.html"],
-        ["Поиск номеров", "search-room.html"],
-        ["Номер", "room.html"],
-        ["UI-kit", "uikit.html"]
-      ])
+    +navigation-page([
+      ["Главная", "landing.html"],
+      ["Вход", "login.html"],
+      ["Регистрация", "registration.html"],
+      ["Поиск номеров", "search-room.html"],
+      ["Номер", "room.html"],
+      ["UI-kit", "uikit.html"]
+    ])

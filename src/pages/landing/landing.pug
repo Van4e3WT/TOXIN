@@ -1,15 +1,10 @@
 extends ~Root/layouts/base.pug
 
-include ~Blocks/landing-card/landing-card.pug
+include ~Blocks/landing-page/landing-page.pug
 
 block variables
   - let title = "Отель \"TOXIN\""
   - let isAuthorized = false
 
 block content
-  .landing
-    .landing__wrapper.container
-      +landing-card()
-      p.landing__slogan
-        |Лучшие номера для вашей работы,
-        |отдыха и просто вдохновения
+  +landing-page()

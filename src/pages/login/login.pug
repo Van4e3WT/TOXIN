@@ -1,10 +1,9 @@
 extends ~Root/layouts/base.pug
 
-include ~Blocks/login-card/login-card.pug
+include ~Blocks/login-page/login-page.pug
 
 block variables
   - let title = "Вход"
 
 block content
-  .login
-    +login-card()
+  +login-page()

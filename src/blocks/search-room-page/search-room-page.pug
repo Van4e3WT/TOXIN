@@ -1,0 +1,7 @@
+include ~Blocks/search-filter/search-filter.pug
+include ~Blocks/searched-rooms/searched-rooms.pug
+
+mixin search-room-page(rooms)
+  .search-page.container
+    +search-filter()
+    +searched-rooms(rooms)

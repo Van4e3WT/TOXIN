@@ -1,13 +1,10 @@
 extends ~Root/layouts/base.pug
 
-include ~Blocks/search-filter/search-filter.pug
-include ~Blocks/searched-rooms/searched-rooms.pug
+include ~Blocks/search-room-page/search-room-page.pug
 
 block variables
   - let title = "Поиск номеров"
 
 block content
   - const rooms = require("./search-room.json")
-  .search-page.container
-    +search-filter()
-    +searched-rooms(rooms)
+  +search-room-page(rooms)
