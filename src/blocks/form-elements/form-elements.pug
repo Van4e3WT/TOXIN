@@ -111,37 +111,39 @@ mixin form-elements()
               sliderType: "double"
             })
           .form-elements__wrapper_large
-            label.form-elements__wrapper_medium buttons
+            label.form-elements__wrapper_small buttons
             .form-elements__buttons
-              .form-elements__button.form-elements__wrapper_large
+              .form-elements__button
                 +button({
                   reference: "#",
-                  content: "click me"
-                })
-              .form-elements__button.form-elements__wrapper_large
-                +button({
-                  reference: "#",
-                  content: "click me"
+                  content: "click me",
+                  modificators: ["high-button"],
                 })
               .form-elements__button
                 +button({
                   reference: "#",
                   content: "click me",
-                  modificators: ["ghost-button"]
+                  modificators: ["high-button"],
                 })
               .form-elements__button
                 +button({
                   reference: "#",
                   content: "click me",
-                  modificators: ["ghost-button"]
+                  modificators: ["ghost-button", "high-button"],
                 })
               .form-elements__button
+                +button({
+                  reference: "#",
+                  content: "click me",
+                  modificators: ["ghost-button", "high-button"],
+                })
+              .form-elements__button.form-elements__button-skeleton
                 +button({
                   reference: "#",
                   content: "click me",
                   modificators: ["skeleton-button"]
                 })
-              .form-elements__button
+              .form-elements__button.form-elements__button-skeleton
                 +button({
                   reference: "#",
                   content: "click me",
@@ -153,7 +155,7 @@ mixin form-elements()
               addedClasses: "form-elements__wrapper_large",
               modificators: ["send-button", "high-button"]
             })
-            label.form-elements__label_large pagination
+            label.form-elements__label_medium pagination
             +pagination(1, 15)
         .form-elements__div4
           .form-elements__wrapper_medium

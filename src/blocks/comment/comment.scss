@@ -2,7 +2,7 @@
   &__header {
     display: flex;
     align-items: center;
-    padding-bottom: 15px;
+    padding-bottom: 13px;
   }
 
   &__image {
@@ -26,10 +26,11 @@
 
   &__like {
     margin-right: 10px;
-    padding: 0 5px;
+    padding: 2px 5px;
   }
 
   &__content {
     letter-spacing: 0.25px;
+    line-height: 1.5rem;
   }
 }
