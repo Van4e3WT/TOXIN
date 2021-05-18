@@ -127,31 +127,31 @@ mixin form-elements()
                 +button({
                   reference: "#",
                   content: "click me",
-                  modificator: "ghost-button"
+                  modificators: ["ghost-button"]
                 })
               .form-elements__button
                 +button({
                   reference: "#",
                   content: "click me",
-                  modificator: "ghost-button"
+                  modificators: ["ghost-button"]
                 })
               .form-elements__button
                 +button({
                   reference: "#",
                   content: "click me",
-                  modificator: "skeleton-button"
+                  modificators: ["skeleton-button"]
                 })
               .form-elements__button
                 +button({
                   reference: "#",
                   content: "click me",
-                  modificator: "skeleton-button"
+                  modificators: ["skeleton-button"]
                 })
             +button({
               reference: "#",
               content: "перейти к оплате",
               addedClasses: "form-elements__wrapper_large",
-              modificator: "send-button"
+              modificators: ["send-button", "high-button"]
             })
             label.form-elements__label_large pagination
             +pagination(1, 15)

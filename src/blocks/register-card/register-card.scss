@@ -29,7 +29,7 @@
   }
 
   &__send {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 
   &__label {
@@ -40,6 +40,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 5px;
+  }
+
+  &__text {
+    letter-spacing: 0.2px;
   }
 }

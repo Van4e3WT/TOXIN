@@ -58,10 +58,7 @@
     width: 100%;
 
     .button__content {
-      $height: 45px;
       width: 100%;
-      height: $height;
-      border-radius: $height / 2;
 
       &::before {
         content: '';
@@ -102,6 +99,30 @@
 
       &:hover {
         color: $darkShade;
+      }
+    }
+  }
+
+  &_high-button {
+    $height: 45px;
+
+    .button__content {
+      height: $height;
+      border-radius: $height / 2;
+    }
+    &.button_ghost-button {
+      $border: 2px;
+
+      .button__content {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          z-index: -1;
+          margin: $border;
+          border-radius: $height / 2;
+          background-color: white;
+        }
       }
     }
   }
