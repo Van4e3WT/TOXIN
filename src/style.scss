@@ -36,6 +36,10 @@ body {
   letter-spacing: 0.18px;
 }
 
+h1, h2, h3 {
+  color: $darkShade;
+}
+
 h1 {
   font-family: 'Montserrat', 'Arial', 'sans-serif';
   font-weight: bold;
@@ -61,11 +65,8 @@ h3, label {
 }
 
 p {
+  color: $darkShade75;
   line-height: 1.45rem;
-}
-
-h1, h2, h3, p {
-  color: $darkShade;
 }
 
 a {
