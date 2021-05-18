@@ -1,0 +1,18 @@
+.cards {
+  background-color: #F4F4F6;
+
+  &__grid {
+    display: grid;
+    margin-top: 40px;
+    grid-template-columns: 33% 33% 1fr;
+    column-gap: 38px;
+  }
+
+  &__cell {
+    margin-bottom: 40px;
+  }
+
+  &__rooms {
+    max-width: 268px;
+  }
+}

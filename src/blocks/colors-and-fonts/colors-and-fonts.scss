@@ -1,0 +1,52 @@
+@import 'Root/style-variables.scss';
+
+.colors-and-fonts {
+  &__grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-top: 34px;
+    margin-bottom: 125px;
+    padding: 0 10px;
+  }
+
+  &__color-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__color-example {
+    height: 70px;
+    width: 70px;
+    background-color: $darkShade;
+    border-radius: 6px;
+    margin-right: 40px;
+  }
+
+  &__color-description {
+    font-size: 1.15rem;
+    line-height: 1.7rem;
+  }
+
+  &__text-item {
+    display: flex;
+    margin-bottom: 50.5px;
+  }
+
+  &__text-description {
+    display: block;
+    margin-right: 30px;
+    width: 50px;
+    flex-shrink: 0;
+    font-family: 'Montserrat';
+    font-weight: normal;
+    color: $darkShade25;
+    text-align: right;
+  }
+
+  &__text-example {
+    &_limited {
+      max-width: 300px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+include ~Blocks/svg-UI/svg-UI.pug
+include ~Blocks/landing-card/landing-card.pug
+include ~Blocks/register-card/register-card.pug
+include ~Blocks/total-card/total-card.pug
+include ~Blocks/login-card/login-card.pug
+include ~Blocks/opened-datepick/opened-datepick.pug
+include ~Blocks/room-card/room-card.pug
+
+mixin cards()
+  .cards
+    +svg-UI()
+    .container
+      .cards__grid
+        .cards__col
+          .cards__cell
+            +landing-card()
+          .cards__cell
+            +register-card()
+        .cards__col
+          .cards__cell
+            +total-card(888, true, 9900)
+          .cards__cell
+            +login-card()
+        .cards__col
+          .cards__cell
+            +opened-datepick()
+          .cards__rooms
+            .cards__cell
+              +room-card({
+                "reference": "room.html",
+                "images": [
+                  "assets/images/rooms/room-888.jpg",
+                  "assets/images/rooms/room-840.jpg",
+                  "assets/images/rooms/room-888.jpg",
+                  "assets/images/rooms/room-840.jpg"
+                ],
+                "number": 888,
+                "isLux": true,
+                "cost": 9990,
+                "rating": 5,
+                "reviews": 145
+              })
+            .cards__cell
+              +room-card({
+                "reference": "room.html",
+                "images": [
+                  "assets/images/rooms/room-840.jpg",
+                  "assets/images/rooms/room-980.jpg",
+                  "assets/images/rooms/room-888.jpg",
+                  "assets/images/rooms/room-444.jpg"
+                ],
+                "number": 840,
+                "isLux": false,
+                "cost": 9990,
+                "rating": 4,
+                "reviews": 65
+              })
