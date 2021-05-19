@@ -1,3 +1,5 @@
+/* global document */
+
 import Utils from './utils';
 
 class DropdownAbsolute {
@@ -8,21 +10,23 @@ class DropdownAbsolute {
   }
 
   init() {
-    this.dropdownOutput = this.dropdown.querySelector(`.${this.selector}__output`);
+    this.dropdownInput = this.dropdown.querySelector(`.${this.selector}__input`);
+    const dropdownOutput = this.dropdown.querySelector(`.${this.selector}__output`);
     const dropdownClear = this.dropdown.querySelector(`.${this.selector}__clear-btn`);
     const dropdownApply = this.dropdown.querySelector(`.${this.selector}__apply-btn`);
     const dropdownList = this.dropdown.querySelector(`.${this.selector}__list`);
 
     dropdownList.style.zIndex = this.zIndex;
 
-    this.dropdownOutput.addEventListener('click', this.toggleActiveOnList.bind(this));
+    dropdownOutput.addEventListener('click', this.toggleList.bind(this));
+    document.addEventListener('mouseup', this.hideLostList.bind(this));
 
     if (dropdownClear) {
       dropdownClear.addEventListener('click', this.clearListValues.bind(this));
     }
 
     if (dropdownApply) {
-      dropdownApply.addEventListener('click', this.toggleActiveOnList.bind(this));
+      dropdownApply.addEventListener('click', this.toggleList.bind(this));
     }
 
     const listItems = this.dropdown.querySelectorAll(`.${this.selector}__item`);
@@ -51,7 +55,7 @@ class DropdownAbsolute {
   }
 
   update() {
-    const defaultValue = this.dropdownOutput.getAttribute('default');
+    const defaultValue = this.dropdownInput.getAttribute('default');
 
     const updateCounterBlock = (item) => {
       const counter = item.querySelector(`.${this.selector}__counter`);
@@ -95,9 +99,9 @@ class DropdownAbsolute {
             resultStr += j ? `, ${result[j]}` : result[j];
           }
 
-          this.dropdownOutput.value = `${resultStr}\u2026`;
+          this.dropdownInput.value = `${resultStr}\u2026`;
         } else {
-          this.dropdownOutput.value = defaultValue;
+          this.dropdownInput.value = defaultValue;
         }
       });
     } else {
@@ -113,17 +117,26 @@ class DropdownAbsolute {
       const rightForm = wordForms ? Utils.num2str(value, wordForms) : '';
 
       if (value !== 0) {
-        this.dropdownOutput.value = `${value} ${rightForm}`;
+        this.dropdownInput.value = `${value} ${rightForm}`;
         buttonsBlock.classList.add(`${this.selector}__buttons_non-empty`);
       } else {
-        this.dropdownOutput.value = defaultValue;
+        this.dropdownInput.value = defaultValue;
         buttonsBlock.classList.remove(`${this.selector}__buttons_non-empty`);
       }
     }
   }
 
-  toggleActiveOnList() {
+  toggleList() {
     this.dropdown.querySelector(`.${this.selector}__list`).classList.toggle(`${this.selector}__list_active`);
+  }
+
+  hideLostList(e) {
+    const { target } = e;
+    const list = this.dropdown.querySelector(`.${this.selector}__list`);
+
+    if (!this.dropdown.contains(target)) {
+      list.classList.remove(`${this.selector}__list_active`);
+    }
   }
 
   clearListValues() {
