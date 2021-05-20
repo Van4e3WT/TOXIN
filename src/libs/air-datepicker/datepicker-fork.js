@@ -34,11 +34,13 @@ function hideByApply() {
   }
 }
 
-const twinDatepickers = $('.twin-datepick');
+const twinDatepickers = $('.js-twin-datepick');
 
 twinDatepickers.each((index, value) => {
-  const dateArrival = $(value).find('.js-date-arrival');
-  const dateDeparture = $(value).find('.js-date-departure');
+  const outputArrival = $(value).find('.twin-datepick__output_arrival');
+  const outputDeparture = $(value).find('.twin-datepick__output_departure');
+  const dateArrival = outputArrival.find('.twin-datepick__input');
+  const dateDeparture = outputDeparture.find('.twin-datepick__input');
 
   dateArrival.datepicker({
     range: true,
@@ -53,7 +55,9 @@ twinDatepickers.each((index, value) => {
 
   const data = dateArrival.data('datepicker');
 
-  $(dateDeparture).on('click', contextShow.bind(data));
+  outputArrival.on('click', contextShow.bind(data));
+  outputDeparture.on('click', contextShow.bind(data));
+  dateDeparture.on('click', contextShow.bind(data));
 
   hideByApply.call(data);
 });
