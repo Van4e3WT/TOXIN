@@ -1,3 +1,5 @@
+/* global $ */
+
 class DateSoloMask {
   constructor(input) {
     this.input = input;
@@ -10,6 +12,7 @@ class DateSoloMask {
 
     this.input.addEventListener('input', this.inputListener.bind(this));
     this.input.addEventListener('select', cancelSelect.bind(this));
+    this.input.addEventListener('change', this.setDate.bind(this));
   }
 
   inputListener() {
@@ -82,6 +85,14 @@ class DateSoloMask {
     res.splice(2, 0, '.');
     res.splice(5, 0, '.');
     this.newValue = res.join('');
+  }
+
+  setDate() {
+    const dateArr = this.input.value.split('.').reverse().join('-');
+    const datepicker = $(this.input).datepicker().data('datepicker');
+
+    datepicker.selectDate(new Date(dateArr));
+    datepicker.date = new Date(dateArr);
   }
 }
 
