@@ -1,6 +1,7 @@
 .date-solo-range {
   position: relative;
   max-width: 268px;
+  cursor: pointer;
 
   &::before {
     $side: 7px;
@@ -18,5 +19,6 @@
 
   &__input {
     padding-right: 40px;
+    cursor: pointer;
   }
 }

@@ -67,7 +67,8 @@ $('.js-date-solo').each((i, el) => {
 });
 
 $('.js-date-solo-range').each((i, el) => {
-  $(el).datepicker({
+  const input = $(el).find('.date-solo-range__input');
+  input.datepicker({
     range: true,
     dateFormat: 'dd M',
     multipleDatesSeparator: ' - ',
@@ -75,7 +76,9 @@ $('.js-date-solo-range').each((i, el) => {
     ...props,
   });
 
-  hideByApply.call($(el).data('datepicker'));
+  hideByApply.call(input.data('datepicker'));
+
+  el.addEventListener('click', contextShow.bind(input.data('datepicker')));
 });
 
 $('.js-opened-datepick').each((i, el) => {
