@@ -5,6 +5,8 @@
   position: relative;
   font-weight: normal;
   text-transform: none;
+  cursor: pointer;
+  user-select: none;
 
   &__input {
     position: absolute;
