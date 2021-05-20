@@ -100,8 +100,10 @@ class DropdownAbsolute {
           }
 
           this.dropdownInput.value = `${resultStr}\u2026`;
+          this.dropdownInput.setAttribute('title', this.dropdownInput.value);
         } else {
           this.dropdownInput.value = defaultValue;
+          this.dropdownInput.setAttribute('title', defaultValue);
         }
       });
     } else {
