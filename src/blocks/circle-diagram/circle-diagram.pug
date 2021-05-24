@@ -17,10 +17,25 @@ mixin circle-diagram(count=0, votes="голосов", value)
         linearGradient(id="under2", x1="0.5", y1="0", x2="0.5", y2="1")
           stop(offset="0%" stop-color="#909090")
           stop(offset="50%" stop-color="#3D4975")
-        circle.circle-diagram__unit(r="15.9", cx="50%", cy="50%", stroke="url(#rate5)", stroke-dasharray= ""+(value[0]?value[0]-1:value[0])+" 100")
-        circle.circle-diagram__unit(r="15.9", cx="50%", cy="50%", stroke="url(#rate4)", stroke-dasharray=""+(value[1]?value[1]-1:value[1])+" 100", stroke-dashoffset=""+(-1*(value[0])))
-        circle.circle-diagram__unit(r="15.9", cx="50%", cy="50%", stroke="url(#rate3)", stroke-dasharray=""+(value[2]?value[2]-1:value[2])+" 100", stroke-dashoffset=""+(-1*(value[0] + value[1])))
-        circle.circle-diagram__unit(r="15.9", cx="50%", cy="50%", stroke="url(#under2)", stroke-dasharray=""+(value[3]?value[3]-1:value[3])+" 100", stroke-dashoffset=""+(-1*(value[0] + value[1] + value[2])))
+        circle.circle-diagram__unit(
+          r="15.9", cx="50%", cy="50%", stroke="url(#rate5)",
+          stroke-dasharray= ""+(value[0]?value[0]-1:value[0])+" 100"
+        )
+        circle.circle-diagram__unit(
+          r="15.9", cx="50%", cy="50%", stroke="url(#rate4)",
+          stroke-dasharray=""+(value[1]?value[1]-1:value[1])+" 100",
+          stroke-dashoffset=""+(-1*(value[0]))
+        )
+        circle.circle-diagram__unit(
+          r="15.9", cx="50%", cy="50%", stroke="url(#rate3)",
+          stroke-dasharray=""+(value[2]?value[2]-1:value[2])+" 100",
+          stroke-dashoffset=""+(-1*(value[0] + value[1]))
+        )
+        circle.circle-diagram__unit(
+          r="15.9", cx="50%", cy="50%", stroke="url(#under2)",
+          stroke-dasharray=""+(value[3]?value[3]-1:value[3])+" 100",
+          stroke-dashoffset=""+(-1*(value[0] + value[1] + value[2]))
+        )
     .circle-diagram__description
       .circle-diagram__item
         .circle-diagram__sample.circle-diagram__sample_perfect

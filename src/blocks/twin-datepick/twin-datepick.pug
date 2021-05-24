@@ -3,8 +3,12 @@ mixin twin-datepick(label1, label2, addedClasses="")
     .twin-datepick__item
       label.twin-datepick__label=label1
       .twin-datepick__output.twin-datepick__output_arrival
-        input.twin-datepick__input(type="text", placeholder="ДД.ММ.ГГГГ", name="dateArrival", readonly)
+        input.twin-datepick__input(
+          type="text", placeholder="ДД.ММ.ГГГГ", name="dateArrival", readonly
+        )
     .twin-datepick__item
       label.twin-datepick__label=label2
       .twin-datepick__output.twin-datepick__output_departure
-        input.twin-datepick__input(type="text", placeholder="ДД.ММ.ГГГГ", name="dateDeparture", readonly)
+        input.twin-datepick__input(
+          type="text", placeholder="ДД.ММ.ГГГГ", name="dateDeparture", readonly
+        )

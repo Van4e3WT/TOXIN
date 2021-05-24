@@ -12,7 +12,9 @@ mixin dropdown-absolute(props)
             .dropdown-absolute__item-type=item[1]
             +dropdown-absolute__counter(defaultValues, key)
   else
-    .dropdown-absolute.js-dropdown-absolute(wordforms=wordforms.join(', '), class=`${addedClasses}`)
+    .dropdown-absolute.js-dropdown-absolute(
+      wordforms=wordforms.join(', '), class=`${addedClasses}`
+    )
       .dropdown-absolute__output
         input.dropdown-absolute__input(default=defaultText, type="text", readonly)
       .dropdown-absolute__list(class= isOpen ? "dropdown-absolute__list_active" : "")

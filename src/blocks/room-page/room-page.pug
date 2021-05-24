@@ -7,7 +7,7 @@ include ~Blocks/bullet-list/bullet-list.pug
 include ~Blocks/free-cancel/free-cancel.pug
 
 mixin room-page(props)
-  - const { commentaries, images, privileges, votes, room, rules, freeCancel } = props 
+  - const { commentaries, images, privileges, votes, room, rules, freeCancel } = props
   .room
     +collage(images, "room__collage")
     .container.room__body

@@ -1,8 +1,17 @@
 include ~Blocks/like-button/like-button.pug
 
 mixin comment(props)
-  - let { image, username="Пользователь", date="сегодня", likes=0, isLiked=false, content, addedClasses="" } = props
-  - const alt = image.split('/').slice(-1)[0].split('.')[0]
+  -
+    let { 
+      image,
+      username="Пользователь",
+      date="сегодня",
+      likes=0,
+      isLiked=false,
+      content,
+      addedClasses=""
+    } = props
+    const alt = image.split('/').slice(-1)[0].split('.')[0]
   .comment(class=`${addedClasses}`)
     .comment__header
       img.comment__image(src=image, alt=alt)
