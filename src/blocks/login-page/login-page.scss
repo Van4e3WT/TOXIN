@@ -1,7 +1,7 @@
 .login {
   background: url('Root/static/images/background-sign-in.jpg') no-repeat;
   background-size: cover;
-  height: 683px;
+  min-height: 683px;
   background-position: 0 79%;
   display: flex;
   align-items: center;

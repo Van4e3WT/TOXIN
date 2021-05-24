@@ -98,14 +98,13 @@ $mediaSize: 420px;
   &__total {
     margin-bottom: 20px;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
   }
 
   &__space { 
-    border-bottom: 2px dotted $darkShade25;
+    border-bottom: 1px dotted $darkShade25;
     width: 100%;
     margin: 0 5px;
-    height: 1.5rem;
     flex-shrink: 2;
   }
   

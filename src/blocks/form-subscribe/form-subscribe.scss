@@ -2,13 +2,11 @@
 
 .form-subscribe {
   display: flex;
-  height: 44px;
   max-width: 268px;
   border: 2px solid $darkShade25;
   border-radius: 5px;
 
   &__input {
-    height: 100%;
     border: none;
     border-right: none;
     color: $darkShade;
@@ -21,7 +19,6 @@
   &__button {
     cursor: pointer;
     width: 17%;
-    height: 100%;
     border: none;
     background-color: white;
     flex-shrink: 0;

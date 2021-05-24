@@ -1,7 +1,5 @@
 .carousel {
   position: relative;
-  width: 100%;
-  height: 100%;
   background-color: white;
   overflow: hidden;
 
@@ -9,8 +7,6 @@
     display: block;
     opacity: 0;
     position: absolute;
-    height: 100%;
-    width: 100%;
 
     &_active {
       position: relative;
@@ -20,8 +16,8 @@
   }
 
   &__img {
+    display: block;
     object-fit: cover;
-    height: 100%;
     width: 100%;
   }
 
