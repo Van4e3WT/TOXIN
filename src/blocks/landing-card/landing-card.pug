@@ -6,15 +6,16 @@ mixin landing-card()
   .landing-card
     h1.landing-card__header Найдём номера под ваши пожелания
     form.landing-card__form(action="", method="post")
-      +twin-datepick("Прибытие", "Выезд", "landing-card__twin-datepick")
+      .landing-card__twin-datepick
+        +twin-datepick("Прибытие", "Выезд")
       label.landing-card__label Гости
-      +dropdown-absolute({
-        wordforms: ["гость", "гостя", "гостей"],
-        items: ["Взрослые", "Дети", "Младенцы"],
-        isOpen: false,
-        defaultText: "Сколько гостей",
-        addedClasses: "landing-card__dropdown-absolute"
-      })
+      .landing-card__dropdown-absolute
+        +dropdown-absolute({
+          wordforms: ["гость", "гостя", "гостей"],
+          items: ["Взрослые", "Дети", "Младенцы"],
+          isOpen: false,
+          defaultText: "Сколько гостей",
+        })
       +button({ 
         reference: "search-room.html",
         content: "Подобрать номер",

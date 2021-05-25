@@ -59,16 +59,16 @@ mixin search-filter()
     .search-filter__section
       .search-filter__group
         label.search-filter__label Удобства номера
-        +dropdown-absolute({
-          wordforms: [
-            ["спальня", "спальни", "спален"],
-            ["кровать", "кровати", "кроватей"],
-            ["ванная комната", "ванные комнаты", "ванных комнат"]
-          ],
-          addedClasses: "search-filter__group_large",
-          defaultValues: [2, 2, 0],
-          defaultText: "Выберите удобства"
-        })
+        .search-filter__group_large
+          +dropdown-absolute({
+            wordforms: [
+              ["спальня", "спальни", "спален"],
+              ["кровать", "кровати", "кроватей"],
+              ["ванная комната", "ванные комнаты", "ванных комнат"]
+            ],
+            defaultValues: [2, 2, 0],
+            defaultText: "Выберите удобства"
+          })
         +dropdown-relative({
           content: "Дополнительные удобства",
           checkboxes: [

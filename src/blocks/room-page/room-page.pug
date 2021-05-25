@@ -20,12 +20,14 @@ mixin room-page(props)
       .room__reviews
         h2.room__header Впечатления от номера
         +circle-diagram(votes.total, "голосов", votes.precents)
-      +total-card(room.number, room.isLux, room.cost, "room__check")
-      +comments(commentaries, "room__comments")
+      .room__check
+        +total-card(room.number, room.isLux, room.cost)
+      .room__comments
+        +comments(commentaries)
       .room__bullet-list
         h2.room__header.room__bullet-header Правила
         +bullet-list(rules)
       if(freeCancel)
         .room__free-cancel
           h2.room__header Отмена
-          +free-cancel("room__cancel")
+          +free-cancel()

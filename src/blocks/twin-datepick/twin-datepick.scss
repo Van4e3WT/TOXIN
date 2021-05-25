@@ -8,9 +8,19 @@ $mediaSize: 420px;
 
   &__item {
     max-width: 151px;
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     @media(max-width: $mediaSize) {
       max-width: 100%;
+      margin: 0;
 
       .twin-datepick__label {
         padding-top: 5px;

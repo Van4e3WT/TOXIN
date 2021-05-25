@@ -8,6 +8,9 @@ mixin footer_mobile()
         +logo()
       p.footer-mobile__text Copyright © 2018 Toxin отель. Все права защищены.
       .footer-mobile__socials
-        +social-reference("/plug-link", "twitter", "footer-mobile__link")
-        +social-reference("/plug-link", "facebook", "footer-mobile__link")
-        +social-reference("/plug-link", "instagram", "footer-mobile__link")
+        .footer-mobile__link
+          +social-reference("/plug-link", "twitter")
+        .footer-mobile__link
+          +social-reference("/plug-link", "facebook")
+        .footer-mobile__link
+          +social-reference("/plug-link", "instagram")

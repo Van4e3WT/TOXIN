@@ -3,8 +3,8 @@ include ~Blocks/dropdown-absolute/dropdown-absolute.pug
 include ~Blocks/tooltip/tooltip.pug
 include ~Blocks/button/button.pug
 
-mixin total-card(number, isLux, cost, addedClasses)
-  .total-card(class=`${addedClasses}`)
+mixin total-card(number, isLux, cost)
+  .total-card
     .total-card__header
       .total-card__room-number
         label.total-card__prefix №
@@ -15,15 +15,16 @@ mixin total-card(number, isLux, cost, addedClasses)
         label.total-card__rubles=cost + "₽"
         p.total-card__period в сутки
     .total-card__body
-      +twin-datepick("Прибытие", "Выезд", "total-card__input")
+      .total-card__input
+        +twin-datepick("Прибытие", "Выезд")
       label.total-card__label Гости
-      +dropdown-absolute({
-        wordforms: ["гость", "гостя", "гостей"],
-        items: ["Взрослые", "Дети", "Младенцы"],
-        isOpen: false,
-        defaultText: "Сколько гостей",
-        addedClasses: "total-card__input"
-      })
+      .total-card__input
+        +dropdown-absolute({
+          wordforms: ["гость", "гостя", "гостей"],
+          items: ["Взрослые", "Дети", "Младенцы"],
+          isOpen: false,
+          defaultText: "Сколько гостей",
+        })
       .total-card__calculate
         .total-card__product
           .total-card__position

@@ -1,7 +1,7 @@
 mixin room-privilege(props)
-  - let { image, title, description, addedClasses="" } = props
+  - let { image, title, description } = props
   - const alt = image.split('/').slice(-1)[0].split('.')[0]
-  .room-privilege(class=`${addedClasses}`)
+  .room-privilege
     img.room-privilege__img(src=image, height="40px", width="40px", alt=alt)
     .room-privilege__content
       label.room-privilege__title=title

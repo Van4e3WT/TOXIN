@@ -1,5 +1,5 @@
-mixin social-reference(reference, name, addedClasses="")
-  .social-reference(class=`${addedClasses}`)
+mixin social-reference(reference, name)
+  .social-reference
     a.social-reference__link(href=reference)
       img.social-reference__img(
         src=`./assets/images/${name}-logo.svg`, alt=name, height="22px", width="22px"

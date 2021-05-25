@@ -68,22 +68,24 @@ mixin form-elements()
               })
           .form-elements__wrapper
             label.form-elements__label_medium Radio buttons
-            .form-elements__radio
-              +radio-button({
-                content: "Мужчина",
-                name: "sexRegistration",
-                isChecked: true,
-                addedClasses: "register-card__radio"
-              })
-              +radio-button({
-                content: "Женщина",
-                name: "sexRegistration",
-                addedClasses: "register-card__radio"
-              })
+            .form-elements__radios
+              .form-elements__radio
+                +radio-button({
+                  content: "Мужчина",
+                  name: "sexRegistration",
+                  isChecked: true,
+                })
+              .form-elements__radio
+                +radio-button({
+                  content: "Женщина",
+                  name: "sexRegistration",
+                })
           .form-elements__wrapper_huge
             label.form-elements__label_large Toggle
-            +toggle-button("Получать спецпредложения", true, "form-elements__wrapper_small")
-            +toggle-button("Получать спецпредложения", false, "form-elements__wrapper_small")
+            .form-elements__wrapper_small
+              +toggle-button("Получать спецпредложения", true)
+            .form-elements__wrapper_small
+              +toggle-button("Получать спецпредложения", false)
           .form-elements__wrapper_large
             label.form-elements__label_large Like button
             .form-elements__likes
@@ -248,13 +250,11 @@ mixin form-elements()
           +room-privilege({
             image: "assets/images/privilege-comfort.svg",
             title: "Комфорт",
-            addedClasses: "form-elements__privilege",
             description: "Шумопоглощающие стены"
           })
           +room-privilege({
             image: "assets/images/privilege-convenience.svg",
             title: "Удобство",
-            addedClasses: "form-elements__privilege",
             description: "Окно в каждой из спален"
           })
         .form-elements__div11
