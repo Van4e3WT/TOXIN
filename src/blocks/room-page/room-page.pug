@@ -9,7 +9,8 @@ include ~Blocks/free-cancel/free-cancel.pug
 mixin room-page(props)
   - const { commentaries, images, privileges, votes, room, rules, freeCancel } = props
   .room
-    +collage(images, "room__collage")
+    .room__collage
+      +collage(images)
     .container.room__body
       .room__about
         h2.room__header Сведения о номере
@@ -23,10 +24,7 @@ mixin room-page(props)
       +comments(commentaries, "room__comments")
       .room__bullet-list
         h2.room__header.room__bullet-header Правила
-        +bullet-list({
-          addedClasses: "room__rules",
-          bullets: rules
-        })
+        +bullet-list(rules)
       if(freeCancel)
         .room__free-cancel
           h2.room__header Отмена

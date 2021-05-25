@@ -29,12 +29,12 @@ mixin register-card()
       input.register-card__field(type="email", name="email" placeholder="Email")
       input.register-card__field(type="password", name="password" placeholder="Пароль")
       +toggle-button("Получать спецпредложения", false)
-    +button({
-      reference: "/plug-link",
-      content: "Зарегистрироваться",
-      addedClasses: "register-card__send",
-      modificators: ["directed", "high"]
-    })
+    .register-card__send
+      +button({
+        reference: "/plug-link",
+        content: "Зарегистрироваться",
+        modificators: ["directed", "high"]
+      })
     .register-card__help
       p.register-card__text Уже есть аккаунт на Toxin
       +button({

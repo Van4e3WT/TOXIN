@@ -1,6 +1,5 @@
-mixin bullet-list(props)
-  - let { bullets, addedClasses="" } = props
-  .bullet-list(class=`${addedClasses}`)
+mixin bullet-list(bullets)
+  .bullet-list
     ul.bullet-list__content
       each bullet in bullets
         li.bullet-list__item=bullet

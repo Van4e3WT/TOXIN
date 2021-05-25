@@ -32,32 +32,30 @@ mixin search-filter()
     .search-filter__section
       .search-filter__checkboxes
         label.search-filter__checkboxes-label Правила дома
-        +checkbox({
-          content: "Можно курить",
-          addedClasses: "search-filter__checkbox"
-        })
-        +checkbox({
-          content: "Можно с питомцами",
-          isChecked: true,
-          addedClasses: "search-filter__checkbox"
-        })
-        +checkbox({
-          content: "Можно пригласить гостей (до 10 человек)",
-          isChecked: true,
-          addedClasses: "search-filter__checkbox"
-        })
+        .search-filter__checkbox
+          +checkbox({ content: "Можно курить" })
+        .search-filter__checkbox
+          +checkbox({
+            content: "Можно с питомцами",
+            isChecked: true
+          })
+        .search-filter__checkbox
+          +checkbox({
+            content: "Можно пригласить гостей (до 10 человек)",
+            isChecked: true,
+          })
       .search-filter__checkboxes
         label.search-filter__checkboxes-label Доступность
-        +checkbox({
-          content: "Широкий коридор",
-          addedClasses: "search-filter__checkbox",
-          description: "Ширина коридоров в номере не\xA0менее 91 см."
-        })
-        +checkbox({
-          content: "Помощник для инвалидов",
-          addedClasses: "search-filter__checkbox",
-          description: "На 1 этаже вас встретит специалист и проводит до номера."
-        })
+        .search-filter__checkbox
+          +checkbox({
+            content: "Широкий коридор",
+            description: "Ширина коридоров в номере не\xA0менее 91 см."
+          })
+        .search-filter__checkbox
+          +checkbox({
+            content: "Помощник для инвалидов",
+            description: "На 1 этаже вас встретит специалист и проводит до номера."
+          })
     .search-filter__section
       .search-filter__group
         label.search-filter__label Удобства номера

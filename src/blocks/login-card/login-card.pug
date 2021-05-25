@@ -6,12 +6,12 @@ mixin login-card()
     .login-card__fields
       input.login-card__field(type="email", name="email" placeholder="Email")
       input.login-card__field(type="password", name="password" placeholder="Пароль")
-    +button({
-      reference: "/plug-link",
-      content: "Войти",
-      addedClasses: "login-card__send",
-      modificators: ["directed", "high"]
-    })
+    .login-card__send
+      +button({
+        reference: "/plug-link",
+        content: "Войти",
+        modificators: ["directed", "high"]
+      })
     .login-card__help
       p.login-card__text Нет аккаунта на Toxin?
       +button({

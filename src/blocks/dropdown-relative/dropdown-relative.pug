@@ -7,13 +7,11 @@ mixin dropdown-relative(props)
     .dropdown-relative__list
       each i in checkboxes
         if typeof i === "string"
-          +checkbox({
-            content: i,
-            addedClasses: "dropdown-relative__item"
-          })
+          .dropdown-relative__item
+            +checkbox({ content: i })
         else
-          +checkbox({
-            content: i[0],
-            isChecked: i[1],
-            addedClasses: "dropdown-relative__item"
-          })
+          .dropdown-relative__item
+            +checkbox({
+              content: i[0],
+              isChecked: i[1],
+            })

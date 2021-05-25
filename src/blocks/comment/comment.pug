@@ -9,10 +9,9 @@ mixin comment(props)
       likes=0,
       isLiked=false,
       content,
-      addedClasses=""
     } = props
     const alt = image.split('/').slice(-1)[0].split('.')[0]
-  .comment(class=`${addedClasses}`)
+  .comment
     .comment__header
       img.comment__image(src=image, alt=alt)
       .comment__user

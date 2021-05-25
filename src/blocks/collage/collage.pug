@@ -1,5 +1,5 @@
-mixin collage(images, addedClasses)
-  .collage(class=`${addedClasses}`)
+mixin collage(images)
+  .collage
     each image, i in images
       - const alt = image.split('/').slice(-1)[0].split('.')[0]
       if !(i % 3)

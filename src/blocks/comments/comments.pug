@@ -7,5 +7,5 @@ mixin comments(items, addedClasses)
       .comments__counter=`${items.length} отзыва`
     .comments__body
       each item in items
-        - item.addedClasses = "comments__item"
-        +comment(item)
+        .comments__item
+          +comment(item)

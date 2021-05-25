@@ -1,7 +1,7 @@
 mixin button(props)
   -
-    let { reference="/plug-link", content="Button", addedClasses="", modificators } = props;
+    let { reference="/plug-link", content="Button", modificators } = props;
     const modificatorStr = modificators ? ` ${modificators.map((item) =>
       `button_${item}`).join(' ')}` : '';
-  a.button(class=`${addedClasses + modificatorStr}`, href=reference)
+  a.button(class=modificatorStr, href=reference)
     .button__content=content

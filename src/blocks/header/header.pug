@@ -20,14 +20,14 @@ mixin header(isAuthorized)
           .header__item
             .header__user Константин Константинопольский
         else
-          +button({
-            reference: "login.html",
-            content: "Войти",
-            addedClasses: "header__item",
-            modificators: ["ghostly"]
-          })
-          +button({
-            reference: "registration.html",
-            content: "Зарегистрироваться",
-            addedClasses: "header__item"
-          })
+          .header__item
+            +button({
+              reference: "login.html",
+              content: "Войти",
+              modificators: ["ghostly"]
+            })
+          .header__item
+            +button({
+              reference: "registration.html",
+              content: "Зарегистрироваться"
+            })
