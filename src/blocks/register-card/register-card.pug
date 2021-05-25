@@ -33,12 +33,12 @@ mixin register-card()
       reference: "/plug-link",
       content: "Зарегистрироваться",
       addedClasses: "register-card__send",
-      modificators: ["send-button", "high-button"]
+      modificators: ["directed", "high"]
     })
     .register-card__help
       p.register-card__text Уже есть аккаунт на Toxin
       +button({
         reference: "login.html",
         content: "Войти",
-        modificators: ["ghost-button", "high-button"]
+        modificators: ["ghostly", "high"]
       })

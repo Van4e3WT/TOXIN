@@ -10,12 +10,12 @@ mixin login-card()
       reference: "/plug-link",
       content: "Войти",
       addedClasses: "login-card__send",
-      modificators: ["send-button", "high-button"]
+      modificators: ["directed", "high"]
     })
     .login-card__help
       p.login-card__text Нет аккаунта на Toxin?
       +button({
         reference: "registration.html",
         content: "Создать",
-        modificators: ["ghost-button", "high-button"]
+        modificators: ["ghostly", "high"]
       })

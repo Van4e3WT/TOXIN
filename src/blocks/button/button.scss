@@ -24,7 +24,7 @@
     opacity: 0.5;
   }
 
-  &_ghost-button {
+  &_ghostly {
     .button__content {
       $border: 2px;
       color: #BC9CFF;
@@ -51,7 +51,7 @@
     }
   }
 
-  &_send-button {
+  &_directed {
     width: 100%;
 
     .button__content {
@@ -87,7 +87,7 @@
     }
   }
 
-  &_skeleton-button {
+  &_clean {
     .button__content {
       background: none;
       color: $purple;
@@ -99,7 +99,7 @@
     }
   }
 
-  &_high-button {
+  &_high {
     $indent: 0.98rem;
 
     .button__content {
@@ -108,7 +108,7 @@
       padding-bottom: $indent;
     }
 
-    &.button_ghost-button {
+    &.button_ghostly {
       $border: 2px;
 
       .button__content {
