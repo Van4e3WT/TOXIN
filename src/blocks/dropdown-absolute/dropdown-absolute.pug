@@ -1,7 +1,7 @@
 include __counter/dropdown-absolute__counter.pug
 
 mixin dropdown-absolute(props)
-  - let { wordforms, items, isOpen=false, defaultText="", defaultValues } = props
+  - const { wordforms, items, isOpen=false, defaultText="", defaultValues } = props
   if (wordforms[0] instanceof Array)
     .dropdown-absolute.js-dropdown-absolute(several-word-forms)
       .dropdown-absolute__output

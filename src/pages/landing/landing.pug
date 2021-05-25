@@ -3,8 +3,8 @@ extends ~Root/layouts/base.pug
 include ~Blocks/landing-page/landing-page.pug
 
 block variables
-  - let title = "Отель \"TOXIN\""
-  - let isAuthorized = false
+  - const title = "Отель \"TOXIN\""
+  - const isAuthorized = false
 
 block content
   +landing-page()

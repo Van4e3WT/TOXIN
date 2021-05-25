@@ -3,7 +3,7 @@ extends ~Root/layouts/base.pug
 include ~Blocks/room-page/room-page.pug
 
 block variables
-  - let title = "Отель \"TOXIN\" №888"
+  - const title = "Отель \"TOXIN\" №888"
 
 block content
   - const commentaries = require('./comments.json')

@@ -3,7 +3,7 @@ extends ~Root/layouts/base.pug
 include ~Blocks/search-room-page/search-room-page.pug
 
 block variables
-  - let title = "Поиск номеров"
+  - const title = "Поиск номеров"
 
 block content
   - const rooms = require("./search-room.json")

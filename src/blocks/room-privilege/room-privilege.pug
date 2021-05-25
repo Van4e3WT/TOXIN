@@ -1,5 +1,5 @@
 mixin room-privilege(props)
-  - let { image, title, description } = props
+  - const { image, title, description } = props
   - const alt = image.split('/').slice(-1)[0].split('.')[0]
   .room-privilege
     img.room-privilege__img(src=image, height="40px", width="40px", alt=alt)
