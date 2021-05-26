@@ -62,7 +62,6 @@ $mediaSize: 1000px;
 
     .arrow-down {
       $size: 27px;
-      display: inline-block;
       position: relative;
       height: $size;
       width: $size;
@@ -113,7 +112,6 @@ $mediaSize: 1000px;
   &__user {
     padding: 0.5rem 0 0.5rem 30px;
     border-left: 1px solid $darkShade25;
-    display: flex;
     align-items: center;
     cursor: default;
 
