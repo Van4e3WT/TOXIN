@@ -130,4 +130,11 @@
       }
     }
   }
+
+  &_wide {
+    .button__content {
+      padding-left: 1.55rem;
+      padding-right: 1.55rem;
+    }
+  }
 }
