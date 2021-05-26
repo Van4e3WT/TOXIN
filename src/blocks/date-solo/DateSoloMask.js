@@ -88,6 +88,8 @@ class DateSoloMask {
   }
 
   setDate() {
+    if (this.input.value.length !== 10) return;
+
     const dateArr = this.input.value.split('.').reverse().join('-');
     const datepicker = $(this.input).datepicker().data('datepicker');
 
