@@ -4,6 +4,10 @@
   font-family: 'Montserrat';
   width: 320px;
 
+  @media(max-width: 380px) {
+    max-width: 260px;
+  }
+
   &--cell {
     border-radius: 50%;
     height: 40px;
