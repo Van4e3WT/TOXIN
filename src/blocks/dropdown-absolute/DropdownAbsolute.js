@@ -108,6 +108,7 @@ class DropdownAbsolute {
       });
     } else {
       const buttonsBlock = this.dropdown.querySelector(`.${this.selector}__buttons`);
+      const dropdownClear = buttonsBlock.querySelector(`.${this.selector}__clear-btn`);
       let value = 0;
 
       this.dropdown.querySelectorAll(`.${this.selector}__item`).forEach((item) => {
@@ -121,9 +122,11 @@ class DropdownAbsolute {
       if (value !== 0) {
         this.dropdownInput.value = `${value} ${rightForm}`;
         buttonsBlock.classList.add(`${this.selector}__buttons_non-empty`);
+        dropdownClear.classList.add(`${this.selector}__clear-btn_non-empty`);
       } else {
         this.dropdownInput.value = defaultValue;
         buttonsBlock.classList.remove(`${this.selector}__buttons_non-empty`);
+        dropdownClear.classList.remove(`${this.selector}__clear-btn_non-empty`);
       }
     }
   }

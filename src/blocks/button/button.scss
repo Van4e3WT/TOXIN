@@ -4,6 +4,10 @@
   display: inline-block;
   width: auto;
 
+  &:hover {
+    opacity: 0.5;
+  }
+
   &__content {
     display: inline-flex;
     position: relative;
@@ -18,26 +22,12 @@
     cursor: pointer;
     letter-spacing: 0.2px;
     padding: 0.65rem 1.3rem;
-  }
 
-  &:hover {
-    opacity: 0.5;
-  }
-
-  &_ghostly {
-    .button__content {
+    &_theme_bordered {
       $border: 2px;
       color: #BC9CFF;
       background-clip: padding-box;
       z-index: 0;
-
-      &:hover {
-        opacity: 0.50;
-
-        &::before {
-          opacity: 1;
-        }
-      }
 
       &::before {
         content: '';
@@ -48,16 +38,12 @@
         bottom: 0;
         z-index: -1;
         margin: $border;
-        border-radius: 1.3rem;
+        border-radius: 1.96rem;
         background-color: white;
       }
     }
-  }
 
-  &_directed {
-    width: 100%;
-
-    .button__content {
+    &_theme_directed {
       width: 100%;
 
       &::before {
@@ -83,15 +69,14 @@
 
       @media(max-width: 420px) {
         text-align: center;
+
         &::before, &::after {
           content: none;
         }
       }
     }
-  }
 
-  &_clean {
-    .button__content {
+    &_theme_clean {
       background: none;
       color: $purple;
       padding: 0;
@@ -100,41 +85,22 @@
         color: $darkShade;
       }
     }
-  }
 
-  &_high {
-    $indent: 0.98rem;
+    &_transform_high {
+      $indent: 0.98rem;
 
-    .button__content {
       border-radius: $indent * 2;
       padding-top: $indent;
       padding-bottom: $indent;
     }
 
-    &.button_ghostly {
-      $border: 2px;
-
-      .button__content {
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          z-index: -1;
-          margin: $border;
-          border-radius: $indent * 2;
-          background-color: white;
-        }
-      }
-    }
-  }
-
-  &_wide {
-    .button__content {
+    &_transform_wide {
       padding-left: 1.55rem;
       padding-right: 1.55rem;
     }
+  }
+
+  &_theme_directed {
+    width: 100%;
   }
 }

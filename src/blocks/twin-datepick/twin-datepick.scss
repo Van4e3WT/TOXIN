@@ -21,10 +21,6 @@ $mediaSize: 420px;
     @media(max-width: $mediaSize) {
       max-width: 100%;
       margin: 0;
-
-      .twin-datepick__label {
-        padding-top: 5px;
-      }
     }
   }
 
@@ -54,6 +50,10 @@ $mediaSize: 420px;
 
   &__label {
     padding-bottom: 5px;
+
+    @media(max-width: $mediaSize) {
+      padding-top: 5px;
+    }
   }
   
   @media(max-width: $mediaSize) {

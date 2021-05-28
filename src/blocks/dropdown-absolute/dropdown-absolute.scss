@@ -95,10 +95,6 @@
 
     &_non-empty {
       justify-content: space-between;
-
-      .dropdown-absolute__clear-btn {
-        display: block;
-      }
     }
   }
 
@@ -109,6 +105,10 @@
 
     &:hover {
       opacity: 0.75;
+    }
+
+    &_non-empty {
+      display: block;
     }
   }
 

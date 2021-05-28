@@ -24,38 +24,34 @@
       transform: rotate(45deg);
       transition: 0.3s;
     }
+
+    &_active {
+      &::before {
+        transform: rotate(225deg);
+        top: 5px;
+      }
+    }
   }
 
   &__list {
     max-height: 0;
     overflow: hidden;
     transition: .3s;
+
+    &_active {
+      max-height: 300px;
+      overflow-y: scroll;
+      
+      &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+      }
+    }
   }
 
   &__item {
     display: block;
     margin-top: 6px;
     margin-bottom: 7.2px;
-  }
-
-  &_active {
-    .dropdown-relative {
-      &__content {
-        &::before {
-          transform: rotate(225deg);
-          top: 5px;
-        }
-      }
-
-      &__list {
-        max-height: 300px;
-        overflow-y: scroll;
-        
-        &::-webkit-scrollbar {
-          width: 0;
-          background: transparent;
-        }
-      }
-    }
   }
 }

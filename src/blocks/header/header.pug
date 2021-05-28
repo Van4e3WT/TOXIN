@@ -9,7 +9,7 @@ mixin header(isAuthorized)
         .header__logo
           +logo()
         .header__burger.js-header__burger
-          .header__burger-divisions
+          .header__burger-divisions.js-header__burger-divisions
       .header__body.js-header__body
         +header__ref-item("/plug-link", "О\xA0нас")
         +header__ref-item("/plug-link", "Услуги", true)
@@ -24,7 +24,7 @@ mixin header(isAuthorized)
             +button({
               reference: "login.html",
               content: "Войти",
-              modificators: ["ghostly"]
+              modificators: ["theme_bordered"]
             })
           .header__item
             +button({

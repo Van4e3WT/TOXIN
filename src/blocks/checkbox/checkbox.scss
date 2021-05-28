@@ -49,6 +49,11 @@
       border-image: $gradientColor;
       border-image-slice: 1;
     }
+
+    &_extended {
+      font-weight: bold;
+      color: $darkShade75;
+    }
   }
 
   &__input:checked + &__content {
@@ -61,20 +66,13 @@
     }
   }
 
+  &__description {
+    margin-top: 3px;
+    margin-left: 30px;
+    color: $darkShade50;
+  }
+
   &_extended {
     max-width: 255px;
-
-    .checkbox {
-      &__content {
-        font-weight: bold;
-        color: $darkShade75;
-      }
-      
-      &__description {
-        margin-top: 3px;
-        margin-left: 30px;
-        color: $darkShade50;
-      }
-    }
   }
 }

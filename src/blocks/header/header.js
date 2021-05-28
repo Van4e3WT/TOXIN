@@ -8,6 +8,7 @@ const headerBurger = 'header__burger';
 const headerBody = 'header__body';
 
 function addBurgerListener() {
+  $(`.js-${headerBurger}-divisions`).toggleClass(`${headerBurger}-divisions_active`);
   $(`.js-${headerBurger}`).toggleClass(`${headerBurger}_active`);
   $(`.js-${headerBody}`).toggleClass(`${headerBody}_active`);
 }
