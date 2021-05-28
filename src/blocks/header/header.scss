@@ -53,12 +53,14 @@ $mediaSize: 1000px;
   }
 
   &__item {
+    position: relative;
     display: flex;
     padding: 0 9.5px;
     color:$darkShade50;
     align-items: center;
     justify-content: center;
     letter-spacing: 0.25px;
+    cursor: pointer;
 
     &:first-child {
       padding-left: 0;
@@ -70,6 +72,21 @@ $mediaSize: 1000px;
 
     &:hover {
       color: $darkShade75;
+    }
+
+    &-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      background-color: white;
+      border-top: 1px solid $darkShade25;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+      &_active {
+        display: block;
+      }
     }
 
     @media (max-width:$mediaSize) {
@@ -107,6 +124,12 @@ $mediaSize: 1000px;
       border-top: 0;
       border-left: 0;
     }
+  }
+
+  &__subitem {
+    display: block;
+    padding: 10px;
+    color: $darkShade50;
   }
 
   &__user {

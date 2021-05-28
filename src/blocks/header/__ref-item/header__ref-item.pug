@@ -1,4 +1,11 @@
-mixin header__ref-item(reference, name, isExtended=false)
-  a(class="header__item", href=`${reference}`)=name
-    if isExtended
+mixin header__ref-item(name, references)
+  - const isDropdown = references instanceof Array;
+
+  if isDropdown
+    .header__item.js-header__item=name
       .header__arrow-down
+      .header__item-list
+        each ref in references
+          a.header__subitem(href=ref[1])=ref[0]
+  else
+    a.header__item(href=`${references}`)=name

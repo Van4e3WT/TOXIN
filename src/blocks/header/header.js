@@ -1,6 +1,7 @@
 /* global $ */
 
 import './header.scss';
+import './__ref-item/header__ref-item';
 import 'Blocks/logo/logo';
 import 'Blocks/button/button';
 

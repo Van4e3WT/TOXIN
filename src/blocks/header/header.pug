@@ -11,11 +11,19 @@ mixin header(isAuthorized)
         .header__burger.js-header__burger
           .header__burger-divisions.js-header__burger-divisions
       .header__body.js-header__body
-        +header__ref-item("/plug-link", "О\xA0нас")
-        +header__ref-item("/plug-link", "Услуги", true)
-        +header__ref-item("/plug-link", "Вакансии")
-        +header__ref-item("/plug-link", "Новости")
-        +header__ref-item("/plug-link", "Соглашения", true)
+        +header__ref-item("О\xA0нас", "/plug-link")
+        +header__ref-item("Услуги", [
+          ["Услуга 1", "/plug-link"],
+          ["Услуга 2", "/plug-link"],
+          ["Услуга 3", "/plug-link"],
+        ])
+        +header__ref-item("Вакансии", "/plug-link")
+        +header__ref-item("Новости", "/plug-link")
+        +header__ref-item("Соглашения", [
+          ["Соглашение 1", "/plug-link"],
+          ["Соглашение 2", "/plug-link"],
+          ["Соглашение 3", "/plug-link"],
+        ])
         if isAuthorized
           .header__item
             .header__user Константин Константинопольский
