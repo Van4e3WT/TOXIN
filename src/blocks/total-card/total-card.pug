@@ -20,7 +20,11 @@ mixin total-card(number, isLux, cost)
       label.total-card__label Гости
       .total-card__input
         +dropdown-absolute({
-          wordforms: ["гость", "гостя", "гостей"],
+          wordforms: [
+            ["гость", "гостя", "гостей"],
+            ["гость", "гостя", "гостей"],
+            ["младенец", "младенца", "младенцев"]
+          ],
           items: ["Взрослые", "Дети", "Младенцы"],
           isOpen: false,
           defaultText: "Сколько гостей",

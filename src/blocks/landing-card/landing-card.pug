@@ -11,7 +11,11 @@ mixin landing-card()
       label.landing-card__label Гости
       .landing-card__dropdown-absolute
         +dropdown-absolute({
-          wordforms: ["гость", "гостя", "гостей"],
+          wordforms: [
+            ["гость", "гостя", "гостей"],
+            ["гость", "гостя", "гостей"],
+            ["младенец", "младенца", "младенцев"]
+          ],
           items: ["Взрослые", "Дети", "Младенцы"],
           isOpen: false,
           defaultText: "Сколько гостей",

@@ -35,7 +35,11 @@ mixin form-elements()
           .form-elements__wrapper_medium
             label.form-elements__label dropdown
             +dropdown-absolute({
-              wordforms: ["гость", "гостя", "гостей"],
+              wordforms: [
+                ["гость", "гостя", "гостей"],
+                ["гость", "гостя", "гостей"],
+                ["младенец", "младенца", "младенцев"]
+              ],
               items: ["Взрослые", "Дети", "Младенцы"],
               isOpen: false,
               defaultText: "Сколько гостей"
@@ -184,7 +188,11 @@ mixin form-elements()
         .form-elements__div5
           label.form-elements__label Dropdown
           +dropdown-absolute({
-              wordforms: ["гость", "гостя", "гостей"],
+              wordforms: [
+                ["гость", "гостя", "гостей"],
+                ["гость", "гостя", "гостей"],
+                ["младенец", "младенца", "младенцев"]
+              ],
               items: ["Взрослые", "Дети", "Младенцы"],
               isOpen: true,
               defaultText: "Сколько гостей"
@@ -192,7 +200,11 @@ mixin form-elements()
         .form-elements__div6
           label.form-elements__label Dropdown
           +dropdown-absolute({
-            wordforms: ["гость", "гостя", "гостей"],
+            wordforms: [
+              ["гость", "гостя", "гостей"],
+              ["гость", "гостя", "гостей"],
+              ["младенец", "младенца", "младенцев"]
+            ],
             items: ["Взрослые", "Дети", "Младенцы"],
             isOpen: true,
             defaultText: "Сколько гостей",

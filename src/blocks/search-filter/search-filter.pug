@@ -13,7 +13,11 @@ mixin search-filter()
       .search-filter__group
         label.search-filter__label Гости
         +dropdown-absolute({
-          wordforms: ["гость", "гостя", "гостей"],
+          wordforms: [
+            ["гость", "гостя", "гостей"],
+            ["гость", "гостя", "гостей"],
+            ["младенец", "младенца", "младенцев"]
+          ],
           items: ["Взрослые", "Дети", "Младенцы"],
           defaultText: "Сколько гостей"
         })
