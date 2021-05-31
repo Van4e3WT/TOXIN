@@ -3,10 +3,13 @@
 .checkbox {
   max-width: 225px;
   position: relative;
-  font-weight: normal;
-  text-transform: none;
-  cursor: pointer;
   user-select: none;
+
+  &__label {
+    font-weight: normal;
+    text-transform: none;
+    cursor: pointer;
+  }
 
   &__input {
     position: absolute;
@@ -67,9 +70,11 @@
   }
 
   &__description {
-    margin-top: 3px;
+    margin-top: 1px;
     margin-left: 30px;
     color: $darkShade50;
+    font-size: 0.75rem;
+    letter-spacing: 0px;
   }
 
   &_extended {
