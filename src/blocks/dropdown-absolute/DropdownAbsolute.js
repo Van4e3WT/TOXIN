@@ -10,26 +10,29 @@ class DropdownAbsolute {
   }
 
   init() {
-    this.dropdownInput = this.dropdown.querySelector(`.${this.selector}__input`);
     const dropdownOutput = this.dropdown.querySelector(`.${this.selector}__output`);
-    const dropdownClear = this.dropdown.querySelector(`.${this.selector}__clear-btn`);
-    const dropdownApply = this.dropdown.querySelector(`.${this.selector}__apply-btn`);
     const dropdownList = this.dropdown.querySelector(`.${this.selector}__list`);
+
+    // const dropdownClear = this.dropdown.querySelector(`.${this.selector}__clear-btn`);
+    // const dropdownApply = this.dropdown.querySelector(`.${this.selector}__apply-btn`);
+
+    this.dropdownInput = dropdownOutput.querySelector(`.${this.selector}__input`);
 
     dropdownList.style.zIndex = this.zIndex;
 
     dropdownOutput.addEventListener('click', this.toggleList.bind(this));
     document.addEventListener('mouseup', this.hideLostList.bind(this));
 
-    if (dropdownClear) {
-      dropdownClear.addEventListener('click', this.clearListValues.bind(this));
-    }
+    // if (dropdownClear) {
+    //   dropdownClear.addEventListener('click', this.clearListValues.bind(this));
+    // }
 
-    if (dropdownApply) {
-      dropdownApply.addEventListener('click', this.toggleList.bind(this));
-    }
+    // if (dropdownApply) {
+    //   dropdownApply.addEventListener('click', this.toggleList.bind(this));
+    // }
 
-    const listItems = this.dropdown.querySelectorAll(`.${this.selector}__item`);
+    const listItems = dropdownList.querySelectorAll(`.${this.selector}__item`);
+
     listItems.forEach((item) => {
       const minus = item.querySelector(`.${this.selector}__minus`);
       const counter = item.querySelector(`.${this.selector}__counter`);
@@ -39,11 +42,13 @@ class DropdownAbsolute {
         if (+counter.textContent > 0) {
           counter.textContent = +counter.textContent - 1;
         }
+
         this.update();
       };
 
       const incrementCounter = () => {
         counter.textContent = +counter.textContent + 1;
+
         this.update();
       };
 
@@ -55,79 +60,66 @@ class DropdownAbsolute {
   }
 
   update() {
-    const defaultValue = this.dropdownInput.getAttribute('default');
+    const items = this.dropdown.querySelectorAll(`.${this.selector}__item`);
 
-    const updateCounterBlock = (item) => {
-      const counter = item.querySelector(`.${this.selector}__counter`);
-      const minus = item.querySelector(`.${this.selector}__minus`);
-
-      if (+counter.textContent < 1) {
-        minus.classList.add(`${this.selector}__minus_disabled`);
-      } else {
-        minus.classList.remove(`${this.selector}__minus_disabled`);
-      }
+    const resultArray = [];
+    const buffer = {
+      wordforms: items[0].dataset.wordforms.split(', '),
+      value: 0,
     };
 
-    if (this.dropdown.hasAttribute('several-word-forms')) {
-      const result = [];
-      let sum = 0;
+    items.forEach((item) => {
+      this.updateCounterBlock(item);
 
-      this.dropdown.querySelectorAll(`.${this.selector}__item`).forEach((item) => {
-        updateCounterBlock(item);
-
-        if (item.hasAttribute('wordforms')) {
-          const counters = item.querySelectorAll(`.${this.selector}__counter`);
-          let value;
-
-          counters.forEach((counter) => {
-            value = +counter.textContent;
-            sum += +counter.textContent;
-          });
-
-          if (value > 0) {
-            const wordForms = item.getAttribute('wordforms').split(', ');
-            const rightForm = Utils.num2str(value, wordForms);
-
-            result.push(`${value} ${rightForm}`);
-          }
-        }
-
-        if (sum !== 0) {
-          let resultStr = '';
-
-          for (let j = 0; j < result.length; j += 1) {
-            resultStr += j ? `, ${result[j]}` : result[j];
-          }
-
-          this.dropdownInput.value = `${resultStr}\u2026`;
-          this.dropdownInput.setAttribute('title', this.dropdownInput.value);
-        } else {
-          this.dropdownInput.value = defaultValue;
-          this.dropdownInput.setAttribute('title', defaultValue);
-        }
-      });
-    } else {
-      const buttonsBlock = this.dropdown.querySelector(`.${this.selector}__buttons`);
-      const dropdownClear = buttonsBlock.querySelector(`.${this.selector}__clear-btn`);
+      const counter = item.querySelector(`.${this.selector}__counter`);
       let value = 0;
 
-      this.dropdown.querySelectorAll(`.${this.selector}__item`).forEach((item) => {
-        updateCounterBlock(item);
-        value += (+item.querySelector(`.${this.selector}__counter`).textContent);
-      });
+      value = +counter.textContent;
 
-      const wordForms = this.dropdown.hasAttribute('wordforms') ? this.dropdown.getAttribute('wordforms').split(', ') : null;
-      const rightForm = wordForms ? Utils.num2str(value, wordForms) : '';
+      const wordforms = item.dataset.wordforms.split(', ');
 
-      if (value !== 0) {
-        this.dropdownInput.value = `${value} ${rightForm}`;
-        buttonsBlock.classList.add(`${this.selector}__buttons_non-empty`);
-        dropdownClear.classList.add(`${this.selector}__clear-btn_non-empty`);
-      } else {
-        this.dropdownInput.value = defaultValue;
-        buttonsBlock.classList.remove(`${this.selector}__buttons_non-empty`);
-        dropdownClear.classList.remove(`${this.selector}__clear-btn_non-empty`);
+      if (buffer.wordforms.toString() === wordforms.toString()) {
+        buffer.value += value;
+      } else if (value > 0) {
+        resultArray.push({
+          wordforms: buffer.wordforms,
+          value: buffer.value,
+        });
+
+        buffer.wordforms = wordforms;
+        buffer.value = value;
       }
+    });
+
+    if (buffer.value > 0) {
+      resultArray.push(resultArray.push({
+        wordforms: buffer.wordforms,
+        value: buffer.value,
+      }));
+    }
+
+    let resultStr = '';
+
+    resultArray.forEach((obj) => {
+      if (obj.value) {
+        resultStr += `${obj.value} ${Utils.num2str(obj.value, obj.wordforms)}, `;
+      }
+    });
+
+    this.dropdownInput.value = resultStr
+      ? `${resultStr.split('').slice(0, -2).join('')}`
+      : this.dropdownInput.dataset.placeholder;
+    this.dropdownInput.setAttribute('title', this.dropdownInput.value);
+  }
+
+  updateCounterBlock(item) {
+    const counter = item.querySelector(`.${this.selector}__counter`);
+    const minus = item.querySelector(`.${this.selector}__minus`);
+
+    if (+counter.textContent < 1) {
+      minus.classList.add(`${this.selector}__minus_disabled`);
+    } else {
+      minus.classList.remove(`${this.selector}__minus_disabled`);
     }
   }
 

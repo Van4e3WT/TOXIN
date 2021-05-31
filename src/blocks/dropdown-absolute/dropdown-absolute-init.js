@@ -11,6 +11,7 @@ function initDropdownsAbsolute() {
 
   dropdowns.forEach((item, i) => {
     const dropdown = new DropdownAbsolute(item, BLOCKNAME, dropdowns.length - i);
+
     dropdown.init();
   });
 }
