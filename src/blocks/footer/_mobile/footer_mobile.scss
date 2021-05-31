@@ -2,24 +2,14 @@
 
 .footer-mobile {
   display:none;
-  align-items: center;
-  justify-content: center;
-  background-color:#f4f4f6;
   text-align: center;
 
   &__copyrights {
     display: inline-block;
     padding-top: 116px;
     padding-bottom: 96px;
-    max-width: 768px;
     width: 100%;
-    margin: 40px auto;
     background-color: white;
-    box-shadow: $shadow;
-
-    @media (max-width:1125px) {
-      width: 90%;
-    }
   }
 
   &__logo {
