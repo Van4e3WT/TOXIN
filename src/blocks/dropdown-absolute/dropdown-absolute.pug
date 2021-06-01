@@ -1,7 +1,7 @@
 include __counter/dropdown-absolute__counter.pug
 
 mixin dropdown-absolute(props)
-  - const { wordforms, items, isOpen=false, defaultText="", defaultValues } = props
+  - const { wordforms, items, isOpen=false, defaultText="", defaultValues, isButtons=false } = props
   .dropdown-absolute.js-dropdown-absolute
     .dropdown-absolute__output
       input.dropdown-absolute__input(data-placeholder=defaultText, type="text", readonly)
@@ -10,7 +10,7 @@ mixin dropdown-absolute(props)
         .dropdown-absolute__item(data-wordforms=item.join(', '))
           .dropdown-absolute__item-type= items ? items[key] : item[1]
           +dropdown-absolute__counter(defaultValues, key)
-      //- if (isButtons)
-      //-   .dropdown-absolute__buttons
-      //-     .dropdown-absolute__clear-btn Очистить
-      //-     .dropdown-absolute__apply-btn Применить
+      if (isButtons)
+        .dropdown-absolute__buttons
+          .dropdown-absolute__clear-btn Очистить
+          .dropdown-absolute__apply-btn Применить

@@ -42,7 +42,8 @@ mixin form-elements()
               ],
               items: ["Взрослые", "Дети", "Младенцы"],
               isOpen: false,
-              defaultText: "Сколько гостей"
+              defaultText: "Сколько гостей",
+              isButtons: true,
             })
           .form-elements__wrapper_large
             label.form-elements__label masked text field
@@ -195,7 +196,8 @@ mixin form-elements()
               ],
               items: ["Взрослые", "Дети", "Младенцы"],
               isOpen: true,
-              defaultText: "Сколько гостей"
+              defaultText: "Сколько гостей",
+              isButtons: true,
             })
         .form-elements__div6
           label.form-elements__label Dropdown
@@ -208,7 +210,8 @@ mixin form-elements()
             items: ["Взрослые", "Дети", "Младенцы"],
             isOpen: true,
             defaultText: "Сколько гостей",
-            defaultValues: [2, 1, 0]
+            defaultValues: [2, 1, 0],
+            isButtons: true,
           })
         .form-elements__div7
           .form-elements__wrapper
