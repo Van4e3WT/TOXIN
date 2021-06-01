@@ -6,31 +6,27 @@ class DateSoloMask {
   }
 
   init() {
-    function cancelSelect() {
-      this.input.selectionStart = this.input.selectionEnd;
-    }
-
-    this.input.addEventListener('input', this.inputListener.bind(this));
-    this.input.addEventListener('select', cancelSelect.bind(this));
-    this.input.addEventListener('change', this.setDate.bind(this));
+    this.input.addEventListener('input', this._inputListener.bind(this));
+    this.input.addEventListener('select', this._cancelSelect.bind(this));
+    this.input.addEventListener('change', this._setDate.bind(this));
   }
 
-  inputListener() {
+  _inputListener() {
     const validatedInput = this.input.value.replace(/\D/g, '');
     const len = validatedInput.length;
 
     if (len < 3) {
-      this.inputDay(validatedInput);
+      this._inputDay(validatedInput);
     } else if (len < 5) {
-      this.inputMonth(validatedInput);
+      this._inputMonth(validatedInput);
     } else {
-      this.inputYear(validatedInput);
+      this._inputYear(validatedInput);
     }
 
     this.input.value = this.newValue;
   }
 
-  inputDay(str) {
+  _inputDay(str) {
     const res = str.split('');
 
     if (res.length === 1) {
@@ -48,7 +44,7 @@ class DateSoloMask {
     this.newValue = res.join('');
   }
 
-  inputMonth(str) {
+  _inputMonth(str) {
     const res = str.split('');
 
     if (res.length === 3) {
@@ -67,7 +63,7 @@ class DateSoloMask {
     this.newValue = res.join('');
   }
 
-  inputYear(str) {
+  _inputYear(str) {
     const res = str.split('');
 
     if (res.length === 5) {
@@ -87,7 +83,7 @@ class DateSoloMask {
     this.newValue = res.join('');
   }
 
-  setDate() {
+  _setDate() {
     if (this.input.value.length !== 10) return;
 
     const dateArr = this.input.value.split('.').reverse().join('-');
@@ -95,6 +91,10 @@ class DateSoloMask {
 
     datepicker.selectDate(new Date(dateArr));
     datepicker.date = new Date(dateArr);
+  }
+
+  _cancelSelect() {
+    this.input.selectionStart = this.input.selectionEnd;
   }
 }
 

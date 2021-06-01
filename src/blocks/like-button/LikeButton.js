@@ -7,10 +7,10 @@ class LikeButton {
   init() {
     this.input = this.like.querySelector(`.${this.selector}__input`);
 
-    this.input.addEventListener('change', this.moveCount.bind(this));
+    this.input.addEventListener('change', this._moveCount.bind(this));
   }
 
-  moveCount() {
+  _moveCount() {
     const counter = this.like.querySelector(`.${this.selector}__counter`);
 
     if (this.input.checked) {

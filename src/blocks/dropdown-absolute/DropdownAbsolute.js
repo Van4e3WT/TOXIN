@@ -19,16 +19,16 @@ class DropdownAbsolute {
     const handleInputDefaultEvents = (e) => e.preventDefault();
     dropdownList.style.zIndex = this.zIndex;
 
-    dropdownOutput.addEventListener('click', this.handleDropdownClick.bind(this));
-    document.addEventListener('mouseup', this.handleOutsideClick.bind(this));
+    dropdownOutput.addEventListener('click', this._handleDropdownClick.bind(this));
+    document.addEventListener('mouseup', this._handleOutsideClick.bind(this));
     this.dropdownInput.addEventListener('mousedown', handleInputDefaultEvents);
 
     if (this.buttons) {
       this.dropdownClear = this.buttons.querySelector(`.${this.selector}__clear-btn`);
       this.dropdownApply = this.buttons.querySelector(`.${this.selector}__apply-btn`);
 
-      this.dropdownClear.addEventListener('click', this.handleClearButtonClick.bind(this));
-      this.dropdownApply.addEventListener('click', this.handleDropdownClick.bind(this));
+      this.dropdownClear.addEventListener('click', this._handleClearButtonClick.bind(this));
+      this.dropdownApply.addEventListener('click', this._handleDropdownClick.bind(this));
     }
 
     const listItems = dropdownList.querySelectorAll(`.${this.selector}__item`);
@@ -134,12 +134,12 @@ class DropdownAbsolute {
     }
   }
 
-  handleDropdownClick() {
+  _handleDropdownClick() {
     this.dropdown.querySelector(`.${this.selector}__list`)
       .classList.toggle(`${this.selector}__list_active`);
   }
 
-  handleOutsideClick(e) {
+  _handleOutsideClick(e) {
     const { target } = e;
     const list = this.dropdown.querySelector(`.${this.selector}__list`);
 
@@ -148,7 +148,7 @@ class DropdownAbsolute {
     }
   }
 
-  handleClearButtonClick() {
+  _handleClearButtonClick() {
     const counters = this.dropdown.querySelectorAll(`.${this.selector}__counter`);
 
     counters.forEach((counter) => {

@@ -12,13 +12,13 @@ class Carousel {
     this.dots = this.carousel.querySelectorAll(`.${this.selector}__dot`);
     this.currentIndex = 0;
 
-    prevBtn.addEventListener('click', this.prev.bind(this));
-    nextBtn.addEventListener('click', this.next.bind(this));
+    prevBtn.addEventListener('click', this._prev.bind(this));
+    nextBtn.addEventListener('click', this._next.bind(this));
 
-    this.update();
+    this._update();
   }
 
-  update() {
+  _update() {
     this.items.forEach((item, i) => {
       if (i === this.currentIndex) {
         item.classList.add(`${this.selector}__item_active`);
@@ -30,24 +30,24 @@ class Carousel {
     });
   }
 
-  prev() {
+  _prev() {
     if (this.currentIndex - 1 < 0) {
       this.currentIndex = this.items.length - 1;
     } else {
       this.currentIndex -= 1;
     }
 
-    this.update();
+    this._update();
   }
 
-  next() {
+  _next() {
     if (this.currentIndex + 1 >= this.items.length) {
       this.currentIndex = 0;
     } else {
       this.currentIndex += 1;
     }
 
-    this.update();
+    this._update();
   }
 }
 

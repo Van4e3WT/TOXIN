@@ -7,15 +7,15 @@ class HeaderItem {
 
   init() {
     this.list = this.item.querySelector('.header__item-list');
-    this.item.addEventListener('click', this.toggleClass.bind(this));
-    document.addEventListener('mouseup', this.removeClass.bind(this));
+    this.item.addEventListener('click', this._toggleClass.bind(this));
+    document.addEventListener('mouseup', this._removeClass.bind(this));
   }
 
-  toggleClass() {
+  _toggleClass() {
     this.list.classList.toggle('header__item-list_active');
   }
 
-  removeClass(e) {
+  _removeClass(e) {
     const { target } = e;
 
     if (!this.item.contains(target)) {
