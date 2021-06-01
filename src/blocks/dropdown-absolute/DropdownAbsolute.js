@@ -16,17 +16,19 @@ class DropdownAbsolute {
     this.buttons = this.dropdown.querySelector(`.${this.selector}__buttons`);
     this.dropdownInput = dropdownOutput.querySelector(`.${this.selector}__input`);
 
+    const handleInputDefaultEvents = (e) => e.preventDefault();
     dropdownList.style.zIndex = this.zIndex;
 
-    dropdownOutput.addEventListener('click', this.toggleList.bind(this));
-    document.addEventListener('mouseup', this.hideLostList.bind(this));
+    dropdownOutput.addEventListener('click', this.handleDropdownClick.bind(this));
+    document.addEventListener('mouseup', this.handleOutsideClick.bind(this));
+    this.dropdownInput.addEventListener('mousedown', handleInputDefaultEvents);
 
     if (this.buttons) {
       this.dropdownClear = this.buttons.querySelector(`.${this.selector}__clear-btn`);
       this.dropdownApply = this.buttons.querySelector(`.${this.selector}__apply-btn`);
 
-      this.dropdownClear.addEventListener('click', this.clearListValues.bind(this));
-      this.dropdownApply.addEventListener('click', this.toggleList.bind(this));
+      this.dropdownClear.addEventListener('click', this.handleClearButtonClick.bind(this));
+      this.dropdownApply.addEventListener('click', this.handleDropdownClick.bind(this));
     }
 
     const listItems = dropdownList.querySelectorAll(`.${this.selector}__item`);
@@ -36,28 +38,28 @@ class DropdownAbsolute {
       const counter = item.querySelector(`.${this.selector}__counter`);
       const plus = item.querySelector(`.${this.selector}__plus`);
 
-      const decrementCounter = () => {
+      const handleCounterDecrement = () => {
         if (+counter.textContent > 0) {
           counter.textContent = +counter.textContent - 1;
         }
 
-        this.update();
+        this._update();
       };
 
-      const incrementCounter = () => {
+      const handleCounterIncrement = () => {
         counter.textContent = +counter.textContent + 1;
 
-        this.update();
+        this._update();
       };
 
-      minus.addEventListener('click', decrementCounter);
-      plus.addEventListener('click', incrementCounter);
+      minus.addEventListener('click', handleCounterDecrement);
+      plus.addEventListener('click', handleCounterIncrement);
     });
 
-    this.update();
+    this._update();
   }
 
-  update() {
+  _update() {
     const items = this.dropdown.querySelectorAll(`.${this.selector}__item`);
 
     const resultArray = [];
@@ -67,7 +69,7 @@ class DropdownAbsolute {
     };
 
     items.forEach((item) => {
-      this.updateCounterBlock(item);
+      this._updateCounterBlock(item);
 
       const counter = item.querySelector(`.${this.selector}__counter`);
       let value = 0;
@@ -98,7 +100,7 @@ class DropdownAbsolute {
       });
     }
 
-    this.toggleCleanButton(resultArray.length);
+    this._toggleCleanButton(resultArray.length);
 
     let resultStr = '';
 
@@ -112,7 +114,7 @@ class DropdownAbsolute {
     this.dropdownInput.setAttribute('title', this.dropdownInput.value);
   }
 
-  toggleCleanButton(count) {
+  _toggleCleanButton(count) {
     if (!this.buttons) return;
 
     const toggle = count ? 'add' : 'remove';
@@ -121,7 +123,7 @@ class DropdownAbsolute {
     this.dropdownClear.classList[toggle](`${this.selector}__clear-btn_non-empty`);
   }
 
-  updateCounterBlock(item) {
+  _updateCounterBlock(item) {
     const counter = item.querySelector(`.${this.selector}__counter`);
     const minus = item.querySelector(`.${this.selector}__minus`);
 
@@ -132,12 +134,12 @@ class DropdownAbsolute {
     }
   }
 
-  toggleList() {
+  handleDropdownClick() {
     this.dropdown.querySelector(`.${this.selector}__list`)
       .classList.toggle(`${this.selector}__list_active`);
   }
 
-  hideLostList(e) {
+  handleOutsideClick(e) {
     const { target } = e;
     const list = this.dropdown.querySelector(`.${this.selector}__list`);
 
@@ -146,7 +148,7 @@ class DropdownAbsolute {
     }
   }
 
-  clearListValues() {
+  handleClearButtonClick() {
     const counters = this.dropdown.querySelectorAll(`.${this.selector}__counter`);
 
     counters.forEach((counter) => {
@@ -154,7 +156,7 @@ class DropdownAbsolute {
       counter.textContent = 0;
     });
 
-    this.update();
+    this._update();
   }
 }
 
