@@ -5,6 +5,7 @@ $mediaSize: 1000px;
 .header {
   background-color: white;
   box-shadow: $shadow;
+  user-select: none;
 
   &__wrapper {
     display: flex;
@@ -33,7 +34,7 @@ $mediaSize: 1000px;
 
     @media (max-width:$mediaSize) {
       position: absolute;
-      overflow: hidden;
+      overflow-y: scroll;
       left: 0;
       top: 100%;
       width: 100%;
@@ -54,7 +55,6 @@ $mediaSize: 1000px;
 
   &__item {
     position: relative;
-    display: flex;
     padding: 0 9.5px;
     color:$darkShade50;
     align-items: center;
@@ -78,11 +78,19 @@ $mediaSize: 1000px;
       display: none;
       position: absolute;
       top: 100%;
+      left: 0;
+      margin-top: 5px;
       width: 100%;
       background-color: white;
       border-top: 1px solid $darkShade25;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
+
+      @media (max-width:$mediaSize) {
+        position: relative;
+        margin-top: 25px;
+        border: none;
+      }
 
       &_active {
         display: block;
@@ -105,21 +113,21 @@ $mediaSize: 1000px;
   }
 
   &__arrow-down {
-    $size: 27px;
+    display: inline-block;
     position: relative;
-    height: $size;
-    width: $size;
+    height: 10px;
+    width: 23px;
     $childWidth: 12px;
 
     &::before {
       position: absolute;
       content: '';
       $side: 6px;
-      top: 7px;
-      left: 9px;
+      top: 50%;
+      left: 50%;
       height: $side;
       width: $side;
-      transform: rotate(45deg);
+      transform: rotate(45deg) translateX(-100%) ;
       border: 2.5px solid $darkShade50;
       border-top: 0;
       border-left: 0;
@@ -130,6 +138,11 @@ $mediaSize: 1000px;
     display: block;
     padding: 10px;
     color: $darkShade50;
+
+    @media (max-width:$mediaSize) {
+      padding: 25px;
+      border-top: 1px dashed $purple;
+    }
   }
 
   &__user {
