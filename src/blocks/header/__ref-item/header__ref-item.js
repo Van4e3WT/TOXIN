@@ -2,7 +2,7 @@
 
 import HeaderItem from './HeaderItem';
 
-function initRefItems() {
+function handleDOMLoaded() {
   const refItems = document.querySelectorAll('.js-header__item');
 
   refItems.forEach((item) => {
@@ -12,4 +12,4 @@ function initRefItems() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initRefItems);
+document.addEventListener('DOMContentLoaded', handleDOMLoaded);

@@ -6,12 +6,12 @@ class DateSoloMask {
   }
 
   init() {
-    this.input.addEventListener('input', this._inputListener.bind(this));
-    this.input.addEventListener('select', this._cancelSelect.bind(this));
-    this.input.addEventListener('change', this._setDate.bind(this));
+    this.input.addEventListener('input', this._handleFieldInput.bind(this));
+    this.input.addEventListener('select', this._handleFieldSelect.bind(this));
+    this.input.addEventListener('change', this._handleFieldChange.bind(this));
   }
 
-  _inputListener() {
+  _handleFieldInput() {
     const validatedInput = this.input.value.replace(/\D/g, '');
     const len = validatedInput.length;
 
@@ -83,7 +83,7 @@ class DateSoloMask {
     this.newValue = res.join('');
   }
 
-  _setDate() {
+  _handleFieldChange() {
     if (this.input.value.length !== 10) return;
 
     const dateArr = this.input.value.split('.').reverse().join('-');
@@ -93,7 +93,7 @@ class DateSoloMask {
     datepicker.date = new Date(dateArr);
   }
 
-  _cancelSelect() {
+  _handleFieldSelect() {
     this.input.selectionStart = this.input.selectionEnd;
   }
 }

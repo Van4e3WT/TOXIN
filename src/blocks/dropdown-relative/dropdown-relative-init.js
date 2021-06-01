@@ -7,13 +7,14 @@ import 'Blocks/checkbox/checkbox';
 
 const BLOCKNAME = 'dropdown-relative';
 
-function initDropdownsRelative() {
+function handleDOMLoaded() {
   const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   dropdowns.forEach((item) => {
     const dropdown = new DropdownRelative(item, BLOCKNAME);
+
     dropdown.init();
   });
 }
 
-document.addEventListener('DOMContentLoaded', initDropdownsRelative);
+document.addEventListener('DOMContentLoaded', handleDOMLoaded);

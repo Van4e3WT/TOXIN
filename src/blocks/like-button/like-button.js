@@ -5,7 +5,7 @@ import LikeButton from './LikeButton';
 
 const BLOCKNAME = 'like-button';
 
-function initLikesCount() {
+function handleDOMLoaded() {
   const likes = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   likes.forEach((item) => {
@@ -15,4 +15,4 @@ function initLikesCount() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initLikesCount);
+document.addEventListener('DOMContentLoaded', handleDOMLoaded);

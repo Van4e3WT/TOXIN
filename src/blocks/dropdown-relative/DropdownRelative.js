@@ -7,10 +7,10 @@ class DropdownRelative {
   init() {
     this.title = this.dropdown.querySelector(`.${this.selector}__content`);
 
-    this.title.addEventListener('click', this._toggleActiveDropdown.bind(this));
+    this.title.addEventListener('click', this._handleTitleClick.bind(this));
   }
 
-  _toggleActiveDropdown() {
+  _handleTitleClick() {
     const list = this.dropdown.querySelector(`.${this.selector}__list`);
 
     this.dropdown.classList.toggle(`${this.selector}_active`);

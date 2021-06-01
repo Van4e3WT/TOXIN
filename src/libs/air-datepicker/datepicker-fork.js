@@ -18,11 +18,11 @@ const props = {
   nextHtml: '<svg><path d="M 19,10 l 7,7 l -7,7"></path><path d="M 26,17 l -16,0"></path></svg>',
 };
 
-function contextShow() {
+function handleContextElementShow() {
   this.show();
 }
 
-function contextHide() {
+function handleContextElementHide() {
   this.hide();
 }
 
@@ -30,7 +30,7 @@ function hideByApply() {
   const acceptBtn = this.nav.$buttonsContainer[0].firstChild;
 
   if (acceptBtn) {
-    acceptBtn.addEventListener('click', contextHide.bind(this));
+    acceptBtn.addEventListener('click', handleContextElementHide.bind(this));
   }
 }
 
@@ -55,9 +55,9 @@ twinDatepickers.each((index, value) => {
 
   const data = dateArrival.data('datepicker');
 
-  outputArrival.on('click', contextShow.bind(data));
-  outputDeparture.on('click', contextShow.bind(data));
-  dateDeparture.on('click', contextShow.bind(data));
+  outputArrival.on('click', handleContextElementShow.bind(data));
+  outputDeparture.on('click', handleContextElementShow.bind(data));
+  dateDeparture.on('click', handleContextElementShow.bind(data));
 
   hideByApply.call(data);
 });
@@ -82,7 +82,7 @@ $('.js-date-solo-range').each((i, el) => {
 
   hideByApply.call(input.data('datepicker'));
 
-  el.addEventListener('click', contextShow.bind(input.data('datepicker')));
+  el.addEventListener('click', handleContextElementShow.bind(input.data('datepicker')));
 });
 
 $('.js-opened-datepick').each((i, el) => {
