@@ -3,7 +3,9 @@ include ~Blocks/logo/logo.pug
 include ~Blocks/form-subscribe/form-subscribe.pug
 include ~Blocks/social-reference/social-reference.pug
 
-mixin footer()
+mixin footer(props)
+  - const { plugLink = '/plug-link', refBlocks = [], socials = [] } = props;
+
   .footer
     .footer_references.container
       .footer__row
@@ -14,23 +16,12 @@ mixin footer()
             | Бронирование номеров в лучшем
             | отеле 2019 года по версии
             | ассоциации «Отельные взгляды»
-        ul.footer__column 
-          .footer__item Навигация
-          +footer__ref-item("/plug-link", "О нас")
-          +footer__ref-item("/plug-link", "Новости")
-          +footer__ref-item("/plug-link", "Служба поддержки")
-          +footer__ref-item("/plug-link", "Услуги")
-        ul.footer__column 
-          .footer__item О&nbsp;нас
-          +footer__ref-item("/plug-link", "О сервисе")
-          +footer__ref-item("/plug-link", "Наша команда")
-          +footer__ref-item("/plug-link", "Вакансии")
-          +footer__ref-item("/plug-link", "Инвесторы")
-        ul.footer__column
-          .footer__item Служба&nbsp;поддержки
-          +footer__ref-item("/plug-link", "Соглашения")
-          +footer__ref-item("/plug-link", "Сообщества")
-          +footer__ref-item("/plug-link", "Связь с нами")
+        each refBlock in refBlocks
+          ul.footer__column 
+            .footer__item=refBlock.title
+            each reference in refBlock.references
+              - const link = reference.link ? reference.link : plugLink;
+              +footer__ref-item(link, reference.content)
         .footer__column
           .footer__item Подписка
           p.footer__text Получайте специальные предложения и новости сервиса
@@ -39,9 +30,7 @@ mixin footer()
       .footer__content.container
         p.footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
         .footer__social
-          .footer__reference
-            +social-reference("/plug-link", "twitter")
-          .footer__reference
-            +social-reference("/plug-link", "facebook")
-          .footer__reference
-            +social-reference("/plug-link", "instagram")
+          each social in socials
+            .footer__reference
+              - const link = social.link ? social.link : plugLink;
+              +social-reference(link, social.name)

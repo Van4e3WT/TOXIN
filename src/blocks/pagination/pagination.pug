@@ -1,15 +1,17 @@
-mixin pagination(page, pages)
+mixin pagination(props)
+  - const { current = 1, total = 5 } = props
+
   .pagination
     .pagination__items
       each i in [0,1,2,3,4,5]
         if i == 0
-          .pagination__item.pagination__item_active=page+i
+          .pagination__item.pagination__item_active=current+i
         else if i == 3
           .pagination__item="\u2026"
         else if i == 4
-          .pagination__item=pages
+          .pagination__item=total
         else if i == 5
           .pagination__item.pagination__item_arrow
         else
-          .pagination__item=page+i
+          .pagination__item=current+i
     .pagination__info 1 – 12 из 100+ вариантов аренды

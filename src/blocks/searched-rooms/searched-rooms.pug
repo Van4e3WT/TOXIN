@@ -8,4 +8,7 @@ mixin searched-rooms(rooms)
       each room in rooms
         +room-card(room)
     .searched-rooms__pagination
-      +pagination(1, 15)
+      +pagination({
+        current: 1,
+        total: 15,
+      })

@@ -18,7 +18,34 @@ include ~Blocks/bullet-list/bullet-list.pug
 include ~Blocks/room-privilege/room-privilege.pug
 include ~Blocks/comment/comment.pug
 
-mixin form-elements()
+mixin form-elements(props)
+  -
+    const {
+      dropdownAbsoluteMain,
+      twinDatepick = {},
+      checkboxes = [],
+      radioButtons = [],
+      toggleButtons = [],
+      likeButtons = [],
+      rateButton,
+      rateResult = 5,
+      rangeSlider = {},
+      buttonsLarge = [],
+      buttons = [],
+      buttonSend,
+      pagination,
+      dropdownAbsoluteExtended,
+      dropdownAbsoluteExtendedExpand,
+      dropdownAbsoluteExpand,
+      dropdownAbsoluteExpandFilled,
+      dropdownRealtiveWrapped,
+      dropdownRealtive,
+      checkboxesExtended = [],
+      bulletList = [],
+      roomPrivileges = [],
+      comment,
+    } = props;
+
   .form-elements
     +svg-UI()
     .container
@@ -34,22 +61,13 @@ mixin form-elements()
             input.form-elements__input(type="text", name="textfield2", value="This is pretty awesome", class="hover-focus")
           .form-elements__wrapper_medium
             label.form-elements__label dropdown
-            +dropdown-absolute({
-              wordforms: [
-                ["гость", "гостя", "гостей"],
-                ["гость", "гостя", "гостей"],
-                ["младенец", "младенца", "младенцев"]
-              ],
-              items: ["Взрослые", "Дети", "Младенцы"],
-              isOpen: false,
-              defaultText: "Сколько гостей",
-              isButtons: true,
-            })
+            +dropdown-absolute(dropdownAbsoluteMain)
           .form-elements__wrapper_large
             label.form-elements__label masked text field
             +date-solo()
           .form-elements__wrapper_large
-            +twin-datepick("date dropdown", "date dropdown")
+            - const { field1 = "date dropdown", field2 = "date dropdown" } = twinDatepick;
+            +twin-datepick(field1, field2)
           .form-elements__wrapper_large
             label.form-elements__label Filter date dropdown
             +date-solo-range()
@@ -59,228 +77,79 @@ mixin form-elements()
         .form-elements__div2
           .form-elements__checkboxes
             label.form-elements__label_large Checkbox buttons
-            .form-elements__checkbox
-              +checkbox({ content: "Можно курить" })
-            .form-elements__checkbox
-              +checkbox({
-                content: "Можно с питомцами",
-                isChecked: true,
-              })
-            .form-elements__checkbox
-              +checkbox({
-                content: "Можно пригласить гостей (до 10 человек)",
-                isChecked: true,
-              })
+            each checkbox in checkboxes
+              .form-elements__checkbox
+                +checkbox(checkbox)
           .form-elements__wrapper
             label.form-elements__label_medium Radio buttons
             .form-elements__radios
-              .form-elements__radio
-                +radio-button({
-                  content: "Мужчина",
-                  name: "sexRegistration",
-                  isChecked: true,
-                })
-              .form-elements__radio
-                +radio-button({
-                  content: "Женщина",
-                  name: "sexRegistration",
-                })
+              each radioButton in radioButtons
+                .form-elements__radio
+                  +radio-button(radioButton)
           .form-elements__wrapper_huge
             label.form-elements__label_large Toggle
-            .form-elements__wrapper_small
-              +toggle-button("Получать спецпредложения", true)
-            .form-elements__wrapper_small
-              +toggle-button("Получать спецпредложения", false)
+            each toggleButton in toggleButtons
+              .form-elements__wrapper_small
+                +toggle-button(toggleButton)
           .form-elements__wrapper_large
             label.form-elements__label_large Like button
             .form-elements__likes
-              .form-elements__like
-                +like-button(2, false)
-              .form-elements__like
-                +like-button(12, true)
+              each likeButton in likeButtons
+                .form-elements__like
+                  +like-button(likeButton)
           .form-elements__wrapper_large
             label.form-elements__label_large Rate button
             .form-elements__rates
               .form-elements__rate
-                +rate-button("rating", 4)
+                +rate-button(rateButton)
               .form-elements__rate
-                +rate-result(5)
+                +rate-result(rateResult)
         .form-elements__div3
           .form-elements__wrapper_huge
-            +range-slider({
-              minValue: 0,
-              maxValue: 15000,
-              value1: 5000,
-              value2: 10000,
-              step: 100,
-              sliderType: "double"
-            })
+            +range-slider(rangeSlider)
           .form-elements__wrapper_large
             label.form-elements__wrapper_small buttons
             .form-elements__buttons
-              .form-elements__button
-                +button({
-                  reference: "/plug-link",
-                  content: "click me",
-                  modificators: ["transform_high"],
-                })
-              .form-elements__button
-                +button({
-                  reference: "/plug-link",
-                  content: "click me",
-                  modificators: ["transform_high"],
-                })
-              .form-elements__button
-                +button({
-                  reference: "/plug-link",
-                  content: "click me",
-                  modificators: ["theme_bordered", "transform_high"],
-                })
-              .form-elements__button
-                +button({
-                  reference: "/plug-link",
-                  content: "click me",
-                  modificators: ["theme_bordered", "transform_high"],
-                })
-              .form-elements__button.form-elements__button-skeleton
-                +button({
-                  reference: "/plug-link",
-                  content: "click me",
-                  modificators: ["theme_clean"]
-                })
-              .form-elements__button.form-elements__button-skeleton
-                +button({
-                  reference: "/plug-link",
-                  content: "click me",
-                  modificators: ["theme_clean"]
-                })
+              each buttonLarge in buttonsLarge
+                .form-elements__button
+                  +button(buttonLarge)
+              each button in buttons
+                .form-elements__button.form-elements__button-skeleton
+                  +button(button)
             .form-elements__wrapper_large
-              +button({
-                reference: "/plug-link",
-                content: "перейти к оплате",
-                modificators: ["theme_directed", "transform_high"]
-              })
+              +button(buttonSend)
             label.form-elements__label_medium pagination
-            +pagination(1, 15)
+            +pagination(pagination)
         .form-elements__div4
           .form-elements__wrapper_medium
             label.form-elements__label Dropdown
             .form-elements__promt default
-            +dropdown-absolute({
-              wordforms: [
-                ["спальня", "спальни", "спален"],
-                ["кровать", "кровати", "кроватей"],
-                ["ванная комната", "ванные комнаты", "ванных комнат"]
-              ],
-              defaultValues: [2, 2, 0]
-            })
+            +dropdown-absolute(dropdownAbsoluteExtended)
           .form-elements__wrapper_medium
             label.form-elements__label Dropdown
             .form-elements__promt expanded
-            +dropdown-absolute({
-              wordforms: [
-                ["спальня", "спальни", "спален"],
-                ["кровать", "кровати", "кроватей"],
-                ["ванная комната", "ванные комнаты", "ванных комнат"]
-              ],
-              defaultValues: [2, 2, 0],
-              isOpen: true
-            })
+            +dropdown-absolute(dropdownAbsoluteExtendedExpand)
         .form-elements__div5
           label.form-elements__label Dropdown
-          +dropdown-absolute({
-              wordforms: [
-                ["гость", "гостя", "гостей"],
-                ["гость", "гостя", "гостей"],
-                ["младенец", "младенца", "младенцев"]
-              ],
-              items: ["Взрослые", "Дети", "Младенцы"],
-              isOpen: true,
-              defaultText: "Сколько гостей",
-              isButtons: true,
-            })
+          +dropdown-absolute(dropdownAbsoluteExpand)
         .form-elements__div6
           label.form-elements__label Dropdown
-          +dropdown-absolute({
-            wordforms: [
-              ["гость", "гостя", "гостей"],
-              ["гость", "гостя", "гостей"],
-              ["младенец", "младенца", "младенцев"]
-            ],
-            items: ["Взрослые", "Дети", "Младенцы"],
-            isOpen: true,
-            defaultText: "Сколько гостей",
-            defaultValues: [2, 1, 0],
-            isButtons: true,
-          })
+          +dropdown-absolute(dropdownAbsoluteExpandFilled)
         .form-elements__div7
           .form-elements__wrapper
-            +dropdown-relative({
-              content: "Expandable checkbox list",
-              checkboxes: [
-                  "Завтрак",
-                  ["Письменный стол", true],
-                  ["Стул для кормления", true],
-                  ["Кроватка", true],
-                  "Телевизор",
-                  "Шампунь",
-                  "Телевизор",
-                  "Шампунь",
-                ]
-            })
-          +dropdown-relative({
-            content: "Expandable checkbox list",
-            checkboxes: [
-              "Завтрак",
-              ["Письменный стол", true],
-              ["Стул для кормления", true],
-              ["Кроватка", true],
-              "Телевизор",
-              "Шампунь",
-              "Телевизор",
-              "Шампунь",
-            ],
-            isOpen: true
-          })
+            +dropdown-relative(dropdownRealtiveWrapped)
+          +dropdown-relative(dropdownRealtive)
         .form-elements__div8
           label.form-elements__label_large Rich checkbox buttons
-          .form-elements__checkbox
-            +checkbox({
-              content: "Широкий коридор",
-              description: "Ширина коридоров в номере не\xA0менее 91 см."
-            })
-          .form-elements__checkbox
-            +checkbox({
-              content: "Помощник для инвалидов",
-              description: "На 1 этаже вас встретит специалист и проводит до номера."
-            })
+          each checkboxExtended in checkboxesExtended
+            .form-elements__checkbox
+              +checkbox(checkboxExtended)
         .form-elements__div9
           label.form-elements__label_medium Bullet list
-          +bullet-list([
-            "Нельзя с питомцами",
-            "Без вечеринок и мероприятий",
-            "Время прибытия — после\xa013:00, а выезд до\xa012:00"
-          ])
+          +bullet-list(bulletList)
         .form-elements__div10
-          +room-privilege({
-            image: "assets/images/privilege-comfort.svg",
-            title: "Комфорт",
-            description: "Шумопоглощающие стены"
-          })
-          +room-privilege({
-            image: "assets/images/privilege-convenience.svg",
-            title: "Удобство",
-            description: "Окно в каждой из спален"
-          })
+          each roomPrivilege in roomPrivileges
+            +room-privilege(roomPrivilege)
         .form-elements__div11
           .form-elements__comment
-            +comment({
-              image: "assets/images/users-images/marat-123.jpg",
-              username: "Мурад Сарафанов",
-              date: "5 дней назад",
-              likes: 12,
-              isLiked: true,
-              content: "Великолепный матрас на кровати в основной спальне! " +
-                "А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. " +
-                "Выкрикивал комплименты повару — никто не жаловался из соседей."
-            })
+            +comment(comment)

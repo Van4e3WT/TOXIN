@@ -1,4 +1,6 @@
-mixin rate-button(name, inputRate = 0)
+mixin rate-button(props)
+  - const { name = 'ratingRadio', rate = 0 } = props;
+
   .rate-button
     each i in [1,2,3,4,5]
-      input.rate-button__input(type="radio", name=name, checked= i == inputRate)
+      input.rate-button__input(type="radio", name=name, checked= i == rate)

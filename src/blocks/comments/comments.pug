@@ -1,11 +1,13 @@
 include ~Blocks/comment/comment.pug
 
-mixin comments(items)
+mixin comments(props)
+  - const { comments, reviews = 'отзыва' } = props;
+
   .comments
     .comments__header
       h2.comments__title Отзывы посетителей номера
-      .comments__counter=`${items.length} отзыва`
+      .comments__counter=`${comments.length} ${reviews}`
     .comments__body
-      each item in items
+      each item in comments
         .comments__item
           +comment(item)

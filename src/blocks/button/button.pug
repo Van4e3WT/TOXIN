@@ -1,6 +1,6 @@
 mixin button(props)
   -
-    const { reference="/plug-link", content="Button", modificators } = props;
+    const { reference='/plug-link', content='click me', modificators } = props;
     const modificatorBtn = modificators ? ` ${modificators.map((item) =>
       `button_${item}`).join(' ')}` : '';
     const modificatorContent = modificators ? ` ${modificators.map((item) =>

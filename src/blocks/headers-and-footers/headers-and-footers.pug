@@ -10,6 +10,46 @@ mixin headers-and-footers()
       +header(false)
     .headers-and-footers__item
       +header(true)
-    +footer()
+    +footer({
+      refBlocks: [
+        {
+          title: "Навигация",
+          references: [
+            { content: "О нас" },
+            { content: "Новости" },
+            { content: "Служба поддержки" },
+            { content: "Услуги" },
+          ],
+        },
+        {
+          title: "О\xa0нас",
+          references: [
+            { content: "О сервисе" },
+            { content: "Наша команда" },
+            { content: "Вакансии" },
+            { content: "Инвесторы" },
+          ],
+        },
+        {
+          title: "Служба\xa0поддержки",
+          references: [
+            { content: "Соглашения" },
+            { content: "Сообщества" },
+            { content: "Связь с нами" },
+          ],
+        },
+      ],
+      socials: [
+        { name: "twitter" },
+        { name: "facebook" },
+        { name: "instagram" },
+      ],
+    })
     .headers-and-footers__wrapper
-      +footer_mobile()
+      +footer_mobile({
+        socials: [
+          { name: "twitter" },
+          { name: "facebook" },
+          { name: "instagram" },
+        ],
+      })

@@ -1,19 +1,15 @@
 include __color-item/colors-and-fonts__color-item.pug
 include ~Blocks/svg-UI/svg-UI.pug
 
-mixin colors-and-fonts()
+mixin colors-and-fonts(colors)
   .colors-and-fonts
     +svg-UI()
     .container
       .colors-and-fonts__grid
         .colors-and-fonts__col
-          +colors-and-fonts__color-item("#1F2041", "Dark Shade 100%", "1")
-          +colors-and-fonts__color-item("#1F2041", "Dark Shade 75%", "0.75")
-          +colors-and-fonts__color-item("#1F2041", "Dark Shade 50%", "0.5")
-          +colors-and-fonts__color-item("#1F2041", "Dark Shade 25%", "0.25")
-          +colors-and-fonts__color-item("#1F2041", "Dark Shade 5%", "0.05")
-          +colors-and-fonts__color-item("#BC9CFF", "Purple", "1")
-          +colors-and-fonts__color-item("#6FCF97", "Green", "1")
+          each item in colors
+            - const { color = '#1F2041', opacity = '1', description = 'Color' } = item
+            +colors-and-fonts__color-item(color, description, opacity)
         .colors-and-fonts__column
           .colors-and-fonts__text-item
             h1.colors-and-fonts__text-description H1

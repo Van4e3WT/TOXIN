@@ -1,16 +1,16 @@
 include ~Blocks/logo/logo.pug
 include ~Blocks/social-reference/social-reference.pug
 
-mixin footer_mobile()
+mixin footer_mobile(props)
+  - const { socials = [], plugLink = '/plug-link' } = props;
+
   .footer-mobile
     .footer-mobile__copyrights
       .footer-mobile__logo
         +logo()
       p.footer-mobile__text Copyright © 2018 Toxin отель. Все права защищены.
       .footer-mobile__socials
-        .footer-mobile__link
-          +social-reference("/plug-link", "twitter")
-        .footer-mobile__link
-          +social-reference("/plug-link", "facebook")
-        .footer-mobile__link
-          +social-reference("/plug-link", "instagram")
+        each social in socials
+          - const { name, link = plugLink } = social;
+          .footer-mobile__link
+            +social-reference(link, name)

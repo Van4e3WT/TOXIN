@@ -28,7 +28,7 @@ mixin register-card()
       label.register-card__label Данные для входа в сервис
       input.register-card__field(type="email", name="email" placeholder="Email")
       input.register-card__field(type="password", name="password" placeholder="Пароль")
-      +toggle-button("Получать спецпредложения", false)
+      +toggle-button({ content: "Получать спецпредложения" })
     .register-card__send
       +button({
         reference: "/plug-link",

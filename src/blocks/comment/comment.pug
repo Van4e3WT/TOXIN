@@ -4,10 +4,10 @@ mixin comment(props)
   -
     const { 
       image,
-      username="Пользователь",
-      date="сегодня",
-      likes=0,
-      isLiked=false,
+      username = 'Пользователь',
+      date = 'сегодня',
+      likes = 0,
+      isLiked = false,
       content,
     } = props
     const alt = image.split('/').slice(-1)[0].split('.')[0]
@@ -19,5 +19,8 @@ mixin comment(props)
         .comment__date=date
     .comment__body
       .comment__like
-        +like-button(likes, isLiked)
+        +like-button({
+          count: likes,
+          isChecked: isLiked,
+        })
       p.comment__content=content

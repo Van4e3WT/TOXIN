@@ -1,5 +1,6 @@
 mixin checkbox(props)
-  - const { content="Checkbox", isChecked=false, description } = props
+  - const { content='Checkbox', isChecked=false, description } = props
+
   .checkbox(class=`${description ? "checkbox_extended" : ""}`)
     label.checkbox__label
       input.checkbox__input(type="checkbox", checked=isChecked)

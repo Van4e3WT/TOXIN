@@ -26,6 +26,46 @@ html(lang="ru-RU")
     main.main
       block content
     footer.footers
-      +footer()
-      +footer_mobile()
+      +footer({
+        refBlocks: [
+          {
+            title: "Навигация",
+            references: [
+              { content: "О нас" },
+              { content: "Новости" },
+              { content: "Служба поддержки" },
+              { content: "Услуги" },
+            ],
+          },
+          {
+            title: "О\xa0нас",
+            references: [
+              { content: "О сервисе" },
+              { content: "Наша команда" },
+              { content: "Вакансии" },
+              { content: "Инвесторы" },
+            ],
+          },
+          {
+            title: "Служба\xa0поддержки",
+            references: [
+              { content: "Соглашения" },
+              { content: "Сообщества" },
+              { content: "Связь с нами" },
+            ],
+          },
+        ],
+        socials: [
+          { name: "twitter" },
+          { name: "facebook" },
+          { name: "instagram" },
+        ],
+      })
+      +footer_mobile({
+        socials: [
+          { name: "twitter" },
+          { name: "facebook" },
+          { name: "instagram" },
+        ],
+      })
     block scripts

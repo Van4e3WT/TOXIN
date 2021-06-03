@@ -1,4 +1,6 @@
-mixin like-button(count, isChecked)
+mixin like-button(props)
+  - const { count, isChecked } = props;
+
   label.like-button.js-like-button
     input.like-button__input(type="checkbox", checked=isChecked)
     .like-button__wrapper
