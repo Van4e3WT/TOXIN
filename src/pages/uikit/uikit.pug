@@ -48,6 +48,51 @@ html(lang="ru-RU")
         },
       ])
       +cards({
+        landingCard: {
+          twinDatepick: {
+            field1: "Прибытие",
+            field2: "Выезд",
+          },
+          dropdownAbsolute: {
+            wordforms: [
+              ["гость", "гостя", "гостей"],
+              ["гость", "гостя", "гостей"],
+              ["младенец", "младенца", "младенцев"]
+            ],
+            items: ["Взрослые", "Дети", "Младенцы"],
+            isOpen: false,
+            defaultText: "Сколько гостей",
+            isButtons: true,
+          },
+          button: {
+            reference: "search-room.html",
+            content: "Подобрать номер",
+            modificators: ["theme_directed", "transform_high"],
+          },
+        },
+        registerCard: {
+          radioButtons: [
+            {
+              content: "Мужчина",
+              name: "sexRegistrationForm",
+              isChecked: true,
+            },
+            {
+              content: "Женщина",
+              name: "sexRegistrationForm",
+            },
+          ],
+          toggleButton: { content: "Получать спецпредложения" },
+          buttonSend: {
+            content: "Зарегистрироваться",
+            modificators: ["theme_directed", "transform_high"]
+          },
+          buttonHelp: {
+            reference: "login.html",
+            content: "Войти",
+            modificators: ["theme_bordered", "transform_high", "transform_wide"]
+          },
+        },
         totalCard: {
           number: 888,
           isLux: true,
@@ -84,6 +129,17 @@ html(lang="ru-RU")
           button: {
             content: "Забронировать",
             modificators: ["theme_directed", "transform_high"]
+          },
+        },
+        loginCard: {
+          buttonSend: {
+            content: "Войти",
+            modificators: ["theme_directed", "transform_high"]
+          },
+          buttonHelp: {
+            reference: "registration.html",
+            content: "Создать",
+            modificators: ["theme_bordered", "transform_high"]
           },
         },
         roomCards: [

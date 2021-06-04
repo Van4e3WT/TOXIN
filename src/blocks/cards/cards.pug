@@ -7,7 +7,7 @@ include ~Blocks/opened-datepick/opened-datepick.pug
 include ~Blocks/room-card/room-card.pug
 
 mixin cards(props)
-  - const { totalCard, roomCards } = props;
+  - const { landingCard, registerCard, totalCard, loginCard, roomCards } = props;
 
   .cards
     +svg-UI()
@@ -15,68 +15,14 @@ mixin cards(props)
       .cards__grid
         .cards__col
           .cards__cell
-            +landing-card({
-              twinDatepick: {
-                field1: "Прибытие",
-                field2: "Выезд",
-              },
-              dropdownAbsolute: {
-                wordforms: [
-                  ["гость", "гостя", "гостей"],
-                  ["гость", "гостя", "гостей"],
-                  ["младенец", "младенца", "младенцев"]
-                ],
-                items: ["Взрослые", "Дети", "Младенцы"],
-                isOpen: false,
-                defaultText: "Сколько гостей",
-                isButtons: true,
-              },
-              button: {
-                reference: "search-room.html",
-                content: "Подобрать номер",
-                modificators: ["theme_directed", "transform_high"],
-              },
-            })
+            +landing-card(landingCard)
           .cards__cell
-            +register-card({
-              radioButtons: [
-                {
-                  content: "Мужчина",
-                  name: "sexRegistrationForm",
-                  isChecked: true,
-                },
-                {
-                  content: "Женщина",
-                  name: "sexRegistrationForm",
-                },
-              ],
-              toggleButton: { content: "Получать спецпредложения" },
-              buttonSend: {
-                content: "Зарегистрироваться",
-                modificators: ["theme_directed", "transform_high"]
-              },
-              buttonHelp: {
-                reference: "login.html",
-                content: "Войти",
-                modificators: ["theme_bordered", "transform_high", "transform_wide"]
-              },
-            })
+            +register-card(registerCard)
         .cards__col
           .cards__cell
             +total-card(totalCard)
           .cards__cell
-            +login-card({
-              buttonSend: {
-                reference: "/plug-link",
-                content: "Войти",
-                modificators: ["theme_directed", "transform_high"]
-              },
-              buttonHelp: {
-                reference: "registration.html",
-                content: "Создать",
-                modificators: ["theme_bordered", "transform_high"]
-              },
-            })
+            +login-card(loginCard)
         .cards__col
           .cards__cell
             +opened-datepick()
