@@ -5,7 +5,7 @@ mixin header__ref-item(props)
 
   if isDropdown
     .header__item.js-header__item=content
-      .header__arrow-down
+      .header__arrow
       .header__item-list
         each link in links
           - const { refContent, refLink = plugLink } = link;

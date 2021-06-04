@@ -14,11 +14,11 @@
       $side: 7px;
       position: absolute;
       content: '';
-      top: 16px;
+      top: 50%;
       right: 18px;
       height: $side;
       width: $side;
-      transform: rotate(45deg);
+      transform: translateY(-70%) rotate(45deg);
       border: 2px solid #1F20417F;
       border-top: 0;
       border-left: 0;
@@ -26,6 +26,12 @@
 
     &::placeholder {
       color: $darkShade75;
+    }
+
+    &_active {
+      &::before {
+        transform: translateY(-30%) rotate(-135deg);
+      }
     }
   }
 

@@ -10,16 +10,16 @@ class DropdownAbsolute {
   }
 
   init() {
-    const dropdownOutput = this.dropdown.querySelector(`.${this.selector}__output`);
-    const dropdownList = this.dropdown.querySelector(`.${this.selector}__list`);
+    this.dropdownOutput = this.dropdown.querySelector(`.${this.selector}__output`);
+    this.dropdownList = this.dropdown.querySelector(`.${this.selector}__list`);
 
     this.buttons = this.dropdown.querySelector(`.${this.selector}__buttons`);
-    this.dropdownInput = dropdownOutput.querySelector(`.${this.selector}__input`);
+    this.dropdownInput = this.dropdownOutput.querySelector(`.${this.selector}__input`);
 
     const handleInputDefaultEvents = (e) => e.preventDefault();
-    dropdownList.style.zIndex = this.zIndex;
+    this.dropdownList.style.zIndex = this.zIndex;
 
-    dropdownOutput.addEventListener('click', this._handleDropdownClick.bind(this));
+    this.dropdownOutput.addEventListener('click', this._handleDropdownClick.bind(this));
     document.addEventListener('mouseup', this._handleOutsideClick.bind(this));
     this.dropdownInput.addEventListener('mousedown', handleInputDefaultEvents);
 
@@ -31,7 +31,7 @@ class DropdownAbsolute {
       this.dropdownApply.addEventListener('click', this._handleDropdownClick.bind(this));
     }
 
-    const listItems = dropdownList.querySelectorAll(`.${this.selector}__item`);
+    const listItems = this.dropdownList.querySelectorAll(`.${this.selector}__item`);
 
     listItems.forEach((item) => {
       const minus = item.querySelector(`.${this.selector}__minus`);
@@ -135,16 +135,16 @@ class DropdownAbsolute {
   }
 
   _handleDropdownClick() {
-    this.dropdown.querySelector(`.${this.selector}__list`)
-      .classList.toggle(`${this.selector}__list_active`);
+    this.dropdownList.classList.toggle(`${this.selector}__list_active`);
+    this.dropdownOutput.classList.toggle(`${this.selector}__output_active`);
   }
 
   _handleOutsideClick(e) {
     const { target } = e;
-    const list = this.dropdown.querySelector(`.${this.selector}__list`);
 
     if (!this.dropdown.contains(target)) {
-      list.classList.remove(`${this.selector}__list_active`);
+      this.dropdownList.classList.remove(`${this.selector}__list_active`);
+      this.dropdownOutput.classList.remove(`${this.selector}__output_active`);
     }
   }
 

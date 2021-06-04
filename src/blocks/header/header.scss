@@ -112,7 +112,7 @@ $mediaSize: 1000px;
     }
   }
 
-  &__arrow-down {
+  &__arrow {
     display: inline-block;
     position: relative;
     height: 10px;
@@ -127,10 +127,16 @@ $mediaSize: 1000px;
       left: 50%;
       height: $side;
       width: $side;
-      transform: rotate(45deg) translateX(-100%) ;
+      transform: translate(-60%, -60%) rotate(45deg);
       border: 2.5px solid $darkShade50;
       border-top: 0;
       border-left: 0;
+    }
+
+    &_active {
+      &::before {
+        transform: translate(-60%, -20%) rotate(-135deg);
+      }
     }
   }
 
