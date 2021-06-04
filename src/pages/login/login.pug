@@ -6,4 +6,16 @@ block variables
   - const title = "Вход"
 
 block content
-  +login-page()
+  +login-page({
+    loginCard: {
+      buttonSend: {
+        content: "Войти",
+        modificators: ["theme_directed", "transform_high"]
+      },
+      buttonHelp: {
+        reference: "registration.html",
+        content: "Создать",
+        modificators: ["theme_bordered", "transform_high"]
+      },
+    },
+  })

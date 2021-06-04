@@ -4,7 +4,17 @@ include ~Blocks/room-number/room-number.pug
 include ~Blocks/room-cost/room-cost.pug
 
 mixin room-card(props)
-  - const { reference, images, number=0, isLux=false, cost=0, rating=0, reviews=0 } = props
+  -
+    const {
+      reference,
+      images,
+      number = 0,
+      isLux = false,
+      cost = 0,
+      rating = 0,
+      reviews = 0
+    } = props;
+
   .room-card
     .room-card__carousel
       +carousel(images)

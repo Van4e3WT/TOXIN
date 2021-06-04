@@ -2,7 +2,56 @@ include __ref-item/header__ref-item.pug
 include ~Blocks/logo/logo.pug
 include ~Blocks/button/button.pug
 
-mixin header(isAuthorized)
+mixin header(props)
+  -
+    const {
+      isAuthorized = false,
+      plugLink = '/plug-link',
+      refItems = [
+        {
+          content: "О\xA0нас",
+          plugLink,
+        },
+        {
+          content: "Услуги",
+          plugLink,
+          links: [
+            { refContent: "Услуга 1" },
+            { refContent: "Услуга 2" },
+            { refContent: "Услуга 3" },
+          ],
+        },
+        {
+          content: "Вакансии",
+          plugLink,
+        },
+        {
+          content: "Новости",
+          plugLink,
+        },
+        {
+          content: "Соглашения",
+          plugLink,
+          links: [
+            { refContent: "Соглашение 1" },
+            { refContent: "Соглашение 2" },
+            { refContent: "Соглашение 3" },
+          ],
+        },
+      ],
+      buttons = [
+        {
+          reference: "login.html",
+          content: "Войти",
+          modificators: ["theme_bordered"]
+        },
+        {
+          reference: "registration.html",
+          content: "Зарегистрироваться"
+        },
+      ],
+    } = props;
+
   .header
     .header__wrapper.container
       .header__head
@@ -11,31 +60,12 @@ mixin header(isAuthorized)
         .header__burger.js-header__burger
           .header__burger-divisions.js-header__burger-divisions
       .header__body.js-header__body
-        +header__ref-item("О\xA0нас", "/plug-link")
-        +header__ref-item("Услуги", [
-          ["Услуга 1", "/plug-link"],
-          ["Услуга 2", "/plug-link"],
-          ["Услуга 3", "/plug-link"],
-        ])
-        +header__ref-item("Вакансии", "/plug-link")
-        +header__ref-item("Новости", "/plug-link")
-        +header__ref-item("Соглашения", [
-          ["Соглашение 1", "/plug-link"],
-          ["Соглашение 2", "/plug-link"],
-          ["Соглашение 3", "/plug-link"],
-        ])
+        each refItem in refItems
+          +header__ref-item(refItem)
         if isAuthorized
           .header__item
             .header__user Константин Константинопольский
         else
-          .header__item
-            +button({
-              reference: "login.html",
-              content: "Войти",
-              modificators: ["theme_bordered"]
-            })
-          .header__item
-            +button({
-              reference: "registration.html",
-              content: "Зарегистрироваться"
-            })
+          each button in buttons
+            .header__item
+              +button(button)

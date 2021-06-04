@@ -3,53 +3,14 @@ include ~Blocks/header/header.pug
 include ~Blocks/footer/footer.pug
 include ~Blocks/footer/_mobile/footer_mobile.pug
 
-mixin headers-and-footers()
+mixin headers-and-footers(props)
+  - const { headers = [], footer, footerMobile } = props;
+
   .headers-and-footers
     +svg-UI()
-    .headers-and-footers__item
-      +header(false)
-    .headers-and-footers__item
-      +header(true)
-    +footer({
-      refBlocks: [
-        {
-          title: "Навигация",
-          references: [
-            { content: "О нас" },
-            { content: "Новости" },
-            { content: "Служба поддержки" },
-            { content: "Услуги" },
-          ],
-        },
-        {
-          title: "О\xa0нас",
-          references: [
-            { content: "О сервисе" },
-            { content: "Наша команда" },
-            { content: "Вакансии" },
-            { content: "Инвесторы" },
-          ],
-        },
-        {
-          title: "Служба\xa0поддержки",
-          references: [
-            { content: "Соглашения" },
-            { content: "Сообщества" },
-            { content: "Связь с нами" },
-          ],
-        },
-      ],
-      socials: [
-        { name: "twitter" },
-        { name: "facebook" },
-        { name: "instagram" },
-      ],
-    })
+    each header in headers
+      .headers-and-footers__item
+        +header(header)
+    +footer(footer)
     .headers-and-footers__wrapper
-      +footer_mobile({
-        socials: [
-          { name: "twitter" },
-          { name: "facebook" },
-          { name: "instagram" },
-        ],
-      })
+      +footer_mobile(footerMobile)

@@ -3,24 +3,18 @@ include ~Blocks/date-solo/date-solo.pug
 include ~Blocks/radio-button/radio-button.pug
 include ~Blocks/toggle-button/toggle-button.pug
 
-mixin register-card()
+mixin register-card(props)
+  - const { radioButtons = [], toggleButton, buttonSend, buttonHelp } = props;
+
   .register-card
     h1.register-card__header Регистрация аккаунта
     .register-card__name-group
       input.register-card__field(type="text", name="name", placeholder="Имя")
       input.register-card__field(type="text", name="surname", placeholder="Фамилия")
     .register-card__radio-group
-      .register-card__radio
-        +radio-button({
-          content: "Мужчина",
-          name: "sexRegistrationForm",
-          isChecked: true,
-        })
-      .register-card__radio
-        +radio-button({
-          content: "Женщина",
-          name: "sexRegistrationForm",
-        })
+      each radioButton in radioButtons
+        .register-card__radio
+          +radio-button(radioButton)
     .register-card__birthday
       label.register-card__label Дата рождения
       +date-solo()
@@ -28,17 +22,9 @@ mixin register-card()
       label.register-card__label Данные для входа в сервис
       input.register-card__field(type="email", name="email" placeholder="Email")
       input.register-card__field(type="password", name="password" placeholder="Пароль")
-      +toggle-button({ content: "Получать спецпредложения" })
+      +toggle-button(toggleButton)
     .register-card__send
-      +button({
-        reference: "/plug-link",
-        content: "Зарегистрироваться",
-        modificators: ["theme_directed", "transform_high"]
-      })
+      +button(buttonSend)
     .register-card__help
       p.register-card__text Уже есть аккаунт на Toxin
-      +button({
-        reference: "login.html",
-        content: "Войти",
-        modificators: ["theme_bordered", "transform_high", "transform_wide"]
-      })
+      +button(buttonHelp)

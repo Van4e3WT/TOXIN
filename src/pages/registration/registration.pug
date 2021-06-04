@@ -6,4 +6,29 @@ block variables
   - const title = "Регистрация"
 
 block content
-  +registration-page()
+  +registration-page({
+    registerCard: {
+      radioButtons: [
+        {
+          content: "Мужчина",
+          name: "sexRegistrationForm",
+          isChecked: true,
+        },
+        {
+          content: "Женщина",
+          name: "sexRegistrationForm",
+        },
+      ],
+      toggleButton: { content: "Получать спецпредложения" },
+      buttonSend: {
+        content: "Зарегистрироваться",
+        modificators: ["theme_directed", "transform_high"]
+      },
+      buttonHelp: {
+        reference: "login.html",
+        content: "Войти",
+        modificators: ["theme_bordered", "transform_high", "transform_wide"]
+      },
+    },
+  })
+  

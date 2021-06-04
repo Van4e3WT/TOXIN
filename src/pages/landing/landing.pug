@@ -7,4 +7,27 @@ block variables
   - const isAuthorized = false
 
 block content
-  +landing-page()
+  +landing-page({
+    landingCard: {
+      twinDatepick: {
+        field1: "Прибытие",
+        field2: "Выезд",
+      },
+      dropdownAbsolute: {
+        wordforms: [
+          ["гость", "гостя", "гостей"],
+          ["гость", "гостя", "гостей"],
+          ["младенец", "младенца", "младенцев"]
+        ],
+        items: ["Взрослые", "Дети", "Младенцы"],
+        isOpen: false,
+        defaultText: "Сколько гостей",
+        isButtons: true,
+      },
+      button: {
+        reference: "search-room.html",
+        content: "Подобрать номер",
+        modificators: ["theme_directed", "transform_high"],
+      },
+    },
+  })

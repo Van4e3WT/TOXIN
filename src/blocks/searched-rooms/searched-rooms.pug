@@ -1,14 +1,13 @@
 include ~Blocks/room-card/room-card.pug
 include ~Blocks/pagination/pagination.pug
 
-mixin searched-rooms(rooms)
+mixin searched-rooms(props)
+  - const { rooms, pagination } = props;
+
   .searched-rooms
     h1.searched-rooms__header Номера, которые мы для вас подобрали
     .searched-rooms__room-cards
       each room in rooms
         +room-card(room)
     .searched-rooms__pagination
-      +pagination({
-        current: 1,
-        total: 15,
-      })
+      +pagination(pagination)

@@ -4,7 +4,17 @@ include ~Blocks/dropdown-relative/dropdown-relative.pug
 include ~Blocks/range-slider/range-slider.pug
 include ~Blocks/checkbox/checkbox.pug
 
-mixin search-filter()
+mixin search-filter(props)
+  -
+    const {
+      dropdownAbsoluteFirst,
+      rangeSlider,
+      checkboxes = [],
+      checkboxesExtended = [],
+      dropdownAbsoluteSecond,
+      dropdownRelative,
+    } = props;
+
   .search-filter
     .search-filter__section
       .search-filter__group
@@ -12,78 +22,25 @@ mixin search-filter()
         +date-solo-range()
       .search-filter__group
         label.search-filter__label Гости
-        +dropdown-absolute({
-          wordforms: [
-            ["гость", "гостя", "гостей"],
-            ["гость", "гостя", "гостей"],
-            ["младенец", "младенца", "младенцев"]
-          ],
-          items: ["Взрослые", "Дети", "Младенцы"],
-          defaultText: "Сколько гостей",
-          isButtons: true,
-        })
+        +dropdown-absolute(dropdownAbsoluteFirst)
       .search-filter__range-group
         .search-filter__range
-          +range-slider({
-            name: "Диапазон цены",
-            minValue: 0,
-            maxValue: 15000,
-            value1: 5000,
-            value2: 10000,
-            step: 100,
-            sliderType: "double"
-          })
+          +range-slider(rangeSlider)
         p.search-filter__description Стоимость за сутки пребывания в номере
     .search-filter__section
       .search-filter__checkboxes
         label.search-filter__checkboxes-label Правила дома
-        .search-filter__checkbox
-          +checkbox({ content: "Можно курить" })
-        .search-filter__checkbox
-          +checkbox({
-            content: "Можно с питомцами",
-            isChecked: true
-          })
-        .search-filter__checkbox
-          +checkbox({
-            content: "Можно пригласить гостей (до 10 человек)",
-            isChecked: true,
-          })
+        each checkbox in checkboxes
+          .search-filter__checkbox
+            +checkbox(checkbox)
       .search-filter__checkboxes
         label.search-filter__checkboxes-label Доступность
-        .search-filter__checkbox
-          +checkbox({
-            content: "Широкий коридор",
-            description: "Ширина коридоров в номере не\xA0менее 91 см."
-          })
-        .search-filter__checkbox
-          +checkbox({
-            content: "Помощник для инвалидов",
-            description: "На 1 этаже вас встретит специалист и проводит до номера."
-          })
+        each checkboxExtended in checkboxesExtended
+          .search-filter__checkbox
+            +checkbox(checkboxExtended)
     .search-filter__section
       .search-filter__group
         label.search-filter__label Удобства номера
         .search-filter__group_large
-          +dropdown-absolute({
-            wordforms: [
-              ["спальня", "спальни", "спален"],
-              ["кровать", "кровати", "кроватей"],
-              ["ванная комната", "ванные комнаты", "ванных комнат"]
-            ],
-            defaultValues: [2, 2, 0],
-            defaultText: "Выберите удобства"
-          })
-        +dropdown-relative({
-          content: "Дополнительные удобства",
-          checkboxes: [
-              "Завтрак",
-              ["Письменный стол", true],
-              ["Стул для кормления", true],
-              ["Кроватка", true],
-              "Телевизор",
-              "Шампунь",
-              "Телевизор",
-              "Шампунь",
-            ]
-        })
+          +dropdown-absolute(dropdownAbsoluteSecond)
+        +dropdown-relative(dropdownRelative)

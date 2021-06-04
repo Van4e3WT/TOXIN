@@ -1,6 +1,8 @@
-mixin social-reference(reference, name)
+mixin social-reference(props)
+  - const { plugLink = '/plug-link', link = plugLink, name } = props;
+
   .social-reference
-    a.social-reference__link(href=reference)
+    a.social-reference__link(href=link)
       img.social-reference__img(
         src=`./assets/images/${name}-logo.svg`, alt=name, height="22px", width="22px"
       )

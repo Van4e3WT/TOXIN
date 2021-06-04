@@ -7,4 +7,79 @@ block variables
 
 block content
   - const rooms = require("./search-room.json")
-  +search-room-page(rooms)
+
+  +search-room-page({
+    searchFilter: {
+      dropdownAbsoluteFirst: {
+        wordforms: [
+          ["гость", "гостя", "гостей"],
+          ["гость", "гостя", "гостей"],
+          ["младенец", "младенца", "младенцев"]
+        ],
+        items: ["Взрослые", "Дети", "Младенцы"],
+        defaultText: "Сколько гостей",
+        isButtons: true,
+      },
+      rangeSlider: {
+        name: "Диапазон цены",
+        minValue: 0,
+        maxValue: 15000,
+        value1: 5000,
+        value2: 10000,
+        step: 100,
+        sliderType: "double"
+      },
+      checkboxes: [
+        {
+          content: "Можно курить"
+        },
+        {
+          content: "Можно с питомцами",
+          isChecked: true
+        },
+        {
+          content: "Можно пригласить гостей (до 10 человек)",
+          isChecked: true,
+        },
+      ],
+      checkboxesExtended: [
+        {
+          content: "Широкий коридор",
+          description: "Ширина коридоров в номере не\xA0менее 91 см."
+        },
+        {
+          content: "Помощник для инвалидов",
+          description: "На 1 этаже вас встретит специалист и проводит до номера."
+        },
+      ],
+      dropdownAbsoluteSecond: {
+        wordforms: [
+          ["спальня", "спальни", "спален"],
+          ["кровать", "кровати", "кроватей"],
+          ["ванная комната", "ванные комнаты", "ванных комнат"]
+        ],
+        defaultValues: [2, 2, 0],
+        defaultText: "Выберите удобства"
+      },
+      dropdownRelative: {
+        content: "Дополнительные удобства",
+        checkboxes: [
+          "Завтрак",
+          ["Письменный стол", true],
+          ["Стул для кормления", true],
+          ["Кроватка", true],
+          "Телевизор",
+          "Шампунь",
+          "Телевизор",
+          "Шампунь",
+        ],
+      },
+    },
+    searchedRooms: {
+      rooms,
+      pagination: {
+        current: 1,
+        total: 15,
+      },
+    },
+  })

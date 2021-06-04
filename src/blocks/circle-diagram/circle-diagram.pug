@@ -1,4 +1,6 @@
-mixin circle-diagram(count=0, votes="голосов", value)
+mixin circle-diagram(props)
+  - const { count = 0, votes = "голосов", value } = props;
+
   .circle-diagram
     .circle-diagram__diagram
       .circle-diagram__data

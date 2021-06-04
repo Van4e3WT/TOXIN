@@ -1,9 +1,11 @@
 include ~Blocks/landing-card/landing-card.pug
 
-mixin landing-page()
+mixin landing-page(props)
+  - const { landingCard } = props;
+
   .landing
     .landing__wrapper.container
-      +landing-card()
+      +landing-card(landingCard)
       p.landing__slogan
         |Лучшие номера для вашей работы,
         |отдыха и просто вдохновения

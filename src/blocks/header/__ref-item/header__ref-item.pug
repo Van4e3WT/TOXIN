@@ -1,11 +1,14 @@
-mixin header__ref-item(name, references)
-  - const isDropdown = references instanceof Array;
+mixin header__ref-item(props)
+  -
+    const { content, plugLink = '/plug-link', links = plugLink } = props;
+    const isDropdown = links instanceof Array;
 
   if isDropdown
-    .header__item.js-header__item=name
+    .header__item.js-header__item=content
       .header__arrow-down
       .header__item-list
-        each ref in references
-          a.header__subitem(href=ref[1])=ref[0]
+        each link in links
+          - const { refContent, refLink = plugLink } = link;
+          a.header__subitem(href=refLink)=refContent
   else
-    a.header__item(href=`${references}`)=name
+    a.header__item(href=`${links}`)=content

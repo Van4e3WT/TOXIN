@@ -1,5 +1,6 @@
 include ~Blocks/register-card/register-card.pug
 
-mixin registration-page()
+mixin registration-page(props)
+  - const { registerCard } = props;
   .registration
-    +register-card()
+    +register-card(registerCard)

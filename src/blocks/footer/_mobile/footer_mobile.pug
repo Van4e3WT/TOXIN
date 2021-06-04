@@ -11,6 +11,5 @@ mixin footer_mobile(props)
       p.footer-mobile__text Copyright © 2018 Toxin отель. Все права защищены.
       .footer-mobile__socials
         each social in socials
-          - const { name, link = plugLink } = social;
           .footer-mobile__link
-            +social-reference(link, name)
+            +social-reference(social)

@@ -1,21 +1,15 @@
 include ~Blocks/button/button.pug
 
-mixin login-card()
+mixin login-card(props)
+  - const { buttonSend, buttonHelp } = props;
+
   .login-card
     h1.login-card__header Войти
     .login-card__fields
       input.login-card__field(type="email", name="email" placeholder="Email")
       input.login-card__field(type="password", name="password" placeholder="Пароль")
     .login-card__send
-      +button({
-        reference: "/plug-link",
-        content: "Войти",
-        modificators: ["theme_directed", "transform_high"]
-      })
+      +button(buttonSend)
     .login-card__help
       p.login-card__text Нет аккаунта на Toxin?
-      +button({
-        reference: "registration.html",
-        content: "Создать",
-        modificators: ["theme_bordered", "transform_high"]
-      })
+      +button(buttonHelp)

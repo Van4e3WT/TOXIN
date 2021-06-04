@@ -22,7 +22,7 @@ html(lang="ru-RU")
     title= title ? title : "TOXIN"
   body
     header.headers
-      +header(isAuthorized)
+      +header({ isAuthorized })
     main.main
       block content
     footer.footers

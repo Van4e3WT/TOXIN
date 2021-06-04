@@ -1,7 +1,9 @@
 include ~Blocks/search-filter/search-filter.pug
 include ~Blocks/searched-rooms/searched-rooms.pug
 
-mixin search-room-page(rooms)
+mixin search-room-page(props)
+  - const { searchedRooms, searchFilter } = props;
+
   .search-page.container
-    +search-filter()
-    +searched-rooms(rooms)
+    +search-filter(searchFilter)
+    +searched-rooms(searchedRooms)

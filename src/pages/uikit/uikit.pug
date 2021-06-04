@@ -52,6 +52,39 @@ html(lang="ru-RU")
           number: 888,
           isLux: true,
           cost: 9900,
+          days: 4,
+          daysForm: "суток",
+          twinDatepick: {
+            field1: "Прибытие",
+            field2: "Выезд",
+          },
+          dropdownAbsolute: {
+            wordforms: [
+              ["гость", "гостя", "гостей"],
+              ["гость", "гостя", "гостей"],
+              ["младенец", "младенца", "младенцев"],
+            ],
+            items: ["Взрослые", "Дети", "Младенцы"],
+            isOpen: false,
+            defaultText: "Сколько гостей",
+            isButtons: true,
+          },
+          positions: [
+            {
+              content: "Сбор за услуги:\xa0скидка 2\xa0179₽",
+              tooltip: "Всплывающая подсказка",
+              cost: 0,
+            },
+            {
+              content: "Сбор за дополнительные услуги",
+              tooltip: "Всплывающая подсказка",
+              cost: 300,
+            }
+          ],
+          button: {
+            content: "Забронировать",
+            modificators: ["theme_directed", "transform_high"]
+          },
         },
         roomCards: [
           {
@@ -274,4 +307,51 @@ html(lang="ru-RU")
             "Выкрикивал комплименты повару — никто не жаловался из соседей."
         },
       })
-      +headers-and-footers()
+      +headers-and-footers({
+        headers: [
+          { isAuthorized: false},
+          { isAuthorized: true},
+        ],
+        footer: {
+          refBlocks: [
+            {
+              title: "Навигация",
+              references: [
+                { content: "О нас" },
+                { content: "Новости" },
+                { content: "Служба поддержки" },
+                { content: "Услуги" },
+              ],
+            },
+            {
+              title: "О\xa0нас",
+              references: [
+                { content: "О сервисе" },
+                { content: "Наша команда" },
+                { content: "Вакансии" },
+                { content: "Инвесторы" },
+              ],
+            },
+            {
+              title: "Служба\xa0поддержки",
+              references: [
+                { content: "Соглашения" },
+                { content: "Сообщества" },
+                { content: "Связь с нами" },
+              ],
+            },
+          ],
+          socials: [
+            { name: "twitter" },
+            { name: "facebook" },
+            { name: "instagram" },
+          ],
+        },
+        footerMobile: {
+          socials: [
+            { name: "twitter" },
+            { name: "facebook" },
+            { name: "instagram" },
+          ],
+        }
+      })

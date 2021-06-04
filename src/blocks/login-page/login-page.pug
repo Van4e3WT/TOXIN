@@ -1,5 +1,7 @@
 include ~Blocks/login-card/login-card.pug
 
-mixin login-page()
+mixin login-page(props)
+  - const { loginCard } = props;
+
   .login
-    +login-card()
+    +login-card(loginCard)

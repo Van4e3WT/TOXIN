@@ -3,56 +3,58 @@ include ~Blocks/dropdown-absolute/dropdown-absolute.pug
 include ~Blocks/tooltip/tooltip.pug
 include ~Blocks/button/button.pug
 
-mixin total-card(number, isLux, cost)
+mixin total-card(props)
+  -
+    const {
+      number,
+      isLux,
+      cost,
+      days = 1,
+      daysForm = 'сутки',
+      twinDatepick,
+      dropdownAbsolute,
+      positions = [],
+      button,
+    } = props;
+
   .total-card
     .total-card__header
       .total-card__room-number
         label.total-card__prefix №
         h1.total-card__number=number
         if isLux
-          label.room-number__lux="люкс"
+          label.room-number__lux люкс
       .total-card__room-cost
-        label.total-card__rubles=cost + "₽"
+        label.total-card__rubles=`${cost}₽`
         p.total-card__period в сутки
     .total-card__body
       .total-card__input
-        +twin-datepick("Прибытие", "Выезд")
+        -
+          const {
+            defaultValue = 'date dropdown',
+            field1 = defaultValue,
+            field2 = defaultValue,
+          } = twinDatepick;
+
+        +twin-datepick(field1, field2)
       label.total-card__label Гости
       .total-card__input
-        +dropdown-absolute({
-          wordforms: [
-            ["гость", "гостя", "гостей"],
-            ["гость", "гостя", "гостей"],
-            ["младенец", "младенца", "младенцев"]
-          ],
-          items: ["Взрослые", "Дети", "Младенцы"],
-          isOpen: false,
-          defaultText: "Сколько гостей",
-          isButtons: true,
-        })
+        +dropdown-absolute(dropdownAbsolute)
       .total-card__calculate
         .total-card__product
           .total-card__position
             span.total-card__cost=`${cost}₽`
             span.total-card__split &nbsp;x&nbsp;
-            span.total-card__peroid 4 суток
-          p.total-card__period-cost=`${cost * 4}₽`
-        .total-card__product
-          .total-card__position.total-card__position_service
-            span.total-card__cost Сбор за услуги:&nbsp; скидка 2&nbsp;179₽
-            +tooltip("Всплывающая подсказка")
-          p.total-card__period-cost 0₽
-        .total-card__product
-          .total-card__position.total-card__position_service
-            span.total-card__cost Сбор за дополнительные услуги
-            +tooltip("Всплывающая подсказка")
-          p.total-card__period-cost 300₽
+            span.total-card__peroid=`${days} ${daysForm}`
+          p.total-card__period-cost=`${cost * days}₽`
+        each position in positions
+          .total-card__product
+            .total-card__position.total-card__position_service
+              span.total-card__cost=position.content
+              +tooltip(position.tooltip)
+            p.total-card__period-cost=`${position.cost}₽`
     .total-card__total
       h2.total-card__result Итого
       .total-card__space
       h2.total-card__cost 38081₽
-    +button({
-      reference: "/plug-link",
-      content: "Забронировать",
-      modificators: ["theme_directed", "transform_high"]
-    })
+    +button(button)

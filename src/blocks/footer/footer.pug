@@ -32,5 +32,4 @@ mixin footer(props)
         .footer__social
           each social in socials
             .footer__reference
-              - const link = social.link ? social.link : plugLink;
-              +social-reference(link, social.name)
+              +social-reference(social)

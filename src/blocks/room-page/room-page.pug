@@ -7,7 +7,7 @@ include ~Blocks/bullet-list/bullet-list.pug
 include ~Blocks/free-cancel/free-cancel.pug
 
 mixin room-page(props)
-  - const { commentaries, images, privileges, votes, room, rules, freeCancel } = props
+  - const { commentaries, images, privileges, circleDiagram, totalCard, rules, freeCancel } = props
   .room
     .room__collage
       +collage(images)
@@ -19,11 +19,11 @@ mixin room-page(props)
             +room-privilege(privilege)
       .room__reviews
         h2.room__header Впечатления от номера
-        +circle-diagram(votes.total, "голосов", votes.precents)
+        +circle-diagram(circleDiagram)
       .room__check
-        +total-card(room.number, room.isLux, room.cost)
+        +total-card(totalCard)
       .room__comments
-        +comments({ comments: commentaries })
+        +comments(commentaries)
       .room__bullet-list
         h2.room__header.room__bullet-header Правила
         +bullet-list(rules)
