@@ -1,4 +1,9 @@
 mixin room-cost(cost)
+  -
+    let strCost = String(cost).split('');
+    strCost.splice(-3, 0, '\xa0');
+    strCost = `${strCost.join('')}₽`;
+
   .room-cost
-    label.room-cost__rubles=cost + "₽"
+    label.room-cost__rubles=strCost
     .room-cost__period в сутки

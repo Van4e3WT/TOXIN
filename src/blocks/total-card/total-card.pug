@@ -17,6 +17,16 @@ mixin total-card(props)
       button,
     } = props;
 
+    const toSpacedString = (number) => {
+      const arrNumber = String(number).split('');
+
+      arrNumber.splice(-3, 0, '\xa0');
+
+      return arrNumber.join('');
+    }
+
+    let totalSum = cost * days;
+
   .total-card
     .total-card__header
       .total-card__room-number
@@ -43,18 +53,22 @@ mixin total-card(props)
       .total-card__calculate
         .total-card__product
           .total-card__position
-            span.total-card__cost=`${cost}₽`
+            span.total-card__cost=`${toSpacedString(cost)}₽`
             span.total-card__split &nbsp;x&nbsp;
             span.total-card__peroid=`${days} ${daysForm}`
-          p.total-card__period-cost=`${cost * days}₽`
+          p.total-card__period-cost=`${toSpacedString(totalSum)}₽`
         each position in positions
+          -
+            const { content, tooltip, cost: positionCost = 0, discont = 0 } = position;
+            totalSum = totalSum + positionCost - discont;
+
           .total-card__product
             .total-card__position.total-card__position_service
-              span.total-card__cost=position.content
-              +tooltip(position.tooltip)
-            p.total-card__period-cost=`${position.cost}₽`
+              span.total-card__cost=content
+              +tooltip(tooltip)
+            p.total-card__period-cost=`${positionCost}₽`
     .total-card__total
       h2.total-card__result Итого
       .total-card__space
-      h2.total-card__cost 38081₽
+      h2.total-card__cost=`${toSpacedString(totalSum)}₽`
     +button(button)
