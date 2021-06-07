@@ -67,7 +67,9 @@ html(lang="ru-RU")
           button: {
             reference: "search-room.html",
             content: "Подобрать номер",
-            modificators: ["theme_directed", "transform_high"],
+            theme: "directed",
+            transforms: ["high"],
+            justify: "stretch",
           },
         },
         registerCard: {
@@ -85,12 +87,15 @@ html(lang="ru-RU")
           toggleButton: { content: "Получать спецпредложения" },
           buttonSend: {
             content: "Зарегистрироваться",
-            modificators: ["theme_directed", "transform_high"]
+            theme: "directed",
+            transforms: ["high"],
+            justify: "stretch",
           },
           buttonHelp: {
             reference: "login.html",
             content: "Войти",
-            modificators: ["theme_bordered", "transform_high", "transform_wide"]
+            theme: "bordered", 
+            transforms: ["high", "wide"],
           },
         },
         totalCard: {
@@ -129,18 +134,23 @@ html(lang="ru-RU")
           ],
           button: {
             content: "Забронировать",
-            modificators: ["theme_directed", "transform_high"]
+            theme: "directed",
+            transforms: ["high"],
+            justify: "stretch",
           },
         },
         loginCard: {
           buttonSend: {
             content: "Войти",
-            modificators: ["theme_directed", "transform_high"]
+            theme: "directed",
+            transforms: ["high"],
+            justify: "stretch",
           },
           buttonHelp: {
             reference: "registration.html",
             content: "Создать",
-            modificators: ["theme_bordered", "transform_high"]
+            theme: "bordered", 
+            transforms: ["high"],
           },
         },
         roomCards: [
@@ -242,18 +252,26 @@ html(lang="ru-RU")
           sliderType: "double"
         },
         buttonsLarge: [
-          { modificators: ["transform_high"] },
-          { modificators: ["transform_high"] },
-          { modificators: ["theme_bordered", "transform_high"] },
-          { modificators: ["theme_bordered", "transform_high"] },
+          { transforms: ["high"] },
+          { transforms: ["high"] },
+          {
+            theme: "bordered",
+            transforms: ["high"]
+          },
+          {
+            theme: "bordered",
+            transforms: ["high"]
+          },
         ],
         buttons: [
-          { modificators: ["theme_clean"] },
-          { modificators: ["theme_clean"] },
+          { theme: "clean" },
+          { theme: "clean" },
         ],
         buttonSend: {
           content: "перейти к оплате",
-          modificators: ["theme_directed", "transform_high"],
+          theme: "directed",
+          transforms: ["high"],
+          justify: "stretch",
         },
         pagination: {
           current: 1,

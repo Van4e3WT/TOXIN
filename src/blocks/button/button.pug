@@ -1,9 +1,9 @@
 mixin button(props)
   -
-    const { reference='/plug-link', content='click me', modificators } = props;
-    const modificatorBtn = modificators ? ` ${modificators.map((item) =>
-      `button_${item}`).join(' ')}` : '';
-    const modificatorContent = modificators ? ` ${modificators.map((item) =>
-      `button__content_${item}`).join(' ')}` : '';
-  a.button(class=modificatorBtn, href=reference)
-    .button__content(class=modificatorContent)=content
+    const { reference='/plug-link', content='click me', theme, transforms = [], justify } = props;
+    const justifyStr = justify ? `button_justify_${justify}` : '';
+    const themeStr = theme ? `button__content_theme_${theme}` : '';
+    const transformsStr = transforms.map((item) => `button__content_transform_${item}`).join(' ');
+
+  a.button(class=justifyStr, href=reference)
+    .button__content(class=`${themeStr} ${transformsStr}`)=content
