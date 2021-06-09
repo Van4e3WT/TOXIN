@@ -1,7 +1,7 @@
 include ~Blocks/button/button.pug
 
 mixin login-card(props)
-  - const { buttonSend, buttonHelp } = props;
+  - const { buttonSend, buttonRegister } = props;
 
   .login-card
     h1.login-card__header Войти
@@ -12,4 +12,4 @@ mixin login-card(props)
       +button(buttonSend)
     .login-card__help
       p.login-card__text Нет аккаунта на Toxin?
-      +button(buttonHelp)
+      +button(buttonRegister)

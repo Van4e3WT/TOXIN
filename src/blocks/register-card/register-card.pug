@@ -4,7 +4,7 @@ include ~Blocks/radio-button/radio-button.pug
 include ~Blocks/toggle-button/toggle-button.pug
 
 mixin register-card(props)
-  - const { radioButtons = [], toggleButton, buttonSend, buttonHelp } = props;
+  - const { radioButtons = [], toggleButton, buttonSend, buttonLogin } = props;
 
   .register-card
     h1.register-card__header Регистрация аккаунта
@@ -27,4 +27,4 @@ mixin register-card(props)
       +button(buttonSend)
     .register-card__help
       p.register-card__text Уже есть аккаунт на Toxin
-      +button(buttonHelp)
+      +button(buttonLogin)
