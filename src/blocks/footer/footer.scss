@@ -70,13 +70,14 @@
 
   &__reference {
     padding-left: 22px;
+    padding-top: 2px;
 
     &:first-child {
       padding-left: 0;
     }
 
     &:last-child {
-      padding-right: 3px;
+      padding-right: 1px;
     }
 
     &:hover {
