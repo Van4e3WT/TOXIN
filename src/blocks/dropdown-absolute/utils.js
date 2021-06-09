@@ -9,4 +9,9 @@ function num2str(i, textForms) {
   return textForms[2];
 }
 
-export default { num2str };
+function getGroupSum(items) {
+  const values = items.map((item) => +item.dataset.value);
+  return values.reduce((sum, value) => sum + value);
+}
+
+export default { num2str, getGroupSum };

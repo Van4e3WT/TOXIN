@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* global document */
 
 import Utils from './utils';
@@ -7,14 +8,19 @@ class DropdownAbsolute {
     this.dropdown = dropdown;
     this.selector = selector;
     this.zIndex = zIndex;
+    this.items = [];
+    this.itemsGroups = [];
   }
 
   init() {
     this.dropdownOutput = this.dropdown.querySelector(`.${this.selector}__output`);
     this.dropdownList = this.dropdown.querySelector(`.${this.selector}__list`);
+    this.items = this.dropdown.querySelectorAll(`.${this.selector}__item`);
 
-    this.buttons = this.dropdown.querySelector(`.${this.selector}__buttons`);
     this.dropdownInput = this.dropdownOutput.querySelector(`.${this.selector}__input`);
+    this.buttons = this.dropdownList.querySelector(`.${this.selector}__buttons`);
+
+    this._sortByGroups();
 
     const handleInputDefaultEvents = (e) => e.preventDefault();
     this.dropdownList.style.zIndex = this.zIndex;
@@ -31,107 +37,122 @@ class DropdownAbsolute {
       this.dropdownApply.addEventListener('click', this._handleDropdownClick.bind(this));
     }
 
-    const listItems = this.dropdownList.querySelectorAll(`.${this.selector}__item`);
+    this.itemsGroups.forEach((itemsGroup) => {
+      itemsGroup.forEach((item) => {
+        const minus = item.querySelector(`.${this.selector}__minus`);
+        const counter = item.querySelector(`.${this.selector}__counter`);
+        const plus = item.querySelector(`.${this.selector}__plus`);
 
-    listItems.forEach((item) => {
-      const minus = item.querySelector(`.${this.selector}__minus`);
-      const counter = item.querySelector(`.${this.selector}__counter`);
-      const plus = item.querySelector(`.${this.selector}__plus`);
+        const handleCounterDecrement = () => {
+          if (+counter.textContent > 0) {
+            counter.textContent = +counter.textContent - 1;
+            item.dataset.value = counter.textContent;
+          }
 
-      const handleCounterDecrement = () => {
-        if (+counter.textContent > 0) {
-          counter.textContent = +counter.textContent - 1;
-        }
+          this._updateDecrement(item, itemsGroup, itemsGroup[0].dataset.maxValue);
+          this._update();
+        };
 
-        this._update();
-      };
+        const handleCounterIncrement = () => {
+          if (Utils.getGroupSum(itemsGroup) < +itemsGroup[0].dataset.maxValue) {
+            counter.textContent = +counter.textContent + 1;
+            item.dataset.value = counter.textContent;
+          }
 
-      const handleCounterIncrement = () => {
-        counter.textContent = +counter.textContent + 1;
+          this._updateIncrement(item, itemsGroup, itemsGroup[0].dataset.maxValue);
+          this._update();
+        };
 
-        this._update();
-      };
+        minus.addEventListener('click', handleCounterDecrement);
+        plus.addEventListener('click', handleCounterIncrement);
 
-      minus.addEventListener('click', handleCounterDecrement);
-      plus.addEventListener('click', handleCounterIncrement);
+        this._updateDecrement(item, itemsGroup, itemsGroup[0].dataset.maxValue);
+        this._updateIncrement(item, itemsGroup, itemsGroup[0].dataset.maxValue);
+      });
     });
 
     this._update();
   }
 
-  _update() {
-    const items = this.dropdown.querySelectorAll(`.${this.selector}__item`);
-
-    const resultArray = [];
+  _sortByGroups() {
     const buffer = {
-      wordforms: items[0].dataset.wordforms.split(', '),
-      value: 0,
+      item: this.items[0],
+      wordforms: this.items[0].dataset.wordforms,
     };
 
-    items.forEach((item) => {
-      this._updateCounterBlock(item);
+    let bufferArray = [];
 
-      const counter = item.querySelector(`.${this.selector}__counter`);
-      let value = 0;
-
-      value = +counter.textContent;
-
-      const wordforms = item.dataset.wordforms.split(', ');
-
-      if (buffer.wordforms.toString() === wordforms.toString()) {
-        buffer.value += value;
-      } else if (value > 0) {
-        if (buffer.value > 0) {
-          resultArray.push({
-            wordforms: buffer.wordforms,
-            value: buffer.value,
-          });
-        }
-
-        buffer.wordforms = wordforms;
-        buffer.value = value;
+    this.items.forEach((item) => {
+      if (buffer.wordforms === item.dataset.wordforms) {
+        bufferArray.push(item);
+      } else {
+        this.itemsGroups.push(bufferArray);
+        bufferArray = [item];
       }
     });
 
-    if (buffer.value > 0) {
-      resultArray.push({
-        wordforms: buffer.wordforms,
-        value: buffer.value,
+    this.itemsGroups.push(bufferArray);
+  }
+
+  _updateDecrement(currentItem, itemsGroup, maxValue) {
+    const counter = currentItem.querySelector(`.${this.selector}__counter`);
+    const minus = currentItem.querySelector(`.${this.selector}__minus`);
+
+    if (+counter.textContent < 1) {
+      minus.classList.add(`${this.selector}__minus_disabled`);
+    } else if (Utils.getGroupSum(itemsGroup) < maxValue) {
+      itemsGroup.forEach((item) => {
+        const plus = item.querySelector(`.${this.selector}__plus`);
+
+        plus.classList.remove(`${this.selector}__plus_disabled`);
       });
     }
+  }
 
-    this._toggleCleanButton(resultArray.length);
+  _updateIncrement(currentItem, itemsGroup, maxValue) {
+    const counter = currentItem.querySelector(`.${this.selector}__counter`);
+    const minus = currentItem.querySelector(`.${this.selector}__minus`);
 
+    if (Utils.getGroupSum(itemsGroup) >= maxValue) {
+      itemsGroup.forEach((item) => {
+        const plus = item.querySelector(`.${this.selector}__plus`);
+
+        plus.classList.add(`${this.selector}__plus_disabled`);
+      });
+    } else if (+counter.textContent > 0) {
+      minus.classList.remove(`${this.selector}__minus_disabled`);
+    }
+
+    this._update();
+  }
+
+  _update() {
     let resultStr = '';
 
-    resultArray.forEach((obj) => {
-      resultStr += `${obj.value} ${Utils.num2str(obj.value, obj.wordforms)}, `;
+    this.itemsGroups.forEach((itemsGroup) => {
+      const sum = Utils.getGroupSum(itemsGroup);
+
+      if (sum > 0) {
+        resultStr += `${sum} ${Utils.num2str(sum, itemsGroup[0].dataset.wordforms.split(', '))}, `;
+      }
     });
+
+    this._toggleCleanButton(resultStr);
 
     this.dropdownInput.value = resultStr
       ? `${resultStr.split('').slice(0, -2).join('')}`
       : this.dropdownInput.dataset.placeholder;
+
     this.dropdownInput.setAttribute('title', this.dropdownInput.value);
   }
 
-  _toggleCleanButton(count) {
+  _toggleCleanButton(resultStr) {
     if (!this.buttons) return;
 
-    const toggle = count ? 'add' : 'remove';
+    const toggle = resultStr ? 'add' : 'remove';
 
     this.buttons.classList[toggle](`${this.selector}__buttons_non-empty`);
     this.dropdownClear.classList[toggle](`${this.selector}__clear-btn_non-empty`);
-  }
-
-  _updateCounterBlock(item) {
-    const counter = item.querySelector(`.${this.selector}__counter`);
-    const minus = item.querySelector(`.${this.selector}__minus`);
-
-    if (+counter.textContent < 1) {
-      minus.classList.add(`${this.selector}__minus_disabled`);
-    } else {
-      minus.classList.remove(`${this.selector}__minus_disabled`);
-    }
   }
 
   _handleDropdownClick() {
@@ -149,11 +170,16 @@ class DropdownAbsolute {
   }
 
   _handleClearButtonClick() {
-    const counters = this.dropdown.querySelectorAll(`.${this.selector}__counter`);
+    this.items.forEach((item) => {
+      const minus = item.querySelector(`.${this.selector}__minus`);
+      const counter = item.querySelector(`.${this.selector}__counter`);
+      const plus = item.querySelector(`.${this.selector}__plus`);
 
-    counters.forEach((counter) => {
-      // eslint-disable-next-line no-param-reassign
       counter.textContent = 0;
+      item.dataset.value = counter.textContent;
+
+      minus.classList.add(`${this.selector}__minus_disabled`);
+      plus.classList.remove(`${this.selector}__plus_disabled`);
     });
 
     this._update();
