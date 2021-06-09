@@ -1,3 +1,5 @@
+$mediaSize: 1000px;
+
 .registration {
   display: flex;
   align-items: center;
@@ -6,4 +8,8 @@
   background: url('Root/static/images/background-sign-in.jpg') no-repeat;
   background-size: cover;
   background-position: 0 79%;
+
+  @media (max-width: $mediaSize) {
+    padding: 50px 0;
+  }
 }
