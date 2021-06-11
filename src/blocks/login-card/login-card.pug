@@ -5,11 +5,12 @@ mixin login-card(props)
 
   .login-card
     h1.login-card__header Войти
-    .login-card__fields
-      input.login-card__field(type="email", name="email" placeholder="Email")
-      input.login-card__field(type="password", name="password" placeholder="Пароль")
-    .login-card__send
-      +button(buttonSend)
+    form.login-card__form(action="", method="post")
+      .login-card__fields
+        input.login-card__field(type="email", name="email" placeholder="Email")
+        input.login-card__field(type="password", name="password" placeholder="Пароль")
+      .login-card__send
+        +button(buttonSend)
     .login-card__help
       .login-card__text Нет аккаунта на Toxin?
       +button(buttonRegister)
