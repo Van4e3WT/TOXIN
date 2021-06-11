@@ -6,17 +6,16 @@ class LikeButton {
 
   init() {
     this.input = this.like.querySelector(`.${this.selector}__input`);
+    this.counter = this.like.querySelector(`.${this.selector}__counter`);
 
     this.input.addEventListener('change', this._handleLikeChange.bind(this));
   }
 
   _handleLikeChange() {
-    const counter = this.like.querySelector(`.${this.selector}__counter`);
-
     if (this.input.checked) {
-      counter.textContent = parseInt(counter.textContent, 10) + 1;
+      this.counter.textContent = parseInt(this.counter.textContent, 10) + 1;
     } else {
-      counter.textContent = parseInt(counter.textContent, 10) - 1;
+      this.counter.textContent = parseInt(this.counter.textContent, 10) - 1;
     }
   }
 }

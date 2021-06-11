@@ -10,7 +10,7 @@ function num2str(i, textForms) {
 }
 
 function getGroupSum(items) {
-  const values = items.map((item) => +item.dataset.value);
+  const values = items.map((item) => +item.root.dataset.value);
   return values.reduce((sum, value) => sum + value);
 }
 
