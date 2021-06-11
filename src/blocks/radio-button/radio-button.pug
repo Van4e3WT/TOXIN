@@ -1,5 +1,6 @@
 mixin radio-button(props)
   - const { content, name, isChecked=false } = props
+
   label.radio-button
     input.radio-button__input(type="radio", name=name, checked=isChecked)
     .radio-button__content=content

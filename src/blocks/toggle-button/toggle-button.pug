@@ -1,5 +1,6 @@
 mixin toggle-button(props)
-  - const { content, isChecked = false } = props
+  - const { content, isChecked = false } = props;
+
   label.toggle-button
     input.toggle-button__input(type="checkbox", checked=isChecked)
     .toggle-button__switch

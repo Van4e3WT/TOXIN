@@ -30,13 +30,13 @@ mixin total-card(props)
   .total-card
     .total-card__header
       .total-card__room-number
-        label.total-card__prefix №
+        h3.total-card__prefix №
         h1.total-card__number=number
         if isLux
-          label.room-number__lux люкс
+          h3.room-number__lux люкс
       .total-card__room-cost
-        label.total-card__rubles=`${cost}₽`
-        p.total-card__period в сутки
+        h3.total-card__rubles=`${cost}₽`
+        .total-card__period в сутки
     .total-card__body
       .total-card__input
         -
@@ -56,7 +56,7 @@ mixin total-card(props)
             span.total-card__cost=`${toSpacedString(cost)}₽`
             span.total-card__split &nbsp;x&nbsp;
             span.total-card__peroid=`${days} ${daysForm}`
-          p.total-card__period-cost=`${toSpacedString(totalSum)}₽`
+          .total-card__period-cost=`${toSpacedString(totalSum)}₽`
         each position in positions
           -
             const { content, tooltip, cost: positionCost = 0, discont = 0 } = position;
@@ -66,7 +66,7 @@ mixin total-card(props)
             .total-card__position.total-card__position_service
               span.total-card__cost=content
               +tooltip(tooltip)
-            p.total-card__period-cost=`${positionCost}₽`
+            .total-card__period-cost=`${positionCost}₽`
     .total-card__total
       h2.total-card__result Итого
       .total-card__space

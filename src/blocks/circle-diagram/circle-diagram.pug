@@ -5,7 +5,7 @@ mixin circle-diagram(props)
     .circle-diagram__diagram
       .circle-diagram__data
         h1.circle-diagram__count=count
-        label.circle-diagram__votes=votes
+        h3.circle-diagram__votes=votes
       svg.circle-diagram__circle(height="127px" width="127px" viewBox="0 0 35 35")
         linearGradient(id="rate5", x1="0", y1="0.5", x2="1", y2="0.5")
           stop(offset="0%" stop-color="#FFE39C")
@@ -41,13 +41,13 @@ mixin circle-diagram(props)
     .circle-diagram__description
       .circle-diagram__item
         .circle-diagram__sample.circle-diagram__sample_perfect
-        p.circle-diagram__rate Великолепно
+        .circle-diagram__rate Великолепно
       .circle-diagram__item
         .circle-diagram__sample.circle-diagram__sample_good
-        p.circle-diagram__rate Хорошо
+        .circle-diagram__rate Хорошо
       .circle-diagram__item
         .circle-diagram__sample.circle-diagram__sample_normal
-        p.circle-diagram__rate Удовлетворительно
+        .circle-diagram__rate Удовлетворительно
       .circle-diagram__item
         .circle-diagram__sample.circle-diagram__sample_bad
-        p.circle-diagram__rate Разочарован
+        .circle-diagram__rate Разочарован
