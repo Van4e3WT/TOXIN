@@ -14,12 +14,18 @@ mixin dropdown-absolute(props)
     } = props
 
   .dropdown-absolute.js-dropdown-absolute
-    .dropdown-absolute__output(class= isOpen ? "dropdown-absolute__output_active" : "")
-      input.dropdown-absolute__input(data-placeholder=defaultText, type="text", readonly)
-    .dropdown-absolute__list(class= isOpen ? "dropdown-absolute__list_active" : "")
+    .dropdown-absolute__output.js-dropdown-absolute__output(
+      class= isOpen ? "dropdown-absolute__output_active" : ""
+    )
+      input.dropdown-absolute__input.js-dropdown-absolute__input(
+        data-placeholder=defaultText, type="text", readonly
+      )
+    .dropdown-absolute__list.js-dropdown-absolute__list(
+      class= isOpen ? "dropdown-absolute__list_active" : ""
+    )
       each item, key in wordforms
         - const defaultValue = defaultValues[key] ? defaultValues[key] : 0;
-        .dropdown-absolute__item(
+        .dropdown-absolute__item.js-dropdown-absolute__item(
           data-wordforms=item.join(', '),
           data-max-value=maxValues[key],
           data-value=defaultValue,
@@ -27,6 +33,6 @@ mixin dropdown-absolute(props)
           .dropdown-absolute__item-type= items ? items[key] : item[1]
           +dropdown-absolute__counter(defaultValue)
       if (isButtons)
-        .dropdown-absolute__buttons
-          .dropdown-absolute__clear-btn Очистить
-          .dropdown-absolute__apply-btn Применить
+        .dropdown-absolute__buttons.js-dropdown-absolute__buttons
+          .dropdown-absolute__clear-btn.js-dropdown-absolute__clear-btn Очистить
+          .dropdown-absolute__apply-btn.js-dropdown-absolute__apply-btn Применить

@@ -37,10 +37,10 @@ function hideByApply() {
 const twinDatepickers = $('.js-twin-datepick');
 
 twinDatepickers.each((index, value) => {
-  const outputArrival = $(value).find('.twin-datepick__output_arrival');
-  const outputDeparture = $(value).find('.twin-datepick__output_departure');
-  const dateArrival = outputArrival.find('.twin-datepick__input');
-  const dateDeparture = outputDeparture.find('.twin-datepick__input');
+  const outputArrival = $(value).find('.js-twin-datepick__output_arrival');
+  const outputDeparture = $(value).find('.js-twin-datepick__output_departure');
+  const dateArrival = outputArrival.find('.js-twin-datepick__input');
+  const dateDeparture = outputDeparture.find('.js-twin-datepick__input');
 
   dateArrival.datepicker({
     range: true,
@@ -71,7 +71,7 @@ $('.js-date-solo').each((i, el) => {
 });
 
 $('.js-date-solo-range').each((i, el) => {
-  const input = $(el).find('.date-solo-range__input');
+  const input = $(el).find('.js-date-solo-range__input');
   input.datepicker({
     range: true,
     dateFormat: 'dd M',

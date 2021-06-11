@@ -6,8 +6,8 @@ class HeaderItem {
   }
 
   init() {
-    this.list = this.item.querySelector('.header__item-list');
-    this.arrow = this.item.querySelector('.header__arrow');
+    this.list = this.item.querySelector('.js-header__item-list');
+    this.arrow = this.item.querySelector('.js-header__arrow');
     this.item.addEventListener('click', this._handleItemClick.bind(this));
 
     document.addEventListener('mouseup', this._handleItemOutsideMouseup.bind(this));

@@ -5,8 +5,8 @@ class LikeButton {
   }
 
   init() {
-    this.input = this.like.querySelector(`.${this.selector}__input`);
-    this.counter = this.like.querySelector(`.${this.selector}__counter`);
+    this.input = this.like.querySelector(`.js-${this.selector}__input`);
+    this.counter = this.like.querySelector(`.js-${this.selector}__counter`);
 
     this.input.addEventListener('change', this._handleLikeChange.bind(this));
   }

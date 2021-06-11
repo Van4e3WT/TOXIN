@@ -5,11 +5,11 @@ class Carousel {
   }
 
   init() {
-    const prevBtn = this.carousel.querySelector(`.${this.selector}__prev`);
-    const nextBtn = this.carousel.querySelector(`.${this.selector}__next`);
+    const prevBtn = this.carousel.querySelector(`.js-${this.selector}__prev`);
+    const nextBtn = this.carousel.querySelector(`.js-${this.selector}__next`);
 
-    this.items = this.carousel.querySelectorAll(`.${this.selector}__item`);
-    this.dots = this.carousel.querySelectorAll(`.${this.selector}__dot`);
+    this.items = this.carousel.querySelectorAll(`.js-${this.selector}__item`);
+    this.dots = this.carousel.querySelectorAll(`.js-${this.selector}__dot`);
     this.currentIndex = 0;
 
     prevBtn.addEventListener('click', this._handlePrevBtnClick.bind(this));

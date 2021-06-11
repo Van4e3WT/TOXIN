@@ -13,10 +13,10 @@ class DropdownAbsolute {
   }
 
   init() {
-    this.dropdownOutput = this.dropdown.querySelector(`.${this.selector}__output`);
-    this.dropdownList = this.dropdown.querySelector(`.${this.selector}__list`);
-    this.dropdownInput = this.dropdownOutput.querySelector(`.${this.selector}__input`);
-    this.buttons = this.dropdownList.querySelector(`.${this.selector}__buttons`);
+    this.dropdownOutput = this.dropdown.querySelector(`.js-${this.selector}__output`);
+    this.dropdownList = this.dropdown.querySelector(`.js-${this.selector}__list`);
+    this.dropdownInput = this.dropdownOutput.querySelector(`.js-${this.selector}__input`);
+    this.buttons = this.dropdownList.querySelector(`.js-${this.selector}__buttons`);
 
     this._getItems();
     this._getGroupsItems();
@@ -30,8 +30,8 @@ class DropdownAbsolute {
     this.dropdownInput.addEventListener('mousedown', handleInputDefaultEvents);
 
     if (this.buttons) {
-      this.dropdownClear = this.buttons.querySelector(`.${this.selector}__clear-btn`);
-      this.dropdownApply = this.buttons.querySelector(`.${this.selector}__apply-btn`);
+      this.dropdownClear = this.buttons.querySelector(`.js-${this.selector}__clear-btn`);
+      this.dropdownApply = this.buttons.querySelector(`.js-${this.selector}__apply-btn`);
 
       this.dropdownClear.addEventListener('click', this._handleClearButtonClick.bind(this));
       this.dropdownApply.addEventListener('click', this._handleDropdownClick.bind(this));
@@ -71,12 +71,12 @@ class DropdownAbsolute {
   }
 
   _getItems() {
-    const items = this.dropdown.querySelectorAll(`.${this.selector}__item`);
+    const items = this.dropdown.querySelectorAll(`.js-${this.selector}__item`);
 
     items.forEach((item) => {
-      const minus = item.querySelector(`.${this.selector}__minus`);
-      const counter = item.querySelector(`.${this.selector}__counter`);
-      const plus = item.querySelector(`.${this.selector}__plus`);
+      const minus = item.querySelector(`.js-${this.selector}__minus`);
+      const counter = item.querySelector(`.js-${this.selector}__counter`);
+      const plus = item.querySelector(`.js-${this.selector}__plus`);
 
       this.items.push({
         root: item,

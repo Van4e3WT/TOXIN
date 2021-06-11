@@ -5,8 +5,8 @@ class DropdownRelative {
   }
 
   init() {
-    this.title = this.dropdown.querySelector(`.${this.selector}__content`);
-    this.list = this.dropdown.querySelector(`.${this.selector}__list`);
+    this.title = this.dropdown.querySelector(`.js-${this.selector}__content`);
+    this.list = this.dropdown.querySelector(`.js-${this.selector}__list`);
 
     this.title.addEventListener('click', this._handleTitleClick.bind(this));
   }
