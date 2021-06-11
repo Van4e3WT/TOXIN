@@ -16,7 +16,7 @@
   }
 
   &__text {
-    padding-bottom: 24px;
+    padding-bottom: 22px;
     color: $darkShade75;
   }
 
@@ -51,6 +51,7 @@
   }
 
   &__copyrights {
+    color: $darkShade75;
     border-top: 1px solid $darkShade25;
     letter-spacing: 0.2px;
   }

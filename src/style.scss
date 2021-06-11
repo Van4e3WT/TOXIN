@@ -34,9 +34,6 @@ body {
   font-weight: normal;
   font-size: 0.85rem;
   letter-spacing: 0.18px;
-}
-
-h1, h2, h3 {
   color: $darkShade;
 }
 
@@ -71,6 +68,7 @@ p {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul {
