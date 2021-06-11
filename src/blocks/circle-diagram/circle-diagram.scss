@@ -7,14 +7,18 @@
 
   &__diagram {
     position: relative;
-    margin-right: 24px;
+    margin-right: 22px;
+  }
+
+  &__description {
+    margin-bottom: 2px;
   }
 
   &__data {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -60%);
+    right: 53%;
+    transform: translate(50%, -60%);
     text-align: center;
   }
 
@@ -24,19 +28,14 @@
 
   &__circle {
     fill: none;
-    stroke-width: 1px;
+    stroke-width: 3%;
     transform: rotate(90deg);
-  }
-
-  &__unit:hover {
-    stroke-width: 2.5px;
-    transition: .2s;
   }
 
   &__item {
     display: flex;
     align-items: center;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
   }
 
   &__sample {
