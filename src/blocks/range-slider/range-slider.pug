@@ -1,5 +1,5 @@
 mixin range-slider(props)
-  - const { name, minValue, maxValue, value1, value2, step, sliderType } = props
+  - const { name, minValue, maxValue, value1, value2, step, sliderType, postfix } = props
   .range-slider
     .js-multislider-v43(
       data-description=name,
@@ -8,5 +8,6 @@ mixin range-slider(props)
       data-value1=value1,
       data-value2=value2,
       data-step=step,
-      data-slider-type=sliderType
+      data-slider-type=sliderType,
+      data-postfix=postfix,
     )

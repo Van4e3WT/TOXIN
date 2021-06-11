@@ -2,22 +2,14 @@
   position: relative;
   font-family: inherit;
   font-size: 0.75rem;
+  line-height: 0.85rem;
   letter-spacing: 0;
   padding: 0;
   z-index: 0;
 
-  &-header {
+  &__header {
     display: flex;
     justify-content: space-between;
-    padding: 0;
-    padding-bottom: 20px;
-
-    &__output {
-      font-size: inherit;
-    }
-    
-    &__spacer {
-      flex-shrink: 0;
-    }
+    padding-bottom: 14px;
   }
 }
