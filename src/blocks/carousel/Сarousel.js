@@ -5,11 +5,13 @@ class Carousel {
   }
 
   init() {
-    const prevBtn = this.carousel.querySelector(`.js-${this.selector}__prev`);
-    const nextBtn = this.carousel.querySelector(`.js-${this.selector}__next`);
+    const { carousel, selector } = this;
 
-    this.items = this.carousel.querySelectorAll(`.js-${this.selector}__item`);
-    this.dots = this.carousel.querySelectorAll(`.js-${this.selector}__dot`);
+    const prevBtn = carousel.querySelector(`.js-${selector}__prev`);
+    const nextBtn = carousel.querySelector(`.js-${selector}__next`);
+
+    this.items = carousel.querySelectorAll(`.js-${selector}__item`);
+    this.dots = carousel.querySelectorAll(`.js-${selector}__dot`);
     this.currentIndex = 0;
 
     prevBtn.addEventListener('click', this._handlePrevBtnClick.bind(this));
@@ -19,20 +21,29 @@ class Carousel {
   }
 
   _update() {
-    this.items.forEach((item, i) => {
-      if (i === this.currentIndex) {
-        item.classList.add(`${this.selector}__item_active`);
-        this.dots[i].classList.add(`${this.selector}__dot_active`);
+    const {
+      items,
+      currentIndex,
+      selector,
+      dots,
+    } = this;
+
+    items.forEach((item, i) => {
+      if (i === currentIndex) {
+        item.classList.add(`${selector}__item_active`);
+        dots[i].classList.add(`${selector}__dot_active`);
       } else {
-        item.classList.remove(`${this.selector}__item_active`);
-        this.dots[i].classList.remove(`${this.selector}__dot_active`);
+        item.classList.remove(`${selector}__item_active`);
+        dots[i].classList.remove(`${selector}__dot_active`);
       }
     });
   }
 
   _handlePrevBtnClick() {
+    const { items } = this;
+
     if (this.currentIndex - 1 < 0) {
-      this.currentIndex = this.items.length - 1;
+      this.currentIndex = items.length - 1;
     } else {
       this.currentIndex -= 1;
     }
@@ -41,7 +52,9 @@ class Carousel {
   }
 
   _handleNextBtnClick() {
-    if (this.currentIndex + 1 >= this.items.length) {
+    const { items } = this;
+
+    if (this.currentIndex + 1 >= items.length) {
       this.currentIndex = 0;
     } else {
       this.currentIndex += 1;

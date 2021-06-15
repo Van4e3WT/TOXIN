@@ -6,13 +6,16 @@ class DateSoloMask {
   }
 
   init() {
-    this.input.addEventListener('input', this._handleFieldInput.bind(this));
-    this.input.addEventListener('select', this._handleFieldSelect.bind(this));
-    this.input.addEventListener('change', this._handleFieldChange.bind(this));
+    const { input } = this;
+
+    input.addEventListener('input', this._handleFieldInput.bind(this));
+    input.addEventListener('select', this._handleFieldSelect.bind(this));
+    input.addEventListener('change', this._handleFieldChange.bind(this));
   }
 
   _handleFieldInput() {
-    const validatedInput = this.input.value.replace(/\D/g, '');
+    const { input, newValue } = this;
+    const validatedInput = input.value.replace(/\D/g, '');
     const len = validatedInput.length;
 
     if (len < 3) {
@@ -23,7 +26,7 @@ class DateSoloMask {
       this._inputYear(validatedInput);
     }
 
-    this.input.value = this.newValue;
+    input.value = newValue;
   }
 
   _inputDay(str) {
@@ -84,17 +87,21 @@ class DateSoloMask {
   }
 
   _handleFieldChange() {
-    if (this.input.value.length !== 10) return;
+    const { input } = this;
 
-    const dateArr = this.input.value.split('.').reverse().join('-');
-    const datepicker = $(this.input).datepicker().data('datepicker');
+    if (input.value.length !== 10) return;
+
+    const dateArr = input.value.split('.').reverse().join('-');
+    const datepicker = $(input).datepicker().data('datepicker');
 
     datepicker.selectDate(new Date(dateArr));
     datepicker.date = new Date(dateArr);
   }
 
   _handleFieldSelect() {
-    this.input.selectionStart = this.input.selectionEnd;
+    const { input } = this;
+
+    input.selectionStart = input.selectionEnd;
   }
 }
 

@@ -5,17 +5,21 @@ class LikeButton {
   }
 
   init() {
-    this.input = this.like.querySelector(`.js-${this.selector}__input`);
-    this.counter = this.like.querySelector(`.js-${this.selector}__counter`);
+    const { like, selector } = this;
+
+    this.input = like.querySelector(`.js-${selector}__input`);
+    this.counter = like.querySelector(`.js-${selector}__counter`);
 
     this.input.addEventListener('change', this._handleLikeChange.bind(this));
   }
 
   _handleLikeChange() {
-    if (this.input.checked) {
-      this.counter.textContent = parseInt(this.counter.textContent, 10) + 1;
+    const { input, counter } = this;
+
+    if (input.checked) {
+      counter.textContent = parseInt(counter.textContent, 10) + 1;
     } else {
-      this.counter.textContent = parseInt(this.counter.textContent, 10) - 1;
+      counter.textContent = parseInt(counter.textContent, 10) - 1;
     }
   }
 }

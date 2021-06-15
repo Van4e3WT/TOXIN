@@ -5,16 +5,25 @@ class DropdownRelative {
   }
 
   init() {
-    this.title = this.dropdown.querySelector(`.js-${this.selector}__content`);
-    this.list = this.dropdown.querySelector(`.js-${this.selector}__list`);
+    const { dropdown, selector } = this;
+
+    this.title = dropdown.querySelector(`.js-${selector}__content`);
+    this.list = dropdown.querySelector(`.js-${selector}__list`);
 
     this.title.addEventListener('click', this._handleTitleClick.bind(this));
   }
 
   _handleTitleClick() {
-    this.dropdown.classList.toggle(`${this.selector}_active`);
-    this.title.classList.toggle(`${this.selector}__content_active`);
-    this.list.classList.toggle(`${this.selector}__list_active`);
+    const {
+      title,
+      list,
+      dropdown,
+      selector,
+    } = this;
+
+    dropdown.classList.toggle(`${selector}_active`);
+    title.classList.toggle(`${selector}__content_active`);
+    list.classList.toggle(`${selector}__list_active`);
   }
 }
 

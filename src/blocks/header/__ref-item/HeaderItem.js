@@ -6,24 +6,30 @@ class HeaderItem {
   }
 
   init() {
-    this.list = this.item.querySelector('.js-header__item-list');
-    this.arrow = this.item.querySelector('.js-header__arrow');
-    this.item.addEventListener('click', this._handleItemClick.bind(this));
+    const { item } = this;
+
+    this.list = item.querySelector('.js-header__item-list');
+    this.arrow = item.querySelector('.js-header__arrow');
+
+    item.addEventListener('click', this._handleItemClick.bind(this));
 
     document.addEventListener('mouseup', this._handleItemOutsideMouseup.bind(this));
   }
 
   _handleItemClick() {
-    this.list.classList.toggle('header__item-list_active');
-    this.arrow.classList.toggle('header__arrow_active');
+    const { list, arrow } = this;
+
+    list.classList.toggle('header__item-list_active');
+    arrow.classList.toggle('header__arrow_active');
   }
 
   _handleItemOutsideMouseup(e) {
+    const { item, list, arrow } = this;
     const { target } = e;
 
-    if (!this.item.contains(target)) {
-      this.list.classList.remove('header__item-list_active');
-      this.arrow.classList.remove('header__arrow_active');
+    if (!item.contains(target)) {
+      list.classList.remove('header__item-list_active');
+      arrow.classList.remove('header__arrow_active');
     }
   }
 }
