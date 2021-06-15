@@ -17,10 +17,10 @@ mixin register-card(props)
           .register-card__radio
             +radio-button(radioButton)
       .register-card__birthday
-        label.register-card__label Дата рождения
+        h3.register-card__label Дата рождения
         +date-solo()
       .register-card__login-group
-        label.register-card__label Данные для входа в сервис
+        h3.register-card__label Данные для входа в сервис
         input.register-card__field(type="email", name="email" placeholder="Email")
         input.register-card__field(type="password", name="password" placeholder="Пароль")
         +toggle-button(toggleButton)

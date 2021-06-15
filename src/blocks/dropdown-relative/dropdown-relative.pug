@@ -3,7 +3,7 @@ include ~Blocks/checkbox/checkbox.pug
 mixin dropdown-relative(props)
   - const { content="Dropdown relative", isOpen=false, checkboxes=[] } = props
   .dropdown-relative.js-dropdown-relative(class= isOpen ? "dropdown-relative_active" : "")
-    label.dropdown-relative__content.js-dropdown-relative__content(
+    h3.dropdown-relative__content.js-dropdown-relative__content(
       class= isOpen ? "dropdown-relative__content_active" : ""
     )=content
     .dropdown-relative__list.js-dropdown-relative__list(

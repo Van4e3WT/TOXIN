@@ -18,10 +18,10 @@ mixin search-filter(props)
   form.search-filter
     .search-filter__section
       .search-filter__group
-        label.search-filter__label Даты пребывания в отеле
+        h3.search-filter__label Даты пребывания в отеле
         +date-solo-range()
       .search-filter__group
-        label.search-filter__label Гости
+        h3.search-filter__label Гости
         +dropdown-absolute(dropdownAbsoluteFirst)
       .search-filter__range-group
         .search-filter__range
@@ -29,18 +29,18 @@ mixin search-filter(props)
         .search-filter__description Стоимость за сутки пребывания в номере
     .search-filter__section
       .search-filter__checkboxes
-        label.search-filter__checkboxes-label Правила дома
+        h3.search-filter__checkboxes-label Правила дома
         each checkbox in checkboxes
           .search-filter__checkbox
             +checkbox(checkbox)
       .search-filter__checkboxes
-        label.search-filter__checkboxes-label Доступность
+        h3.search-filter__checkboxes-label Доступность
         each checkboxExtended in checkboxesExtended
           .search-filter__checkbox
             +checkbox(checkboxExtended)
     .search-filter__section
       .search-filter__group
-        label.search-filter__label Удобства номера
+        h3.search-filter__label Удобства номера
         .search-filter__group_large
           +dropdown-absolute(dropdownAbsoluteSecond)
         +dropdown-relative(dropdownRelative)
