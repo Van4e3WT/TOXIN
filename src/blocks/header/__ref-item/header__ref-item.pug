@@ -4,7 +4,8 @@ mixin header__ref-item(props)
     const isDropdown = links instanceof Array;
 
   if isDropdown
-    .header__item.js-header__item=content
+    .header__item.js-header__item
+      .header__item-title=content
       .header__arrow.js-header__arrow
       .header__item-list.js-header__item-list
         each link in links

@@ -97,6 +97,10 @@ $mediaSize: 1000px;
       }
     }
 
+    &-title {
+      display: inline-block;
+    }
+
     @media (max-width:$mediaSize) {
       padding: 25px;
       width: 90%;
