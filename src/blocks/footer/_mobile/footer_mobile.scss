@@ -3,6 +3,7 @@
 .footer-mobile {
   display:none;
   text-align: center;
+  border-top: 1px solid $darkShade25;
 
   &__copyrights {
     display: inline-block;
