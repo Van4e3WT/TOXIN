@@ -17,14 +17,6 @@ mixin total-card(props)
       button,
     } = props;
 
-    const toSpacedString = (number) => {
-      const arrNumber = String(number).split('');
-
-      arrNumber.splice(-3, 0, '\xa0');
-
-      return arrNumber.join('');
-    }
-
     let totalSum = cost * days;
 
   form.total-card
@@ -35,7 +27,7 @@ mixin total-card(props)
         if isLux
           h3.room-number__lux люкс
       .total-card__room-cost
-        h3.total-card__rubles=`${cost}₽`
+        h3.total-card__rubles=`${cost.toLocaleString('ru')}₽`
         .total-card__period в сутки
     .total-card__body
       .total-card__input
@@ -53,10 +45,10 @@ mixin total-card(props)
       .total-card__calculate
         .total-card__product
           .total-card__position
-            span.total-card__cost=`${toSpacedString(cost)}₽`
+            span.total-card__cost=`${cost.toLocaleString('ru')}₽`
             span.total-card__split &nbsp;x&nbsp;
             span.total-card__peroid=`${days} ${daysForm}`
-          .total-card__period-cost=`${toSpacedString(totalSum)}₽`
+          .total-card__period-cost=`${totalSum.toLocaleString('ru')}₽`
         each position in positions
           -
             const { content, tooltip, cost: positionCost = 0, discont = 0 } = position;
@@ -70,5 +62,5 @@ mixin total-card(props)
     .total-card__total
       h2.total-card__result Итого
       .total-card__space
-      h2.total-card__cost=`${toSpacedString(totalSum)}₽`
+      h2.total-card__cost=`${totalSum.toLocaleString('ru')}₽`
     +button(button)
