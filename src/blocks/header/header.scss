@@ -172,8 +172,8 @@ $mediaSize: 1000px;
     cursor: pointer;
 
     @media (max-width:$mediaSize) {
-      $size: 50px;
-      $thickness: 5px;
+      $size: 30px;
+      $thickness: 3px;
       $color: $darkShade;
       display: block;
       position: relative;
@@ -184,6 +184,7 @@ $mediaSize: 1000px;
         position: absolute;
         height: $thickness;
         width: 100%;
+        border-radius: $thickness;
         background-color: $color;
         top: $size / 2;
         transform: translateY(-50%);
@@ -194,6 +195,7 @@ $mediaSize: 1000px;
           position: absolute;
           height: $thickness;
           width: 100%;
+          border-radius: $thickness;
           background-color: $color;
           transition: 0.3s;
         }
@@ -213,12 +215,12 @@ $mediaSize: 1000px;
 
           &::before {
             width: 50%;
-            transform: rotate(-45deg) translateY(9px) translateX(-16px);
+            transform: rotate(-45deg) translate(-9px, 6px);
           }
 
           &::after {
             width: 50%;
-            transform: rotate(45deg) translateY(-9px) translateX(-16px);
+            transform: rotate(45deg) translate(-9px, -6px);
           }
         }
       }
