@@ -1,10 +1,12 @@
 @import 'Root/style-variables.scss';
 
 .form-subscribe {
+  $borderRadius: 5px;
+
   display: flex;
   max-width: 268px;
-  border: 2px solid $darkShade25;
-  border-radius: 5px;
+  border: 1px solid $darkShade25;
+  border-radius: $borderRadius;
 
   &__input {
     border: none;
@@ -21,6 +23,8 @@
     cursor: pointer;
     width: 17%;
     border: none;
+    border-top-right-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
     background-color: white;
     flex-shrink: 0;
 

@@ -28,15 +28,15 @@
     height: $side;
     width: $side * 2;
     margin-right: 10px;
-    border: 2px solid $darkShade25;
+    border: 1px solid $darkShade25;
     border-radius: $side / 2;
     transition: 0.3s;
 
     &::before {
       content: '';
       position: absolute;
-      top: 2px;
-      left: 2px;
+      top: 3px;
+      left: 3px;
       height: 12px;
       width: 12px;
       background: $darkShade25;

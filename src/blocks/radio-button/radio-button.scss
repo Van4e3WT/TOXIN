@@ -12,6 +12,9 @@
   }
 
   &__content {
+    $sideBorder: 20px;
+    $borderWidth: 1px;
+
     display: flex;
     align-items: center;
     font-weight: normal;
@@ -19,10 +22,9 @@
     font-size: 0.85rem;
     letter-spacing: 0.3px;
     color: $darkShade50;
-    $sideBorder: 18px;
-    $borderWidth: 2px;
 
     &::before {
+      box-sizing: border-box;
       content: '';
       flex-shrink: 0;
       width: $sideBorder;
@@ -34,12 +36,13 @@
 
     &::after {
       $side: 12px;
+
       display: none;
       position: absolute;
       content: '';
       transform: translate(-50%, -50%);
-      left: $sideBorder / 2 + $borderWidth;
-      top: $sideBorder / 2 + $borderWidth;
+      left: $sideBorder / 2;
+      top: 50%;
       height: $side;
       width: $side;
       background: $gradientColor;
