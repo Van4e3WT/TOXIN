@@ -1,13 +1,33 @@
 mixin range-slider(props)
-  - const { name, minValue, maxValue, value1, value2, step, sliderType, postfix } = props
+  -
+    const {
+      minValue,
+      maxValue,
+      value1,
+      value2,
+      step,
+      isRange = false,
+      isVertical = false,
+      tooltipOfValue = false,
+      tooltipIsHidden = false,
+      scaleOfValues,
+      isProgressBar = false,
+      description,
+      postfix
+    } = props
   .range-slider
     .js-multislider-v43(
-      data-description=name,
       data-min-value=minValue,
       data-max-value=maxValue,
       data-value1=value1,
       data-value2=value2,
       data-step=step,
-      data-slider-type=sliderType,
+      data-is-range=isRange,
+      data-is-vertical=isVertical,
+      data-is-progress-bar=isProgressBar,
+      data-tooltip-of-value=tooltipOfValue,
+      data-tooltip-is-hidden=tooltipIsHidden,
+      data-scale-of-values=scaleOfValues,
+      data-description=description,
       data-postfix=postfix,
     )
