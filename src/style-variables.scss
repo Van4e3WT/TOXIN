@@ -11,4 +11,5 @@ $green: #6FCF97;
 $lightBlue: #66D2EA;
 $shadow: 0px 0px 50px -25px $darkShade;
 $gradientColor: linear-gradient(to top, #8BA4F9, $purple);
+$gradientColorTranslucent: linear-gradient(to top, rgba(#8BA4F9, .5), rgba($purple, .5));
 $gradientColorSecond: linear-gradient(to top, $lightBlue, $green);

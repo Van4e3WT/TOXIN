@@ -4,10 +4,6 @@
   display: inline-block;
   width: auto;
 
-  &:hover {
-    opacity: 0.5;
-  }
-
   &__content {
     display: inline-flex;
     position: relative;
@@ -22,6 +18,10 @@
     cursor: pointer;
     letter-spacing: 0.2px;
     padding: 0.65rem 1.3rem;
+
+    &:hover {
+      background: $gradientColorTranslucent;
+    }
 
     &_theme_bordered {
       $border: 2px;
@@ -82,7 +82,8 @@
       padding: 0;
 
       &:hover {
-        color: $darkShade;
+        background: inherit;
+        color: $darkShade50;
       }
     }
 
