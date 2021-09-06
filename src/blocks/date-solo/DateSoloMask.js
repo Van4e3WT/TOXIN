@@ -14,7 +14,8 @@ class DateSoloMask {
   }
 
   _handleFieldInput() {
-    const { input, newValue } = this;
+    const { input } = this;
+
     const validatedInput = input.value.replace(/\D/g, '');
     const len = validatedInput.length;
 
@@ -26,7 +27,7 @@ class DateSoloMask {
       this._inputYear(validatedInput);
     }
 
-    input.value = newValue;
+    input.value = this.newValue;
   }
 
   _inputDay(str) {
