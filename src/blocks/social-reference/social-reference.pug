@@ -2,7 +2,7 @@ mixin social-reference(props)
   - const { plugLink = '/plug-link', link = plugLink, name } = props;
 
   .social-reference
-    a.social-reference__link(href=link)
+    a.social-reference__link(href=link, target="_blank", rel="noopener noreferrer")
       img.social-reference__img(
         src=`./assets/images/${name}-logo.svg`, alt=name, height="22px", width="22px"
       )
