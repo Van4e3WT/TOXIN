@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* global document */
 
-import Utils from './utils';
+import Utils from 'Root/utils';
 
 class DropdownAbsolute {
   constructor(dropdown, selector, zIndex = 1) {
