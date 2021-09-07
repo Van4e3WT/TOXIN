@@ -25,9 +25,9 @@ mixin total-card(props)
         h3.total-card__prefix №
         h1.total-card__number=number
         if isLux
-          h3.room-number__lux люкс
-      .total-card__room-cost
-        h3.total-card__rubles=`${cost.toLocaleString('ru')}₽`
+          h3.total-card__lux люкс
+      .total-card__room-price
+        h3.total-card__price=`${cost.toLocaleString('ru')}₽`
         .total-card__period в сутки
     .total-card__body
       .total-card__input
@@ -47,8 +47,8 @@ mixin total-card(props)
           .total-card__position
             span.total-card__cost=`${cost.toLocaleString('ru')}₽`
             span.total-card__split &nbsp;x&nbsp;
-            span.total-card__peroid=`${days} ${daysForm}`
-          .total-card__period-cost=`${totalSum.toLocaleString('ru')}₽`
+            span.total-card__duration=`${days} ${daysForm}`
+          .total-card__duration-cost=`${totalSum.toLocaleString('ru')}₽`
         each position in positions
           -
             const { content, tooltip, cost: positionCost = 0, discont = 0 } = position;
@@ -62,5 +62,6 @@ mixin total-card(props)
     .total-card__total
       h2.total-card__result Итого
       .total-card__space
-      h2.total-card__cost=`${totalSum.toLocaleString('ru')}₽`
-    +button(button)
+      h2.total-card__total-cost=`${totalSum.toLocaleString('ru')}₽`
+    .total-card__send
+      +button(button)
