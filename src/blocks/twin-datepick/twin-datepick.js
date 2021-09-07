@@ -1,1 +1,0 @@
-import './twin-datepick.scss';

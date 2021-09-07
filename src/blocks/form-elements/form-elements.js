@@ -1,8 +1,8 @@
 import './form-elements.scss';
 import 'Blocks/dropdown-absolute/dropdown-absolute-init';
-import 'Blocks/twin-datepick/twin-datepick';
+import 'Blocks/twin-datepick/twin-datepick-init';
 import 'Blocks/date-solo/date-solo-init';
-import 'Blocks/date-solo-range/date-solo-range';
+import 'Blocks/date-solo-range/date-solo-range-init';
 import 'Blocks/form-subscribe/form-subscribe';
 import 'Blocks/checkbox/checkbox';
 import 'Blocks/radio-button/radio-button';
