@@ -28,7 +28,6 @@ function handleDOMLoaded() {
 
     outputArrival.on('click', handleContextElementShow.bind(data));
     outputDeparture.on('click', handleContextElementShow.bind(data));
-    dateDeparture.on('click', handleContextElementShow.bind(data));
 
     hideByApply.call(data);
   });
