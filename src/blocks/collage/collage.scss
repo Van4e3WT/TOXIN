@@ -1,7 +1,6 @@
 .collage {
   display: grid;
   grid-template-columns: repeat(2, 34%) 1fr;
-  grid-template-rows: repeat(2, 242px);
 
   &__img {
     display: block;
@@ -17,6 +16,5 @@
 
   @media(max-width: 1000px) {
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: auto;
   }
 }
