@@ -3,36 +3,9 @@
 import 'air-datepicker/dist/js/datepicker.min';
 import 'air-datepicker/dist/css/datepicker.min.css';
 
+import { airDatepickerConfig as props, handleContextElementShow, hideByApply } from 'Root/utils';
+
 import './datepicker-fork.scss';
-
-const props = {
-  clearButton: true,
-  todayButton: true,
-  language: {
-    today: 'Применить',
-  },
-  navTitles: {
-    days: 'MM yyyy',
-  },
-  prevHtml: '<svg><path d="M 13,10 l -7,7 l 7,7"></path><path d="M 6,17 l 16,0"></path></svg>',
-  nextHtml: '<svg><path d="M 19,10 l 7,7 l -7,7"></path><path d="M 26,17 l -16,0"></path></svg>',
-};
-
-function handleContextElementShow() {
-  this.show();
-}
-
-function handleContextElementHide() {
-  this.hide();
-}
-
-function hideByApply() {
-  const acceptBtn = this.nav.$buttonsContainer[0].firstChild;
-
-  if (acceptBtn) {
-    acceptBtn.addEventListener('click', handleContextElementHide.bind(this));
-  }
-}
 
 const twinDatepickers = $('.js-twin-datepick');
 

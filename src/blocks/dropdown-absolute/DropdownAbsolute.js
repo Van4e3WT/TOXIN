@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* global document */
 
-import Utils from 'Root/utils';
+import { getGroupSum, num2str } from 'Root/utils';
 
 class DropdownAbsolute {
   constructor(dropdown, selector, zIndex = 1) {
@@ -58,7 +58,7 @@ class DropdownAbsolute {
         };
 
         const handleCounterIncrement = () => {
-          if (Utils.getGroupSum(itemsGroup) < +itemsGroup[0].root.dataset.maxValue) {
+          if (getGroupSum(itemsGroup) < +itemsGroup[0].root.dataset.maxValue) {
             item.counter.textContent = +item.counter.textContent + 1;
             item.root.dataset.value = item.counter.textContent;
           }
@@ -123,7 +123,7 @@ class DropdownAbsolute {
 
     if (+currentItem.counter.textContent < 1) {
       currentItem.minus.classList.add(`${selector}__minus_disabled`);
-    } else if (Utils.getGroupSum(itemsGroup) < maxValue) {
+    } else if (getGroupSum(itemsGroup) < maxValue) {
       itemsGroup.forEach((item) => {
         item.plus.classList.remove(`${selector}__plus_disabled`);
       });
@@ -133,7 +133,7 @@ class DropdownAbsolute {
   _updateIncrement(currentItem, itemsGroup, maxValue) {
     const { selector } = this;
 
-    if (Utils.getGroupSum(itemsGroup) >= maxValue) {
+    if (getGroupSum(itemsGroup) >= maxValue) {
       itemsGroup.forEach((item) => {
         item.plus.classList.add(`${selector}__plus_disabled`);
       });
@@ -149,10 +149,10 @@ class DropdownAbsolute {
     let resultStr = '';
 
     itemsGroups.forEach((itemsGroup) => {
-      const sum = Utils.getGroupSum(itemsGroup);
+      const sum = getGroupSum(itemsGroup);
 
       if (sum > 0) {
-        resultStr += `${sum} ${Utils.num2str(sum, itemsGroup[0].root.dataset.wordforms.split(', '))}, `;
+        resultStr += `${sum} ${num2str(sum, itemsGroup[0].root.dataset.wordforms.split(', '))}, `;
       }
     });
 
