@@ -18,6 +18,15 @@
     width: $side;
     border-radius: 50%;
     color: $darkShade50;
+    user-select: none;
+
+    &_available {
+      cursor: pointer;
+
+      &:hover {
+        background: $gradientColorTranslucent;
+      }
+    }
 
     &_active {
       background: $gradientColor;

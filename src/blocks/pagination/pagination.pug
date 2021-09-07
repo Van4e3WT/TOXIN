@@ -9,9 +9,9 @@ mixin pagination(props)
         else if i == 3
           .pagination__item="\u2026"
         else if i == 4
-          .pagination__item=total
+          .pagination__item.pagination__item_available=total
         else if i == 5
-          .pagination__item.pagination__item_arrow
+          .pagination__item.pagination__item_available.pagination__item_arrow
         else
-          .pagination__item=current+i
+          .pagination__item.pagination__item_available=current+i
     .pagination__info 1 – 12 из 100+ вариантов аренды
