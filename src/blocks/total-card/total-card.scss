@@ -93,6 +93,16 @@ $mediaSize: 420px;
     &_service {
       width: 100%;
     }
+
+    @media (max-width: $mediaSize) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__duration-cost {
+    @media (max-width: $mediaSize) {
+      margin-bottom: 10px;
+    }
   }
 
   &__total {
