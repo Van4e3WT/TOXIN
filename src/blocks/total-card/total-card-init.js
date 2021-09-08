@@ -12,7 +12,7 @@ import './total-card.scss';
 const BLOCKNAME = 'total-card';
 
 function handleDOMLoaded() {
-  const totalCards = document.querySelectorAll(`.${BLOCKNAME}`);
+  const totalCards = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   totalCards.forEach((item) => {
     const totalCard = new TotalCard(item, BLOCKNAME);
