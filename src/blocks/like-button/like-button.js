@@ -1,7 +1,8 @@
 /* global document */
 
-import './like-button.scss';
 import LikeButton from './LikeButton';
+
+import './like-button.scss';
 
 const BLOCKNAME = 'like-button';
 

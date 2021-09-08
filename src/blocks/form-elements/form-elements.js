@@ -1,4 +1,3 @@
-import './form-elements.scss';
 import 'Blocks/dropdown-absolute/dropdown-absolute-init';
 import 'Blocks/twin-datepick/twin-datepick-init';
 import 'Blocks/date-solo/date-solo-init';
@@ -17,3 +16,5 @@ import 'Blocks/dropdown-relative/dropdown-relative-init';
 import 'Blocks/bullet-list/bullet-list';
 import 'Blocks/room-privilege/room-privilege';
 import 'Blocks/comment/comment';
+
+import './form-elements.scss';

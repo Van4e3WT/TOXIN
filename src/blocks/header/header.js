@@ -1,9 +1,10 @@
 /* global $ */
 
-import './header.scss';
-import './__ref-item/header__ref-item';
 import 'Blocks/logo/logo';
 import 'Blocks/button/button';
+
+import './__ref-item/header__ref-item';
+import './header.scss';
 
 const headerBurger = 'header__burger';
 const headerBody = 'header__body';

@@ -1,9 +1,10 @@
 /* global document */
 
+import 'Blocks/checkbox/checkbox';
+
 import DropdownRelative from './DropdownRelative';
 
 import './dropdown-relative.scss';
-import 'Blocks/checkbox/checkbox';
 
 const BLOCKNAME = 'dropdown-relative';
 
