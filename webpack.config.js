@@ -80,7 +80,12 @@ module.exports = (env, options) => ({
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(PATHS.src, 'static'), to: path.resolve(PATHS.dist, 'assets'),
+          from: path.resolve(__dirname, 'public'),
+          to: path.resolve(PATHS.dist, 'public'),
+        },
+        {
+          from: path.resolve(PATHS.src, 'static'),
+          to: path.resolve(PATHS.dist, 'assets'),
         },
       ],
     }),
