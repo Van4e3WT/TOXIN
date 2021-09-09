@@ -1,7 +1,7 @@
 @import 'Root/style-variables.scss';
 
 .landing {
-  background: url('Root/static/images/background.jpg') no-repeat;
+  background: url('./background.jpg') no-repeat;
   background-size: cover;
   background-position: 0% 100%;
   min-height: 830px;

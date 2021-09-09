@@ -83,10 +83,6 @@ module.exports = (env, options) => ({
           from: path.resolve(__dirname, 'public'),
           to: path.resolve(PATHS.dist, 'public'),
         },
-        {
-          from: path.resolve(PATHS.src, 'static'),
-          to: path.resolve(PATHS.dist, 'assets'),
-        },
       ],
     }),
     new webpack.ProvidePlugin({
@@ -115,21 +111,23 @@ module.exports = (env, options) => ({
         use: cssLoader('sass-loader'),
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/,
+        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        exclude: /fonts/,
         use: [{
           loader: 'file-loader',
           options: {
-            outputPath: 'assets/images',
+            outputPath: 'public/images',
             name: '[name].[ext]',
           },
         }],
       },
       {
         test: /\.(ttf|woff|woff2|svg|eot)$/,
+        include: /fonts/,
         loader: 'file-loader',
         options: {
-          outputPath: 'assets/fonts',
-          name: '[name].[ext]',
+          outputPath: 'public/fonts',
+          name: '[name]/[name].[ext]',
         },
       },
       {
