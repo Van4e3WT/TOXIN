@@ -56,8 +56,7 @@ const cssLoader = (addition) => {
 };
 
 module.exports = (env, options) => ({
-  context: PATHS.src,
-  entry: ['@babel/polyfill', './index.js', ...PAGES_ENTRY],
+  entry: ['@babel/polyfill', '/src/index.js', ...PAGES_ENTRY],
   output: {
     filename: 'bundle_[id].js',
     path: PATHS.dist,
@@ -72,7 +71,7 @@ module.exports = (env, options) => ({
   plugins: [
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: page,
-      filename: `./${path.basename(page).replace(/\.pug/, '.html')}`,
+      filename: `${path.basename(page).replace(/\.pug/, '.html')}`,
     })),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
