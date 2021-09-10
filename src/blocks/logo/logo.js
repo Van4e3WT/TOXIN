@@ -1,3 +1,3 @@
 import './logo.scss';
-import './logo-img.svg';
-import './logo-name.svg';
+import './images/logo-img.svg';
+import './images/logo-name.svg';

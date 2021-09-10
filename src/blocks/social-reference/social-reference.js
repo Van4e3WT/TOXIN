@@ -1,3 +1,3 @@
-import './facebook-logo.svg';
-import './twitter-logo.svg';
-import './instagram-logo.svg';
+import './images/facebook-logo.svg';
+import './images/twitter-logo.svg';
+import './images/instagram-logo.svg';
