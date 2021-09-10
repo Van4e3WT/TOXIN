@@ -46,7 +46,7 @@
       top: 50%;
       height: $side;
       width: $side;
-      background: $gradientColor;
+      background: $primaryGradient;
       border-radius: 50%;
     }
   }
@@ -55,7 +55,7 @@
     color: $darkShade75;
 
     &::before {
-      border-color: $purple;
+      border-color: $primaryColor;
     }
     
     &::after {

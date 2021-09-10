@@ -1,16 +1,22 @@
 $containerWidth: 1200px;
 $headerPadding: 18px;
+
 $darkShade: #1F2041;
 $darkShade75: rgba($darkShade, 0.75);
 $darkShade50: rgba($darkShade, 0.50);
 $darkShade25: rgba($darkShade, 0.25);
 $darkShade10: rgba($darkShade, 0.10);
 $darkShade05: rgba($darkShade, 0.05);
-$purple: #BC9CFF;
-$green: #6FCF97;
-$lightBlue: #66D2EA;
-$shadow: 0px 10px 20px $darkShade05;
+
+$primaryColor: #BC9CFF;
+$secondaryColor: #6FCF97;
+$complementaryColor: #66D2EA;
+
+$primaryShadow: 0px 10px 20px $darkShade05;
 $cardShadow: 0px 0px 25px $darkShade25;
-$gradientColor: linear-gradient(to top, #8BA4F9, $purple);
-$gradientColorTranslucent: linear-gradient(to top, rgba(#8BA4F9, .5), rgba($purple, .5));
-$gradientColorSecond: linear-gradient(to top, $lightBlue, $green);
+
+$primaryGradient: linear-gradient(to top, #8BA4F9, $primaryColor);
+$primaryGradientTranslucent: linear-gradient(to top, rgba(#8BA4F9, .5), rgba($primaryColor, .5));
+$secondaryGradient: linear-gradient(to top, $complementaryColor, $secondaryColor);
+
+$primaryFont: 'Montserrat', 'Arial', 'sans-serif';

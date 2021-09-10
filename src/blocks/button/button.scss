@@ -7,7 +7,7 @@
   &__content {
     display: inline-flex;
     position: relative;
-    background: $gradientColor;
+    background: $primaryGradient;
     border-radius: 1.3rem;
     color: white;
     align-items: center;
@@ -20,7 +20,7 @@
     padding: 0.65rem 1.3rem;
 
     &:hover {
-      background: $gradientColorTranslucent;
+      background: $primaryGradientTranslucent;
     }
 
     &_theme_bordered {
@@ -78,7 +78,7 @@
 
     &_theme_clean {
       background: none;
-      color: $purple;
+      color: $primaryColor;
       padding: 0;
 
       &:hover {

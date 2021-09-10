@@ -47,11 +47,11 @@
   }
 
   &__input:checked + &__switch {
-    border-color: $purple;
+    border-color: $primaryColor;
 
     &::before {
       transform: translateX(20px);
-      background: $purple;
+      background: $primaryColor;
     }
   }
 }

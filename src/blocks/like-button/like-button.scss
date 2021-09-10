@@ -59,10 +59,10 @@
   }
 
   &__input:checked + &__wrapper {
-    color: $purple;
+    color: $primaryColor;
 
     &::before {
-      background: $gradientColor;
+      background: $primaryGradient;
     }
   }
   

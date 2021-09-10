@@ -4,7 +4,7 @@ $mediaSize: 1000px;
 
 .header {
   background-color: white;
-  box-shadow: $shadow;
+  box-shadow: $primaryShadow;
   user-select: none;
 
   &__wrapper {
@@ -155,7 +155,7 @@ $mediaSize: 1000px;
 
     @media (max-width:$mediaSize) {
       padding: 25px;
-      border-top: 1px dashed $purple;
+      border-top: 1px dashed $primaryColor;
     }
   }
 

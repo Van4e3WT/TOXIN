@@ -10,8 +10,8 @@
     color: $darkShade50;
 
     &:hover {
-      color: $purple;
-      text-shadow: 0px 0px 3px $green;
+      color: $primaryColor;
+      text-shadow: 0px 0px 3px $secondaryColor;
     }
   }
 }

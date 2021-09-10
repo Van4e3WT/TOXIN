@@ -24,18 +24,18 @@
       cursor: pointer;
 
       &:hover {
-        background: $gradientColorTranslucent;
+        background: $primaryGradientTranslucent;
       }
     }
 
     &_active {
-      background: $gradientColor;
+      background: $primaryGradient;
       font-weight: bold;
       color: white;
     }
 
     &_arrow {
-      background: $gradientColorSecond;
+      background: $secondaryGradient;
       position: relative;
 
       &::before {
