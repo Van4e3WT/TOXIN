@@ -3,7 +3,7 @@
 .pagination {
   $side: 40px;
   max-width: 240px;
-  font-size: 0.75rem;
+  font-size: 12px;
 
   &__items {
     display: flex;
@@ -63,7 +63,7 @@
   
   &__info {
     width: 100%;
-    font-size: 0.85rem;
+    font-size: 13.6px;
     text-align: center;
     color: $darkShade75;
   }

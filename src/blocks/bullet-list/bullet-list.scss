@@ -7,11 +7,11 @@
     display: flex;
     margin-bottom: 10px;
     color: $darkShade75;
-    line-height: 1.5rem;
+    line-height: 24px;
     
     &::before {
       flex-shrink: 0;
-      margin-top: 0.4rem;
+      margin-top: 6.4px;
       margin-right: 10px;
       content: '';
       height: 10px;

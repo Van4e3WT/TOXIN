@@ -11,7 +11,7 @@
   color: $darkShade25;
   text-align: center;
   font-weight: bold;
-  line-height: 1.125rem;
+  line-height: 18px;
   
   &:hover::before {
     content: attr(data-prompt);
@@ -27,7 +27,7 @@
     color: $darkShade;
     font-weight: normal;
     text-align: justify;
-    font-size: 0.85rem;
+    font-size: 13.6px;
     padding: 3px;
   }
 }
