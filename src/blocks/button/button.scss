@@ -87,7 +87,7 @@
       }
     }
 
-    &_transform_high {
+    &_transform_height {
       $indent: 15.68px;
 
       border-radius: $indent * 2;
@@ -95,7 +95,7 @@
       padding-bottom: $indent;
     }
 
-    &_transform_wide {
+    &_transform_width {
       padding-left: 24.8px;
       padding-right: 24.8px;
     }
