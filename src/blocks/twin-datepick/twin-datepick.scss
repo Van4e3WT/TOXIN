@@ -49,6 +49,8 @@ $mediaSize: 420px;
   }
 
   &__label {
+    @include h3();
+
     padding-bottom: 5px;
 
     @media(max-width: $mediaSize) {

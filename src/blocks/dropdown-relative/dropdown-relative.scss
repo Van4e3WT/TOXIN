@@ -6,6 +6,8 @@
   user-select: none;
 
   &__content {
+    @include h3();
+
     width: 100%;
     padding-right: 40px;
     padding-bottom: 11px;

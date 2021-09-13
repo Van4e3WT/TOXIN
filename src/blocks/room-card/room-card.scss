@@ -33,6 +33,10 @@
     display: flex;
     align-items: center;
   }
+
+  &__count {
+    @include h3();
+  }
   
   &__count, &__postfix {
     color: $darkShade50;

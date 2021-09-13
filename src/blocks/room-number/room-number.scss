@@ -5,6 +5,8 @@
   align-items: flex-end;
 
   &__prefix {
+    @include h3();
+
     font-size: 13.6px;
     padding-right: 5px;
   }
@@ -18,6 +20,8 @@
   }
   
   &__lux {
+    @include h3();
+
     color: $primaryColor;
   }
 }

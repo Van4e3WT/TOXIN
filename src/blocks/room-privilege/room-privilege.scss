@@ -19,6 +19,10 @@
   &__content {
     padding-left: 14px;
   }
+
+  &__title {
+    @include h3();
+  }
   
   &__title, &__description {
     color: $darkShade75;

@@ -26,6 +26,10 @@
     @include h1();
   }
 
+  &__votes {
+    @include h3();
+  }
+
   &__count, &__votes {
     color: $primaryColor;
   }

@@ -1,6 +1,8 @@
 @import 'Root/style-variables.scss';
 
 .radio-button {
+  @include h3();
+
   position: relative;
   cursor: pointer;
   user-select: none;

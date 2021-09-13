@@ -5,6 +5,8 @@
   align-items: flex-end;
 
   &__rubles {
+    @include h3();
+
     font-size: 13.6px;
     color: $darkShade50;
     padding-right: 3px;

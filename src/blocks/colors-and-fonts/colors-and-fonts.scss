@@ -67,6 +67,12 @@
 
         font-weight: normal;
       }
+
+      &-h3 {
+        @include h3();
+
+        font-weight: normal;
+      }
     }
   
     &-example {
@@ -80,6 +86,14 @@
 
       &-h2 {
         @include h2();
+      }
+
+      &-h3 {
+        @include h3();
+      }
+
+      &-paragraph {
+        @include paragraph();
       }
     }
   }

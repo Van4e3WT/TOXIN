@@ -19,6 +19,8 @@
   }
 
   &__label {
+    @include h3();
+
     padding-bottom: 5px;
   }
 

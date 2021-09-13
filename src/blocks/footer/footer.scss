@@ -20,6 +20,8 @@
   }
 
   &__text {
+    @include paragraph();
+
     padding-bottom: 22px;
     color: $darkShade75;
   }
