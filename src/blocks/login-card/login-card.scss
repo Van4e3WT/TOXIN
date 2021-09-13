@@ -19,6 +19,8 @@
   }
 
   &__field {
+    @include input();
+
     margin-bottom: 10px;
   }
 

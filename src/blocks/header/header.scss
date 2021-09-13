@@ -56,6 +56,8 @@ $mediaSize: 1000px;
   }
 
   &__item {
+    @include link();
+
     position: relative;
     padding: 0 9.5px;
     color:$darkShade50;
@@ -151,6 +153,8 @@ $mediaSize: 1000px;
   }
 
   &__subitem {
+    @include link();
+
     display: block;
     padding: 10px;
     color: $darkShade50;

@@ -24,39 +24,6 @@ body {
   color: $darkShade;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-input {
-  width: 100%;
-  font-size: 13.6px;
-  border: 1px solid $darkShade25;
-  border-radius: 5px;
-  padding: 13px;
-  font-family: $primaryFont;
-  letter-spacing: 0.2px;
-  color: $darkShade75;
-
-  &::placeholder {
-    color: $darkShade25;
-  }
-
-  &:hover, &:focus, &.hover-focus {
-    border-color: $darkShade50;
-  }
-
-  &:focus {
-    outline: none;
-    border-color: $darkShade50;
-  }
-}
-
 .main {
   flex-grow: 1;
 }

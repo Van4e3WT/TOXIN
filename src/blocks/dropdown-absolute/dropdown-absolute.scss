@@ -36,6 +36,8 @@
   }
 
   &__input {
+    @include input();
+
     padding-right: 40px;
     cursor: pointer;
     text-overflow: ellipsis;

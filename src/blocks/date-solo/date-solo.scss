@@ -1,0 +1,7 @@
+@import 'Root/style-variables.scss';
+
+.date-solo {
+  &__input {
+    @include input();
+  }
+}

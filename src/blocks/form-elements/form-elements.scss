@@ -45,6 +45,10 @@
     grid-column: span 2;
   }
 
+  &__input {
+    @include input();
+  }
+
   &__prompt {
     font-size: 12px;
     float: right;

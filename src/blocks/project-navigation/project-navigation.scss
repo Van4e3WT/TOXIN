@@ -1,12 +1,16 @@
 @import 'Root/style-variables.scss';
 
 .project-navigation {
+  list-style: none;
+
   &__item {
     font-size: 20px;
     margin: 5px 0;
   }
 
   &__link {
+    @include link();
+
     color: $darkShade50;
 
     &:hover {

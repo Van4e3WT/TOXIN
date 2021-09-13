@@ -27,6 +27,7 @@
   }
 
   &__column {
+    list-style: none;
     padding-right: 15px;
     letter-spacing: 0.3px;
     line-height: 21.6px;
@@ -49,6 +50,8 @@
   }
 
   &__link {
+    @include link();
+
     color: $darkShade50;
 
     &:hover {

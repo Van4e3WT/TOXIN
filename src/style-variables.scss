@@ -55,3 +55,32 @@ $primaryFont: 'Montserrat', 'Arial', 'sans-serif';
   color: $darkShade75;
   line-height: 23.2px;
 }
+
+@mixin link() {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin input {
+  width: 100%;
+  font-size: 13.6px;
+  border: 1px solid $darkShade25;
+  border-radius: 5px;
+  padding: 13px;
+  font-family: $primaryFont;
+  letter-spacing: 0.2px;
+  color: $darkShade75;
+
+  &::placeholder {
+    color: $darkShade25;
+  }
+
+  &:hover, &:focus, &.hover-focus {
+    border-color: $darkShade50;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $darkShade50;
+  }
+}

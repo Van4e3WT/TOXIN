@@ -1,6 +1,8 @@
 @import 'Root/style-variables.scss';
 
 .button {
+  @include link();
+
   display: inline-block;
   width: auto;
 

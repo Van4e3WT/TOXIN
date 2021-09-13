@@ -44,6 +44,8 @@ $mediaSize: 420px;
   }
 
   &__input {
+    @include input();
+
     cursor: pointer;
     padding-right: 40px;
   }

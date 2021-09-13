@@ -9,6 +9,8 @@
   border-radius: $borderRadius;
 
   &__input {
+    @include input();
+
     border: none;
     border-right: none;
     color: $darkShade;
