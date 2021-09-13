@@ -8,6 +8,8 @@ $mediaSize: 1000px;
   user-select: none;
 
   &__wrapper {
+    @include container();
+
     display: flex;
     position: relative;
     justify-content: space-between;

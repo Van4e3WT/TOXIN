@@ -2,14 +2,20 @@
 
 .colors-and-fonts {
   &__grid {
+    @include container();
+
     display: grid;
     grid-template-columns: 60% 40%;
     margin-top: 34px;
     margin-bottom: 125px;
-    padding: 0 10px;
+    padding: 0 30px;
   }
 
   &__color {
+    &-title {
+      @include h2();
+    }
+
     &-item {
       display: flex;
       align-items: center;
@@ -46,14 +52,34 @@
       width: 50px;
       flex-shrink: 0;
       font-family: $primaryFont;
-      font-weight: normal;
+      font-weight: normal; // дальше его скорее всего нужно будет убрать совсем
       color: $darkShade25;
       text-align: right;
+
+      &-h1 {
+        @include h1();
+
+        font-weight: normal;
+      }
+
+      &-h2 {
+        @include h2();
+
+        font-weight: normal;
+      }
     }
   
     &-example {
       &_limited {
         max-width: 300px;
+      }
+
+      &-h1 {
+        @include h1();
+      }
+
+      &-h2 {
+        @include h2();
       }
     }
   }

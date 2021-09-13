@@ -8,6 +8,8 @@
   box-shadow: $cardShadow;
 
   &__header {
+    @include h1();
+
     padding-top: 11px;
     padding-bottom: 19px;
   }

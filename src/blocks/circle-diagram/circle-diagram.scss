@@ -22,6 +22,10 @@
     text-align: center;
   }
 
+  &__count {
+    @include h1();
+  }
+
   &__count, &__votes {
     color: $primaryColor;
   }

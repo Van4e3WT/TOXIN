@@ -24,21 +24,6 @@ body {
   color: $darkShade;
 }
 
-h1 {
-  font-family: $primaryFont;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29.6px;
-  letter-spacing: 0;
-}
-
-h2 {
-  font-family: $primaryFont;
-  font-weight: bold;
-  font-size: 20px;
-  letter-spacing: -0.6px;
-}
-
 h3, label {
   display: inline-block;
   text-transform: uppercase;
@@ -88,11 +73,4 @@ input {
 
 .main {
   flex-grow: 1;
-}
-
-.container {
-  max-width: $containerWidth;
-  width: 100%;
-  padding: 0 20px;
-  margin: 0 auto;
 }

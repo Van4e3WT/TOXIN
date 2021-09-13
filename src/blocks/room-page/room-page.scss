@@ -1,3 +1,5 @@
+@import 'Root/style-variables.scss';
+
 $mediaSizeLarge: 1200px;
 $mediaSizeSmall: 800px;
 
@@ -7,6 +9,8 @@ $mediaSizeSmall: 800px;
   }
 
   &__body {
+    @include container();
+
     width: 100%;
     display: grid;
     margin-bottom: 62px;
@@ -28,6 +32,8 @@ $mediaSizeSmall: 800px;
   }
 
   &__header {
+    @include h2();
+
     margin-bottom: 18px;
 
     @media(max-width: $mediaSizeLarge) {

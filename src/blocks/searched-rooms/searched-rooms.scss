@@ -1,5 +1,9 @@
+@import 'Root/style-variables.scss';
+
 .searched-rooms {
   &__header {
+    @include h1();
+
     margin-bottom: 22px;
   }
 

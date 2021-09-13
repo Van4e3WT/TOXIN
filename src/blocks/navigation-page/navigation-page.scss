@@ -1,9 +1,15 @@
+@import 'Root/style-variables.scss';
+
 .navigation {
+  @include container();
+
   &__logo {
     margin: 15px 0;
   }
 
   &__header {
+    @include h1();
+
     margin: 20px 0;
   }
 }

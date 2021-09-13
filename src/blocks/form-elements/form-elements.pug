@@ -48,108 +48,107 @@ mixin form-elements(props)
 
   .form-elements
     +svg-UI()
-    .container
-      .form-elements__grid
-        .form-elements__div1
-          .form-elements__wrapper_medium
-            h3.form-elements__label text field
-            .form-elements__prompt default
-            input.form-elements__input(type="text", name="textfield1", placeholder="Email")
-          .form-elements__wrapper_medium
-            h3.form-elements__label text field
-            .form-elements__prompt hover / focus
-            input.form-elements__input(type="text", name="textfield2", value="This is pretty awesome", class="hover-focus")
-          .form-elements__wrapper_medium
-            h3.form-elements__label dropdown
-            +dropdown-absolute(dropdownAbsoluteMain)
-          .form-elements__wrapper_large
-            h3.form-elements__label masked text field
-            +date-solo()
-          .form-elements__wrapper_large
-            - const { field1 = "date dropdown", field2 = "date dropdown" } = twinDatepick;
-            +twin-datepick(field1, field2)
-          .form-elements__wrapper_large
-            h3.form-elements__label Filter date dropdown
-            +date-solo-range()
-          .form-elements__wrapper_large
-            h3.form-elements__label subscription text field
-            +form-subscribe()
-        .form-elements__div2
-          .form-elements__checkboxes
-            h3.form-elements__label_large Checkbox buttons
-            each checkbox in checkboxes
-              .form-elements__checkbox
-                +checkbox(checkbox)
-          .form-elements__wrapper
-            h3.form-elements__label_medium Radio buttons
-            .form-elements__radios
-              each radioButton in radioButtons
-                .form-elements__radio
-                  +radio-button(radioButton)
-          .form-elements__wrapper_huge
-            h3.form-elements__label_large Toggle
-            each toggleButton in toggleButtons
-              .form-elements__wrapper_small
-                +toggle-button(toggleButton)
-          .form-elements__wrapper_large
-            h3.form-elements__label_large Like button
-            .form-elements__likes
-              each likeButton in likeButtons
-                .form-elements__like
-                  +like-button(likeButton)
-          .form-elements__wrapper_large
-            h3.form-elements__label_large Rate button
-            .form-elements__rates
-              .form-elements__rate
-                +rate-button(rateButton)
-              .form-elements__rate
-                +rate-result(rateResult)
-        .form-elements__div3
-          .form-elements__wrapper_huge
-            +range-slider(rangeSlider)
-          .form-elements__wrapper_large
-            h3.form-elements__wrapper_small buttons
-            .form-elements__buttons
-              each buttonLarge in buttonsLarge
-                .form-elements__button
-                  +button(buttonLarge)
-              each button in buttons
-                .form-elements__button.form-elements__button-skeleton
-                  +button(button)
-            .form-elements__wrapper_large
-              +button(buttonSend)
-            h3.form-elements__label_medium pagination
-            +pagination(pagination)
-        .form-elements__div4
-          .form-elements__wrapper_medium
-            h3.form-elements__label Dropdown
-            .form-elements__prompt default
-            +dropdown-absolute(dropdownAbsoluteExtended)
-          .form-elements__wrapper_medium
-            h3.form-elements__label Dropdown
-            .form-elements__prompt expanded
-            +dropdown-absolute(dropdownAbsoluteExtendedExpand)
-        .form-elements__div5
-          h3.form-elements__label Dropdown
-          +dropdown-absolute(dropdownAbsoluteExpand)
-        .form-elements__div6
-          h3.form-elements__label Dropdown
-          +dropdown-absolute(dropdownAbsoluteExpandFilled)
-        .form-elements__div7
-          .form-elements__checkboxes
-            +dropdown-relative(dropdownRealtiveWrapped)
-          +dropdown-relative(dropdownRealtive)
-        .form-elements__div8
-          h3.form-elements__label_large Rich checkbox buttons
-          each checkboxExtended in checkboxesExtended
+    .form-elements__grid
+      .form-elements__div1
+        .form-elements__wrapper_medium
+          h3.form-elements__label text field
+          .form-elements__prompt default
+          input.form-elements__input(type="text", name="textfield1", placeholder="Email")
+        .form-elements__wrapper_medium
+          h3.form-elements__label text field
+          .form-elements__prompt hover / focus
+          input.form-elements__input(type="text", name="textfield2", value="This is pretty awesome", class="hover-focus")
+        .form-elements__wrapper_medium
+          h3.form-elements__label dropdown
+          +dropdown-absolute(dropdownAbsoluteMain)
+        .form-elements__wrapper_large
+          h3.form-elements__label masked text field
+          +date-solo()
+        .form-elements__wrapper_large
+          - const { field1 = "date dropdown", field2 = "date dropdown" } = twinDatepick;
+          +twin-datepick(field1, field2)
+        .form-elements__wrapper_large
+          h3.form-elements__label Filter date dropdown
+          +date-solo-range()
+        .form-elements__wrapper_large
+          h3.form-elements__label subscription text field
+          +form-subscribe()
+      .form-elements__div2
+        .form-elements__checkboxes
+          h3.form-elements__label_large Checkbox buttons
+          each checkbox in checkboxes
             .form-elements__checkbox
-              +checkbox(checkboxExtended)
-        .form-elements__div9
-          h3.form-elements__label_medium Bullet list
-          +bullet-list(bulletList)
-        .form-elements__div10
-          each roomPrivilege in roomPrivileges
-            +room-privilege(roomPrivilege)
-        .form-elements__div11
-          .form-elements__comment
-            +comment(comment)
+              +checkbox(checkbox)
+        .form-elements__wrapper
+          h3.form-elements__label_medium Radio buttons
+          .form-elements__radios
+            each radioButton in radioButtons
+              .form-elements__radio
+                +radio-button(radioButton)
+        .form-elements__wrapper_huge
+          h3.form-elements__label_large Toggle
+          each toggleButton in toggleButtons
+            .form-elements__wrapper_small
+              +toggle-button(toggleButton)
+        .form-elements__wrapper_large
+          h3.form-elements__label_large Like button
+          .form-elements__likes
+            each likeButton in likeButtons
+              .form-elements__like
+                +like-button(likeButton)
+        .form-elements__wrapper_large
+          h3.form-elements__label_large Rate button
+          .form-elements__rates
+            .form-elements__rate
+              +rate-button(rateButton)
+            .form-elements__rate
+              +rate-result(rateResult)
+      .form-elements__div3
+        .form-elements__wrapper_huge
+          +range-slider(rangeSlider)
+        .form-elements__wrapper_large
+          h3.form-elements__wrapper_small buttons
+          .form-elements__buttons
+            each buttonLarge in buttonsLarge
+              .form-elements__button
+                +button(buttonLarge)
+            each button in buttons
+              .form-elements__button.form-elements__button-skeleton
+                +button(button)
+          .form-elements__wrapper_large
+            +button(buttonSend)
+          h3.form-elements__label_medium pagination
+          +pagination(pagination)
+      .form-elements__div4
+        .form-elements__wrapper_medium
+          h3.form-elements__label Dropdown
+          .form-elements__prompt default
+          +dropdown-absolute(dropdownAbsoluteExtended)
+        .form-elements__wrapper_medium
+          h3.form-elements__label Dropdown
+          .form-elements__prompt expanded
+          +dropdown-absolute(dropdownAbsoluteExtendedExpand)
+      .form-elements__div5
+        h3.form-elements__label Dropdown
+        +dropdown-absolute(dropdownAbsoluteExpand)
+      .form-elements__div6
+        h3.form-elements__label Dropdown
+        +dropdown-absolute(dropdownAbsoluteExpandFilled)
+      .form-elements__div7
+        .form-elements__checkboxes
+          +dropdown-relative(dropdownRealtiveWrapped)
+        +dropdown-relative(dropdownRealtive)
+      .form-elements__div8
+        h3.form-elements__label_large Rich checkbox buttons
+        each checkboxExtended in checkboxesExtended
+          .form-elements__checkbox
+            +checkbox(checkboxExtended)
+      .form-elements__div9
+        h3.form-elements__label_medium Bullet list
+        +bullet-list(bulletList)
+      .form-elements__div10
+        each roomPrivilege in roomPrivileges
+          +room-privilege(roomPrivilege)
+      .form-elements__div11
+        .form-elements__comment
+          +comment(comment)

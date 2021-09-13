@@ -4,6 +4,10 @@
   background-color: white;
   border-top: 1px solid $darkShade25;
 
+  &__references {
+    @include container();
+  }
+
   &__row {
     display: grid;
     grid-template-columns: 25.8% 17.25% 17.25% 17.25% 1fr;
@@ -57,6 +61,8 @@
   }
 
   &__content {
+    @include container();
+
     display: flex;
     align-items: center;
     justify-content: space-between;

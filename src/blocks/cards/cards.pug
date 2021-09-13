@@ -11,22 +11,21 @@ mixin cards(props)
 
   .cards
     +svg-UI()
-    .container
-      .cards__grid
-        .cards__col
-          .cards__cell
-            +landing-card(landingCard)
-          .cards__cell
-            +register-card(registerCard)
-        .cards__col
-          .cards__cell
-            +total-card(totalCard)
-          .cards__cell
-            +login-card(loginCard)
-        .cards__col
-          .cards__cell
-            +opened-datepick()
-          .cards__rooms
-            each roomCard in roomCards
-              .cards__cell
-                +room-card(roomCard)
+    .cards__grid
+      .cards__col
+        .cards__cell
+          +landing-card(landingCard)
+        .cards__cell
+          +register-card(registerCard)
+      .cards__col
+        .cards__cell
+          +total-card(totalCard)
+        .cards__cell
+          +login-card(loginCard)
+      .cards__col
+        .cards__cell
+          +opened-datepick()
+        .cards__rooms
+          each roomCard in roomCards
+            .cards__cell
+              +room-card(roomCard)

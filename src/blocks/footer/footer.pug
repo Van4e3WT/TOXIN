@@ -7,7 +7,7 @@ mixin footer(props)
   - const { plugLink = '/plug-link', refBlocks = [], socials = [] } = props;
 
   .footer
-    .footer_references.container
+    .footer__references
       .footer__row
         .footer__column
           .footer__logo
@@ -27,7 +27,7 @@ mixin footer(props)
           p.footer__text Получайте специальные предложения и новости сервиса
           +form-subscribe()
     .footer__copyrights
-      .footer__content.container
+      .footer__content
         .footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
         .footer__social
           each social in socials

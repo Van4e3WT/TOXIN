@@ -10,6 +10,8 @@
   }
 
   &__value {
+    @include h2();
+
     padding-right: 9px;
     font-size: 20px;
     line-height: 20px;

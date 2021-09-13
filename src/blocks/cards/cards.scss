@@ -1,8 +1,12 @@
+@import 'Root/style-variables.scss';
+
 .cards {
   background-color: #F4F4F6;
   padding-bottom: 100px;
 
   &__grid {
+    @include container();
+
     display: grid;
     margin-top: 40px;
     grid-template-columns: 33% 33% 1fr;
