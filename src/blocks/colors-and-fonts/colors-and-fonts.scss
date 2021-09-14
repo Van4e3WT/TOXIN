@@ -47,12 +47,13 @@
     }
   
     &-description {
+      margin-top: 0;
+      margin-bottom: 0;
       display: block;
       margin-right: 30px;
       width: 50px;
       flex-shrink: 0;
       font-family: $primaryFont;
-      font-weight: normal; // дальше его скорее всего нужно будет убрать совсем
       color: $darkShade25;
       text-align: right;
 

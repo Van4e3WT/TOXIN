@@ -2,8 +2,6 @@
 @import './style-variables.scss';
 
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
 }
 
@@ -15,6 +13,7 @@ html {
 
 body {
   min-height: 100vh;
+  margin: 0;
   display: flex;
   flex-direction: column;
   font-family: $primaryFont;

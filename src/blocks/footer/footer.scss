@@ -27,7 +27,9 @@
   }
 
   &__column {
+    margin: 0;
     list-style: none;
+    padding-left: 0;
     padding-right: 15px;
     letter-spacing: 0.3px;
     line-height: 21.6px;
