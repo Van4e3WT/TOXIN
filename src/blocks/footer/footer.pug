@@ -4,9 +4,15 @@ include ~Blocks/form-subscribe/form-subscribe.pug
 include ~Blocks/social-reference/social-reference.pug
 
 mixin footer(props)
-  - const { plugLink = '/plug-link', refBlocks = [], socials = [] } = props;
+  -
+    const {
+      plugLink = '/plug-link',
+      refBlocks = [],
+      socials = [],
+      allTimeVisible = false,
+    } = props;
 
-  .footer
+  .footer(class=allTimeVisible ? 'footer_all-time-visible' : '')
     .footer__references
       .footer__row
         .footer__column

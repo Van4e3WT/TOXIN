@@ -2,9 +2,9 @@ include ~Blocks/logo/logo.pug
 include ~Blocks/social-reference/social-reference.pug
 
 mixin footer_mobile(props)
-  - const { socials = [], plugLink = '/plug-link' } = props;
+  - const { socials = [], plugLink = '/plug-link', allTimeVisible = false } = props;
 
-  .footer-mobile
+  .footer-mobile(class=allTimeVisible ? 'footer-mobile_all-time-visible' : '')
     .footer-mobile__copyrights
       .footer-mobile__logo
         +logo()
