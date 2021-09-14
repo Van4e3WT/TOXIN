@@ -1,43 +1,14 @@
+include __circle/circle-diagram__circle.pug
+
 mixin circle-diagram(props)
-  - const { count = 0, votes = "голосов", value } = props;
+  - const { count = 0, votes = "голосов", proportions } = props;
 
   .circle-diagram
     .circle-diagram__diagram
       .circle-diagram__data
         h1.circle-diagram__count=count
         h3.circle-diagram__votes=votes
-      svg.circle-diagram__circle(height="127px" width="127px" viewBox="0 0 35 35")
-        linearGradient(id="rate5", x1="0", y1="0.5", x2="1", y2="0.5")
-          stop(offset="0%" stop-color="#FFE39C")
-          stop(offset="50%" stop-color="#FFBA9C")
-        linearGradient(id="rate4", x1="0", y1="1", x2="1", y2="0")
-          stop(offset="0%" stop-color="#8BA4F9")
-          stop(offset="50%" stop-color="#BC9CFF")
-        linearGradient(id="rate3", x1="0", y1="1", x2="1", y2="0")
-          stop(offset="0%" stop-color="#66D2EA")
-          stop(offset="50%" stop-color="#6FCF97")
-        linearGradient(id="under2", x1="0.5", y1="0", x2="0.5", y2="1")
-          stop(offset="0%" stop-color="#909090")
-          stop(offset="50%" stop-color="#3D4975")
-        circle.circle-diagram__unit(
-          r="15.9", cx="50%", cy="53%", stroke="url(#rate5)",
-          stroke-dasharray= ""+(value[0]?value[0]-1:value[0])+" 100"
-        )
-        circle.circle-diagram__unit(
-          r="15.9", cx="50%", cy="53%", stroke="url(#rate4)",
-          stroke-dasharray=""+(value[1]?value[1]-1:value[1])+" 100",
-          stroke-dashoffset=""+(-1*(value[0]))
-        )
-        circle.circle-diagram__unit(
-          r="15.9", cx="50%", cy="53%", stroke="url(#rate3)",
-          stroke-dasharray=""+(value[2]?value[2]-1:value[2])+" 100",
-          stroke-dashoffset=""+(-1*(value[0] + value[1]))
-        )
-        circle.circle-diagram__unit(
-          r="15.9", cx="50%", cy="53%", stroke="url(#under2)",
-          stroke-dasharray=""+(value[3]?value[3]-1:value[3])+" 100",
-          stroke-dashoffset=""+(-1*(value[0] + value[1] + value[2]))
-        )
+      +circle-diagram__circle(proportions)
     .circle-diagram__description
       .circle-diagram__item
         .circle-diagram__sample.circle-diagram__sample_perfect
