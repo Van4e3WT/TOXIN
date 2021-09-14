@@ -13,23 +13,41 @@ block content
       comments: commentaries,
     },
     images: [
-      "public/images/rooms/room-888-1.jpg",
-      "public/images/rooms/room-888-2.jpg",
-      "public/images/rooms/room-888-3.jpg",
+      {
+        "alt": "room-888",
+        "src": "public/images/rooms/room-888-1.jpg",
+      },
+      {
+        "alt": "room-888",
+        "src": "public/images/rooms/room-888-2.jpg",
+      },
+      {
+        "alt": "room-888",
+        "src": "public/images/rooms/room-888-3.jpg",
+      },
     ],
     privileges: [
       {
-        image: "public/images/privilege-comfort.svg",
+        image: {
+          "alt": "comfort",
+          "src": "public/images/privilege-comfort.svg",
+        },
         title: "Комфорт",
         description: "Шумопоглощающие стены",
       },
       {
-        image: "public/images/privilege-convenience.svg",
+        image: {
+          "alt": "convenience",
+          "src": "public/images/privilege-convenience.svg",
+        },
         title: "Удобство",
         description: "Окно в каждой из спален",
       },
       {
-        image: "public/images/privilege-fireplace.svg",
+        image: {
+          "alt": "fireplace",
+          "src": "public/images/privilege-fireplace.svg",
+        },
         title: "Уют",
         description: "Номер оснащен камином",
       }

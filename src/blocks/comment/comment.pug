@@ -10,10 +10,9 @@ mixin comment(props)
       isLiked = false,
       content,
     } = props
-    const alt = image.split('/').slice(-1)[0].split('.')[0]
   .comment
     .comment__header
-      img.comment__image(src=image, alt=alt)
+      img.comment__image(src=image.src, alt=image.alt)
       .comment__user
         h3.comment__username=username
         .comment__date=date

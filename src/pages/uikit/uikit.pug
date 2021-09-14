@@ -157,10 +157,22 @@ html(lang="ru-RU")
           {
             "reference": "room.html",
             "images": [
-              "public/images/rooms/room-888.jpg",
-              "public/images/rooms/room-840.jpg",
-              "public/images/rooms/room-888.jpg",
-              "public/images/rooms/room-840.jpg"
+              {
+                "alt": "room-888",
+                "src": "public/images/rooms/room-888.jpg"
+              },
+              {
+                "alt": "room-840",
+                "src": "public/images/rooms/room-840.jpg"
+              },
+              {
+                "alt": "room-888",
+                "src": "public/images/rooms/room-888.jpg"
+              },
+              {
+                "alt": "room-840",
+                "src": "public/images/rooms/room-840.jpg"
+              },
             ],
             "number": 888,
             "isLux": true,
@@ -171,10 +183,22 @@ html(lang="ru-RU")
           {
             "reference": "room.html",
             "images": [
-              "public/images/rooms/room-840.jpg",
-              "public/images/rooms/room-980.jpg",
-              "public/images/rooms/room-888.jpg",
-              "public/images/rooms/room-444.jpg"
+              {
+                "alt": "room-840",
+                "src": "public/images/rooms/room-840.jpg"
+              },
+              {
+                "alt": "room-980",
+                "src": "public/images/rooms/room-980.jpg"
+              },
+              {
+                "alt": "room-888",
+                "src": "public/images/rooms/room-888.jpg"
+              },
+              {
+                "alt": "room-444",
+                "src": "public/images/rooms/room-444.jpg"
+              },
             ],
             "number": 840,
             "isLux": false,
@@ -363,18 +387,27 @@ html(lang="ru-RU")
         ],
         roomPrivileges: [
           {
-            image: "public/images/privilege-comfort.svg",
+            image: {
+              "alt": "comfort",
+              "src": "public/images/privilege-comfort.svg",
+            },
             title: "Комфорт",
             description: "Шумопоглощающие стены"
           },
           {
-            image: "public/images/privilege-convenience.svg",
+            image: {
+              "alt": "convenience",
+              "src": "public/images/privilege-convenience.svg",
+            },
             title: "Удобство",
             description: "Окно в каждой из спален"
           }
         ],
         comment: {
-          image: "public/images/users-images/marat-123.jpg",
+          image: {
+            "alt": "marat-123",
+            "src": "public/images/users-images/marat-123.jpg",
+          },
           username: "Мурад Сарафанов",
           date: "5 дней назад",
           likes: 12,

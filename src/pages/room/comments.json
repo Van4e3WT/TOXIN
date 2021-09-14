@@ -1,6 +1,9 @@
 [
   {
-    "image": "public/images/users-images/marat-123.jpg",
+    "image": {
+      "alt": "marat-123",
+      "src": "public/images/users-images/marat-123.jpg"
+    },
     "username": "Мурад Сарафанов",
     "date": "5 дней назад",
     "likes": 12,
@@ -8,7 +11,10 @@
     "content": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
   },
   {
-    "image": "public/images/users-images/patrya-glassy.jpg",
+    "image": {
+      "alt": "patrya-glassy",
+      "src": "public/images/users-images/patrya-glassy.jpg"
+    },
     "username": "Патрисия Стёклышкова",
     "date": "Неделю назад",
     "likes": 2,
