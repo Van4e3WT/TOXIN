@@ -101,7 +101,7 @@ class DropdownAbsolute {
   _updateDecrement(currentItem, itemsGroup, maxValue) {
     const { selector } = this;
 
-    if (+currentItem.counter.textContent < 1) {
+    if (Number(currentItem.counter.textContent) < 1) {
       currentItem.minus.classList.add(`${selector}__minus_disabled`);
     } else if (getGroupSum(itemsGroup) < maxValue) {
       itemsGroup.forEach((item) => {
@@ -117,7 +117,7 @@ class DropdownAbsolute {
       itemsGroup.forEach((item) => {
         item.plus.classList.add(`${selector}__plus_disabled`);
       });
-    } else if (+currentItem.counter.textContent > 0) {
+    } else if (Number(currentItem.counter.textContent) > 0) {
       currentItem.minus.classList.remove(`${selector}__minus_disabled`);
     }
 
@@ -193,8 +193,8 @@ class DropdownAbsolute {
   }
 
   _handleCounterDecrement(item, itemsGroup) {
-    if (+item.counter.textContent > 0) {
-      item.counter.textContent = +item.counter.textContent - 1;
+    if (Number(item.counter.textContent) > 0) {
+      item.counter.textContent = Number(item.counter.textContent) - 1;
       item.root.dataset.value = item.counter.textContent;
     }
 
@@ -203,8 +203,8 @@ class DropdownAbsolute {
   }
 
   _handleCounterIncrement(item, itemsGroup) {
-    if (getGroupSum(itemsGroup) < +itemsGroup[0].root.dataset.maxValue) {
-      item.counter.textContent = +item.counter.textContent + 1;
+    if (getGroupSum(itemsGroup) < Number(itemsGroup[0].root.dataset.maxValue)) {
+      item.counter.textContent = Number(item.counter.textContent) + 1;
       item.root.dataset.value = item.counter.textContent;
     }
 
