@@ -1,4 +1,4 @@
-include ~Blocks/svg-UI/svg-UI.pug
+include ~Blocks/svg-ui/svg-ui.pug
 include ~Blocks/header/header.pug
 include ~Blocks/footer/footer.pug
 include ~Blocks/footer/_mobile/footer_mobile.pug
@@ -7,7 +7,7 @@ mixin headers-and-footers(props)
   - const { headers = [], footer, footerMobile } = props;
 
   .headers-and-footers
-    +svg-UI()
+    +svg-ui()
     each header in headers
       .headers-and-footers__item
         +header(header)

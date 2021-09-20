@@ -1,4 +1,4 @@
-include ~Blocks/svg-UI/svg-UI.pug
+include ~Blocks/svg-ui/svg-ui.pug
 include ~Blocks/landing-card/landing-card.pug
 include ~Blocks/register-card/register-card.pug
 include ~Blocks/total-card/total-card.pug
@@ -10,7 +10,7 @@ mixin cards(props)
   - const { landingCard, registerCard, totalCard, loginCard, roomCards } = props;
 
   .cards
-    +svg-UI()
+    +svg-ui()
     .cards__grid
       .cards__col
         .cards__cell

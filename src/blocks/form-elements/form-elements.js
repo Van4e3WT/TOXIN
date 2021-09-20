@@ -16,5 +16,6 @@ import 'Blocks/dropdown-relative/dropdown-relative-init';
 import 'Blocks/bullet-list/bullet-list';
 import 'Blocks/room-privilege/room-privilege';
 import 'Blocks/comment/comment';
+import 'Blocks/svg-ui/svg-ui';
 
 import './form-elements.scss';
