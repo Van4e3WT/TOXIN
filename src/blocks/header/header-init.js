@@ -11,6 +11,8 @@ import './header.scss';
 function handleDOMLoaded() {
   const burger = document.querySelector('.js-header__burger');
 
+  if (!burger) return;
+
   const header = new Header({
     burger,
     burgerSelector: 'header__burger',
