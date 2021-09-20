@@ -59,8 +59,10 @@ class TotalCard {
       minDate: new Date(),
       onSelect: function onSelect(date) {
         const dates = date.split(',');
-        arrivalInput.value = dates[0] ? dates[0] : '';
-        departureInput.value = dates[1] ? dates[1] : '';
+        const [arrivalDate, departureDate] = dates;
+
+        arrivalInput.value = arrivalDate ? arrivalDate : '';
+        departureInput.value = departureDate ? departureDate : '';
       },
       onHide: this._handleDatepickerHide,
       ...airDatepickerConfig,

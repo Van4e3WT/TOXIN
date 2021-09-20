@@ -18,8 +18,10 @@ function handleDOMLoaded() {
       minDate: new Date(),
       onSelect: function onSelect(date) {
         const dates = date.split(',');
-        dateArrival.val(dates[0] ? dates[0] : '');
-        dateDeparture.val(dates[1] ? dates[1] : '');
+        const [arrivalDate, departureDate] = dates;
+
+        dateArrival.val(arrivalDate ? arrivalDate : '');
+        dateDeparture.val(departureDate ? departureDate : '');
       },
       ...airDatepickerConfig,
     });
