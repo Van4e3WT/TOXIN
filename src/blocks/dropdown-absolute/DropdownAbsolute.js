@@ -47,28 +47,8 @@ class DropdownAbsolute {
 
     itemsGroups.forEach((itemsGroup) => {
       itemsGroup.forEach((item) => {
-        const handleCounterDecrement = () => {
-          if (+item.counter.textContent > 0) {
-            item.counter.textContent = +item.counter.textContent - 1;
-            item.root.dataset.value = item.counter.textContent;
-          }
-
-          this._updateDecrement(item, itemsGroup, itemsGroup[0].root.dataset.maxValue);
-          this._update();
-        };
-
-        const handleCounterIncrement = () => {
-          if (getGroupSum(itemsGroup) < +itemsGroup[0].root.dataset.maxValue) {
-            item.counter.textContent = +item.counter.textContent + 1;
-            item.root.dataset.value = item.counter.textContent;
-          }
-
-          this._updateIncrement(item, itemsGroup, itemsGroup[0].root.dataset.maxValue);
-          this._update();
-        };
-
-        item.minus.addEventListener('click', handleCounterDecrement);
-        item.plus.addEventListener('click', handleCounterIncrement);
+        item.minus.addEventListener('click', this._handleCounterDecrement.bind(this, item, itemsGroup));
+        item.plus.addEventListener('click', this._handleCounterIncrement.bind(this, item, itemsGroup));
 
         this._updateDecrement(item, itemsGroup, itemsGroup[0].root.dataset.maxValue);
         this._updateIncrement(item, itemsGroup, itemsGroup[0].root.dataset.maxValue);
@@ -209,6 +189,26 @@ class DropdownAbsolute {
       item.plus.classList.remove(`${selector}__plus_disabled`);
     });
 
+    this._update();
+  }
+
+  _handleCounterDecrement(item, itemsGroup) {
+    if (+item.counter.textContent > 0) {
+      item.counter.textContent = +item.counter.textContent - 1;
+      item.root.dataset.value = item.counter.textContent;
+    }
+
+    this._updateDecrement(item, itemsGroup, itemsGroup[0].root.dataset.maxValue);
+    this._update();
+  }
+
+  _handleCounterIncrement(item, itemsGroup) {
+    if (getGroupSum(itemsGroup) < +itemsGroup[0].root.dataset.maxValue) {
+      item.counter.textContent = +item.counter.textContent + 1;
+      item.root.dataset.value = item.counter.textContent;
+    }
+
+    this._updateIncrement(item, itemsGroup, itemsGroup[0].root.dataset.maxValue);
     this._update();
   }
 }
