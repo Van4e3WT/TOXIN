@@ -1,7 +1,7 @@
 include ~Blocks/logo/logo.pug
 include ~Blocks/social-reference/social-reference.pug
 
-mixin footer_mobile(props)
+mixin footer-mobile(props)
   - const { socials = [], plugLink = '/plug-link', allTimeVisible = false } = props;
 
   .footer-mobile(class=allTimeVisible ? 'footer-mobile_all-time-visible' : '')

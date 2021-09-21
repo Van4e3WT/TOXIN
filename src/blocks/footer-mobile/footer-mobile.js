@@ -1,4 +1,4 @@
 import 'Blocks/logo/logo';
 import 'Blocks/social-reference/social-reference';
 
-import './footer_mobile.scss';
+import './footer-mobile.scss';
