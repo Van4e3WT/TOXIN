@@ -1,7 +1,5 @@
 @import 'Root/style-variables.scss';
 
-$mediaSize: 420px;
-
 .twin-datepick {
   display: flex;
   justify-content: space-between;
@@ -18,7 +16,7 @@ $mediaSize: 420px;
       margin-right: 0;
     }
 
-    @media(max-width: $mediaSize) {
+    @media(max-width: $mediaSizeMobile) {
       max-width: 100%;
       margin: 0;
     }
@@ -55,12 +53,12 @@ $mediaSize: 420px;
 
     padding-bottom: 5px;
 
-    @media(max-width: $mediaSize) {
+    @media(max-width: $mediaSizeMobile) {
       padding-top: 5px;
     }
   }
   
-  @media(max-width: $mediaSize) {
+  @media(max-width: $mediaSizeMobile) {
     display: block;
   }
 }

@@ -1,4 +1,4 @@
-$mediaSize: 1000px;
+@import 'Root/style-variables.scss';
 
 .registration {
   display: flex;
@@ -9,7 +9,7 @@ $mediaSize: 1000px;
   background-size: cover;
   background-position: 0 79%;
 
-  @media (max-width: $mediaSize) {
+  @media (max-width: $mediaSizeLaptop) {
     padding: 50px 0;
   }
 }

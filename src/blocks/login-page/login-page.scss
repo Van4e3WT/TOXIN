@@ -1,4 +1,4 @@
-$mediaSize: 1000px;
+@import 'Root/style-variables.scss';
 
 .login {
   background: url('./images/background-sign-in.jpg') no-repeat;
@@ -9,7 +9,7 @@ $mediaSize: 1000px;
   align-items: center;
   justify-content: center;
 
-  @media (max-width: $mediaSize) {
+  @media (max-width: $mediaSizeLaptop) {
     min-height: 500px;
   }
 }

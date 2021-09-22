@@ -1,7 +1,5 @@
 @import 'Root/style-variables.scss';
 
-$mediaSize: 1000px;
-
 .header {
   background-color: white;
   box-shadow: $primaryShadow;
@@ -17,7 +15,7 @@ $mediaSize: 1000px;
   }
 
   &__head {
-    @media (max-width:$mediaSize) {
+    @media (max-width:$mediaSizeLaptop) {
       display: flex;
       width: 100%;
       justify-content: space-between;
@@ -34,7 +32,7 @@ $mediaSize: 1000px;
     align-items: center;
     z-index: 1;
 
-    @media (max-width:$mediaSize) {
+    @media (max-width:$mediaSizeLaptop) {
       position: absolute;
       overflow-y: scroll;
       left: 0;
@@ -49,7 +47,7 @@ $mediaSize: 1000px;
     }
 
     &_active {
-      @media (max-width:$mediaSize) {
+      @media (max-width:$mediaSizeLaptop) {
         max-height: 100vh;
       }
     }
@@ -99,7 +97,7 @@ $mediaSize: 1000px;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
 
-      @media (max-width:$mediaSize) {
+      @media (max-width:$mediaSizeLaptop) {
         position: relative;
         margin-top: 25px;
         border: none;
@@ -110,7 +108,7 @@ $mediaSize: 1000px;
       }
     }
 
-    @media (max-width:$mediaSize) {
+    @media (max-width:$mediaSizeLaptop) {
       padding: 25px;
       width: 90%;
       text-align: center;
@@ -159,7 +157,7 @@ $mediaSize: 1000px;
     padding: 10px;
     color: $darkShade50;
 
-    @media (max-width:$mediaSize) {
+    @media (max-width:$mediaSizeLaptop) {
       padding: 25px;
       border-top: 1px dashed $primaryColor;
     }
@@ -171,7 +169,7 @@ $mediaSize: 1000px;
     align-items: center;
     cursor: default;
 
-    @media (max-width:$mediaSize) {
+    @media (max-width:$mediaSizeLaptop) {
       border: none;
       font-weight: bold;
     }
@@ -181,7 +179,7 @@ $mediaSize: 1000px;
     display: none;
     cursor: pointer;
 
-    @media (max-width:$mediaSize) {
+    @media (max-width:$mediaSizeLaptop) {
       $size: 30px;
       $thickness: 3px;
       $color: $darkShade;

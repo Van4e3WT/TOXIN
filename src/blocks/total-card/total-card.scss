@@ -1,7 +1,5 @@
 @import 'Root/style-variables.scss';
 
-$mediaSize: 420px;
-
 .total-card {
   background-color: white;
   max-width: 383px;
@@ -19,7 +17,7 @@ $mediaSize: 420px;
     padding-top: 5px;
     padding-bottom: 20px;
 
-    @media (max-width: $mediaSize) {
+    @media (max-width: $mediaSizeMobile) {
       flex-direction: column;
       align-items: center;
     }
@@ -88,7 +86,7 @@ $mediaSize: 420px;
     align-items: flex-start;
     margin-bottom: 15px;
 
-    @media (max-width: $mediaSize) {
+    @media (max-width: $mediaSizeMobile) {
       flex-direction: column;
       align-items: center;
       border-bottom: 1px dotted $darkShade25;
@@ -104,13 +102,13 @@ $mediaSize: 420px;
       width: 100%;
     }
 
-    @media (max-width: $mediaSize) {
+    @media (max-width: $mediaSizeMobile) {
       margin-bottom: 10px;
     }
   }
 
   &__duration-cost {
-    @media (max-width: $mediaSize) {
+    @media (max-width: $mediaSizeMobile) {
       margin-bottom: 10px;
     }
   }
@@ -136,7 +134,7 @@ $mediaSize: 420px;
     @include h2();
   }
   
-  @media(max-width: $mediaSize) {
+  @media(max-width: $mediaSizeMobile) {
     max-height: none;
   }
 }

@@ -1,7 +1,5 @@
 @import 'Root/style-variables.scss';
 
-$mediaSizeLarge: 1200px;
-$mediaSizeSmall: 800px;
 
 .room {
   &__collage {
@@ -18,14 +16,14 @@ $mediaSizeSmall: 800px;
     grid-template-rows: minmax(303px, auto);
     grid-auto-flow: dense;
 
-    @media(max-width: $mediaSizeLarge) {
+    @media(max-width: $mediaSizeDesktop) {
       grid-template-columns: repeat(2, 50%);
       grid-template-rows: auto;
       justify-items: center;
       grid-row-gap: 30px;
     }
 
-    @media(max-width: $mediaSizeSmall) {
+    @media(max-width: $mediaSizeTablet) {
       grid-template-columns: 100%;
       grid-row-gap: 50px;
     }
@@ -36,7 +34,7 @@ $mediaSizeSmall: 800px;
 
     margin-bottom: 18px;
 
-    @media(max-width: $mediaSizeLarge) {
+    @media(max-width: $mediaSizeDesktop) {
       text-align: center;
     }
   }
@@ -53,7 +51,7 @@ $mediaSizeSmall: 800px;
     grid-column: span 2;
     margin-bottom: 8px;
     
-    @media(max-width: $mediaSizeSmall) {
+    @media(max-width: $mediaSizeTablet) {
       grid-column: auto;
     }
   }
