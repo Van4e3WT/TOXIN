@@ -3,7 +3,7 @@
 
 import { getGroupSum, num2str } from 'Root/utils';
 
-class DropdownAbsolute {
+class DropdownAbsoluteItem {
   constructor(dropdown, selector, zIndex = 1) {
     this.dropdown = dropdown;
     this.selector = selector;
@@ -213,4 +213,4 @@ class DropdownAbsolute {
   }
 }
 
-export default DropdownAbsolute;
+export default DropdownAbsoluteItem;

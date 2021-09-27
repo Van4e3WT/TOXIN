@@ -7,7 +7,7 @@ import {
   num2str,
 } from 'Root/utils';
 
-class TotalCard {
+class TotalCardItem {
   constructor(totalCard, selector) {
     this.totalCard = totalCard;
     this.selector = selector;
@@ -108,4 +108,4 @@ class TotalCard {
   }
 }
 
-export default TotalCard;
+export default TotalCardItem;

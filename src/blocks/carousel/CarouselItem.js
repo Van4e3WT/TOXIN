@@ -1,4 +1,4 @@
-class Carousel {
+class CarouselItem {
   constructor(carousel, selector) {
     this.carousel = carousel;
     this.selector = selector;
@@ -64,4 +64,4 @@ class Carousel {
   }
 }
 
-export default Carousel;
+export default CarouselItem;

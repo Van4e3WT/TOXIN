@@ -1,4 +1,4 @@
-class LikeButton {
+class LikeButtonItem {
   constructor(like, selector) {
     this.like = like;
     this.selector = selector;
@@ -24,4 +24,4 @@ class LikeButton {
   }
 }
 
-export default LikeButton;
+export default LikeButtonItem;

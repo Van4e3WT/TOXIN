@@ -1,6 +1,6 @@
 /* global document */
 
-class Header {
+class HeaderItem {
   constructor(props) {
     const { burger, burgerSelector, bodySelector } = props;
 
@@ -35,4 +35,4 @@ class Header {
   }
 }
 
-export default Header;
+export default HeaderItem;

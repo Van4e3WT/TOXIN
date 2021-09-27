@@ -1,4 +1,4 @@
-class DropdownRelative {
+class DropdownRelativeItem {
   constructor(dropdown, selector) {
     this.dropdown = dropdown;
     this.selector = selector;
@@ -27,4 +27,4 @@ class DropdownRelative {
   }
 }
 
-export default DropdownRelative;
+export default DropdownRelativeItem;

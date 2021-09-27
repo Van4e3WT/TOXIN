@@ -1,6 +1,6 @@
 /* global document */
 
-import DropdownAbsolute from './DropdownAbsolute';
+import DropdownAbsoluteItem from './DropdownAbsoluteItem';
 
 import './dropdown-absolute.scss';
 
@@ -10,7 +10,7 @@ function handleDOMLoaded() {
   const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   dropdowns.forEach((item, i) => {
-    const dropdown = new DropdownAbsolute(item, BLOCKNAME, dropdowns.length - i);
+    const dropdown = new DropdownAbsoluteItem(item, BLOCKNAME, dropdowns.length - i);
 
     dropdown.init();
   });

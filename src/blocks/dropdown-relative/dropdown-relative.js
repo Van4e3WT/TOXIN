@@ -2,7 +2,7 @@
 
 import 'Blocks/checkbox/checkbox';
 
-import DropdownRelative from './DropdownRelative';
+import DropdownRelativeItem from './DropdownRelativeItem';
 
 import './dropdown-relative.scss';
 
@@ -12,7 +12,7 @@ function handleDOMLoaded() {
   const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   dropdowns.forEach((item) => {
-    const dropdown = new DropdownRelative(item, BLOCKNAME);
+    const dropdown = new DropdownRelativeItem(item, BLOCKNAME);
 
     dropdown.init();
   });

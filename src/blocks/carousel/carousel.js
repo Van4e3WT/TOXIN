@@ -1,6 +1,6 @@
 /* global document */
 
-import Carousel from './Сarousel';
+import CarouselItem from './CarouselItem';
 
 import './carousel.scss';
 
@@ -10,7 +10,7 @@ function handleDOMLoaded() {
   const carousels = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   carousels.forEach((item) => {
-    const carousel = new Carousel(item, BLOCKNAME);
+    const carousel = new CarouselItem(item, BLOCKNAME);
 
     carousel.init();
   });

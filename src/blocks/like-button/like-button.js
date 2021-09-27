@@ -1,6 +1,6 @@
 /* global document */
 
-import LikeButton from './LikeButton';
+import LikeButtonItem from './LikeButtonItem';
 
 import './like-button.scss';
 
@@ -10,7 +10,7 @@ function handleDOMLoaded() {
   const likes = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   likes.forEach((item) => {
-    const like = new LikeButton(item, BLOCKNAME);
+    const like = new LikeButtonItem(item, BLOCKNAME);
 
     like.init();
   });
