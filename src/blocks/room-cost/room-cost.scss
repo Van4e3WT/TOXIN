@@ -8,12 +8,12 @@
     @include h3();
 
     font-size: 13.6px;
-    color: $darkShade50;
+    color: $textColor50;
     padding-right: 3px;
   }
   
   &__period {
     font-size: 12px;
-    color: $darkShade50;
+    color: $textColor50;
   }
 }

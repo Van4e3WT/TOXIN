@@ -24,7 +24,7 @@
 
     &.-in-range- {
       background: linear-gradient(to top, #bc9cff3f 0%, #8ba4f93f 100%);
-      color: $darkShade50;
+      color: $textColor50;
     }
 
     &.-range-from- {
@@ -135,7 +135,7 @@
     border: none;
     font-family: $primaryFont;
     font-weight: bold;
-    color: $darkShade;
+    color: $textColor;
     padding: 8px 20px;
 
     &-action {
@@ -165,7 +165,7 @@
 
     .datepicker--button[data-action='clear'] {
       justify-content: flex-start;
-      color: $darkShade50;
+      color: $textColor50;
     }
 
     .datepicker--button[data-action='today'] {

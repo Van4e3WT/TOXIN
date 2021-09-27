@@ -25,7 +25,7 @@
     &-example {
       height: 70px;
       width: 70px;
-      background-color: $darkShade;
+      background-color: $textColor;
       border-radius: 6px;
       margin-right: 40px;
     }
@@ -54,7 +54,7 @@
       width: 50px;
       flex-shrink: 0;
       font-family: $primaryFont;
-      color: $darkShade25;
+      color: $textColor25;
       text-align: right;
 
       &-h1 {

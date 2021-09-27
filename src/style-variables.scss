@@ -6,19 +6,19 @@ $mediaSizeMobile: 420px;
 $containerWidth: 1200px;
 $headerPadding: 18px;
 
-$darkShade: #1F2041;
-$darkShade75: rgba($darkShade, 0.75);
-$darkShade50: rgba($darkShade, 0.50);
-$darkShade25: rgba($darkShade, 0.25);
-$darkShade10: rgba($darkShade, 0.10);
-$darkShade05: rgba($darkShade, 0.05);
+$textColor: #1F2041;
+$textColor75: rgba($textColor, 0.75);
+$textColor50: rgba($textColor, 0.50);
+$textColor25: rgba($textColor, 0.25);
+$textColor10: rgba($textColor, 0.10);
+$textColor05: rgba($textColor, 0.05);
 
 $primaryColor: #BC9CFF;
 $secondaryColor: #6FCF97;
 $complementaryColor: #66D2EA;
 
-$primaryShadow: 0px 10px 20px $darkShade05;
-$cardShadow: 0px 0px 25px $darkShade25;
+$primaryShadow: 0px 10px 20px $textColor05;
+$cardShadow: 0px 0px 25px $textColor25;
 
 $primaryGradient: linear-gradient(to top, #8BA4F9, $primaryColor);
 $primaryGradientTranslucent: linear-gradient(to top, rgba(#8BA4F9, .5), rgba($primaryColor, .5));
@@ -65,7 +65,7 @@ $primaryFont: 'Montserrat', 'Arial', 'sans-serif';
 @mixin paragraph() {
   margin-top: 0;
   margin-bottom: 0;
-  color: $darkShade75;
+  color: $textColor75;
   line-height: 23.2px;
 }
 
@@ -77,23 +77,23 @@ $primaryFont: 'Montserrat', 'Arial', 'sans-serif';
 @mixin input {
   width: 100%;
   font-size: 13.6px;
-  border: 1px solid $darkShade25;
+  border: 1px solid $textColor25;
   border-radius: 5px;
   padding: 13px;
   font-family: $primaryFont;
   letter-spacing: 0.2px;
-  color: $darkShade75;
+  color: $textColor75;
 
   &::placeholder {
-    color: $darkShade25;
+    color: $textColor25;
   }
 
   &:hover, &:focus, &.hover-focus {
-    border-color: $darkShade50;
+    border-color: $textColor50;
   }
 
   &:focus {
     outline: none;
-    border-color: $darkShade50;
+    border-color: $textColor50;
   }
 }

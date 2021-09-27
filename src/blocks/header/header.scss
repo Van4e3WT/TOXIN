@@ -58,7 +58,7 @@
 
     position: relative;
     padding: 0 9.5px;
-    color:$darkShade50;
+    color:$textColor50;
     align-items: center;
     justify-content: center;
     letter-spacing: 0.25px;
@@ -73,7 +73,7 @@
     }
 
     &:hover {
-      color: $darkShade75;
+      color: $textColor75;
     }
 
     &-wrapper {
@@ -93,7 +93,7 @@
       margin-top: 5px;
       width: 100%;
       background-color: white;
-      border-top: 1px solid $darkShade25;
+      border-top: 1px solid $textColor25;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
 
@@ -112,7 +112,7 @@
       padding: 25px;
       width: 90%;
       text-align: center;
-      border-bottom: 1px solid $darkShade25;
+      border-bottom: 1px solid $textColor25;
       &:first-child, &:last-child {
         padding: 25px;
       }
@@ -138,7 +138,7 @@
       height: $side;
       width: $side;
       transform: translate(-60%, -60%) rotate(45deg);
-      border: 2.5px solid $darkShade50;
+      border: 2.5px solid $textColor50;
       border-top: 0;
       border-left: 0;
     }
@@ -155,7 +155,7 @@
 
     display: block;
     padding: 10px;
-    color: $darkShade50;
+    color: $textColor50;
 
     @media (max-width:$mediaSizeLaptop) {
       padding: 25px;
@@ -165,7 +165,7 @@
 
   &__user {
     padding: 8px 0 8px 30px;
-    border-left: 1px solid $darkShade25;
+    border-left: 1px solid $textColor25;
     align-items: center;
     cursor: default;
 
@@ -182,7 +182,7 @@
     @media (max-width:$mediaSizeLaptop) {
       $size: 30px;
       $thickness: 3px;
-      $color: $darkShade;
+      $color: $textColor;
       display: block;
       position: relative;
       height: $size;

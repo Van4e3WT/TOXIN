@@ -19,7 +19,7 @@
     text-transform: none;
     font-size: 13.6px;
     letter-spacing: 0.25px;
-    color: $darkShade75;
+    color: $textColor75;
   }
 
   &__switch {
@@ -29,7 +29,7 @@
     height: $side;
     width: $side * 2;
     margin-right: 10px;
-    border: 1px solid $darkShade25;
+    border: 1px solid $textColor25;
     border-radius: $side / 2;
     transition: 0.3s;
 
@@ -40,7 +40,7 @@
       left: 3px;
       height: 12px;
       width: 12px;
-      background: $darkShade25;
+      background: $textColor25;
       border-radius: 50%;
       transition: 0.3s;
     }

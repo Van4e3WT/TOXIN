@@ -17,7 +17,7 @@
     height: $side;
     width: $side;
     border-radius: 50%;
-    color: $darkShade50;
+    color: $textColor50;
     user-select: none;
 
     &_available {
@@ -65,6 +65,6 @@
     width: 100%;
     font-size: 13.6px;
     text-align: center;
-    color: $darkShade75;
+    color: $textColor75;
   }
 }

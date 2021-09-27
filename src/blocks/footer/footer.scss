@@ -2,7 +2,7 @@
 
 .footer {
   background-color: white;
-  border-top: 1px solid $darkShade25;
+  border-top: 1px solid $textColor25;
 
   &__references {
     @include container();
@@ -23,7 +23,7 @@
     @include paragraph();
 
     padding-bottom: 22px;
-    color: $darkShade75;
+    color: $textColor75;
   }
 
   &__column {
@@ -47,23 +47,23 @@
       font-weight: bold;
       font-size: 12px;
       letter-spacing: 0;
-      color: $darkShade;
+      color: $textColor;
     }
   }
 
   &__link {
     @include link();
 
-    color: $darkShade50;
+    color: $textColor50;
 
     &:hover {
-      color: $darkShade75;
+      color: $textColor75;
     }
   }
 
   &__copyrights {
-    color: $darkShade75;
-    border-top: 1px solid $darkShade25;
+    color: $textColor75;
+    border-top: 1px solid $textColor25;
     letter-spacing: 0.2px;
   }
 

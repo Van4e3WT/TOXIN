@@ -13,7 +13,7 @@
   &__link {
     @include link();
 
-    color: $darkShade50;
+    color: $textColor50;
 
     &:hover {
       color: $primaryColor;

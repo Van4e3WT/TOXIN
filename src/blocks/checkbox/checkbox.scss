@@ -27,7 +27,7 @@
     font-size: 13.6px;
     line-height: 20px;
     letter-spacing: 0.3px;
-    color: $darkShade50;
+    color: $textColor50;
 
     &::before {
       $side: 18px;
@@ -35,7 +35,7 @@
       flex-shrink: 0;
       width: $side;
       height: $side;
-      border: 1px solid $darkShade25;
+      border: 1px solid $textColor25;
       border-radius: 5px;
       margin-right: 10px;
     }
@@ -58,7 +58,7 @@
 
     &_extended {
       font-weight: bold;
-      color: $darkShade75;
+      color: $textColor75;
     }
   }
 
@@ -75,7 +75,7 @@
   &__description {
     margin-top: 1px;
     margin-left: 30px;
-    color: $darkShade50;
+    color: $textColor50;
     font-size: 12px;
     letter-spacing: 0px;
   }

@@ -5,7 +5,7 @@
 
   display: flex;
   max-width: 268px;
-  border: 1px solid $darkShade25;
+  border: 1px solid $textColor25;
   border-radius: $borderRadius;
 
   &__input {
@@ -13,10 +13,10 @@
 
     border: none;
     border-right: none;
-    color: $darkShade;
+    color: $textColor;
 
     & ::placeholder {
-      color: $darkShade50;
+      color: $textColor50;
     }
   }
 
@@ -58,7 +58,7 @@
 
     &:focus {
       outline: none;
-      background-color: $darkShade05;
+      background-color: $textColor05;
     }
   }
 }

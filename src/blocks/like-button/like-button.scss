@@ -21,7 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $darkShade25;
+    color: $textColor25;
     min-width: $side * 2;
     height: $side;
     border-radius: $side / 2;
@@ -34,7 +34,7 @@
 
     &::before {
       content: '';
-      background: $darkShade25;
+      background: $textColor25;
       position: absolute;
       z-index: -1;
       left: -$border;

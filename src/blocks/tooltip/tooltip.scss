@@ -6,9 +6,9 @@
   flex-shrink: 0;
   height: 20px;
   width: 20px;
-  border: 2px solid $darkShade25;
+  border: 2px solid $textColor25;
   border-radius: 50%;
-  color: $darkShade25;
+  color: $textColor25;
   text-align: center;
   font-weight: bold;
   line-height: 18px;
@@ -21,10 +21,10 @@
     top: 50%;
     z-index: 5;
     background: white;
-    border: 2px solid $darkShade25;
+    border: 2px solid $textColor25;
     border-radius: 10px;
     border-top-left-radius: 0;
-    color: $darkShade;
+    color: $textColor;
     font-weight: normal;
     text-align: justify;
     font-size: 13.6px;

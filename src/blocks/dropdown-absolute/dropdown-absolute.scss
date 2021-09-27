@@ -25,7 +25,7 @@
     }
 
     &::placeholder {
-      color: $darkShade75;
+      color: $textColor75;
     }
 
     &_active {
@@ -51,7 +51,7 @@
     z-index: 1;
     width: 100%;
     background-color: white;
-    border: 1px solid $darkShade50;
+    border: 1px solid $textColor50;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -63,7 +63,7 @@
     padding: 7px 6px 0 14px;
     text-transform: uppercase;
     font-weight: bold;
-    color: $darkShade;
+    color: $textColor;
   }
 
   &__counter-element {
@@ -80,8 +80,8 @@
   &__minus, &__plus {
     height: 30px;
     width: 30px;
-    border: 1px solid $darkShade50;
-    color: $darkShade50;
+    border: 1px solid $textColor50;
+    color: $textColor50;
     border-radius: 50%;
     font-size: 24px;
     font-weight: normal;
@@ -89,8 +89,8 @@
     text-align: center;
 
     &_disabled {
-      border: 1px solid $darkShade25;
-      color: $darkShade25;
+      border: 1px solid $textColor25;
+      color: $textColor25;
     }
   }
 
@@ -109,7 +109,7 @@
 
   &__clear-btn {
     display: none;
-    color: $darkShade50;
+    color: $textColor50;
     cursor: pointer;
 
     &:hover {
