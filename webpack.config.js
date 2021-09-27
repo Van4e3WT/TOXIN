@@ -28,7 +28,7 @@ function scanerFiles(directory, filetype) {
 
 const PAGES_DIR = path.join(PATHS.src, 'pages');
 const PAGES = scanerFiles(PAGES_DIR, '.pug');
-const PAGES_ENTRY = scanerFiles(PATHS.src, '.js');
+const PAGES_ENTRY = scanerFiles(PAGES_DIR, '.js');
 
 const cssLoader = (addition) => {
   const loaders = [
