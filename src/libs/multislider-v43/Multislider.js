@@ -1,4 +1,5 @@
 /* global $ */
+
 import './multislider-v43';
 import './multislider-v43.css';
 

@@ -1,14 +1,21 @@
-/* global $ */
+/* global document */
 
-import { airDatepickerConfig, hideByApply } from 'Root/utils';
+import Datepicker from 'Root/libs/air-datepicker/Datepicker';
 
 import './opened-datepick.scss';
 
-$('.js-opened-datepick').each((i, el) => {
-  $(el).datepicker({
-    inline: true,
-    ...airDatepickerConfig,
-  });
+const DATEPICKER_CONFIG = {
+  inline: true,
+};
 
-  hideByApply.call($(el).data('datepicker'));
-});
+function handleDOMLoaded() {
+  const items = document.querySelectorAll('.js-opened-datepick');
+
+  items.forEach((item) => {
+    const datepicker = new Datepicker(item, DATEPICKER_CONFIG);
+
+    datepicker.init();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', handleDOMLoaded);

@@ -1,20 +1,27 @@
-/* global $ */
+/* global document */
 
-import { airDatepickerConfig, hideByApply, handleContextElementShow } from 'Root/utils';
+import Datepicker from 'Root/libs/air-datepicker/Datepicker';
 
 import './date-solo-range.scss';
 
-$('.js-date-solo-range').each((i, el) => {
-  const input = $(el).find('.js-date-solo-range__input');
-  input.datepicker({
-    range: true,
-    dateFormat: 'dd M',
-    multipleDatesSeparator: ' - ',
-    minDate: new Date(),
-    ...airDatepickerConfig,
+const DATEPICKER_CONFIG = {
+  range: true,
+  dateFormat: 'dd M',
+  multipleDatesSeparator: ' - ',
+  minDate: new Date(),
+};
+
+function handleDOMLoaded() {
+  const items = document.querySelectorAll('.js-date-solo-range');
+
+  items.forEach((item) => {
+    const input = item.querySelector('.js-date-solo-range__input');
+    const datepicker = new Datepicker(input, DATEPICKER_CONFIG);
+
+    datepicker.init();
+
+    item.addEventListener('click', datepicker.handleContextElementShow);
   });
+}
 
-  hideByApply.call(input.data('datepicker'));
-
-  el.addEventListener('click', handleContextElementShow.bind(input.data('datepicker')));
-});
+document.addEventListener('DOMContentLoaded', handleDOMLoaded);

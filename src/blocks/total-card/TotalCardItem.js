@@ -1,11 +1,7 @@
 /* global $ */
 
-import {
-  airDatepickerConfig,
-  hideByApply,
-  handleContextElementShow,
-  num2str,
-} from 'Root/utils';
+import Datepicker from 'Root/libs/air-datepicker/Datepicker';
+import { num2str } from 'Root/utils';
 
 class TotalCardItem {
   constructor(totalCard, selector) {
@@ -54,10 +50,10 @@ class TotalCardItem {
       departurePlace,
     } = this;
 
-    $(arrivalInput).datepicker({
+    const datepickerConfig = {
       range: true,
       minDate: new Date(),
-      onSelect: function onSelect(date) {
+      onSelect(date) {
         const dates = date.split(',');
         const [arrivalDate, departureDate] = dates;
 
@@ -65,15 +61,16 @@ class TotalCardItem {
         departureInput.value = departureDate ? departureDate : '';
       },
       onHide: this._handleDatepickerHide,
-      ...airDatepickerConfig,
-    });
+    };
+
+    const datepicker = new Datepicker(arrivalInput, datepickerConfig);
+
+    datepicker.init();
 
     this.datepicker = $(arrivalInput).datepicker().data('datepicker');
 
-    arrivalPlace.addEventListener('click', handleContextElementShow.bind(this.datepicker));
-    departurePlace.addEventListener('click', handleContextElementShow.bind(this.datepicker));
-
-    hideByApply.call(this.datepicker);
+    arrivalPlace.addEventListener('click', datepicker.handleContextElementShow);
+    departurePlace.addEventListener('click', datepicker.handleContextElementShow);
   }
 
   _handleDatepickerHide() {

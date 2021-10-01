@@ -1,6 +1,6 @@
-/* global document, $ */
+/* global document */
 
-import { airDatepickerConfig, hideByApply } from 'Root/utils';
+import Datepicker from 'Root/libs/air-datepicker/Datepicker';
 
 import DateSoloMask from './DateSoloMask';
 
@@ -10,11 +10,9 @@ function handleDOMLoaded() {
   const inputs = document.querySelectorAll('.js-date-solo__input');
 
   inputs.forEach((item) => {
-    $(item).datepicker({
-      ...airDatepickerConfig,
-    });
+    const datepicker = new Datepicker(item);
 
-    hideByApply.call($(item).data('datepicker'));
+    datepicker.init();
 
     const input = new DateSoloMask(item);
 
