@@ -1,8 +1,6 @@
 /* global document */
 
-import Datepicker from 'Root/libs/air-datepicker/Datepicker';
-
-import DateSoloMask from './DateSoloMask';
+import DateSoloItem from './DateSoloItem';
 
 import './date-solo.scss';
 
@@ -10,13 +8,9 @@ function handleDOMLoaded() {
   const inputs = document.querySelectorAll('.js-date-solo__input');
 
   inputs.forEach((item) => {
-    const datepicker = new Datepicker(item);
+    const dateSoloItem = new DateSoloItem(item);
 
-    datepicker.init();
-
-    const input = new DateSoloMask(item);
-
-    input.init();
+    dateSoloItem.init();
   });
 }
 
