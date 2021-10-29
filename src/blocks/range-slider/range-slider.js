@@ -1,5 +1,5 @@
 /* global document */
-import Multislider from 'Root/libs/multislider-v43/Multislider';
+import Multislider from 'Source/libs/multislider-v43/Multislider';
 
 import './range-slider.scss';
 

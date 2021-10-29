@@ -64,7 +64,7 @@ module.exports = (env, options) => ({
   devtool: options.mode === 'production' ? false : 'eval-cheap-module-source-map',
   resolve: {
     alias: {
-      Root: PATHS.src,
+      Source: PATHS.src,
       Blocks: path.join(PATHS.src, 'blocks'),
     },
   },

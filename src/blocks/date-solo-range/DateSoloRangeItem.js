@@ -1,4 +1,4 @@
-import Datepicker from 'Root/libs/air-datepicker/Datepicker';
+import Datepicker from 'Source/libs/air-datepicker/Datepicker';
 
 const DATEPICKER_CONFIG = {
   range: true,

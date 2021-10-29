@@ -1,6 +1,6 @@
 /* global document */
 
-import Datepicker from 'Root/libs/air-datepicker/Datepicker';
+import Datepicker from 'Source/libs/air-datepicker/Datepicker';
 
 import './opened-datepick.scss';
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* global document */
 
-import { getGroupSum, num2str } from 'Root/utils';
+import { getGroupSum, num2str } from 'Source/utils';
 
 class DropdownAbsoluteItem {
   constructor(dropdown, selector, zIndex = 1) {

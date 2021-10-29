@@ -1,7 +1,7 @@
 /* global $ */
 
-import Datepicker from 'Root/libs/air-datepicker/Datepicker';
-import { num2str } from 'Root/utils';
+import Datepicker from 'Source/libs/air-datepicker/Datepicker';
+import { num2str } from 'Source/utils';
 
 class TotalCardItem {
   constructor(totalCard, selector) {
