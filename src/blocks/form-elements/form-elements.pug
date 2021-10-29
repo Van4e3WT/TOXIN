@@ -49,7 +49,7 @@ mixin form-elements(props)
   .form-elements
     +svg-ui()
     .form-elements__grid
-      .form-elements__div1
+      .form-elements__inputs-cell
         .form-elements__wrapper_medium
           h3.form-elements__label text field
           .form-elements__prompt default
@@ -73,7 +73,7 @@ mixin form-elements(props)
         .form-elements__wrapper_large
           h3.form-elements__label subscription text field
           +form-subscribe()
-      .form-elements__div2
+      .form-elements__toggles-cell
         .form-elements__checkboxes
           h3.form-elements__label_large Checkbox buttons
           each checkbox in checkboxes
@@ -103,7 +103,7 @@ mixin form-elements(props)
               +rate-button(rateButton)
             .form-elements__rate
               +rate-result(rateResult)
-      .form-elements__div3
+      .form-elements__buttons-cell
         .form-elements__wrapper_huge
           +range-slider()
         .form-elements__wrapper_large
@@ -119,7 +119,7 @@ mixin form-elements(props)
             +button(buttonSend)
           h3.form-elements__label_medium pagination
           +pagination(pagination)
-      .form-elements__div4
+      .form-elements__amenities-cell
         .form-elements__wrapper_medium
           h3.form-elements__label Dropdown
           .form-elements__prompt default
@@ -128,27 +128,27 @@ mixin form-elements(props)
           h3.form-elements__label Dropdown
           .form-elements__prompt expanded
           +dropdown-absolute(dropdownAbsoluteExtendedExpand)
-      .form-elements__div5
+      .form-elements__guests-cell
         h3.form-elements__label Dropdown
         +dropdown-absolute(dropdownAbsoluteExpand)
-      .form-elements__div6
+      .form-elements__guests-cell
         h3.form-elements__label Dropdown
         +dropdown-absolute(dropdownAbsoluteExpandFilled)
-      .form-elements__div7
+      .form-elements__additional-amenities-cell
         .form-elements__checkboxes
           +dropdown-relative(dropdownRealtiveWrapped)
         +dropdown-relative(dropdownRealtive)
-      .form-elements__div8
+      .form-elements__checkboxes-cell
         h3.form-elements__label_large Rich checkbox buttons
         each checkboxExtended in checkboxesExtended
           .form-elements__checkbox
             +checkbox(checkboxExtended)
-      .form-elements__div9
+      .form-elements__list-cell
         h3.form-elements__label_medium Bullet list
         +bullet-list(bulletList)
-      .form-elements__div10
+      .form-elements__privilleges-cell
         each roomPrivilege in roomPrivileges
           +room-privilege(roomPrivilege)
-      .form-elements__div11
+      .form-elements__comment-cell
         .form-elements__comment
           +comment(comment)

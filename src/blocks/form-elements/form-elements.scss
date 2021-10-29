@@ -13,34 +13,34 @@
     padding-bottom: 31px;
   }
 
-  &__div1 {
+  &__inputs-cell {
     max-width: 322px;
     min-height: 733px;
   }
 
-  &__div2 {
+  &__toggles-cell {
     max-width: 265px;
   }
 
-  &__div4 {
+  &__amenities-cell {
     max-width: 265px;
     min-height: 320px;
   }
 
-  &__div5 {
+  &__guests-cell {
     max-width: 322px;
   }
 
-  &__div7 {
+  &__additional-amenities-cell {
     max-width: 266px;
     min-height: 368px;
   }
 
-  &__div10 {
+  &__privilleges-cell {
     min-height: 260px;
   }
 
-  &__div11 {
+  &__comment-cell {
     max-width: 710px;
     grid-column: span 2;
   }
