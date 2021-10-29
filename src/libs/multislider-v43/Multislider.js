@@ -1,7 +1,7 @@
 /* global $ */
 
-import './multislider-v43';
-import './multislider-v43.css';
+import 'Root/vendors/multislider-v43/multislider-v43';
+import 'Root/vendors/multislider-v43/multislider-v43.css';
 
 import './multislider-v43-fork.scss';
 
