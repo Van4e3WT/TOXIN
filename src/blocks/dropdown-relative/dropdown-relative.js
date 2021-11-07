@@ -8,7 +8,7 @@ import './dropdown-relative.scss';
 
 const BLOCKNAME = 'dropdown-relative';
 
-function handleDOMLoaded() {
+function initDropdownRelative() {
   const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   dropdowns.forEach((item) => {
@@ -18,4 +18,4 @@ function handleDOMLoaded() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initDropdownRelative;

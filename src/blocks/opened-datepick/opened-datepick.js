@@ -8,7 +8,7 @@ const DATEPICKER_CONFIG = {
   inline: true,
 };
 
-function handleDOMLoaded() {
+function initOpenedDatepick() {
   const items = document.querySelectorAll('.js-opened-datepick');
 
   items.forEach((item) => {
@@ -18,4 +18,4 @@ function handleDOMLoaded() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initOpenedDatepick;

@@ -3,12 +3,12 @@
 import 'Blocks/button/button';
 import 'Blocks/logo/logo';
 
-import './__ref-item/header__ref-item';
+import initHeaderItem from './__ref-item/header__ref-item';
 import HeaderItem from './HeaderItem';
 
 import './header.scss';
 
-function handleDOMLoaded() {
+function initHeader() {
   const burger = document.querySelector('.js-header__burger');
 
   if (!burger) return;
@@ -20,6 +20,7 @@ function handleDOMLoaded() {
   });
 
   header.init();
+  initHeaderItem();
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initHeader;

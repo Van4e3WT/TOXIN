@@ -6,7 +6,7 @@ import './carousel.scss';
 
 const BLOCKNAME = 'carousel';
 
-function handleDOMLoaded() {
+function initCarousel() {
   const carousels = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   carousels.forEach((item) => {
@@ -16,4 +16,4 @@ function handleDOMLoaded() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initCarousel;

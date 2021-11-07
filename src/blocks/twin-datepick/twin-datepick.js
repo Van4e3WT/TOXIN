@@ -4,7 +4,7 @@ import TwinDatepickItem from './TwinDatepickItem';
 
 import './twin-datepick.scss';
 
-function handleDOMLoaded() {
+function initTwinDatepick() {
   const twinDatepickers = document.querySelectorAll('.js-twin-datepick');
 
   twinDatepickers.forEach((item) => {
@@ -14,4 +14,4 @@ function handleDOMLoaded() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initTwinDatepick;

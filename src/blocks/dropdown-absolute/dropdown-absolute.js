@@ -6,7 +6,7 @@ import './dropdown-absolute.scss';
 
 const BLOCKNAME = 'dropdown-absolute';
 
-function handleDOMLoaded() {
+function initDropdownAbsolute() {
   const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   dropdowns.forEach((item, index) => {
@@ -16,4 +16,4 @@ function handleDOMLoaded() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initDropdownAbsolute;

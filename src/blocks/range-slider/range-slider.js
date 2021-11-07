@@ -1,4 +1,5 @@
 /* global document */
+
 import Multislider from 'Source/libs/multislider-v43/Multislider';
 
 import './range-slider.scss';
@@ -15,7 +16,7 @@ const DEFAULT_PROPS = {
   description: 'Диапазон цены',
 };
 
-function handleDOMLoaded() {
+function initRangeSlider() {
   const items = document.querySelectorAll('.js-multislider-v43');
 
   items.forEach((item) => {
@@ -25,4 +26,4 @@ function handleDOMLoaded() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initRangeSlider;

@@ -1,7 +1,7 @@
 /* global document */
 
-import 'Blocks/twin-datepick/twin-datepick';
-import 'Blocks/dropdown-absolute/dropdown-absolute';
+import initDropdownAbsolute from 'Blocks/dropdown-absolute/dropdown-absolute';
+import initTwinDatepick from 'Blocks/twin-datepick/twin-datepick';
 import 'Blocks/tooltip/tolltip';
 import 'Blocks/button/button';
 
@@ -11,7 +11,7 @@ import './total-card.scss';
 
 const BLOCKNAME = 'total-card';
 
-function handleDOMLoaded() {
+function initTotalCard() {
   const totalCards = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   totalCards.forEach((item) => {
@@ -19,6 +19,9 @@ function handleDOMLoaded() {
 
     totalCard.init();
   });
+
+  initDropdownAbsolute();
+  initTwinDatepick();
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initTotalCard;

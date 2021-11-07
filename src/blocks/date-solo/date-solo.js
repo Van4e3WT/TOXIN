@@ -4,7 +4,7 @@ import DateSoloItem from './DateSoloItem';
 
 import './date-solo.scss';
 
-function handleDOMLoaded() {
+function initDateSolo() {
   const inputs = document.querySelectorAll('.js-date-solo__input');
 
   inputs.forEach((item) => {
@@ -14,4 +14,4 @@ function handleDOMLoaded() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initDateSolo;

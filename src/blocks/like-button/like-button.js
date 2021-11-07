@@ -6,7 +6,7 @@ import './like-button.scss';
 
 const BLOCKNAME = 'like-button';
 
-function handleDOMLoaded() {
+function initLikeButton() {
   const likes = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   likes.forEach((item) => {
@@ -16,4 +16,4 @@ function handleDOMLoaded() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initLikeButton;

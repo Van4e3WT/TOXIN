@@ -4,7 +4,7 @@ import DateSoloRangeItem from './DateSoloRangeItem';
 
 import './date-solo-range.scss';
 
-function handleDOMLoaded() {
+function initDateSoloRange() {
   const items = document.querySelectorAll('.js-date-solo-range');
 
   items.forEach((item) => {
@@ -14,4 +14,4 @@ function handleDOMLoaded() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', handleDOMLoaded);
+export default initDateSoloRange;
