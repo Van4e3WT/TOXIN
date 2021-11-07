@@ -28,13 +28,13 @@ class CarouselItem {
       dots,
     } = this;
 
-    items.forEach((item, i) => {
-      if (i === currentIndex) {
+    items.forEach((item, index) => {
+      if (index === currentIndex) {
         item.classList.add(`${selector}__item_active`);
-        dots[i].classList.add(`${selector}__dot_active`);
+        dots[index].classList.add(`${selector}__dot_active`);
       } else {
         item.classList.remove(`${selector}__item_active`);
-        dots[i].classList.remove(`${selector}__dot_active`);
+        dots[index].classList.remove(`${selector}__dot_active`);
       }
     });
   }

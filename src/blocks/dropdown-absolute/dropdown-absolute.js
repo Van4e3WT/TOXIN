@@ -9,8 +9,8 @@ const BLOCKNAME = 'dropdown-absolute';
 function handleDOMLoaded() {
   const dropdowns = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
-  dropdowns.forEach((item, i) => {
-    const dropdown = new DropdownAbsoluteItem(item, BLOCKNAME, dropdowns.length - i);
+  dropdowns.forEach((item, index) => {
+    const dropdown = new DropdownAbsoluteItem(item, BLOCKNAME, dropdowns.length - index);
 
     dropdown.init();
   });
