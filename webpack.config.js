@@ -17,9 +17,12 @@ function scanerFiles(directory, filetype) {
 
   for (let i = 0; i < items.length; i += 1) {
     const stat = fs.statSync(path.join(directory, items[i]));
-    if (!stat.isDirectory() && items[i].endsWith(filetype)) {
+    const isFile = !stat.isDirectory() && items[i].endsWith(filetype);
+    const isIncludedFolder = stat.isDirectory() && !items[i].startsWith('_');
+
+    if (isFile) {
       arrayFiles.push(path.join(directory, items[i]));
-    } else if (stat.isDirectory() && !items[i].startsWith('_')) {
+    } else if (isIncludedFolder) {
       arrayFiles.push(...scanerFiles(path.join(directory, items[i]), filetype));
     }
   }

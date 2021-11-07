@@ -38,9 +38,12 @@ class DateSoloMask {
       res[0] = charFirst > 3 ? '' : charFirst;
     }
 
-    if (res.length === 2 && parseInt(charFirst, 10) === 3) {
+    const dayIsThirdDecade = res.length === 2 && parseInt(charFirst, 10) === 3;
+    const dayIsDigit = res.length === 2 && parseInt(charFirst, 10) === 0;
+
+    if (dayIsThirdDecade) {
       res[1] = parseInt(charSecond, 10) > 1 ? '' : charSecond;
-    } else if (res.length === 2 && parseInt(charFirst, 10) === 0) {
+    } else if (dayIsDigit) {
       res[1] = parseInt(charSecond, 10) < 1 ? '' : charSecond;
     }
 
@@ -55,9 +58,12 @@ class DateSoloMask {
       res[2] = charFirst > 1 ? '' : charFirst;
     }
 
-    if (res.length === 4 && parseInt(charFirst, 10) === 1) {
+    const monthIsFirstDecade = res.length === 4 && parseInt(charFirst, 10) === 1;
+    const monthIsDigit = res.length === 4 && parseInt(charFirst, 10) === 0;
+
+    if (monthIsFirstDecade) {
       res[3] = charSecond > 2 ? '' : charSecond;
-    } else if (res.length === 4 && parseInt(charFirst, 10) === 0) {
+    } else if (monthIsDigit) {
       res[3] = charSecond < 1 ? '' : charSecond;
     }
 
@@ -73,9 +79,12 @@ class DateSoloMask {
       res[4] = charFirst < 1 || charFirst > 2 ? '' : charFirst;
     }
 
-    if (res.length === 6 && parseInt(charFirst, 10) === 1) {
+    const yearIsFirstThousand = res.length === 6 && parseInt(charFirst, 10) === 1;
+    const yearIsSecondThousand = res.length === 6 && parseInt(charFirst, 10) === 2;
+
+    if (yearIsFirstThousand) {
       res[5] = charSecond < 9 ? '' : charSecond;
-    } else if (res.length === 6 && parseInt(charFirst, 10) === 2) {
+    } else if (yearIsSecondThousand) {
       res[5] = charSecond > 0 ? '' : charSecond;
     }
 

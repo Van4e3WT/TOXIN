@@ -83,7 +83,9 @@ class TotalCardItem {
       total,
     } = this;
 
-    if (!(departureInput.value && arrivalInput.value)) return;
+    const areValuesUndefined = !(departureInput.value && arrivalInput.value);
+
+    if (areValuesUndefined) return;
 
     const departureDate = this._convertStringToDate(departureInput.value);
     const arrivalDate = this._convertStringToDate(arrivalInput.value);

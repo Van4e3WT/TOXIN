@@ -3,9 +3,13 @@ function num2str(i, textForms) {
   const n = Math.abs(i) % 100;
   const n1 = n % 10;
 
-  if (n > 10 && n < 20) return many;
-  if (n1 > 1 && n1 < 5) return two;
-  if (n1 === 1) return one;
+  const isMany = n > 10 && n < 20;
+  const isTwo = n1 > 1 && n1 < 5;
+  const isOne = n1 === 1;
+
+  if (isMany) return many;
+  if (isTwo) return two;
+  if (isOne) return one;
 
   return many;
 }
