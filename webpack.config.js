@@ -11,27 +11,45 @@ const PATHS = {
   dist: path.resolve(__dirname, 'dist'),
 };
 
-function scanerFiles(directory, filetype) {
-  const arrayFiles = [];
-  const items = fs.readdirSync(directory);
-
-  for (let i = 0; i < items.length; i += 1) {
-    const stat = fs.statSync(path.join(directory, items[i]));
-    const isFile = !stat.isDirectory() && items[i].endsWith(filetype);
-    const isIncludedFolder = stat.isDirectory() && !items[i].startsWith('_');
-
-    if (isFile) {
-      arrayFiles.push(path.join(directory, items[i]));
-    } else if (isIncludedFolder) {
-      arrayFiles.push(...scanerFiles(path.join(directory, items[i]), filetype));
-    }
-  }
-  return arrayFiles;
-}
-
 const PAGES_DIR = path.join(PATHS.src, 'pages');
-const PAGES = scanerFiles(PAGES_DIR, '.pug');
-const PAGES_ENTRY = scanerFiles(PAGES_DIR, '.js');
+
+const createChunks = (pagesGroupDir) => {
+  const pagesDirs = fs.readdirSync(pagesGroupDir);
+
+  const entries = {};
+  const pages = [];
+
+  pagesDirs.forEach((pageDir) => {
+    const files = fs.readdirSync(path.join(pagesGroupDir, pageDir));
+
+    files.forEach((file) => {
+      const absPath = path.join(pagesGroupDir, pageDir, file);
+      const [name, type] = file.split('.');
+
+      const isEntry = (name === pageDir) && (type === 'js' || type === 'ts');
+      const isPage = (name === pageDir) && (type === 'pug');
+
+      if (isEntry) {
+        entries[pageDir] = absPath;
+      }
+
+      if (isPage) {
+        pages.push(new HtmlWebpackPlugin({
+          chunks: ['shared', pageDir],
+          template: absPath,
+          filename: `${pageDir}.html`,
+        }));
+      }
+    });
+  });
+
+  return {
+    entries,
+    pages,
+  };
+};
+
+const { entries, pages } = createChunks(PAGES_DIR);
 
 const cssLoader = (addition) => {
   const loaders = [
@@ -59,10 +77,25 @@ const cssLoader = (addition) => {
 };
 
 module.exports = (env, options) => ({
-  entry: ['@babel/polyfill', '/src/index.js', ...PAGES_ENTRY],
+  entry: {
+    ...entries,
+    shared: ['@babel/polyfill', '/src/index.js'],
+  },
   output: {
-    filename: 'bundle_[id].js',
+    filename: '[name].js',
     path: PATHS.dist,
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
   devtool: options.mode === 'production' ? false : 'eval-cheap-module-source-map',
   resolve: {
@@ -73,13 +106,10 @@ module.exports = (env, options) => ({
     },
   },
   plugins: [
-    ...PAGES.map((page) => new HtmlWebpackPlugin({
-      template: page,
-      filename: `${path.basename(page).replace(/\.pug/, '.html')}`,
-    })),
+    ...pages,
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'style_[id].css',
+      filename: '[name].css',
     }),
     new CopyWebpackPlugin({
       patterns: [
