@@ -9,7 +9,7 @@ import 'Blocks/free-cancel/free-cancel';
 import './room-page.scss';
 
 function initRoomPage() {
-  initComments();
+  initComments('.js-comments');
   initTotalCard();
 }
 

@@ -6,7 +6,7 @@ import 'Blocks/toggle-button/toggle-button';
 import './register-card.scss';
 
 function initRegisterCard() {
-  initDateSolo();
+  initDateSolo('.js-register-card');
 }
 
 export default initRegisterCard;

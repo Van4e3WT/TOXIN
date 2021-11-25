@@ -5,8 +5,8 @@ import 'Blocks/button/button';
 import './landing-card.scss';
 
 function initLandingCard() {
-  initDropdownAbsolute();
-  initTwinDatepick();
+  initDropdownAbsolute('.js-landing-card');
+  initTwinDatepick('.js-landing-card');
 }
 
 export default initLandingCard;

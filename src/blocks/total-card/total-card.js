@@ -12,8 +12,8 @@ import './total-card.scss';
 const BLOCKNAME = 'total-card';
 
 function initTotalCard() {
-  initTwinDatepick();
-  initDropdownAbsolute();
+  initTwinDatepick('.js-total-card');
+  initDropdownAbsolute('.js-total-card');
 
   const totalCards = document.querySelectorAll(`.js-${BLOCKNAME}`);
 

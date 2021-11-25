@@ -5,7 +5,7 @@ include ~Blocks/button/button.pug
 mixin landing-card(props)
   - const { twinDatepick, dropdownAbsolute, button } = props;
 
-  .landing-card
+  .landing-card.js-landing-card
     h1.landing-card__header Найдём номера под ваши пожелания
     form.landing-card__form(action="", method="post")
       .landing-card__twin-datepick

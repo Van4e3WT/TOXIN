@@ -21,14 +21,14 @@ import 'Blocks/svg-ui/svg-ui';
 import './form-elements.scss';
 
 function initFormElements() {
-  initDateSolo();
-  initDateSoloRange();
-  initDropdownAbsolute();
-  initDropdownRelative();
-  initLikeButton();
-  initComment();
-  initRangeSlider();
-  initTwinDatepick();
+  initDateSolo('.js-form-elements');
+  initDateSoloRange('.js-form-elements');
+  initDropdownAbsolute('.js-form-elements');
+  initDropdownRelative('.js-form-elements');
+  initLikeButton('.js-form-elements__toggles-cell');
+  initComment('.js-form-elements__comment-cell');
+  initRangeSlider('.js-form-elements');
+  initTwinDatepick('.js-form-elements');
 }
 
 export default initFormElements;

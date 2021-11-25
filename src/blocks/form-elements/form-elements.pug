@@ -46,7 +46,7 @@ mixin form-elements(props)
       comment,
     } = props;
 
-  .form-elements
+  .form-elements.js-form-elements
     +svg-ui()
     .form-elements__grid
       .form-elements__inputs-cell
@@ -73,7 +73,7 @@ mixin form-elements(props)
         .form-elements__wrapper_large
           h3.form-elements__label subscription text field
           +form-subscribe()
-      .form-elements__toggles-cell
+      .form-elements__toggles-cell.js-form-elements__toggles-cell
         .form-elements__checkboxes
           h3.form-elements__label_large Checkbox buttons
           each checkbox in checkboxes
@@ -149,6 +149,6 @@ mixin form-elements(props)
       .form-elements__privilleges-cell
         each roomPrivilege in roomPrivileges
           +room-privilege(roomPrivilege)
-      .form-elements__comment-cell
+      .form-elements__comment-cell.js-form-elements__comment-cell
         .form-elements__comment
           +comment(comment)

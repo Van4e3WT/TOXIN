@@ -7,10 +7,10 @@ import 'Blocks/checkbox/checkbox';
 import './search-filter.scss';
 
 function initSearchFilter() {
-  initDateSoloRange();
-  initDropdownAbsolute();
-  initDropdownRelative();
-  initRangeSlider();
+  initDateSoloRange('.js-search-filter');
+  initDropdownAbsolute('.js-search-filter');
+  initDropdownRelative('.js-search-filter');
+  initRangeSlider('.js-search-filter');
 }
 
 export default initSearchFilter;
