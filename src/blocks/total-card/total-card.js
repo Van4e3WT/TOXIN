@@ -12,6 +12,9 @@ import './total-card.scss';
 const BLOCKNAME = 'total-card';
 
 function initTotalCard() {
+  initTwinDatepick();
+  initDropdownAbsolute();
+
   const totalCards = document.querySelectorAll(`.js-${BLOCKNAME}`);
 
   totalCards.forEach((item) => {
@@ -19,9 +22,6 @@ function initTotalCard() {
 
     totalCard.init();
   });
-
-  initDropdownAbsolute();
-  initTwinDatepick();
 }
 
 export default initTotalCard;
